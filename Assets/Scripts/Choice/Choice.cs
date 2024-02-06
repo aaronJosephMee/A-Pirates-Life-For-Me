@@ -13,7 +13,7 @@ public class Choices : MonoBehaviour
 {
     Choices instance;
     Flag mostRecent;
-    Dictionary<String, Flag> flags;
+    Dictionary<String, Flag> flags = new Dictionary<string, Flag>();
 
     public void AddFlag(String name, int startVal){
         Flag newFlag;
