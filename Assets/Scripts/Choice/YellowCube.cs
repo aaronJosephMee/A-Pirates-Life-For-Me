@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BlueCube : MonoBehaviour
+public class YellowCube : MonoBehaviour
 {
     public Button button;
     public Material mat;
@@ -12,17 +12,20 @@ public class BlueCube : MonoBehaviour
     {
         while(!GameManager.instance.ready);
         button.onClick.AddListener(updateFlag);
+        GameManager.instance.choices.CreateDependency("Blue", this.gameObject, 1, changeColor);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.choices.CheckFlag("Yellow") == 1 && GameManager.instance.choices.CheckFlag("Green") == 0){
-            mat.color = Color.black;
-        }
+
     }
     public void updateFlag(){
-        GameManager.instance.choices.SetFlag("Blue", 1);
+        GameManager.instance.choices.SetFlag("Yellow", 1);
+    }
+    public int changeColor(GameObject gameObject){
+        gameObject.GetComponent<YellowCube>().mat.color = Color.grey;
+        return 0;
     }
     IEnumerator wait(){
         yield return new WaitForSeconds(1);

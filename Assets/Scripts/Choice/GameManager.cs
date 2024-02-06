@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public Choices choices;
+    public bool ready = false;
+    public Choices choices = new Choices();
     // Start is called before the first frame update
     void Start()
     {
-        choices = new Choices();
+        Debug.Log(choices);
         choices.AddFlag("Blue", 0);
         choices.AddFlag("Orange", 0);
         choices.AddFlag("Red", 0);
         choices.AddFlag("Green", 0);
+        ready = true;
     }
     void Awake(){
         if (instance == null){

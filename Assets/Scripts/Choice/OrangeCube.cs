@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BlueCube : MonoBehaviour
+public class OrangeCube : MonoBehaviour
 {
     public Button button;
     public Material mat;
@@ -17,12 +18,10 @@ public class BlueCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.choices.CheckFlag("Yellow") == 1 && GameManager.instance.choices.CheckFlag("Green") == 0){
-            mat.color = Color.black;
-        }
+
     }
     public void updateFlag(){
-        GameManager.instance.choices.SetFlag("Blue", 1);
+        GameManager.instance.choices.SetFlag("Orange", 1);
     }
     IEnumerator wait(){
         yield return new WaitForSeconds(1);
