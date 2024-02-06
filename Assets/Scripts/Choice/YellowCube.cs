@@ -10,9 +10,8 @@ public class YellowCube : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        while(!GameManager.instance.ready);
         button.onClick.AddListener(updateFlag);
-        GameManager.instance.choices.CreateDependency("Blue", this.gameObject, 1, changeColor);
+        GameManager.choices.CreateDependency("Blue", this.gameObject, 1, changeColor);
     }
 
     // Update is called once per frame
@@ -21,10 +20,10 @@ public class YellowCube : MonoBehaviour
 
     }
     public void updateFlag(){
-        GameManager.instance.choices.SetFlag("Yellow", 1);
+        GameManager.choices.SetFlag("Yellow", 1);
     }
     public int changeColor(GameObject gameObject){
-        gameObject.GetComponent<YellowCube>().mat.color = Color.grey;
+        gameObject.GetComponent<Renderer>().material.color = Color.grey;
         return 0;
     }
     IEnumerator wait(){

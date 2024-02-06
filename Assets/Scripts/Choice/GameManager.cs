@@ -7,14 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool ready = false;
-    public Choices choices = new Choices();
+    public static Choices choices = new Choices();
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(choices);
         choices.AddFlag("Blue", 0);
         choices.AddFlag("Orange", 0);
-        choices.AddFlag("Red", 0);
+        choices.AddFlag("Yellow", 0);
         choices.AddFlag("Green", 0);
         ready = true;
     }

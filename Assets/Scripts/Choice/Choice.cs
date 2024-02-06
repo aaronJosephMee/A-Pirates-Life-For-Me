@@ -25,7 +25,7 @@ public class Choices
     public int CheckFlag(String name){
         Flag val;
         if (!flags.TryGetValue(name, out val)){
-            //Debug.Log("Requested flag doesn't exist");
+            Debug.Log("Requested flag doesn't exist");
             return -1;
         }
         return val.val;
@@ -44,6 +44,7 @@ public class Choices
             val.dependencies.Add(gameObject, deps);
         }
         deps.Add(onVal, whatDo);
+        val.dependencies[gameObject] = deps;
     }
     public void SetFlag(String flag, int newVal){
         Debug.Log("Setting " + flag + " to " + newVal);
@@ -52,14 +53,18 @@ public class Choices
             Debug.Log("Requested flag doesn't exist");
             return;
         }
-        
+        foreach (KeyValuePair<String,Flag> entry in flags){
+            Debug.Log("Name: " + entry.Key + " Val: " + entry.Value.val);
+        }
+        Debug.Log(flags.ToString());
         mostRecent = val;
         val.val = newVal;
+        flags[flag] = val;
+        Debug.Log(val.val);
         Func<GameObject, int> toDo;
         foreach (KeyValuePair<GameObject, Dictionary<int, Func<GameObject, int>>> entry in val.dependencies){
             Debug.Log("calling dependency");
-            if (entry.Value.TryGetValue(newVal, out toDo)){
-                
+            if (entry.Value.TryGetValue(newVal, out toDo)){   
                 toDo(entry.Key);
             }
         }

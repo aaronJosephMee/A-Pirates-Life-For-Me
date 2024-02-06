@@ -12,8 +12,8 @@ public class GreenCube : MonoBehaviour
     {
         button.onClick.AddListener(updateFlag);
         Debug.Log("In");
-        GameManager.instance.choices.CreateDependency("Yellow", this.gameObject, 1, changeColor1);
-        GameManager.instance.choices.CreateDependency("Orange", this.gameObject, 1, changeColor2);
+        GameManager.choices.CreateDependency("Yellow", this.gameObject, 1, changeColor1);
+        GameManager.choices.CreateDependency("Orange", this.gameObject, 1, changeColor2);
 
     }
 
@@ -23,14 +23,14 @@ public class GreenCube : MonoBehaviour
         
     }
     public void updateFlag(){
-        GameManager.instance.choices.SetFlag("Green", 1);
+        GameManager.choices.SetFlag("Green", 1);
     }
     public int changeColor1(GameObject gameObject){
-        gameObject.GetComponent<GreenCube>().mat.color = Color.red;
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
         return 0;
     }
     public int changeColor2(GameObject gameObject){
-        gameObject.GetComponent<GreenCube>().mat.color = Color.white;
+        gameObject.GetComponent<Renderer>().material.color = Color.black;
         return 0;
     }
     IEnumerator wait(){
