@@ -10,8 +10,8 @@ public class YellowCube : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(wait());
         button.onClick.AddListener(updateFlag);
-        GameManager.choices.CreateDependency("Blue", this.gameObject, 1, changeColor);
     }
 
     // Update is called once per frame
@@ -28,5 +28,7 @@ public class YellowCube : MonoBehaviour
     }
     IEnumerator wait(){
         yield return new WaitForSeconds(1);
+        GameManager.choices.CreateDependency("Blue", this.gameObject, 1, changeColor);
+
     }
 }

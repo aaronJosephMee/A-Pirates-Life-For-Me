@@ -10,10 +10,9 @@ public class GreenCube : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(wait());
         button.onClick.AddListener(updateFlag);
         Debug.Log("In");
-        GameManager.choices.CreateDependency("Yellow", this.gameObject, 1, changeColor1);
-        GameManager.choices.CreateDependency("Orange", this.gameObject, 1, changeColor2);
 
     }
 
@@ -35,5 +34,7 @@ public class GreenCube : MonoBehaviour
     }
     IEnumerator wait(){
         yield return new WaitForSeconds(1);
+        GameManager.choices.CreateDependency("Yellow", this.gameObject, 1, changeColor1);
+        GameManager.choices.CreateDependency("Orange", this.gameObject, 1, changeColor2);
     }
 }
