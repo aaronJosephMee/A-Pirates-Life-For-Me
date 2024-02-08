@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Awake(){
         if (instance == null){
             instance = this;
+            DontDestroyOnLoad(this);
         }
 
         else if (instance != this)
@@ -32,5 +34,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable() {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+        choices.RemakeDeps();
     }
 }

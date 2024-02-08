@@ -12,7 +12,6 @@ public class GreenCube : MonoBehaviour
     {
         StartCoroutine(wait());
         button.onClick.AddListener(updateFlag);
-        Debug.Log("In");
 
     }
 

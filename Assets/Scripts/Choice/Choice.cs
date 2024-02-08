@@ -3,71 +3,78 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-struct Flag{
-    public int val;
-    public Dictionary<GameObject, Dictionary<int, Func<GameObject, int>>> dependencies;
+struct Dependency{
+    public Dictionary<GameObject, Dictionary<int, Func<GameObject, int>>> deps;
 }
-
 public class Choices
 {
-    Choices instance;
-    Flag mostRecent;
-    Dictionary<String, Flag> flags = new Dictionary<string, Flag>();
+    Dictionary<String, int> flags = new Dictionary<string, int>();
+
+    Dictionary<String, Dependency> dependencies = new Dictionary<string, Dependency>();
 
     public void AddFlag(String name, int startVal){
-        Flag newFlag;
-        newFlag.val = startVal;
-        newFlag.dependencies = new Dictionary<GameObject, Dictionary<int, Func<GameObject, int>>>();
-        Debug.Log("Adding " + name);
+        int newFlag;
+        newFlag = startVal;
         flags.Add(name, newFlag);
     }
+
     public int CheckFlag(String name){
-        Flag val;
+        int val;
         if (!flags.TryGetValue(name, out val)){
             Debug.Log("Requested flag doesn't exist");
             return -1;
         }
-        return val.val;
+        return val;
     }
+
     public void CreateDependency(String flag, GameObject gameObject, int onVal, Func<GameObject, int> whatDo){
-        Flag val;
-        Debug.Log("In dep");
-        if (!flags.TryGetValue(flag, out val)){
+        int state;
+        if (!flags.TryGetValue(flag, out state)){
             Debug.Log("Requested flag doesn't exist");
             return;
         }
-        Debug.Log("In dep");
+        Dependency val;
+        if (!dependencies.TryGetValue(flag, out val)){
+            val = new Dependency();
+            val.deps = new Dictionary<GameObject, Dictionary<int, Func<GameObject, int>>>();
+            dependencies.Add(flag, val);
+        }
         Dictionary<int, Func<GameObject, int>> deps;
-        if (!val.dependencies.TryGetValue(gameObject, out deps)){
+        if (!val.deps.TryGetValue(gameObject, out deps)){
             deps = new Dictionary<int, Func<GameObject, int>>();
-            val.dependencies.Add(gameObject, deps);
+            val.deps.Add(gameObject, deps);
         }
         deps.Add(onVal, whatDo);
-        val.dependencies[gameObject] = deps;
+        val.deps[gameObject] = deps;
+        if (state == onVal){
+            whatDo(gameObject);
+        }
     }
+
     public void SetFlag(String flag, int newVal){
-        Debug.Log("Setting " + flag + " to " + newVal);
-        Flag val;
+        int val;
         if (!flags.TryGetValue(flag, out val)){
             Debug.Log("Requested flag doesn't exist");
             return;
         }
-        foreach (KeyValuePair<String,Flag> entry in flags){
-            Debug.Log("Name: " + entry.Key + " Val: " + entry.Value.val);
-        }
-        Debug.Log(flags.ToString());
-        mostRecent = val;
-        val.val = newVal;
+        val = newVal;
         flags[flag] = val;
-        Debug.Log(val.val);
+        Dependency dep;
         Func<GameObject, int> toDo;
-        foreach (KeyValuePair<GameObject, Dictionary<int, Func<GameObject, int>>> entry in val.dependencies){
-            Debug.Log("calling dependency");
-            if (entry.Value.TryGetValue(newVal, out toDo)){   
-                toDo(entry.Key);
+        if (dependencies.TryGetValue(flag, out dep)){
+            foreach (KeyValuePair<GameObject, Dictionary<int, Func<GameObject, int>>> entry in dep.deps){
+                if (entry.Value.TryGetValue(newVal, out toDo)){   
+                    toDo(entry.Key);
+                }
             }
         }
+        
+    }
+    
+    public void RemakeDeps() {
+        dependencies = new Dictionary<string, Dependency>();
     }
 
 }

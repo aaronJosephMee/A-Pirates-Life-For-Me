@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OrangeCube : MonoBehaviour
@@ -22,6 +24,7 @@ public class OrangeCube : MonoBehaviour
     }
     public void updateFlag(){
         GameManager.choices.SetFlag("Orange", 1);
+        SceneManager.LoadScene("ChoiceTest");
     }
     IEnumerator wait(){
         yield return new WaitForSeconds(1);
