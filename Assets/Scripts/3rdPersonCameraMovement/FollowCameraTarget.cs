@@ -14,9 +14,8 @@ public class FollowCameraTarget : MonoBehaviour
     {
         transform.position = camTarget.position;
     }
-
-    // Update is called once per frame
-    void LateUpdate()
+    
+    private void LateUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, camTarget.position, positionLerpRate);
         transform.rotation = Quaternion.Lerp(transform.rotation, camTarget.rotation, rotationLerpRate);
