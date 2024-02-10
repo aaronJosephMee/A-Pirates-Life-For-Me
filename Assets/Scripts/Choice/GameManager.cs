@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public GameObject mapScreen;
+    public bool isMapOpen = false;
     public bool ready = false;
     public static Choices choices = new Choices();
     // Start is called before the first frame update
@@ -44,5 +46,12 @@ public class GameManager : MonoBehaviour
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
         choices.RemakeDeps();
+    }
+    public void OpenMap(){
+        if (!isMapOpen){
+            Instantiate(mapScreen, new Vector3(0,0,0), Quaternion.identity);
+            isMapOpen = true;
+        }
+        
     }
 }

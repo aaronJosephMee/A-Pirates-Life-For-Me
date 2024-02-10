@@ -24,7 +24,7 @@ public class OrangeCube : MonoBehaviour
     }
     public void updateFlag(){
         GameManager.choices.SetFlag("Orange", 1);
-        SceneManager.LoadScene("ChoiceTest");
+        GameManager.instance.OpenMap();
     }
     IEnumerator wait(){
         yield return new WaitForSeconds(1);

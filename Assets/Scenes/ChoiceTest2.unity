@@ -1943,8 +1943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc7543ba196ba1428116bde74d93e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapScreen: {fileID: 3999492035705223546, guid: 5842606817f8aba468021aaf585aef5b, type: 3}
-  isMapOpen: 0
   ready: 0
 --- !u!4 &1657776260
 Transform:
