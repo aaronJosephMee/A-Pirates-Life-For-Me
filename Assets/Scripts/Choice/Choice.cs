@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 struct Dependency{
     public Dictionary<GameObject, Dictionary<int, Func<GameObject, int>>> deps;
@@ -14,25 +12,26 @@ public class Choices
 
     Dictionary<String, Dependency> dependencies = new Dictionary<string, Dependency>();
 
+    //Adds a flag with value = startVal
     public void AddFlag(String name, int startVal){
         int newFlag;
         newFlag = startVal;
         flags.Add(name, newFlag);
     }
-
-    public int CheckFlag(String name){
+    //Returns the value of the flag
+    public int CheckFlag(String flag){
         int val;
-        if (!flags.TryGetValue(name, out val)){
-            Debug.Log("Requested flag doesn't exist");
+        if (!flags.TryGetValue(flag, out val)){
+            Debug.Log("Requested flag '" + flag + "' doesn't exist");
             return -1;
         }
         return val;
     }
-
+    //Creates a dependency from a gameObject to a flag on a specific value. On that value it calls the function given in whatDo
     public void CreateDependency(String flag, GameObject gameObject, int onVal, Func<GameObject, int> whatDo){
         int state;
         if (!flags.TryGetValue(flag, out state)){
-            Debug.Log("Requested flag doesn't exist");
+            Debug.Log("Requested flag '" + flag +"' doesn't exist");
             return;
         }
         Dependency val;
@@ -52,11 +51,11 @@ public class Choices
             whatDo(gameObject);
         }
     }
-
+    //Sets the value of a flag to newVal and calls any dependencies on that value
     public void SetFlag(String flag, int newVal){
         int val;
         if (!flags.TryGetValue(flag, out val)){
-            Debug.Log("Requested flag doesn't exist");
+            Debug.Log("Requested flag '" + flag + "' doesn't exist");
             return;
         }
         val = newVal;
@@ -65,14 +64,14 @@ public class Choices
         Func<GameObject, int> toDo;
         if (dependencies.TryGetValue(flag, out dep)){
             foreach (KeyValuePair<GameObject, Dictionary<int, Func<GameObject, int>>> entry in dep.deps){
-                if (entry.Value.TryGetValue(newVal, out toDo)){   
+                if (entry.Value.TryGetValue(newVal, out toDo) && entry.Key != null){   
                     toDo(entry.Key);
                 }
             }
         }
         
     }
-    
+    //Remakes the dependencies. (Needed because the gameObjects in the dependencies stop existing on scene change)
     public void RemakeDeps() {
         dependencies = new Dictionary<string, Dependency>();
     }
