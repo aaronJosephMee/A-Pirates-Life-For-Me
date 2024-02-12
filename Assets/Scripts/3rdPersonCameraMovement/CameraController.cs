@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
     {
         _cameraRotation.x += _mouseInput.x * horizontalSensitivity * Time.deltaTime;
         _cameraRotation.y += _mouseInput.y * verticalSensitivity * Time.deltaTime;
-        _cameraRotation.y = Mathf.Clamp(_cameraRotation.y,-85.0f, 85.0f);
+        _cameraRotation.y = Mathf.Clamp(_cameraRotation.y,-85.0f, 50.0f);
     }
 
     public void GetMouseInput(InputAction.CallbackContext context)
