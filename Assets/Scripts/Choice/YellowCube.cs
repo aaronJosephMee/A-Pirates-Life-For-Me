@@ -21,6 +21,7 @@ public class YellowCube : MonoBehaviour
     }
     public void updateFlag(){
         GameManager.choices.SetFlag("Yellow", 1);
+        GameManager.choices.SaveState();
     }
     public int changeColor(GameObject gameObject){
         gameObject.GetComponent<Renderer>().material.color = Color.grey;

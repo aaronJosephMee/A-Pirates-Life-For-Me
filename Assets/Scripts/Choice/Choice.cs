@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 struct Dependency{
     public Dictionary<GameObject, Dictionary<int, Func<GameObject, int>>> deps;
@@ -74,6 +76,16 @@ public class Choices
     //Remakes the dependencies. (Needed because the gameObjects in the dependencies stop existing on scene change)
     public void RemakeDeps() {
         dependencies = new Dictionary<string, Dependency>();
+    }
+
+    public void SaveState(){
+        string data = "";
+        data += SceneManager.GetActiveScene().name + "\n";
+        foreach (KeyValuePair<string, int> entry in flags){
+            data += entry.Key + " " + entry.Value + "\n";
+        }
+        Debug.Log(Application.dataPath + "/Saves/savefile");
+        File.WriteAllText(Application.dataPath + "/Saves/savefile", data);
     }
 
 }
