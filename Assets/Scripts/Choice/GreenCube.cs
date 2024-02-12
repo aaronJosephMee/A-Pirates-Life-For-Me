@@ -22,6 +22,7 @@ public class GreenCube : MonoBehaviour
     }
     public void updateFlag(){
         GameManager.choices.SetFlag("Green", 1);
+        GameManager.choices.LoadState();
     }
     public int changeColor1(GameObject gameObject){
         gameObject.GetComponent<Renderer>().material.color = Color.red;

@@ -16,6 +16,11 @@ public class Choices
 
     //Adds a flag with value = startVal
     public void AddFlag(String name, int startVal){
+        //Containing spaces makes saving and loading harder so its not allowed
+        if (name.Contains(" ")){
+            Debug.Log("Flag names cannot contain spaces");
+            return;
+        }
         int newFlag;
         newFlag = startVal;
         flags.Add(name, newFlag);
@@ -78,6 +83,19 @@ public class Choices
         dependencies = new Dictionary<string, Dependency>();
     }
 
+    //Loads a savefile. Important note that it assumes the flags being read in already exist as the GM should make them
+    public void LoadState(){
+        String[] savefile = File.ReadAllLines(Application.dataPath + "/Saves/savefile");
+        string nextScene = savefile[0];
+        string line;
+        for (int i = 1; i < savefile.Length; i++){
+            line = savefile[i];
+            string[] flagAndVal = line.Split(" ");
+            GameManager.choices.SetFlag(flagAndVal[0], int.Parse(flagAndVal[1]));
+        }
+        SceneManager.LoadScene(nextScene);
+    }
+    //Creates a savefile storing the flags and current scene
     public void SaveState(){
         string data = "";
         data += SceneManager.GetActiveScene().name + "\n";
