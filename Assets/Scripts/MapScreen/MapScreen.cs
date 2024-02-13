@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class MapScreen : MonoBehaviour
 {
-    public GameObject parent;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +17,6 @@ public class MapScreen : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)){
-            parent.GetComponent<InteractionPoint>().mapOpen = false;
             Destroy(this.gameObject);
         }
     }

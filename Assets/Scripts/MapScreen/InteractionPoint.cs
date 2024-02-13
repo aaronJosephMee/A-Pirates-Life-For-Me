@@ -5,8 +5,9 @@ using UnityEngine;
 public class InteractionPoint : MonoBehaviour
 {
     public GameObject interactText;
-    public GameObject map;
-    public bool mapOpen;
+    public GameObject toSpawn;
+    private GameObject instance;
+    public bool spawned;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,14 @@ public class InteractionPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (instance == null){
+            spawned = false;
+        }
     }
     private void OnTriggerStay(Collider other) {
-        if (Input.GetKey(KeyCode.E) && !mapOpen){
-            mapOpen = true;
-            Instantiate(map).GetComponent<MapScreen>().parent = this.gameObject;
+        if (Input.GetKey(KeyCode.E) && !spawned){
+            spawned = true;
+            instance = Instantiate(toSpawn);
         }
     }
     private void OnTriggerEnter(Collider other) {
