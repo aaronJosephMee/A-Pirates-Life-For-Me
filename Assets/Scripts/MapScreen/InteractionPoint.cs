@@ -6,7 +6,7 @@ public class InteractionPoint : MonoBehaviour
 {
     public GameObject interactText;
     public GameObject map;
-    private bool mapOpen;
+    public bool mapOpen;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +19,9 @@ public class InteractionPoint : MonoBehaviour
         
     }
     private void OnTriggerStay(Collider other) {
-        if (Input.GetKeyDown(KeyCode.E) && !mapOpen){
-            Instantiate(map);
+        if (Input.GetKey(KeyCode.E) && !mapOpen){
+            mapOpen = true;
+            Instantiate(map).GetComponent<MapScreen>().parent = this.gameObject;
         }
     }
     private void OnTriggerEnter(Collider other) {

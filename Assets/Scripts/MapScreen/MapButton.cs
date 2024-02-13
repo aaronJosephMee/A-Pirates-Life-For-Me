@@ -22,7 +22,7 @@ public class MapButton : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
         if (!onFlag.Equals("")){
             GameManager.choices.CreateDependency(onFlag, this.gameObject, 1, Activate);
         }
-        else{
+        else if (!dest.Equals("")){
             Activate(this.gameObject);
         }
         
@@ -34,7 +34,6 @@ public class MapButton : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
         
     }
     void GoIsland(string scene){
-        GameManager.instance.isMapOpen = false;
         SceneManager.LoadScene(scene);
     }
     int Activate(GameObject gameObject){
