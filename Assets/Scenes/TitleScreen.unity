@@ -375,7 +375,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[TEMP NAME]'
+  m_Text: A PIRATE'S LIFE FOR ME
 --- !u!222 &1319799938
 CanvasRenderer:
   m_ObjectHideFlags: 0
