@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     private const float Gravity = -9.81f;
     private const float RotationSpeed = 500f;
-    private float _downwardsVelocity;
+    private const float JumpPower = 2.0f;
+    private float _verticalVelocity;
     private Vector2 _input;
     private Vector3 _direction;
     private CharacterController _characterController;
@@ -54,14 +55,14 @@ public class PlayerController : MonoBehaviour
     {
         if (_characterController.isGrounded && _direction.y < 0.0f)
         {
-            _downwardsVelocity = -1.0f;
+            _verticalVelocity = -1.0f;
         }
         else
         {
-            _downwardsVelocity += Gravity * Time.deltaTime;
+            _verticalVelocity += Gravity * Time.deltaTime;
         }
 
-        _direction.y = _downwardsVelocity;
+        _direction.y = _verticalVelocity;
     }
     
     private void ApplyMovement()
@@ -73,5 +74,19 @@ public class PlayerController : MonoBehaviour
     {
         _input = context.ReadValue<Vector2>();
         _direction = new Vector3(_input.x, 0.0f, _input.y);
+    }
+
+    public void GetJumpInput(InputAction.CallbackContext context)
+    {
+        if (!context.started)
+        {
+            return;
+        }
+
+        if (_characterController.isGrounded)
+        {
+            _verticalVelocity = JumpPower;
+            _direction.y = _verticalVelocity;
+        }
     }
 }
