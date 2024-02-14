@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        choices.AddFlag("Wood", 0);
     }
     void Awake(){
         if (instance == null)
