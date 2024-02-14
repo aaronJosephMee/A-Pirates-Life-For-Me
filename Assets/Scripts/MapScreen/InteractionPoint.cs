@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
 
@@ -7,6 +5,7 @@ public class InteractionPoint : MonoBehaviour
 {
     public GameObject interactText;
     private IInteractable _interactable;
+    private bool _canInteract = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +14,11 @@ public class InteractionPoint : MonoBehaviour
 
     // Update is called once per frame
     private void OnTriggerStay(Collider other) {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && _canInteract)
         {
             _interactable.Interact(other);
+            interactText.SetActive(false);
+            _canInteract = false;
         }
     }
     private void OnTriggerEnter(Collider other) {
@@ -28,6 +29,7 @@ public class InteractionPoint : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")){
             interactText.SetActive(false);
+            _canInteract = true;
         }
     }
 }
