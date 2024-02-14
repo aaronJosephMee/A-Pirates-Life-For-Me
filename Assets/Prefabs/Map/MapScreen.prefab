@@ -358,11 +358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: dest
-      value: ChoiceTest
+      value: Isle Of Torrent
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: onFlag
-      value: Yellow
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1396853976732241829, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: m_Name
@@ -468,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: dest
-      value: ChoiceTest
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: onFlag
@@ -578,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: dest
-      value: ChoiceTest
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: onFlag
@@ -688,7 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: dest
-      value: ChoiceTest2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: onFlag
@@ -798,7 +798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 194439567063757257, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: dest
-      value: ChoiceTest2
+      value: Rusty's Retreat
       objectReference: {fileID: 0}
     - target: {fileID: 1396853976732241829, guid: 7bb02d6f428e37a4f94d004fa416f933, type: 3}
       propertyPath: m_Name

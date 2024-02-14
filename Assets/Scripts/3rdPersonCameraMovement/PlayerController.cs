@@ -19,19 +19,37 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject cameraPosition;
     [SerializeField] private float speed;
     private static readonly int RunningAnimationFlag = Animator.StringToHash("Running");
+    private CameraController _cameraController;
+    private bool _canMove = true;
 
     private void Awake()
     {
         _playerModelAnimator = playerModel.GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
+        _cameraController = gameObject.GetComponentInChildren<CameraController>();
+    }
+
+    public void DisablePlayerInput()
+    {
+        _cameraController.ShowCursor();
+        _canMove = false;
+    }
+    
+    public void EnablePlayerInput()
+    {
+        _cameraController.HideCursor();
+        _canMove = true;
     }
 
     private void Update()
     {
         SetAnimationFlags();
-        ApplyRotation();
-        ApplyGravity();
-        ApplyMovement();
+        if (_canMove)
+        {
+            ApplyRotation();
+            ApplyGravity();
+            ApplyMovement();
+        }
     }
 
     private void SetAnimationFlags()

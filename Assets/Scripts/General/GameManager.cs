@@ -7,26 +7,38 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject mapScreen;
     public static Choices choices = new Choices();
+    private static Vector3 _lastPosition;
     // Start is called before the first frame update
     void Start()
     {
-        choices.AddFlag("Blue", 0);
-        choices.AddFlag("Orange", 0);
-        choices.AddFlag("Yellow", 0);
-        choices.AddFlag("Green", 0);
     }
     void Awake(){
-        if (instance == null){
+        if (instance == null)
+        {
             instance = this;
             DontDestroyOnLoad(this);
         }
-
         else if (instance != this)
         {
             Destroy(gameObject);
         }
+    }
+
+    public void LoadScene(string scene, bool restorePosition)
+    {
+        GameObject currentScenePlayer = GameObject.FindGameObjectsWithTag("Player")[0].gameObject;
+        Vector3 newLastPosition = currentScenePlayer.transform.position;
+        SceneManager.LoadScene(scene);
+        if (restorePosition)
+        {
+            GameObject newScenePlayer = GameObject.FindGameObjectsWithTag("Player")[0].gameObject;
+            if (newScenePlayer != null)
+            {
+                newScenePlayer.transform.position = _lastPosition;
+            }
+        }
+        _lastPosition = newLastPosition;
     }
 
     // Update is called once per frame

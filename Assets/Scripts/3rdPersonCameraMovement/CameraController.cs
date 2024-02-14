@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     
     private Vector2 _cameraRotation = Vector2.zero;
     private Vector2 _mouseInput;
+    private bool _receiveMouseInput;
     
     // Start is called before the first frame update
     private void Start()
@@ -21,18 +22,29 @@ public class CameraController : MonoBehaviour
     
     private void Update()
     {
-        CalculateCameraPosition();
+        if (_receiveMouseInput)
+        {
+            CalculateCameraPosition();
+        }
     }
     
     private void LateUpdate()
     {
         transform.localRotation = Quaternion.Euler(-_cameraRotation.y, _cameraRotation.x, 0);
     }
+    
+    public void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _receiveMouseInput = false;
+    }
 
-    private void HideCursor()
+    public void HideCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _receiveMouseInput = true;
     }
 
     private void CalculateCameraPosition()

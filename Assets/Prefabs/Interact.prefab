@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 6364701023892514297}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.413067, y: 1.1, z: 10.417882}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.0919466, y: 2.4453285, z: 2.017343}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: {fileID: 8867777896854382678}
-  map: {fileID: 3999492035705223546, guid: 5842606817f8aba468021aaf585aef5b, type: 3}
-  mapOpen: 0
+  toSpawn: {fileID: 0}
+  spawned: 0
 --- !u!1 &8867777896854382678
 GameObject:
   m_ObjectHideFlags: 0
