@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
 
     private bool hasSpoken = false;
 
-    private void OnTriggerEnter(Collider other)
+    public void Interact(Collider collider)
     {
-        if (other.CompareTag("Player") && !hasSpoken)
+        if (!hasSpoken)
         {
-            other.gameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
+            collider.gameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
             hasSpoken = false;
         }
     }
