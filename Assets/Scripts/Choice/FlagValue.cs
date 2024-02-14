@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class FlagValue : MonoBehaviour
 {
     public Text test;
+    public bool alive = true;
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.SetActive(false);
+        this.gameObject.SetActive(alive);
         GameManager.choices.CreateDependency("Wood", this.gameObject, 1, Activate);
     }
 
