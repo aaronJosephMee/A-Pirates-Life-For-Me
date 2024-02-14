@@ -1775,6 +1775,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 32.299507, y: 27.83693, z: 38.197826}
   m_Center: {x: -12.0339775, y: 0.100764275, z: 0.000005722046}
+--- !u!1001 &315138101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 742414208674631104, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449929317723505158, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf6b902fd49285a458302d4214d70488, type: 3}
 --- !u!1 &410179001 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 160548, guid: f725d918129d69848a395da5d3d992a3, type: 3}
@@ -5198,6 +5255,50 @@ CapsuleCollider:
   m_Height: 43.154797
   m_Direction: 0
   m_Center: {x: -21.577398, y: 0, z: 0}
+--- !u!1 &1461374195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461374197}
+  - component: {fileID: 1461374196}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1461374196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461374195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ff469c4ac65e44dafc7a1149effddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1461374197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461374195}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1475225201 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 129608, guid: f725d918129d69848a395da5d3d992a3, type: 3}
@@ -7437,3 +7538,5 @@ SceneRoots:
   - {fileID: 1338007756}
   - {fileID: 129237079}
   - {fileID: 1151226536}
+  - {fileID: 315138101}
+  - {fileID: 1461374197}

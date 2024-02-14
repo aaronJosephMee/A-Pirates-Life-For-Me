@@ -5,40 +5,46 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float currentHealth, maxHealth = 100f;
+    private bool isDead;
 
     Ragdoll ragdoll;
+
+    combatManager combatManager;
 
     // Start is called before the first frame update
     void Start()
     {
         ragdoll = GetComponent<Ragdoll>();
         currentHealth = maxHealth;
+
+        combatManager = FindObjectOfType<combatManager>();
+
+        isDead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+
     }
 
     public void DecreaseHealth(float amount, Vector3 direction)
     {
         currentHealth -= amount;
-
-        if (currentHealth <= 0)
+        
+        if (currentHealth <= 0 && !isDead)
         {
             Die();
         }
+        
     }
 
     private void Die()
     {
+        isDead = true;
 
         ragdoll.ActivateRagdoll();
-        
+        combatManager.Instance.DecreaseEnemyCount();
 
 
         //StartCoroutine(DestroyAfterDelay(1.5f));
