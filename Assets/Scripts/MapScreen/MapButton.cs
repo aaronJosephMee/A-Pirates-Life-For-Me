@@ -34,7 +34,7 @@ public class MapButton : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
         
     }
     void GoIsland(string scene){
-        SceneManager.LoadScene(scene);
+        GameManager.instance.LoadScene(scene, false);
     }
     int Activate(GameObject gameObject){
         mapButton.interactable = true;
