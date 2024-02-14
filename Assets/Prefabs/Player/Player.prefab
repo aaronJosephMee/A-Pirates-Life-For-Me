@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 3465086491347125377}
   - component: {fileID: 4011351033003352744}
   - component: {fileID: 7832888479943550857}
+  - component: {fileID: 1607016533587148627}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -202,6 +203,23 @@ MonoBehaviour:
   playerModel: {fileID: 2919002732890543064}
   cameraPosition: {fileID: 5327189078373444264}
   speed: 5
+--- !u!114 &1607016533587148627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522721928492919236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f0b2acf7c3b452d974c05871c1b039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueParent: {fileID: 0}
+  dialogueText: {fileID: 0}
+  answer1Button: {fileID: 0}
+  answer2Button: {fileID: 0}
+  typingSpeed: 0.02
 --- !u!1 &5327189078373444264
 GameObject:
   m_ObjectHideFlags: 0
