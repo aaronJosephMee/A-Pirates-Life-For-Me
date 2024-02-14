@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static Choices choices = new Choices();
     private static Vector3 _lastPosition;
     public bool menuOpen;
+    private bool movePlayerOnLoad = false;
     public GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
@@ -30,18 +31,13 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string scene, bool restorePosition)
     {
         
-        GameObject currentScenePlayer = GameObject.FindGameObjectsWithTag("Player")[0].gameObject;
-        Vector3 newLastPosition = currentScenePlayer.transform.position;
-        SceneManager.LoadScene(scene);
-        if (restorePosition)
+        GameObject[] currentScenePlayer = GameObject.FindGameObjectsWithTag("Player");
+        if (currentScenePlayer.Length > 0 && !restorePosition && currentScenePlayer != null)
         {
-            GameObject newScenePlayer = GameObject.FindGameObjectsWithTag("Player")[0].gameObject;
-            if (newScenePlayer != null)
-            {
-                newScenePlayer.transform.position = _lastPosition;
-            }
+            _lastPosition = currentScenePlayer[0].transform.position;
         }
-        _lastPosition = newLastPosition;
+        movePlayerOnLoad = restorePosition;
+        SceneManager.LoadScene(scene);
     }
 
     // Update is called once per frame
@@ -60,6 +56,11 @@ public class GameManager : MonoBehaviour
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
         choices.RemakeDeps();
+        GameObject[] newScenePlayer = GameObject.FindGameObjectsWithTag("Player");
+        if (newScenePlayer.Length > 0 && newScenePlayer[0] != null && movePlayerOnLoad)
+        {
+            newScenePlayer[0].transform.position = _lastPosition;
+        }
     }
 
 }

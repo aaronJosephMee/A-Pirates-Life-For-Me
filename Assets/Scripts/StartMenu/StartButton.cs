@@ -23,6 +23,6 @@ public class StartButton : MonoBehaviour
     }
     void StartGame(){
         GameManager.instance.menuOpen = false;
-        SceneManager.LoadScene(sceneToLoad);
+        GameManager.instance.LoadScene(sceneToLoad, false);
     }
 }
