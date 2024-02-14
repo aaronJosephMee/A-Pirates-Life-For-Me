@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string scene, bool restorePosition)
     {
+        
         GameObject currentScenePlayer = GameObject.FindGameObjectsWithTag("Player")[0].gameObject;
         Vector3 newLastPosition = currentScenePlayer.transform.position;
         SceneManager.LoadScene(scene);

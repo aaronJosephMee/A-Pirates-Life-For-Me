@@ -51,7 +51,7 @@ public class WoodMiniGame : MonoBehaviour
             {
                 Debug.Log("tree defeated");
                 chops = 0;
-                Destroy(gameObject);
+                GameManager.instance.LoadScene("Isle of Torrent", true);
             }
             input = false;
         }
