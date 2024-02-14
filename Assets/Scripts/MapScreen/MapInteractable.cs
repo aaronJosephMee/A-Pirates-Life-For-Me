@@ -18,7 +18,7 @@ namespace DefaultNamespace.MapScreen
         }
         public void Interact(Collider collider)
         {
-            if (!spawned)
+            if (!spawned && !GameManager.instance.menuOpen)
             {
                 _playerController = collider.gameObject.GetComponent<PlayerController>();
                 if (_playerController != null)

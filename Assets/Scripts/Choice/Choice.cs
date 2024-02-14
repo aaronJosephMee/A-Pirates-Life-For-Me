@@ -93,7 +93,7 @@ public class Choices
             string[] flagAndVal = line.Split(" ");
             GameManager.choices.SetFlag(flagAndVal[0], int.Parse(flagAndVal[1]));
         }
-        GameManager.instance.LoadScene(nextScene, false);
+        SceneManager.LoadScene(nextScene);
     }
     //Creates a savefile storing the flags and current scene
     public void SaveState(){
@@ -102,7 +102,6 @@ public class Choices
         foreach (KeyValuePair<string, int> entry in flags){
             data += entry.Key + " " + entry.Value + "\n";
         }
-        Debug.Log(Application.dataPath + "/Saves/savefile");
         File.WriteAllText(Application.dataPath + "/Saves/savefile", data);
     }
 

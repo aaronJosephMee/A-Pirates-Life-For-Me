@@ -258,6 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc7543ba196ba1428116bde74d93e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuOpen: 0
+  pauseMenu: {fileID: 0}
 --- !u!4 &352815421
 Transform:
   m_ObjectHideFlags: 0
@@ -684,6 +686,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9014156321774082564, guid: bf6b902fd49285a458302d4214d70488, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 5792749610776295130, guid: bf2aecb993c56b24c93671c0431780b3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
