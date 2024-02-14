@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static Choices choices = new Choices();
     private static Vector3 _lastPosition;
+    public bool menuOpen;
+    public GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape) && !menuOpen){
+            Instantiate(pauseMenu);
+        }
     }
     void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
