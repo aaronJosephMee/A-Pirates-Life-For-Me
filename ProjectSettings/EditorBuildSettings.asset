@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Isle of Torrent.unity
     guid: 4f9b006b43604c945a24b153bfcc3b15
+  - enabled: 1
+    path: Assets/Scenes/CombatTest.unity
+    guid: 5619ffde15521c54f82e0173c2322bb1
   m_configObjects: {}
