@@ -76,7 +76,7 @@ public class ButtonMashGame : MonoBehaviour
         else if (playerSlider.value <= 0)
         {
             // CPU wins!
-            
+            losingText.gameObject.SetActive(true);
             Debug.Log("You lose!");
         }
 
