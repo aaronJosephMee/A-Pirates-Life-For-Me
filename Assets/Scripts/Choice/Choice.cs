@@ -85,7 +85,7 @@ public class Choices
 
     //Loads a savefile. Important note that it assumes the flags being read in already exist as the GM should make them
     public void LoadState(){
-        String[] savefile = File.ReadAllLines(Application.dataPath + "/Saves/savefile");
+        String[] savefile = File.ReadAllLines(System.IO.Directory.GetCurrentDirectory() + "/savefile");
         string nextScene = savefile[0];
         string line;
         for (int i = 1; i < savefile.Length; i++){
@@ -102,7 +102,7 @@ public class Choices
         foreach (KeyValuePair<string, int> entry in flags){
             data += entry.Key + " " + entry.Value + "\n";
         }
-        File.WriteAllText(Application.dataPath + "/Saves/savefile", data);
+        File.WriteAllText(System.IO.Directory.GetCurrentDirectory() + "/savefile", data);
     }
 
 }

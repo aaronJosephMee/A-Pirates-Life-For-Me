@@ -10,7 +10,7 @@ public class LoadGame : MonoBehaviour
     void Start()
     {
         Button load = this.GetComponent<Button>();
-        if (File.Exists(Application.dataPath + "/Saves/savefile")){
+        if (File.Exists(System.IO.Directory.GetCurrentDirectory() + "/savefile")){
             load.onClick.AddListener(Load);
         }
         else{
