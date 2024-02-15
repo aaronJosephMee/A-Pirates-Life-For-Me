@@ -7,20 +7,17 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public static Choices choices = new Choices();
+    public static Choices choices;
     private static Vector3 _lastPosition;
     public bool menuOpen;
     private bool movePlayerOnLoad = false;
     public GameObject pauseMenu;
     // Start is called before the first frame update
-    void Start()
-    {
-        choices.AddFlag("Wood", 0);
-    }
     void Awake(){
         if (instance == null)
         {
             instance = this;
+            InitializeChoices();
             DontDestroyOnLoad(this);
         }
         else if (instance != this)
@@ -63,5 +60,10 @@ public class GameManager : MonoBehaviour
             newScenePlayer[0].transform.position = _lastPosition;
         }
     }
-
+    
+    public void InitializeChoices()
+    {
+        choices = new Choices();
+        choices.AddFlag("Wood", 0);
+    }
 }

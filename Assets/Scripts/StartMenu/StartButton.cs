@@ -24,5 +24,6 @@ public class StartButton : MonoBehaviour
     void StartGame(){
         GameManager.instance.menuOpen = false;
         GameManager.instance.LoadScene(sceneToLoad, false);
+        GameManager.instance.InitializeChoices();
     }
 }
