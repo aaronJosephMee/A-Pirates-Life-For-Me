@@ -108,7 +108,7 @@ public class DialogueManager : MonoBehaviour
     {
         StopAllCoroutines();
         dialogueText.text = "";
-
+        dialogueList[currentDialogueIndex].endDialogue.Invoke();
         dialogueParent.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
