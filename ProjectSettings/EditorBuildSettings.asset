@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/woodchop minigame.unity
     guid: 81db13d6400a21344a451261adec1bb6
+  - enabled: 1
+    path: Assets/Scenes/ButtonMashing.unity
+    guid: 942fe9c1d6f6140f9bb0b70f0dac56e5
   m_configObjects: {}
