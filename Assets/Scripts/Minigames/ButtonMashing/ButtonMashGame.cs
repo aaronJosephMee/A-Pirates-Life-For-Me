@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -83,7 +84,14 @@ public class ButtonMashGame : MonoBehaviour
         if (playerSlider.value >= 100 || playerSlider.value <= 0)
         {
             gameEnded = true;
+            StartCoroutine(EndGameRoutine());
         }
+    }
+
+    private IEnumerator EndGameRoutine()
+    {
+        yield return new WaitForSeconds(2);
+        GameManager.instance.LoadScene("Rusty's Retreat", true);
     }
 
     void ChallengeLevel(bool difficulty)
