@@ -12,6 +12,10 @@ public class WoodMiniGame : MonoBehaviour
 
     private bool input;
 
+    public GameObject particlePrefab;
+    public Transform goalObject;
+    private GameObject particle;
+
     void Start()
     {
         image.enabled = false;
@@ -39,6 +43,7 @@ public class WoodMiniGame : MonoBehaviour
         image.enabled = true;
         input = true;
         StartCoroutine(HideKey());
+        Destroy(particle);
     }
 
     void CheckInput()
@@ -47,6 +52,8 @@ public class WoodMiniGame : MonoBehaviour
         {
             chops++;
             Debug.Log("Chop " + chops + "/" + treeHP);
+            Vector3 offset = new Vector3(1.0f, 2.0f, -3.0f);
+            particle = Instantiate(particlePrefab, goalObject.position + offset, Quaternion.identity);
             if (chops >= treeHP)
             {
                 Debug.Log("tree defeated");
@@ -56,6 +63,7 @@ public class WoodMiniGame : MonoBehaviour
             }
             input = false;
         }
+
     }
 
     IEnumerator HideKey()
