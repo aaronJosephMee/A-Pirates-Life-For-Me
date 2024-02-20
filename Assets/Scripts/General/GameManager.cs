@@ -57,7 +57,10 @@ public class GameManager : MonoBehaviour
         GameObject[] newScenePlayer = GameObject.FindGameObjectsWithTag("Player");
         if (newScenePlayer.Length > 0 && newScenePlayer[0] != null && movePlayerOnLoad)
         {
+            CharacterController characterController = newScenePlayer[0].gameObject.GetComponent<CharacterController>();
+            characterController.enabled = false;
             newScenePlayer[0].transform.position = _lastPosition;
+            characterController.enabled = true;
         }
     }
     
