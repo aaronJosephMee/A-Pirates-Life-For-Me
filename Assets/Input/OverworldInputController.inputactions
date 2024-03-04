@@ -1,0 +1,56 @@
+{
+    "name": "OverworldInputController",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "29454c39-19cb-4e47-9171-f1acb2215bc9",
+            "actions": [
+                {
+                    "name": "KeyboardMove",
+                    "type": "Value",
+                    "id": "ffab5691-93c0-4c68-a05c-fbc1869355af",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "2D Vector",
+                    "id": "fad10ba1-779d-473a-ac1b-121348c98e09",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "KeyboardMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "f6059e22-00e3-4d7e-aadd-86aa9f5b8ecd",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "KeyboardMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "1bc98231-322e-4401-bd25-b2368ab08561",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "KeyboardMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
