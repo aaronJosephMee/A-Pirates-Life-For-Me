@@ -26,6 +26,8 @@ public struct Choice
 public struct Event
 {
     public string name;
+    public string scene;
+    public int sceneIdx;
     public string flavorText;
     public bool isMinigame;
     public string minigame;
@@ -72,6 +74,10 @@ public class Events
             evt.name = events[i];
             i++;
             evt.flavorText = events[i];
+            i++;
+            evt.scene = events[i];
+            i++;
+            evt.sceneIdx = int.Parse(events[i]);
             i++;
             evt.isMinigame = bool.Parse(events[i]);
             i++;
