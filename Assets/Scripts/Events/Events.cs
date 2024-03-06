@@ -41,7 +41,6 @@ public class Events
     Dictionary<String, Event> seedEvents;
     Dictionary<String, Event> storyEvents;
     Dictionary<String, Event> genericEvents;
-    // Start is called before the first frame update
     public Events()
     {
         seedEvents = LoadEvents("SeedEvents");
@@ -49,7 +48,7 @@ public class Events
         List<string> startSeeds = new List<string>(seedEvents.Keys);
         int r = random.Next(startSeeds.Count);
         eventPool.Add(seedEvents[startSeeds[r]]);
-        Debug.Log("Seeded event: " + eventPool[0].name);
+        //Debug.Log("Seeded event: " + eventPool[0].name);
     }
     public Event GetEvent(){
         int r = random.Next(eventPool.Count);
