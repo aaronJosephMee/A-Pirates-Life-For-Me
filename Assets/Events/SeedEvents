@@ -15,3 +15,24 @@ Gold 1
 0
 1
 Choice2Test
+event1
+Event1
+a test event
+False
+3
+Choice 1
+Health 10
+Gold 10
+0
+1
+event2
+a
+Health 0
+Gold 0
+0
+0
+b
+Health 0
+Gold 0
+0
+0
