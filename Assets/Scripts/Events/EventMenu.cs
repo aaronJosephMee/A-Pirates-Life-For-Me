@@ -32,10 +32,4 @@ public class EventMenu : MonoBehaviour
         bodyText.text = toDisplay.flavorText;
         buttonSpawner.Spawn(toDisplay.choices);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

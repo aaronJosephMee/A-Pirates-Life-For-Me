@@ -7,7 +7,8 @@ public class ButtonSpawner : MonoBehaviour
     public int heightOfArea;
     public GameObject toSpawn;
     
-    public void Spawn(Choice[] choices){
+    public void Spawn(Choice[] choices)
+    {
         int curheight = 0;
         for (int i = 0; i<choices.Length; i++){
             GameObject instance = Instantiate(toSpawn, this.transform.position - new Vector3(0,curheight,0), Quaternion.identity);

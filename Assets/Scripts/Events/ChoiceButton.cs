@@ -8,24 +8,17 @@ public class ChoiceButton : MonoBehaviour
 {
     Choice toDisplay;
     [SerializeField] TextMeshProUGUI myText;
-    // Start is called before the first frame update
     void Start()
     {
-        // myText = GetComponentInChildren<TextMeshProUGUI>();
-        // myText = GetComponent<TextMeshProUGUI>();
         this.GetComponent<Button>().onClick.AddListener(ChoicePicked);
-        
     }
-    public void DisplayChoice(Choice choice){
+    public void DisplayChoice(Choice choice)
+    {
         toDisplay = choice;
         myText.text = choice.text;
     }
-    // Update is called once per frame
-    void Update()
+    void ChoicePicked()
     {
-        
-    }
-    void ChoicePicked(){
         foreach (string newEvent in toDisplay.eventsToAdd){
             GameManager.events.AddEvent(newEvent);
         }

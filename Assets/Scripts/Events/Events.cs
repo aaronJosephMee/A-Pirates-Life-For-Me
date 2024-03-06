@@ -6,25 +6,25 @@ using UnityEngine;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine.InputSystem.Interactions;
 
-public struct Relic{
+public struct Relic
+{
     public string name;
 }
-public struct Stats{
+public struct Stats
+{
     public int health;
     public int gold;
 }
-public struct Reward{
-    public int health;
-    public int gold;
-}
-public struct Choice{
+
+public struct Choice
+{
     public string text;
-    public Reward reward;
     public Relic[] relics;
     public string[] eventsToAdd;
     public Stats stats;
 }
-public struct Event{
+public struct Event
+{
     public string name;
     public string flavorText;
     public bool isMinigame;
@@ -50,7 +50,8 @@ public class Events
         eventPool.Add(seedEvents[startSeeds[r]]);
         //Debug.Log("Seeded event: " + eventPool[0].name);
     }
-    public Event GetEvent(){
+    public Event GetEvent()
+    {
         int r = random.Next(eventPool.Count);
         Event toReturn = eventPool[r];
         eventPool.Remove(eventPool[r]);
@@ -59,7 +60,8 @@ public class Events
     public void AddEvent(string eventToAdd){
         eventPool.Add(storyEvents[eventToAdd]);
     }
-    Dictionary<String, Event> LoadEvents(String filename){
+    Dictionary<String, Event> LoadEvents(String filename)
+    {
         int i = 0;
         Dictionary<String,Event> result = new Dictionary<string, Event>();
         String[] events = File.ReadAllLines(Application.dataPath + "/Events/" + filename);
@@ -121,7 +123,8 @@ public class Events
         return result;
     
     }
-    void DebugPrint(Dictionary<String, Event> target){
+    void DebugPrint(Dictionary<String, Event> target)
+    {
         foreach(KeyValuePair<String, Event> entry in target){
             Debug.Log("Iname: " + entry.Key + ", Name:" + entry.Value.name + ", Text: " + entry.Value.flavorText);
         }

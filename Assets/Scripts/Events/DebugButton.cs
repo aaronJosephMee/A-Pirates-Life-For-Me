@@ -11,10 +11,4 @@ public class DebugButton : MonoBehaviour
     {
         this.GetComponent<Button>().onClick.AddListener(delegate{Instantiate(toSpawn);});
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
