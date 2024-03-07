@@ -9,10 +9,12 @@ Side with the aristocrats. Gain 300 gold.
 Health 0
 Gold 300
 0
-0
+1
+Test Event 2
 Side with the pirates. Gain pirate flag relic.
 Health 0
 Gold 0
 1
 PirateFlagRelic
-0
+1
+Test Event 3

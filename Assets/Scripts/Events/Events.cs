@@ -70,9 +70,11 @@ public class Events
     {
         int i = 0;
         Dictionary<String,Event> result = new Dictionary<string, Event>();
-        String[] events = File.ReadAllLines(Application.dataPath + "/Events/" + filename);
+        String[] events = File.ReadAllLines(Application.streamingAssetsPath + "/Events/" + filename);
         while (i < events.Length){
+            
             string internalName = events[i];
+            Debug.Log(internalName);
             i++;
             Event evt = new Event();
             evt.name = events[i];
