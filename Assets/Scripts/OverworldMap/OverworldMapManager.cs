@@ -30,8 +30,9 @@ public class OverworldMapManager : MonoBehaviour
     private ChoiceNode _currentBoatLocation;
     private ChoiceNode _goalLocation;
 
-    private readonly Events _events = new Events();
+    private Events _events = new Events();
     private bool wasEventChosen = false;
+    private bool advanceMap = false;
     
     void Awake(){
         if (instance == null)
@@ -97,7 +98,8 @@ public class OverworldMapManager : MonoBehaviour
             {
                 () => _choiceGenerator.SetPreviousChoice(_currentChoiceNodes[index].ChoiceType),
                 () => _currentChoiceNodes[index].TravelToNode(_choiceSprites[ChoiceType.Ship], GetBoatCallback()),
-                () => UpdateBoatNode(_currentChoiceNodes[index])
+                () => UpdateBoatNode(_currentChoiceNodes[index]),
+                () => advanceMap = true
             };
             if (_currentChoiceNodes[i].ChoiceType == ChoiceType.Event)
             {
@@ -212,10 +214,16 @@ public class OverworldMapManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
         if (scene.name == SceneName.OverworldMap.GetSceneString())
         {
+            if (!advanceMap)
+            {
+                ResetMap();
+                return;
+            }
             _canvas = GameObject.Find("Canvas");
             LoadChoiceNodeButton(_currentBoatLocation, GetGoalCallback());
             LoadChoiceNodeButton(_goalLocation, GetGoalCallback());
             GenerateNextChoices();
+            advanceMap = false;
         }
 
         if (wasEventChosen)
@@ -223,6 +231,23 @@ public class OverworldMapManager : MonoBehaviour
             AddEvent();
             wasEventChosen = false;
         }
+    }
+
+    private void ResetMap()
+    {
+        _choiceGenerator = null;
+        _currentChoiceNodes = new List<ChoiceNode>();
+        _currentBoatLocation = null;
+        _goalLocation = null;
+
+        _events = new Events();
+        wasEventChosen = false;
+        advanceMap = false;
+        _canvas = GameObject.Find("Canvas");
+        _choiceGenerator = new ChoiceGenerator(_numChoices);
+        GenerateGoal();
+        GenerateStartingPoint();
+        GenerateNextChoices();
     }
 
     private void LoadChoiceNodeButton(ChoiceNode choiceNode, List<UnityAction> callbacks)
