@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OverworldMap.unity
     guid: c7cb269e2c88bc04c9fdc02977ec7632
+  - enabled: 1
+    path: Assets/Scenes/PiratesVsAristocrats.unity
+    guid: feaef391d770c25468be394afbaf832b
   m_configObjects: {}

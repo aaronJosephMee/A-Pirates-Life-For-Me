@@ -40,6 +40,6 @@ public class combatManager : MonoBehaviour
 
         Debug.Log("enemies all clear");
 
-        GameManager.instance.LoadScene("Rusty's Retreat", true);
+        OverworldMapManager.instance.TransitionBackToMap();
     }
 }

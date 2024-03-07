@@ -8,6 +8,7 @@ namespace DefaultNamespace.OverworldMap
         private bool _isEventForced = false;
         private int _currentChoiceDepth = 0;
         private ChoiceType _previousChoice = ChoiceType.Ship;
+        private Event _currentEvent;
 
         public ChoiceGenerator(int numChoices)
         {
@@ -39,20 +40,32 @@ namespace DefaultNamespace.OverworldMap
             return _currentChoiceDepth >= _numChoices + 1;
         }
         
-        public List<ChoiceNode> GenerateChoices()
+        public List<ChoiceNode> GenerateChoices(Events events)
         {
-            List<ChoiceType> nextChoiceTypes = GenerateNextChoiceTypes();
+            List<ChoiceType> nextChoiceTypes = GenerateNextChoiceTypes(events.IsEventPoolEmpty());
             List<ChoiceNode> choiceNodes = new List<ChoiceNode>();
             foreach (ChoiceType choiceType in nextChoiceTypes)
             {
                 // TODO: Add logic to generate choice node based on specific combat/event/shop being generated
-                choiceNodes.Add(new ChoiceNode(choiceType, SceneName.ButtonMashing));
+                switch (choiceType)
+                {
+                    case ChoiceType.Event:
+                        _currentEvent = events.GetEvent();
+                        choiceNodes.Add(new ChoiceNode(choiceType, Scenes.GetSceneName(_currentEvent.scene)));
+                        break;
+                    case ChoiceType.Combat:
+                        choiceNodes.Add(new ChoiceNode(choiceType, SceneName.Combat));
+                        break;
+                    default:
+                        choiceNodes.Add(new ChoiceNode(choiceType, SceneName.ButtonMashing));
+                        break;
+                }
             }
 
             return choiceNodes;
         }
 
-        private List<ChoiceType> GenerateNextChoiceTypes()
+        private List<ChoiceType> GenerateNextChoiceTypes(bool isEventPoolEmpty)
         {
             if (_isEventForced)
             {
@@ -73,7 +86,17 @@ namespace DefaultNamespace.OverworldMap
                 possibleChoices.Remove(_previousChoice);
             }
 
+            if (isEventPoolEmpty)
+            {
+                possibleChoices.Remove(ChoiceType.Event);
+            }
+
             return possibleChoices;
+        }
+
+        public Event GetCurrentEvent()
+        {
+            return _currentEvent;
         }
     }
 }
