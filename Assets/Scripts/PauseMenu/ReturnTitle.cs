@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace.OverworldMap;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ public class ReturnTitle : MonoBehaviour
         
     }
     void ReturnToTitle(){
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().DisablePlayerInput();
-        GameManager.instance.LoadScene("TitleScreen", false);
+        GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>()?.DisablePlayerInput();
+        GameManager.instance.LoadScene(SceneName.TitleScreen.GetSceneString(), false);
     }
 }

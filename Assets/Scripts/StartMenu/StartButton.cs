@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace.OverworldMap;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartButton : MonoBehaviour
 {
-    public string sceneToLoad;
+    public SceneName scene;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class StartButton : MonoBehaviour
     }
     void StartGame(){
         GameManager.instance.menuOpen = false;
-        GameManager.instance.LoadScene(sceneToLoad, false);
+        GameManager.instance.LoadScene(scene.GetSceneString(), false);
         GameManager.instance.InitializeChoices();
     }
 }

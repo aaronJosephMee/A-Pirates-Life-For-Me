@@ -8,6 +8,7 @@ namespace DefaultNamespace.OverworldMap
         OverworldMap,
         PiratesVsAristocrats,
         Combat,
+        TitleScreen,
         NoScene
     }
     
@@ -25,6 +26,8 @@ namespace DefaultNamespace.OverworldMap
                     return "PiratesVsAristocrats";
                 case SceneName.Combat:
                     return "CombatTest";
+                case SceneName.TitleScreen:
+                    return "TitleScreen";
                 default:
                     return "Error";
             }
@@ -47,6 +50,10 @@ namespace DefaultNamespace.OverworldMap
             else if (sceneString == "CombatTest")
             {
                 return SceneName.Combat;
+            }
+            else if (sceneString == "TitleScreen")
+            {
+                return SceneName.TitleScreen;
             }
             else
             {
