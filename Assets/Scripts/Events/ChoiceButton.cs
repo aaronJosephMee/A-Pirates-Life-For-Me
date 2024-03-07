@@ -22,7 +22,8 @@ public class ChoiceButton : MonoBehaviour
     {
         print("Clicked");
         foreach (string newEvent in toDisplay.eventsToAdd){
-            GameManager.events.AddEvent(newEvent);
+            Debug.Log(newEvent);
+            OverworldMapManager.instance.AddToEventPool(newEvent);
         }
         Destroy(this.transform.parent.gameObject);
     }

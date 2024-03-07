@@ -60,7 +60,9 @@ public class OverworldMapManager : MonoBehaviour
     {
         Instantiate(eventCanvas);
     }
-
+    public void AddToEventPool(string eventToAdd){
+        _events.AddEvent(eventToAdd);
+    }
     public Event GetEvent()
     {
         return _choiceGenerator.GetCurrentEvent();
