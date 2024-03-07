@@ -15,6 +15,7 @@ public class OverworldMapManager : MonoBehaviour
     [SerializeField] private List<ChoiceScriptableObject> _choiceScriptableObjects;
     private Dictionary<ChoiceType, Sprite> _choiceSprites;
     private GameObject _canvas;
+    public GameObject eventCanvas;
     
     // Variables used to space choice nodes equally when placed
     private float _mapLength = 1042.0f;
@@ -29,6 +30,7 @@ public class OverworldMapManager : MonoBehaviour
     private ChoiceNode _currentBoatLocation;
     private ChoiceNode _goalLocation;
 
+    private readonly Events _events = new Events();
     
     void Awake(){
         if (instance == null)
@@ -53,6 +55,17 @@ public class OverworldMapManager : MonoBehaviour
         GenerateNextChoices();
     }
 
+    // Start is called before the first frame update
+    public void AddEvent()
+    {
+        Instantiate(eventCanvas);
+    }
+
+    public Event GetEvent()
+    {
+        return _choiceGenerator.GetCurrentEvent();
+    }
+
     private Dictionary<ChoiceType, Sprite> CreateChoiceSpritesDictionary()
     {
         Dictionary<ChoiceType, Sprite> dictionary = new Dictionary<ChoiceType, Sprite>();
@@ -72,7 +85,14 @@ public class OverworldMapManager : MonoBehaviour
             _choiceGenerator.IncreaseChoiceDepth();
             return;
         }
-        _currentChoiceNodes = _choiceGenerator.GenerateChoices();
+        _currentChoiceNodes = _choiceGenerator.GenerateChoices(_events);
+        foreach (ChoiceNode choiceNode in _currentChoiceNodes)
+        {
+            if (choiceNode.ChoiceType == ChoiceType.Event)
+            {
+                
+            }
+        }
         List<Vector3> positions = GetButtonPositions(_choiceGenerator.GetChoiceDepth() + 1, _currentChoiceNodes.Count);
         for (int i = 0; i < _currentChoiceNodes.Count; i++)
         {
@@ -193,7 +213,11 @@ public class OverworldMapManager : MonoBehaviour
             LoadChoiceNodeButton(_currentBoatLocation, GetGoalCallback());
             LoadChoiceNodeButton(_goalLocation, GetGoalCallback());
             GenerateNextChoices();
+        }
 
+        if (scene.name == SceneName.PiratesVsAristocrats.GetSceneString())
+        {
+            AddEvent();
         }
     }
 

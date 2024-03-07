@@ -1,38 +1,18 @@
-TestSeed
-Test Event
-The first test event
+AristocratsVsPriates
+Aristocrats Vs Pirates
+As you sail the seas, you encounter two ships engaged in battle: a group of pirates fighting a group of aristocrats. It is too late to steer your ship away from the fight. Both groups beckon at you, asking for your assistance. Who do you side with?
+PiratesVsAristocrats
+0
 False
 2
-Choice 1
-Health 10
-Gold 5
+Side with the aristocrats. Gain 300 gold.
+Health 0
+Gold 300
 0
-1
-Choice1Test
-Choice 2
-Health 2
-Gold 1
 0
-1
-Choice2Test
-event1
-Event1
-a test event
-False
-3
-Choice 1
-Health 10
-Gold 10
-0
-1
-event2
-a
+Side with the pirates. Gain pirate flag relic.
 Health 0
 Gold 0
-0
-0
-b
-Health 0
-Gold 0
-0
+1
+PirateFlagRelic
 0

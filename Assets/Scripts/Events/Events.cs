@@ -136,4 +136,9 @@ public class Events
         }
 
     }
+
+    public bool IsEventPoolEmpty()
+    {
+        return eventPool.Count == 0;
+    }
 }

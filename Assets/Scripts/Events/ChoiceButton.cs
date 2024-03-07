@@ -11,6 +11,7 @@ public class ChoiceButton : MonoBehaviour
     void Start()
     {
         this.GetComponent<Button>().onClick.AddListener(ChoicePicked);
+        this.GetComponent<Button>().onClick.AddListener(() => OverworldMapManager.instance.TransitionBackToMap());
     }
     public void DisplayChoice(Choice choice)
     {
@@ -19,6 +20,7 @@ public class ChoiceButton : MonoBehaviour
     }
     void ChoicePicked()
     {
+        print("Clicked");
         foreach (string newEvent in toDisplay.eventsToAdd){
             GameManager.events.AddEvent(newEvent);
         }

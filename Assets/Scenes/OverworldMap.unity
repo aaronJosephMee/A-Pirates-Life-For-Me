@@ -176,6 +176,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e6c292d9d15052499886cd1ac21bdae, type: 2}
   - {fileID: 11400000, guid: 3f1632713a98ea346bf9413c2f7a7a3e, type: 2}
   - {fileID: 11400000, guid: eaba89e3210a388419af92f1e2bbb75d, type: 2}
+  eventCanvas: {fileID: 3490997076418267859, guid: 2d2915eb645a7b84ca6167958e500fcf, type: 3}
 --- !u!1 &815790331
 GameObject:
   m_ObjectHideFlags: 0

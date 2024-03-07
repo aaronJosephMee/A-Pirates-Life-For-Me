@@ -13,7 +13,7 @@ public class EventMenu : MonoBehaviour
     void Start()
     {
         buttonSpawner = GetComponentInChildren<ButtonSpawner>();
-        toDisplay = GameManager.events.GetEvent();
+        toDisplay = OverworldMapManager.instance.GetEvent();
         //Debug.Log(toDisplay.name);
         
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
