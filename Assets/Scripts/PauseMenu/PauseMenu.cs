@@ -8,8 +8,12 @@ public class PauseMenu : Menu
     // Start is called before the first frame update
     void Start()
     {
-        _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        _playerController.DisablePlayerInput();
+        
+        _playerController = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
+        if (_playerController != null)
+        {
+            _playerController.DisablePlayerInput();
+        }
         Time.timeScale = 0;
         GameManager.instance.menuOpen = true;
     }
@@ -17,6 +21,9 @@ public class PauseMenu : Menu
     {
         Time.timeScale = 1;
         GameManager.instance.menuOpen = false;
-        _playerController.EnablePlayerInput();
+        if (_playerController != null)
+        {
+            _playerController.EnablePlayerInput();
+        }
     }
 }
