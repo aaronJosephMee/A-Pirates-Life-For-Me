@@ -56,8 +56,12 @@ public class Events
     {
         int r = random.Next(eventPool.Count);
         Event toReturn = eventPool[r];
-        eventPool.Remove(eventPool[r]);
         return toReturn;
+    }
+
+    public void RemoveEvent(Event eventToRemove)
+    {
+        eventPool.Remove(eventToRemove);
     }
     public void AddEvent(string eventToAdd){
         eventPool.Add(storyEvents[eventToAdd]);

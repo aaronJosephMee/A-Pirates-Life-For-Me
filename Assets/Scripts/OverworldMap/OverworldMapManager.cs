@@ -31,6 +31,7 @@ public class OverworldMapManager : MonoBehaviour
     private ChoiceNode _goalLocation;
 
     private readonly Events _events = new Events();
+    private bool wasEventChosen = false;
     
     void Awake(){
         if (instance == null)
@@ -86,13 +87,6 @@ public class OverworldMapManager : MonoBehaviour
             return;
         }
         _currentChoiceNodes = _choiceGenerator.GenerateChoices(_events);
-        foreach (ChoiceNode choiceNode in _currentChoiceNodes)
-        {
-            if (choiceNode.ChoiceType == ChoiceType.Event)
-            {
-                
-            }
-        }
         List<Vector3> positions = GetButtonPositions(_choiceGenerator.GetChoiceDepth() + 1, _currentChoiceNodes.Count);
         for (int i = 0; i < _currentChoiceNodes.Count; i++)
         {
@@ -101,9 +95,14 @@ public class OverworldMapManager : MonoBehaviour
             {
                 () => _choiceGenerator.SetPreviousChoice(_currentChoiceNodes[index].ChoiceType),
                 () => _currentChoiceNodes[index].TravelToNode(_choiceSprites[ChoiceType.Ship], GetBoatCallback()),
-                () => UpdateBoatNode(_currentChoiceNodes[index]),
-                () => TransitionToNewScene(_currentChoiceNodes[index].SceneName)
+                () => UpdateBoatNode(_currentChoiceNodes[index])
             };
+            if (_currentChoiceNodes[i].ChoiceType == ChoiceType.Event)
+            {
+                callbacks.Add(() => _events.RemoveEvent(_choiceGenerator.GetCurrentEvent()));
+                callbacks.Add(() => wasEventChosen = true);
+            }
+            callbacks.Add(() => TransitionToNewScene(_currentChoiceNodes[index].SceneName));
             _currentChoiceNodes[i].AddButton(GenerateChoiceButton(), positions[i], _choiceSprites[_currentChoiceNodes[i].ChoiceType], callbacks);
         }
 
@@ -203,6 +202,8 @@ public class OverworldMapManager : MonoBehaviour
 
     public void TransitionBackToMap()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene(SceneName.OverworldMap.GetSceneString());
     }
 
@@ -215,9 +216,10 @@ public class OverworldMapManager : MonoBehaviour
             GenerateNextChoices();
         }
 
-        if (scene.name == SceneName.PiratesVsAristocrats.GetSceneString())
+        if (wasEventChosen)
         {
             AddEvent();
+            wasEventChosen = false;
         }
     }
 
