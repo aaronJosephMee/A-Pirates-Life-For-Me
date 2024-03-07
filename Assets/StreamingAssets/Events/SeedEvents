@@ -1,20 +1,20 @@
-testevent
-Test Event
-An event to test the event system
+AristocratsVsPriates
+Aristocrats Vs Pirates
+As you sail the seas, you encounter two ships engaged in battle: a group of pirates fighting a group of aristocrats. It is too late to steer your ship away from the fight. Both groups beckon at you, asking for your assistance. Who do you side with?
 PiratesVsAristocrats
-1
+0
 False
 2
-The first choice
+Side with the aristocrats. Gain 300 gold.
 Health 0
-Gold 0
-1
-Sword
+Gold 300
+0
 1
 Test Event 2
-The seconds choice
+Side with the pirates. Gain pirate flag relic.
 Health 0
 Gold 0
-0
+1
+PirateFlagRelic
 1
 Test Event 3
