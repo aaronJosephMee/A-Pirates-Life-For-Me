@@ -1,6 +1,6 @@
 Sword
 Sword
-Weapon
+Relic
 None
 Damage 10
 Defense 0
@@ -10,3 +10,108 @@ Duration 0
 Damage 0
 Defense 0
 Duration 0
+Melee
+Dagger
+Dagger
+Relic
+None
+Damage 10
+Defense 0
+Duration 0
+0
+0
+Damage 0
+Defense 0
+Duration 0
+Melee
+Halberd
+Halberd
+Relic
+None
+Damage 10
+Defense 0
+Duration 0
+0
+0
+Damage 0
+Defense 0
+Duration 0
+Melee
+Rapier
+Rapier
+Relic
+None
+Damage 10
+Defense 0
+Duration 0
+0
+0
+Damage 0
+Defense 0
+Duration 0
+Melee
+Flinklock
+Flintlock
+Relic
+None
+Damage 10
+Defense 0
+Duration 0
+0
+0
+Damage 0
+Defense 0
+Duration 0
+Melee
+Cutlass
+Cutlass
+Relic
+None
+Damage 10
+Defense 0
+Duration 0
+0
+0
+Damage 0
+Defense 0
+Duration 0
+Melee
+Hook
+Hook
+Relic
+None
+Damage 10
+Defense 0
+Duration 0
+0
+0
+Damage 0
+Defense 0
+Duration 0
+Melee
+Saber
+Saber
+Relic
+None
+Damage 10
+Defense 0
+Duration 0
+0
+0
+Damage 0
+Defense 0
+Duration 0
+Melee
+Scimitar
+Scimitar
+Relic
+None
+Damage 10
+Defense 0
+Duration 0
+0
+0
+Damage 0
+Defense 0
+Duration 0
+Melee

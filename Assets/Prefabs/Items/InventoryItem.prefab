@@ -90,7 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b0ac91715137346875b482b9bd7b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nme: {fileID: 2776164575971987624}
   widget: {fileID: 4118169159548106396, guid: c1a1bdf8d2a0da14e8923e7ab9e146c7, type: 3}
+  offset: {x: 80, y: 0, z: 0}
 --- !u!1 &5278825035994518343
 GameObject:
   m_ObjectHideFlags: 0

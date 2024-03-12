@@ -13,8 +13,12 @@ public class InventoryItemSpawner : MonoBehaviour
     {
         Vector3 offset = new Vector3(0,0,0);
         int relics = ItemManager.instance.playerItems.RelicCount();
+        Dictionary<string, Item> allRelics = ItemManager.instance.playerItems.GetRelics();
+        List<string> keys = new List<string>(allRelics.Keys);
         for (int i = 0; i < relics; i++){
-            Instantiate(inventoryItem, this.transform.position + offset, Quaternion.identity);
+            GameObject instance  = Instantiate(inventoryItem, this.transform.position + offset, Quaternion.identity);
+            instance.transform.SetParent(this.transform.parent);
+            instance.GetComponent<InventoryItem>().GiveItem(allRelics[keys[i]]);
             if (offset.x < maxlen){
                 offset = offset + new Vector3(horizontalGap,0,0);
             }

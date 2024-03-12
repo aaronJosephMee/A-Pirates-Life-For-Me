@@ -30,7 +30,7 @@ public class ItemPool
     Dictionary<string, Item> relicPool;
 
     public ItemPool(){
-        itemPool = LoadItems("Items");
+        relicPool = LoadItems("Items");
     }
     public KeyValuePair<string, Item> GetItem(string type, string title){
         if (type == "Weapon"){
@@ -89,6 +89,7 @@ public class ItemPool
             foreach (string stat in allStats){
                 switch(items[i].Split(" ")[0]){
                     case "Damage":
+                        
                         baseStats.damage = int.Parse(items[i].Split(" ")[1]);
                         i++;
                         break;

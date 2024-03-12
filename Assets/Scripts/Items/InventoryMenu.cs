@@ -10,7 +10,7 @@ public class InventoryMenu : MonoBehaviour
     void Start()
     {
         close = GetComponentInChildren<Button>();
-        close.onClick.AddListener(delegate{Destroy(this);});
+        close.onClick.AddListener(delegate{Destroy(this.gameObject);});
     }
 
     // Update is called once per frame

@@ -7,10 +7,12 @@ public class InfoWidget : MonoBehaviour
 {
     TextMeshProUGUI levelText;
     TextMeshProUGUI infotext;
+    string info;
+    ItemStats stats;
+    Item item;
     private void Start() {
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
         foreach (TextMeshProUGUI tmp in tmps){
-            Debug.Log(tmp.name);
             switch(tmp.name){
                 case "Level":
                     levelText = tmp;
@@ -20,10 +22,18 @@ public class InfoWidget : MonoBehaviour
                     break;
             }
         }
+        if (infotext != null){
+            infotext.text = info;
+        }
+        if (levelText != null){
+            levelText.text = "Level: " + item.curlvl;
+        }
     }
     public void GiveItem(Item item){
-        string info = "";
-        ItemStats stats = item.baseStats;
+        info = "";
+        Debug.Log(item.baseStats.damage);
+        stats = item.baseStats;
+        this.item = item;
         for (int i = 0; i<item.curlvl;i++){
             stats = ItemManager.instance.CombineStats(stats,item.lvlStats);
         }
@@ -36,7 +46,11 @@ public class InfoWidget : MonoBehaviour
         // if (stats.damage != 0){
         //     info += "Damage: " + stats.damage;
         // }
-        infotext.text = info;
-        levelText.text = "Level: " + item.curlvl;
+        if (infotext != null){
+            infotext.text = info;
+        }
+        if (levelText != null){
+            levelText.text = "Level: " + item.curlvl;
+        }
     }
 }
