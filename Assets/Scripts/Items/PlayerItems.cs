@@ -8,7 +8,9 @@ public class PlayerItems
     Dictionary<string, Item> playerWeapons;
     Item currentItem;
     Item currentWeapon;
-
+    public int RelicCount(){
+        return playerRelics.Count;
+    }
     public Item GetItem(){
         return currentItem;
     }

@@ -15,6 +15,7 @@ public struct Item{
     public string type;
     public string imageName;
     public int maxlvl;
+    public int curlvl;
     public int uses;
     public ItemStats baseStats;
     public ItemStats lvlStats;
@@ -105,6 +106,8 @@ public class ItemPool
             }
             itm.baseStats = baseStats;
             itm.maxlvl = int.Parse(items[i]);
+            i++;
+            itm.curlvl = int.Parse(items[i]);
             i++;
             ItemStats lvlStats = new ItemStats();
             foreach (string stat in allStats){

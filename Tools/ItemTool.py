@@ -45,7 +45,7 @@ while line != "":
     elif (line[0] == "Activator"):
         activ = line[1]
     line = file.readline()
-print(f"{title}\n{name}\n{typ}\n{image}\n{baseEffects}{mxlvl}\n{lvlEffects}")
+print(f"{title}\n{name}\n{typ}\n{image}\n{baseEffects}{mxlvl}\n0\n{lvlEffects}")
 if (typ == "Relic"):
     print(activ)
 if (typ == "Item"):
