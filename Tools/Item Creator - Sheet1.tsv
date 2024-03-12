@@ -1,0 +1,17 @@
+Name	Sword
+Type	Weapon
+	
+Base Effects:	
+Damage	10
+Defense	0
+Duration	0
+	
+Others:	
+Uses	0
+Max Level	0
+Activators	Melee
+	
+Level Up Effects:	
+Damage	0
+Defense	0
+Duration	0
