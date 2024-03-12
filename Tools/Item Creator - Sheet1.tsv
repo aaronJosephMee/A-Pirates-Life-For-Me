@@ -1,5 +1,7 @@
+Title	Sword
 Name	Sword
 Type	Weapon
+Image	None
 	
 Base Effects:	
 Damage	10
@@ -9,7 +11,7 @@ Duration	0
 Others:	
 Uses	0
 Max Level	0
-Activators	Melee
+Activator	Passive
 	
 Level Up Effects:	
 Damage	0
