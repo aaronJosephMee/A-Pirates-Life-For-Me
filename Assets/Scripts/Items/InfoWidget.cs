@@ -10,7 +10,7 @@ public class InfoWidget : MonoBehaviour
     string info;
     ItemStats stats;
     Item item;
-    private void Start() {
+    private void Awake() {
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
         foreach (TextMeshProUGUI tmp in tmps){
             switch(tmp.name){
@@ -22,19 +22,13 @@ public class InfoWidget : MonoBehaviour
                     break;
             }
         }
-        if (infotext != null){
-            infotext.text = info;
-        }
-        if (levelText != null){
-            levelText.text = "Level: " + item.curlvl;
-        }
     }
     public void GiveItem(Item item){
         info = "";
         Debug.Log(item.baseStats.damage);
         stats = item.baseStats;
         this.item = item;
-        for (int i = 0; i<item.curlvl;i++){
+        for (int i = 1; i<item.curlvl;i++){
             stats = ItemManager.instance.CombineStats(stats,item.lvlStats);
         }
         if (stats.damage != 0){
