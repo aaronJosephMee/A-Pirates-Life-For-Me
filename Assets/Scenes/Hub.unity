@@ -1117,6 +1117,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35e90d529f3476a82081568e81cd968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trophy1Flag: 1
+  trophy2Flag: 0
+  trophy3Flag: 0
+  trophy4Flag: 0
+  trophy5Flag: 1
+  trophy6Flag: 0
+  trophy7Flag: 0
+  trophy8Flag: 1
+  trophy9Flag: 1
 --- !u!1 &1684136211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 112620, guid: e9d1b80d7de726c48aa1742de23ffd48, type: 3}
