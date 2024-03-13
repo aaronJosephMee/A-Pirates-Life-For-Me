@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class ButtonMashGame : MonoBehaviour
 {
+    public enum Difficulty
+    {
+        EASY, 
+        MEDIUM,
+        CHALLENGING
+    }
+    
     public Slider playerSlider;
     public TextMeshProUGUI winningText;
     public TextMeshProUGUI losingText;
@@ -12,10 +19,8 @@ public class ButtonMashGame : MonoBehaviour
     private float playerProgress;
     private float cpuProgress;
     private bool gameEnded;
-    
-    private bool isEasy = false;
-    private bool isMedium = false;
-    private bool isChallenging = false;
+
+    private Difficulty difficulty;
     
     private const float PlayerMashSpeed = 5f;  
     private float CPUMashSpeed = 9f;      
@@ -34,7 +39,7 @@ public class ButtonMashGame : MonoBehaviour
         playerSlider.value = playerProgress;
         
         // adjust game difficulty here
-        isEasy = true;
+        difficulty = Difficulty.EASY;
     }
     
     void Update()
@@ -53,7 +58,7 @@ public class ButtonMashGame : MonoBehaviour
         // Simulate CPU progress (you can adjust this logic)
         cpuProgress += Time.deltaTime * CPUMashSpeed;
         
-        ChallengeLevel(isEasy);
+        ChallengeLevel(difficulty);
 
         UpdateUI();
 
@@ -84,10 +89,10 @@ public class ButtonMashGame : MonoBehaviour
         if (playerSlider.value >= 100 || playerSlider.value <= 0)
         {
             gameEnded = true;
-            StartCoroutine(EndGameRoutine());
+            //StartCoroutine(EndGameRoutine());
         }
     }
-
+    
     private IEnumerator EndGameRoutine()
     {
         yield return new WaitForSeconds(2);
@@ -95,9 +100,10 @@ public class ButtonMashGame : MonoBehaviour
         // GameManager.instance.LoadScene("Rusty's Retreat", true);
     }
 
-    void ChallengeLevel(bool difficulty)
+
+    void ChallengeLevel(Difficulty difficulty)
     {
-        if (difficulty == isEasy)
+        if (difficulty == Difficulty.EASY)
         {
             Debug.Log("easy difficulty activated");
             
@@ -117,7 +123,7 @@ public class ButtonMashGame : MonoBehaviour
             }
         }
 
-        if (difficulty == isMedium)
+        if (difficulty == Difficulty.MEDIUM)
         {
             Debug.Log("medium difficulty activated");
             
@@ -141,7 +147,7 @@ public class ButtonMashGame : MonoBehaviour
             }
         }
 
-        if (difficulty == isChallenging)
+        if (difficulty == Difficulty.CHALLENGING)
         {
             Debug.Log("challenging difficulty activated");
             
