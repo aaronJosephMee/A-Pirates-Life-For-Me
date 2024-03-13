@@ -6,145 +6,57 @@ using UnityEngine;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine.InputSystem.Interactions;
 
-public struct Relic
-{
-    public string name;
-}
+[Serializable]
 public struct Stats
 {
     public int health;
     public int gold;
 }
 
-public struct Choice
+[Serializable]
+public class Choice
 {
     public string text;
-    public Relic[] relics;
-    public string[] eventsToAdd;
+    public RelicScriptableObject[] relics;
+    public EventScriptableObject[] eventsToAdd;
     public Stats stats;
-}
-public struct Event
-{
-    public string name;
-    public string scene;
-    public int sceneIdx;
-    public string flavorText;
-    public bool isMinigame;
-    public string minigame;
-    public Choice[] choices;
-    
 }
 
 public class Events
 {
-    System.Random random = new System.Random();
-    string[] allStats = new string[] {"Health", "Gold"};
-    List<Event> eventPool = new List<Event>();
-    Dictionary<String, Event> seedEvents;
-    Dictionary<String, Event> storyEvents;
-    Dictionary<String, Event> genericEvents;
-    public Events()
+    private System.Random _random = new System.Random();
+    string[] _allStats = new string[] {"Health", "Gold"};
+    private List<EventScriptableObject> _eventPool = new List<EventScriptableObject>();
+    private List<EventScriptableObject> _seedEvents;
+    private List<EventScriptableObject> _storyEvents;
+    private List<EventScriptableObject> _genericEvents;
+    
+    public Events(List<EventScriptableObject> seedEvents, List<EventScriptableObject> storyEvents, List<EventScriptableObject> genericEvents)
     {
-        seedEvents = LoadEvents("SeedEvents");
-        storyEvents = LoadEvents("StoryEvents");
-        List<string> startSeeds = new List<string>(seedEvents.Keys);
-        int r = random.Next(startSeeds.Count);
-        eventPool.Add(seedEvents[startSeeds[r]]);
-        //Debug.Log("Seeded event: " + eventPool[0].name);
+        _seedEvents = seedEvents;
+        _storyEvents = storyEvents;
+        int randomEventIndex = _random.Next(_seedEvents.Count);
+        _eventPool.Add(_seedEvents[randomEventIndex]);
     }
-    public Event GetEvent()
+    
+    public EventScriptableObject GetEvent()
     {
-        int r = random.Next(eventPool.Count);
-        Event toReturn = eventPool[r];
+        int r = _random.Next(_eventPool.Count);
+        EventScriptableObject toReturn = _eventPool[r];
         return toReturn;
     }
 
-    public void RemoveEvent(Event eventToRemove)
+    public void RemoveEvent(EventScriptableObject eventToRemove)
     {
-        eventPool.Remove(eventToRemove);
+        _eventPool.Remove(eventToRemove);
     }
-    public void AddEvent(string eventToAdd){
-        eventPool.Add(storyEvents[eventToAdd]);
-    }
-    Dictionary<String, Event> LoadEvents(String filename)
-    {
-        int i = 0;
-        Dictionary<String,Event> result = new Dictionary<string, Event>();
-        String[] events = File.ReadAllLines(Application.streamingAssetsPath + "/Events/" + filename);
-        while (i < events.Length){
-            
-            string internalName = events[i];
-            Debug.Log(internalName);
-            i++;
-            Event evt = new Event();
-            evt.name = events[i];
-            i++;
-            evt.flavorText = events[i];
-            i++;
-            evt.scene = events[i];
-            i++;
-            evt.sceneIdx = int.Parse(events[i]);
-            i++;
-            evt.isMinigame = bool.Parse(events[i]);
-            i++;
-            if (evt.isMinigame){
-                evt.minigame = events[i];
-                i++;
-                result.Add(internalName, evt);
-                continue;
-            }
-            evt.choices = new Choice[int.Parse(events[i])];
-            i++;
-            for (int y = 0; y < evt.choices.Length; y++){
-                Choice c = new Choice();
-                c.text = events[i];
-                i++;
-                foreach (string stat in allStats){
-                    switch(events[i].Split(" ")[0]){
-                        case "Health":
-                            c.stats.health = int.Parse(events[i].Split(" ")[1]);
-                            i++;
-                            break;
-                        case "Gold":
-                            c.stats.gold = int.Parse(events[i].Split(" ")[1]);
-                            i++;
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                c.relics = new Relic[int.Parse(events[i])];
-                i++;
-                for (int x = 0; x<c.relics.Length;x++){
-                    Relic r = new Relic();
-                    r.name = events[i];
-                    i++;
-                    c.relics[x] = r;
-                }
-                c.eventsToAdd = new string[int.Parse(events[i])];
-                i++;
-                for (int x = 0; x<c.eventsToAdd.Length;x++){
-                    c.eventsToAdd[x] = events[i];
-                    i++;
-                }
-                evt.choices[y] = c;
-            }
-            result.Add(internalName, evt);
-
-        }
-        return result;
     
-    }
-    void DebugPrint(Dictionary<String, Event> target)
-    {
-        foreach(KeyValuePair<String, Event> entry in target){
-            Debug.Log("Iname: " + entry.Key + ", Name:" + entry.Value.name + ", Text: " + entry.Value.flavorText);
-        }
-
+    public void AddEvent(EventScriptableObject eventToAdd){
+        _eventPool.Add(eventToAdd);
     }
 
     public bool IsEventPoolEmpty()
     {
-        return eventPool.Count == 0;
+        return _eventPool.Count == 0;
     }
 }

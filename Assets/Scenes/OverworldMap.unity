@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choiceButtonPrefab: {fileID: 3555237876615303540, guid: 7cb50c58fd2a4084b82edebbeb584ebc, type: 3}
-  _choiceScriptableObjects:
+  choiceScriptableObjects:
   - {fileID: 11400000, guid: 95c9aec3ee36d154eb4cd2e52a4e7a6b, type: 2}
   - {fileID: 11400000, guid: f06cf623dcb3d624a8f84e8956b3c13c, type: 2}
   - {fileID: 11400000, guid: b2a0a1cea4701e44baa09f5f6cff6d7c, type: 2}
@@ -177,6 +177,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f1632713a98ea346bf9413c2f7a7a3e, type: 2}
   - {fileID: 11400000, guid: eaba89e3210a388419af92f1e2bbb75d, type: 2}
   eventCanvas: {fileID: 3490997076418267859, guid: 2d2915eb645a7b84ca6167958e500fcf, type: 3}
+  seedEvents:
+  - {fileID: 11400000, guid: c7db6eec88e1bc848b4966b923b1907a, type: 2}
+  storyEvents: []
+  genericEvents: []
 --- !u!1 &815790331
 GameObject:
   m_ObjectHideFlags: 0
