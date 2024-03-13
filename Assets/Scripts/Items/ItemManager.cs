@@ -29,10 +29,4 @@ public class ItemManager : MonoBehaviour
     {
         
     }
-    public ItemStats CombineStats(ItemStats IS1, ItemStats IS2){
-        IS1.duration += IS2.duration;
-        IS1.defense += IS2.defense;
-        IS1.damage += IS2.damage;
-        return IS1;
-    }
 }

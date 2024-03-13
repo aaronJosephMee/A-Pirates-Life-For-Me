@@ -11,6 +11,7 @@ public class InfoWidget : MonoBehaviour
     ItemStats stats;
     Item item;
     private void Awake() {
+        //this.transform.position = new Vector3(82f,0,0);
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
         foreach (TextMeshProUGUI tmp in tmps){
             switch(tmp.name){
@@ -25,11 +26,10 @@ public class InfoWidget : MonoBehaviour
     }
     public void GiveItem(Item item){
         info = "";
-        Debug.Log(item.baseStats.damage);
         stats = item.baseStats;
         this.item = item;
         for (int i = 1; i<item.curlvl;i++){
-            stats = ItemManager.instance.CombineStats(stats,item.lvlStats);
+            stats = ItemManager.instance.playerItems.CombineStats(stats,item.lvlStats);
         }
         if (stats.damage != 0){
             info += "Damage: " + stats.damage;
