@@ -8,7 +8,7 @@ namespace DefaultNamespace.OverworldMap
         private bool _isEventForced = false;
         private int _currentChoiceDepth = 0;
         private ChoiceType _previousChoice = ChoiceType.Ship;
-        private Event _currentEvent;
+        private EventScriptableObject _currentEvent;
 
         public ChoiceGenerator(int numChoices)
         {
@@ -51,7 +51,7 @@ namespace DefaultNamespace.OverworldMap
                 {
                     case ChoiceType.Event:
                         _currentEvent = events.GetEvent();
-                        choiceNodes.Add(new ChoiceNode(choiceType, Scenes.GetSceneName(_currentEvent.scene)));
+                        choiceNodes.Add(new ChoiceNode(choiceType, _currentEvent.scene));
                         break;
                     case ChoiceType.Combat:
                         choiceNodes.Add(new ChoiceNode(choiceType, SceneName.Combat));
@@ -94,7 +94,7 @@ namespace DefaultNamespace.OverworldMap
             return possibleChoices;
         }
 
-        public Event GetCurrentEvent()
+        public EventScriptableObject GetCurrentEvent()
         {
             return _currentEvent;
         }

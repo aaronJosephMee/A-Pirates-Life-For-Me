@@ -91,7 +91,7 @@ public class ButtonMashGame : MonoBehaviour
     private IEnumerator EndGameRoutine()
     {
         yield return new WaitForSeconds(2);
-        OverworldMapManager.instance.TransitionBackToMap();
+        OverworldMapManager.Instance.TransitionBackToMap();
         // GameManager.instance.LoadScene("Rusty's Retreat", true);
     }
 

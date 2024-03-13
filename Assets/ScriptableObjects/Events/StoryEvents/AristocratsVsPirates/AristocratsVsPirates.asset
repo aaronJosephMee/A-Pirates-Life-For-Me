@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: AristocratsVsPirates
+  m_EditorClassIdentifier: 
+  name: Aristocrats Vs Pirates
+  scene: 2
+  sceneIdx: 0
+  flavorText: 'As you sail the seas, you encounter two ships engaged in battle: a
+    group of pirates fighting a group of aristocrats. It is too late to steer your
+    ship away from the fight. Both groups beckon at you, asking for your assistance.
+    Who do you side with?'
+  isMinigame: 0
+  choices:
+  - text: Side with the aristocrats. Gain 300 gold.
+    relics: []
+    eventsToAdd:
+    - {fileID: 11400000, guid: 598f8f3309020734997774727ad3a69e, type: 2}
+    stats:
+      health: 0
+      gold: 300
+  - text: Side with the pirates. Gain pirate flag relic.
+    relics: []
+    eventsToAdd:
+    - {fileID: 11400000, guid: cd221cf525957834984137e1ce49b805, type: 2}
+    stats:
+      health: 0
+      gold: 0

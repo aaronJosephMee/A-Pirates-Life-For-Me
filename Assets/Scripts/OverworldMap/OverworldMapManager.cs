@@ -6,13 +6,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class OverworldMapManager : MonoBehaviour
 {
-    public static OverworldMapManager instance;
+    public static OverworldMapManager Instance;
     [SerializeField] private GameObject choiceButtonPrefab;
-    [SerializeField] private List<ChoiceScriptableObject> _choiceScriptableObjects;
+    [SerializeField] private List<ChoiceScriptableObject> choiceScriptableObjects;
     private Dictionary<ChoiceType, Sprite> _choiceSprites;
     private GameObject _canvas;
     public GameObject eventCanvas;
@@ -30,23 +31,28 @@ public class OverworldMapManager : MonoBehaviour
     private ChoiceNode _currentBoatLocation;
     private ChoiceNode _goalLocation;
 
-    private Events _events = new Events();
-    private bool wasEventChosen = false;
-    private bool advanceMap = false;
+    // Variables used for events
+    [SerializeField] private List<EventScriptableObject> seedEvents;
+    [SerializeField] private List<EventScriptableObject> storyEvents;
+    [SerializeField] private List<EventScriptableObject> genericEvents;
+    private Events _events;
+    private bool _wasEventChosen = false;
+    private bool _advanceMap = false;
     
     void Awake(){
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(this);
         }
-        else if (instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
     }
     private void Start()
     {
+        _events = new Events(seedEvents, storyEvents, genericEvents);
         SceneManager.sceneLoaded += OnSceneLoaded;
         _canvas = GameObject.Find("Canvas");
         _choiceSprites = CreateChoiceSpritesDictionary();
@@ -62,10 +68,10 @@ public class OverworldMapManager : MonoBehaviour
     {
         Instantiate(eventCanvas);
     }
-    public void AddToEventPool(string eventToAdd){
+    public void AddToEventPool(EventScriptableObject eventToAdd){
         _events.AddEvent(eventToAdd);
     }
-    public Event GetEvent()
+    public EventScriptableObject GetEvent()
     {
         return _choiceGenerator.GetCurrentEvent();
     }
@@ -73,7 +79,7 @@ public class OverworldMapManager : MonoBehaviour
     private Dictionary<ChoiceType, Sprite> CreateChoiceSpritesDictionary()
     {
         Dictionary<ChoiceType, Sprite> dictionary = new Dictionary<ChoiceType, Sprite>();
-        foreach (ChoiceScriptableObject choice in _choiceScriptableObjects)
+        foreach (ChoiceScriptableObject choice in choiceScriptableObjects)
         {
             dictionary[choice.choiceType] = choice.sprite;
         }
@@ -99,12 +105,12 @@ public class OverworldMapManager : MonoBehaviour
                 () => _choiceGenerator.SetPreviousChoice(_currentChoiceNodes[index].ChoiceType),
                 () => _currentChoiceNodes[index].TravelToNode(_choiceSprites[ChoiceType.Ship], GetBoatCallback()),
                 () => UpdateBoatNode(_currentChoiceNodes[index]),
-                () => advanceMap = true
+                () => _advanceMap = true
             };
             if (_currentChoiceNodes[i].ChoiceType == ChoiceType.Event)
             {
                 callbacks.Add(() => _events.RemoveEvent(_choiceGenerator.GetCurrentEvent()));
-                callbacks.Add(() => wasEventChosen = true);
+                callbacks.Add(() => _wasEventChosen = true);
             }
             callbacks.Add(() => TransitionToNewScene(_currentChoiceNodes[index].SceneName));
             _currentChoiceNodes[i].AddButton(GenerateChoiceButton(), positions[i], _choiceSprites[_currentChoiceNodes[i].ChoiceType], callbacks);
@@ -201,20 +207,20 @@ public class OverworldMapManager : MonoBehaviour
 
     private void TransitionToNewScene(SceneName sceneName)
     {
-        SceneManager.LoadScene(sceneName.GetSceneString());
+        GameManager.instance.LoadScene(sceneName.GetSceneString(), false);
     }
 
     public void TransitionBackToMap()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        SceneManager.LoadScene(SceneName.OverworldMap.GetSceneString());
+        GameManager.instance.LoadScene(SceneName.OverworldMap.GetSceneString(), false);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
         if (scene.name == SceneName.OverworldMap.GetSceneString())
         {
-            if (!advanceMap)
+            if (!_advanceMap)
             {
                 ResetMap();
                 return;
@@ -223,13 +229,13 @@ public class OverworldMapManager : MonoBehaviour
             LoadChoiceNodeButton(_currentBoatLocation, GetGoalCallback());
             LoadChoiceNodeButton(_goalLocation, GetGoalCallback());
             GenerateNextChoices();
-            advanceMap = false;
+            _advanceMap = false;
         }
 
-        if (wasEventChosen)
+        if (_wasEventChosen)
         {
             AddEvent();
-            wasEventChosen = false;
+            _wasEventChosen = false;
         }
     }
 
@@ -240,9 +246,9 @@ public class OverworldMapManager : MonoBehaviour
         _currentBoatLocation = null;
         _goalLocation = null;
 
-        _events = new Events();
-        wasEventChosen = false;
-        advanceMap = false;
+        _events = new Events(seedEvents, storyEvents, genericEvents);
+        _wasEventChosen = false;
+        _advanceMap = false;
         _canvas = GameObject.Find("Canvas");
         _choiceGenerator = new ChoiceGenerator(_numChoices);
         GenerateGoal();

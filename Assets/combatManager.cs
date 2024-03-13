@@ -40,6 +40,6 @@ public class combatManager : MonoBehaviour
 
         Debug.Log("enemies all clear");
 
-        OverworldMapManager.instance.TransitionBackToMap();
+        OverworldMapManager.Instance.TransitionBackToMap();
     }
 }
