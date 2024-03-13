@@ -89,7 +89,6 @@ public class OverworldMapManager : MonoBehaviour
     private void GenerateNextChoices()
     {
         ClearPreviousChoiceNodes();
-        print(_choiceGenerator.CanGenerateMoreChoices());
         if (!_choiceGenerator.CanGenerateMoreChoices())
         {
             _choiceGenerator.IncreaseChoiceDepth();
@@ -183,8 +182,10 @@ public class OverworldMapManager : MonoBehaviour
     
     private List<UnityAction> GetBoatCallback()
     {
-        // TODO: Implement logic to return the player to the boat hub world
-        return new List<UnityAction>();
+        return new List<UnityAction>()
+        {
+            () => TransitionToNewScene(SceneName.HubShip)
+        };
     }
 
     private List<UnityAction> GetGoalCallback()
@@ -226,7 +227,7 @@ public class OverworldMapManager : MonoBehaviour
                 return;
             }
             _canvas = GameObject.Find("Canvas");
-            LoadChoiceNodeButton(_currentBoatLocation, GetGoalCallback());
+            LoadChoiceNodeButton(_currentBoatLocation, GetBoatCallback());
             LoadChoiceNodeButton(_goalLocation, GetGoalCallback());
             GenerateNextChoices();
             _advanceMap = false;

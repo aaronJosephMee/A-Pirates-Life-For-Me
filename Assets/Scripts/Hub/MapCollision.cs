@@ -16,13 +16,11 @@ public class MapCollision : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+    
+    private void OnTriggerStay(Collider other) {
+        if (Input.GetKey(KeyCode.E))
         {
-            Debug.Log("Insert Map interaction");
+            OverworldMapManager.Instance.TransitionBackToMap();
         }
     }
-
 }

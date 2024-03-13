@@ -179,7 +179,9 @@ MonoBehaviour:
   eventCanvas: {fileID: 3490997076418267859, guid: 2d2915eb645a7b84ca6167958e500fcf, type: 3}
   seedEvents:
   - {fileID: 11400000, guid: c7db6eec88e1bc848b4966b923b1907a, type: 2}
-  storyEvents: []
+  storyEvents:
+  - {fileID: 11400000, guid: 598f8f3309020734997774727ad3a69e, type: 2}
+  - {fileID: 11400000, guid: cd221cf525957834984137e1ce49b805, type: 2}
   genericEvents: []
 --- !u!1 &815790331
 GameObject:
