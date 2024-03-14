@@ -10,17 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
-  m_Name: AristocratsVsPirates3
+  m_Name: WheelMinigame
   m_EditorClassIdentifier: 
-  name: Aristocrats Vs Pirates 3
-  scene: 2
+  name: Wheel Minigame
+  scene: 6
   sceneIdx: 0
-  flavorText: Scenario where you sided with pirates.
-  isMinigame: 0
-  choices:
-  - text: Continue
-    relics: []
-    eventsToAdd: []
-    stats:
-      health: 0
-      gold: 0
+  flavorText: 
+  isMinigame: 1
+  choices: []

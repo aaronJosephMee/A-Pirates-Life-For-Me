@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 
 namespace DefaultNamespace.Hub
@@ -15,24 +14,31 @@ namespace DefaultNamespace.Hub
         public Boolean trophy7Flag = false;
         public Boolean trophy8Flag = false;
         public Boolean trophy9Flag = false;
+        private Transform trophy1;
+        private Transform trophy2;
+        private Transform trophy3;
+        private Transform trophy4;
+        private Transform trophy5;
+        private Transform trophy6;
+        private Transform trophy7;
+        private Transform trophy8;
+        private Transform trophy9;
         
         public void Start()
         {
-            
+            trophy1 = transform.Find("1");
+            trophy2 = transform.Find("2");
+            trophy3 = transform.Find("3");
+            trophy4 = transform.Find("4");
+            trophy5 = transform.Find("5");
+            trophy6 = transform.Find("6");
+            trophy7 = transform.Find("7");
+            trophy8 = transform.Find("8");
+            trophy9 = transform.Find("9");
         }
 
         public void Update()
         {
-            Transform trophy1 = transform.Find("1");
-            Transform trophy2 = transform.Find("2");
-            Transform trophy3 = transform.Find("3");
-            Transform trophy4 = transform.Find("4");
-            Transform trophy5 = transform.Find("5");
-            Transform trophy6 = transform.Find("6");
-            Transform trophy7 = transform.Find("7");
-            Transform trophy8 = transform.Find("8");
-            Transform trophy9 = transform.Find("9");
-            
             if (trophy1Flag)
             {
                 trophy1.gameObject.SetActive(true);

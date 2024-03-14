@@ -59,7 +59,7 @@ public class WoodMiniGame : MonoBehaviour
                 Debug.Log("tree defeated");
                 chops = 0;
                 GameManager.choices.SetFlag("Wood", 1);
-                GameManager.instance.LoadScene("Rusty's Retreat", true);
+                OverworldMapManager.Instance.TransitionBackToMap();
             }
             input = false;
         }

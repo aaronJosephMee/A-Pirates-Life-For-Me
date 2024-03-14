@@ -23,7 +23,7 @@ public class OverworldMapManager : MonoBehaviour
     private float _margin = 25.0f;
     private float _horizontalIconMargin;
     private float _verticalIconMargin = 70.0f;
-    private int _numChoices = 6;
+    private int _numChoices = 12;
 
     // Variables used to keep track of and generate choices
     private ChoiceGenerator _choiceGenerator;
@@ -89,7 +89,6 @@ public class OverworldMapManager : MonoBehaviour
     private void GenerateNextChoices()
     {
         ClearPreviousChoiceNodes();
-        print(_choiceGenerator.CanGenerateMoreChoices());
         if (!_choiceGenerator.CanGenerateMoreChoices())
         {
             _choiceGenerator.IncreaseChoiceDepth();
@@ -110,7 +109,10 @@ public class OverworldMapManager : MonoBehaviour
             if (_currentChoiceNodes[i].ChoiceType == ChoiceType.Event)
             {
                 callbacks.Add(() => _events.RemoveEvent(_choiceGenerator.GetCurrentEvent()));
-                callbacks.Add(() => _wasEventChosen = true);
+                if (!_choiceGenerator.GetCurrentEvent().isMinigame)
+                {
+                    callbacks.Add(() => _wasEventChosen = true);
+                }
             }
             callbacks.Add(() => TransitionToNewScene(_currentChoiceNodes[index].SceneName));
             _currentChoiceNodes[i].AddButton(GenerateChoiceButton(), positions[i], _choiceSprites[_currentChoiceNodes[i].ChoiceType], callbacks);
@@ -183,8 +185,10 @@ public class OverworldMapManager : MonoBehaviour
     
     private List<UnityAction> GetBoatCallback()
     {
-        // TODO: Implement logic to return the player to the boat hub world
-        return new List<UnityAction>();
+        return new List<UnityAction>()
+        {
+            () => TransitionToNewScene(SceneName.HubShip)
+        };
     }
 
     private List<UnityAction> GetGoalCallback()
@@ -226,7 +230,7 @@ public class OverworldMapManager : MonoBehaviour
                 return;
             }
             _canvas = GameObject.Find("Canvas");
-            LoadChoiceNodeButton(_currentBoatLocation, GetGoalCallback());
+            LoadChoiceNodeButton(_currentBoatLocation, GetBoatCallback());
             LoadChoiceNodeButton(_goalLocation, GetGoalCallback());
             GenerateNextChoices();
             _advanceMap = false;
