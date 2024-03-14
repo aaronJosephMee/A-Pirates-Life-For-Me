@@ -37,6 +37,10 @@ public class Events
         _storyEvents = storyEvents;
         int randomEventIndex = _random.Next(_seedEvents.Count);
         _eventPool.Add(_seedEvents[randomEventIndex]);
+        foreach (EventScriptableObject genericEvent in genericEvents)
+        {
+            _eventPool.Add(genericEvent);
+        }
     }
     
     public EventScriptableObject GetEvent()

@@ -74,5 +74,6 @@ public class wheelRotation : MonoBehaviour
     public void Win(int Score)
     {
         print(Score);
+        OverworldMapManager.Instance.TransitionBackToMap();
     }
 }
