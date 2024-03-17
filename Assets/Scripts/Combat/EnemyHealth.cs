@@ -28,10 +28,10 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-    public void DecreaseHealth(float amount, Vector3 direction)
+    public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
-        
+        Debug.Log("Hit");
         if (currentHealth <= 0 && !isDead)
         {
             Die();
@@ -45,6 +45,18 @@ public class EnemyHealth : MonoBehaviour
 
         ragdoll.ActivateRagdoll();
         combatManager.Instance.DecreaseEnemyCount();
+
+        enemytargeting targeting = GetComponent<enemytargeting>();
+        if (targeting != null)
+        {
+            targeting.enabled = false;
+        }
+
+        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        if (agent != null)
+        {
+            agent.enabled = false;
+        }
 
 
         //StartCoroutine(DestroyAfterDelay(1.5f));
