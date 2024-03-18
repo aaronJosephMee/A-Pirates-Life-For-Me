@@ -10,6 +10,7 @@ public struct ItemStats{
     public int damage;
     public int defense;
     public int duration;
+    public int maxStacks;
 }
 public class ItemPool
 {
@@ -44,7 +45,7 @@ public class ItemPool
         if (type == "Weapon"){
             keys = new List<string>(weaponPool.Keys);
             if (keys.Count == 0){
-                return ItemManager.instance.GenericNoItem;
+                return null;
             }
             r = random.Next(keys.Count);
             return weaponPool[keys[r]];
@@ -52,14 +53,14 @@ public class ItemPool
         if (type == "Relic"){
             keys = new List<string>(relicPool.Keys);
             if (keys.Count == 0){
-                return ItemManager.instance.GenericNoItem;
+                return null;
             }
             r = random.Next(keys.Count);
             return relicPool[keys[r]];
         }
         keys = new List<string>(itemPool.Keys);
         if (keys.Count == 0){
-            return ItemManager.instance.GenericNoItem;
+            return null;
         }
         r = random.Next(keys.Count);
         return itemPool[keys[r]];

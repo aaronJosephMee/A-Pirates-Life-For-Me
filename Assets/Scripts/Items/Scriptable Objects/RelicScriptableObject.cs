@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 public enum Activators{
     [Description("Passive")]
@@ -17,5 +16,5 @@ public enum Activators{
 public class RelicScriptableObject :  Item
 {
     public Activators activator;
-    
+    [System.NonSerialized] public int curStacks;
 }

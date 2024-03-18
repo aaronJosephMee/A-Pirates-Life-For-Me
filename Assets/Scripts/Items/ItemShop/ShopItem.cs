@@ -13,7 +13,7 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
     public Image background;
     public Color highlight;
     public Color regular;
-    private InventoryItem inventoryItem;
+    [System.NonSerialized] public InventoryItem inventoryItem;
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (item != null && item != ItemManager.instance.GenericNoItem && ItemManager.instance.CurrentGold() >= item.price){
@@ -31,15 +31,15 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
     {
         inventoryItem = this.GetComponent<InventoryItem>();
     }
-    public void GiveItem(Item item){
+    public virtual void GiveItem(Item item){
         if (item == null){
             item = ItemManager.instance.GenericNoItem;
         }
         this.item = item;
-        if (item == ItemManager.instance.GenericNoItem){
+        if (item == ItemManager.instance.GenericNoItem && price != null){
             price.text = "";
         }
-        else{
+        else if (price != null){
             price.text = item.price + " Gold";
         }
         
@@ -49,7 +49,7 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
         inventoryItem.GiveItem(item);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
         if (item != null && item != ItemManager.instance.GenericNoItem && ItemManager.instance.CurrentGold() >= item.price){
             ItemManager.instance.AddGold(-item.price);
@@ -72,10 +72,10 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
     }
     void Update(){
         if (item != null && !ItemManager.instance.IsUpgrade(item) && inventoryItem.shopUpgrade){
-            this.GiveItem(ItemManager.instance.GenericNoItem);
+            GiveItem(ItemManager.instance.GenericNoItem);
         }
         if (item != null && ItemManager.instance.IsUpgrade(item) && !inventoryItem.shopUpgrade){
-            this.GiveItem(this.item);
+            GiveItem(this.item);
         }
     }
 }

@@ -93,6 +93,7 @@ public class ItemManager : MonoBehaviour
     }
     public ItemStats CombineStats(ItemStats IS1, ItemStats IS2){
         IS1.duration += IS2.duration;
+        IS1.maxStacks += IS2.maxStacks;
         IS1.defense += IS2.defense;
         IS1.damage += IS2.damage;
         return IS1;
@@ -109,5 +110,20 @@ public class ItemManager : MonoBehaviour
             stats = CombineStats(stats,item.lvlStats);
         }
         return stats;
+    }
+    public void OnMelee(){
+        foreach (string relic in playerItems.GetMeleeRelics()){
+            StartCoroutine(playerItems.AddEffect(playerItems.GetRelics()[relic]));
+        }
+    }
+    public void OnKill(){
+        foreach (string relic in playerItems.GetKillRelics()){
+            StartCoroutine(playerItems.AddEffect(playerItems.GetRelics()[relic]));
+        }
+    }
+    public void OnTakeDamage(){
+        foreach (string relic in playerItems.GetTakeDamageRelics()){
+            StartCoroutine(playerItems.AddEffect(playerItems.GetRelics()[relic]));
+        }
     }
 }

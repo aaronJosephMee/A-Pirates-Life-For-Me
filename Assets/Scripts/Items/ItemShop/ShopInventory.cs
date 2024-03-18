@@ -28,18 +28,23 @@ public class ShopInventory : MonoBehaviour
             }
             else{
                 int threshold = 100;
-                if (ItemManager.instance.RelicCount() < ItemManager.instance.MaxRelics/4){
-                    threshold = 10;
-                }
-                else if (ItemManager.instance.RelicCount() < ItemManager.instance.MaxRelics/2){
-                    threshold = 30;
-                }
-                else if (ItemManager.instance.RelicCount() < ItemManager.instance.MaxRelics){
-                    threshold = 60;
+                if (ItemManager.instance.GetRandRelic() != null){
+                    if (ItemManager.instance.RelicCount() < ItemManager.instance.MaxRelics/4){
+                        threshold = 10;
+                    }
+                    else if (ItemManager.instance.RelicCount() < ItemManager.instance.MaxRelics/2){
+                        threshold = 30;
+                    }
+                    else if (ItemManager.instance.RelicCount() < ItemManager.instance.MaxRelics){
+                        threshold = 60;
+                    }
                 }
                 res = random.Next(100);
                 if (res < threshold){
                     items[i] = ItemManager.instance.GetRandUpgrade();
+                    if (items[i] == null){
+                        items[i] = ItemManager.instance.GetRandRelic();
+                    }
                 }
                 else{
                     items[i] = ItemManager.instance.GetRandRelic();

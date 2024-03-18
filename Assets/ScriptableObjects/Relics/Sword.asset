@@ -18,10 +18,12 @@ MonoBehaviour:
   baseStats:
     damage: 10
     defense: 0
-    duration: 0
+    duration: 4
+    maxStacks: 4
   lvlStats:
     damage: 5
     defense: 0
-    duration: 0
+    duration: 1
+    maxStacks: 1
   price: 0
   activator: 1

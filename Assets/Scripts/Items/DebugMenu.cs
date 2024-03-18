@@ -11,8 +11,10 @@ public class DebugMenu : MonoBehaviour
     public Button getItem;
     public Button getMoney;
     public Button openShop;
+    public Button melee;
     public GameObject inventory;
     public GameObject shop;
+    public GameObject drop;
     public int goldToAdd;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class DebugMenu : MonoBehaviour
         getItem.onClick.AddListener(GetItem);
         openShop.onClick.AddListener(OpenShop);
         getMoney.onClick.AddListener(AddGold);
+        melee.onClick.AddListener(Melee);
     }
     void Update(){
         gold.text = "Gold: " + ItemManager.instance.CurrentGold();
@@ -29,12 +32,15 @@ public class DebugMenu : MonoBehaviour
         Instantiate(inventory);
     }
     void GetItem(){
-        ItemManager.instance.playerItems.AddRelic((RelicScriptableObject)ItemManager.instance.itemPool.GetRandItem("Relic"));
+        Instantiate(drop);
     }
     void OpenShop(){
         Instantiate(shop);
     }
     void AddGold(){
         ItemManager.instance.AddGold(goldToAdd);
+    }
+    void Melee(){
+        ItemManager.instance.OnMelee();
     }
 }
