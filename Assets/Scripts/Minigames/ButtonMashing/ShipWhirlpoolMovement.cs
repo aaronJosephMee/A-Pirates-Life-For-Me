@@ -15,6 +15,8 @@ public class ShipWhirlpoolMovement : MonoBehaviour
     
     public TextMeshProUGUI winningText;
     public TextMeshProUGUI losingText;
+    public TextMeshProUGUI howToPlayText;
+
 
     
     private bool isBeingPulled;
@@ -25,6 +27,7 @@ public class ShipWhirlpoolMovement : MonoBehaviour
         whirlpoolSize = (float) 1.5 * whirlpoolCenter.gameObject.GetComponent<Renderer>().bounds.size.magnitude;
         winningText.gameObject.SetActive(false);
         losingText.gameObject.SetActive(false);
+        howToPlayText.gameObject.SetActive(true);
     }
 
     void Update()
@@ -41,7 +44,7 @@ public class ShipWhirlpoolMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             isBeingPulled = true;
-            
+            howToPlayText.gameObject.SetActive(false);
         }
         distanceFromCenter = Vector3.Distance(ship.gameObject.transform.position, whirlpoolCenter.position);
         playerSlider.value = distanceFromCenter / (whirlpoolSize / 2);
@@ -49,10 +52,12 @@ public class ShipWhirlpoolMovement : MonoBehaviour
         if (playerSlider.value >= 1)
         {
             winningText.gameObject.SetActive(true);
+            Time.timeScale = 0f;
 
         } else if (playerSlider.value <= 0)
         {
             losingText.gameObject.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 
@@ -68,14 +73,27 @@ public class ShipWhirlpoolMovement : MonoBehaviour
         // Translate the object towards the center of the whirlpool
         float step = translationSpeed * Time.deltaTime;
         obj.transform.position = Vector3.MoveTowards(obj.transform.position, whirlpoolCenter.position, step);
+        
+        if (playerSlider.value <= 0.25)
+        {
+            translationSpeed = 5;
+        }
+        else if (playerSlider.value <= 0.75)
+        {
+            translationSpeed = 10;
+        }
+        else
+        {
+            translationSpeed = 20;
+        }
     }
 
     void TranslateTowardsPerimeter()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && Time.deltaTime != 0f)
         {
             // Controls how fast you are moving away from the whirlpool when you press Z
-            ship.transform.position = Vector3.MoveTowards(ship.transform.position, whirlpoolCenter.position, -3.0f);
+            ship.transform.position = Vector3.MoveTowards(ship.transform.position, whirlpoolCenter.position, -5.0f);
         }
     }
 }
