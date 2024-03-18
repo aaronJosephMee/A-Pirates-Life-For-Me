@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WheelMiniGame.unity
     guid: b9d978691bc3e4ac681575caccf89964
+  - enabled: 1
+    path: Assets/Scenes/HubShip.unity
+    guid: 211051b6b2708408fb8488b1a532595f
   m_configObjects: {}

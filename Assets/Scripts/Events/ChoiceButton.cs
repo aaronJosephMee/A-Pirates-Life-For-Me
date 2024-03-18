@@ -27,7 +27,7 @@ public class ChoiceButton : MonoBehaviour
             }
             // TODO: Add logic to reward player with stats and relics
             Destroy(this.transform.parent.gameObject);
-            GameManager.instance.LoadScene(toDisplay.nextScene.GetSceneString(), false);
+            GameManager.instance.LoadScene(toDisplay.nextScene, false);
         }
         else
         {

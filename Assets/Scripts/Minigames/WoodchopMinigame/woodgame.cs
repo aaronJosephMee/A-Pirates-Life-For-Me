@@ -58,7 +58,6 @@ public class WoodMiniGame : MonoBehaviour
             {
                 Debug.Log("tree defeated");
                 chops = 0;
-                GameManager.choices.SetFlag("Wood", 1);
                 OverworldMapManager.Instance.TransitionBackToMap();
             }
             input = false;

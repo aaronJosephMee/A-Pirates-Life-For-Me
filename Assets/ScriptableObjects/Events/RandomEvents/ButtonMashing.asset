@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: ButtonMashing
   m_EditorClassIdentifier: 
   name: ButtonMashing
-  scene: 0
+  scene: 1
   sceneIdx: 0
   flavorText: 
   isMinigame: 1
-  choices: []
+  initialChoices: 
+  choices:
+    Value: []

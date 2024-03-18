@@ -20,18 +20,62 @@ MonoBehaviour:
     ship away from the fight. Both groups beckon at you, asking for your assistance.
     Who do you side with?'
   isMinigame: 0
+  initialChoices: 0000000001000000
   choices:
-  - text: Side with the aristocrats. Gain 300 gold.
-    relics: []
-    eventsToAdd:
-    - {fileID: 11400000, guid: 598f8f3309020734997774727ad3a69e, type: 2}
-    stats:
-      health: 0
-      gold: 300
-  - text: Side with the pirates. Gain pirate flag relic.
-    relics: []
-    eventsToAdd:
-    - {fileID: 11400000, guid: cd221cf525957834984137e1ce49b805, type: 2}
-    stats:
-      health: 0
-      gold: 0
+    Value:
+    - text: Side with the aristocrats. Gain 300 gold.
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: The aristocrats easily dispatch the pirates with your help. You
+        are handsomly rewarded for your efforts.
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Side with the pirates. Gain pirate flag relic.
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: The pirates easily dispatch the aristocrats with your help. The
+        pirate captain gives you a strange artifact for your efforts.
+      nextChoiceIndices:
+        Value: 03000000
+    - text: Continue.
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: 598f8f3309020734997774727ad3a69e, type: 2}
+      stats:
+        health: 0
+        gold: 300
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Continue.
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: cd221cf525957834984137e1ce49b805, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 02000000
