@@ -536,6 +536,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569fcb15819e485439919ee09a79ce51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  relics:
+  - {fileID: 11400000, guid: 7b136555e7e6a9a4f8c6313a092b876b, type: 2}
+  items:
+  - {fileID: 11400000, guid: 93eb1de89e534fa4aa08d297057c48d4, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: 98a39c2b587d2b042825576258221e9c, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 98a39c2b587d2b042825576258221e9c, type: 2}
+  defaultItem: {fileID: 11400000, guid: 93eb1de89e534fa4aa08d297057c48d4, type: 2}
 --- !u!4 &1458637657
 Transform:
   m_ObjectHideFlags: 0

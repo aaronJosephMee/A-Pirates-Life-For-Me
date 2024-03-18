@@ -13,7 +13,7 @@ public class InventoryItemSpawner : MonoBehaviour
     {
         Vector3 offset = new Vector3(0,0,0);
         int relics = ItemManager.instance.playerItems.RelicCount();
-        Dictionary<string, Item> allRelics = ItemManager.instance.playerItems.GetRelics();
+        Dictionary<string, RelicScriptableObject> allRelics = ItemManager.instance.playerItems.GetRelics();
         List<string> keys = new List<string>(allRelics.Keys);
         GameObject[] instances = new GameObject[relics];
         for (int i = 0; i < relics; i++){

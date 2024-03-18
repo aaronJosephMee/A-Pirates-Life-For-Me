@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ItemWidget : InventoryItem
 {
-    Item item;
     // Start is called before the first frame update
     void Start()
     {

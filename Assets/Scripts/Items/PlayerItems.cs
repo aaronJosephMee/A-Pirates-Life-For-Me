@@ -5,44 +5,53 @@ using UnityEngine;
 public class PlayerItems
 {
     ItemStats totalStats = new ItemStats();
-    Dictionary<string, Item> playerRelics;
-    Dictionary<string, Item> playerWeapons;
-    Item currentItem;
-    Item currentWeapon;
-    public PlayerItems(){
-        playerRelics = new Dictionary<string, Item>();
-    }
+    Dictionary<string, RelicScriptableObject> playerRelics = new Dictionary<string, RelicScriptableObject>();
+    Dictionary<string, WeaponScriptableObject> playerWeapons = new Dictionary<string, WeaponScriptableObject>();
+    ItemScriptableObject currentItem;
+    WeaponScriptableObject currentWeapon;
     public int RelicCount(){
         return playerRelics.Count;
     }
     public Item GetItem(){
         return currentItem;
     }
-    public void SetItem(Item item){
+    public void SetItem(ItemScriptableObject item){
         currentItem = item;
     }
     public Item GetWeapon(){
         return currentWeapon;
     }
     public void SetWeapon(string weapon){
-        if (currentWeapon.type != ""){
+        if (currentWeapon != null){
             totalStats = SubtractStats(totalStats, GetItemStats(currentWeapon));
         }
         currentWeapon = playerWeapons[weapon];
         totalStats = CombineStats(totalStats, GetItemStats(currentWeapon));
     }
-    public Dictionary<string, Item> GetRelics(){
+    public Dictionary<string, RelicScriptableObject> GetRelics(){
         return playerRelics;
     }
-    public void AddRelic(KeyValuePair<string, Item> relic){
-        playerRelics.Add(relic.Key, relic.Value);
-        totalStats = CombineStats(totalStats, GetItemStats(relic.Value));
+    public void AddRelic(RelicScriptableObject relic){
+        RelicScriptableObject r;
+        playerRelics.TryGetValue(relic.title, out r);
+        if (r != null){
+            playerRelics[relic.title].curlvl++;
+        }
+        else{
+            playerRelics.Add(relic.title, relic);
+            totalStats = CombineStats(totalStats, GetItemStats(relic)); 
+        } 
     }
-    public Dictionary<string, Item> GetWeapons(){
+    public Dictionary<string, WeaponScriptableObject> GetWeapons(){
         return playerWeapons;
     }
-    public void AddWeapon(KeyValuePair<string, Item> weapon){
-        playerWeapons.Add(weapon.Key, weapon.Value);
+    public void AddWeapon(WeaponScriptableObject weapon){
+        WeaponScriptableObject w;
+        playerWeapons.TryGetValue(weapon.title, out w);
+        if (w != null){
+            playerWeapons[weapon.title].curlvl++;
+        }
+        playerWeapons.Add(weapon.title, weapon);
     }
     public ItemStats TotalStats(){
         return totalStats;

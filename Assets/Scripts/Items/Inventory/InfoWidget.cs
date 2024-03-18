@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,7 +12,6 @@ public class InfoWidget : MonoBehaviour
     ItemStats stats;
     Item item;
     private void Awake() {
-        //this.transform.position = new Vector3(82f,0,0);
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
         foreach (TextMeshProUGUI tmp in tmps){
             switch(tmp.name){
@@ -32,14 +32,27 @@ public class InfoWidget : MonoBehaviour
             stats = ItemManager.instance.playerItems.CombineStats(stats,item.lvlStats);
         }
         if (stats.damage != 0){
-            info += "Damage: " + stats.damage;
+            info += "Damage: " + stats.damage + "\n";
         }
         if (stats.defense != 0){
-            info += "Defense: " + stats.defense;
+            info += "Defense: " + stats.defense + "\n";
         }
-        // if (stats.damage != 0){
-        //     info += "Damage: " + stats.damage;
-        // }
+        try{
+            if (((ItemScriptableObject) item).uses != 0){
+                info += "Uses: " + ((ItemScriptableObject) item).uses + "\n";
+            }
+        }
+        catch{}
+        try{
+            info += ((WeaponScriptableObject) item).type;
+        }
+        catch{}
+        try{
+            if (((RelicScriptableObject) item).activator != Activators.Passive){
+                info += "Activation: " + ((RelicScriptableObject) item).activator + "\n";
+            }
+        }
+        catch{}
         if (infotext != null){
             infotext.text = info;
         }

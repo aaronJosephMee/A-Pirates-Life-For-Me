@@ -19,6 +19,6 @@ public class DebugMenu : MonoBehaviour
         Instantiate(inventory);
     }
     void GetItem(){
-        ItemManager.instance.playerItems.AddRelic(ItemManager.instance.itemPool.GetRandItem("Relic"));
+        ItemManager.instance.playerItems.AddRelic((RelicScriptableObject)ItemManager.instance.itemPool.GetRandItem("Relic"));
     }
 }
