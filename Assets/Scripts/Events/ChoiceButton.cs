@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace.OverworldMap;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,6 @@ public class ChoiceButton : MonoBehaviour
     void Start()
     {
         this.GetComponent<Button>().onClick.AddListener(ChoicePicked);
-        this.GetComponent<Button>().onClick.AddListener(() => OverworldMapManager.Instance.TransitionBackToMap());
     }
     public void DisplayChoice(Choice choice)
     {
@@ -20,10 +20,18 @@ public class ChoiceButton : MonoBehaviour
     }
     void ChoicePicked()
     {
-        print("Clicked");
-        foreach (EventScriptableObject newEvent in toDisplay.eventsToAdd){
-            OverworldMapManager.Instance.AddToEventPool(newEvent);
+        if (toDisplay.isTerminal)
+        {
+            foreach (EventScriptableObject newEvent in toDisplay.eventsToAdd.Value){
+                OverworldMapManager.Instance.AddToEventPool(newEvent);
+            }
+            // TODO: Add logic to reward player with stats and relics
+            Destroy(this.transform.parent.gameObject);
+            GameManager.instance.LoadScene(toDisplay.nextScene, false);
         }
-        Destroy(this.transform.parent.gameObject);
+        else
+        {
+            gameObject.transform.GetComponentInParent<EventMenu>().UpdateEventMenu(toDisplay.followUpText, toDisplay.nextChoiceIndices.Value);
+        }
     }
 }

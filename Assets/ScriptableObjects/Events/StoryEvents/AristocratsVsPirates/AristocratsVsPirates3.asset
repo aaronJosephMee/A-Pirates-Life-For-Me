@@ -17,10 +17,19 @@ MonoBehaviour:
   sceneIdx: 0
   flavorText: Scenario where you sided with pirates.
   isMinigame: 0
+  initialChoices: 00000000
   choices:
-  - text: Continue
-    relics: []
-    eventsToAdd: []
-    stats:
-      health: 0
-      gold: 0
+    Value:
+    - text: Continue.
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 

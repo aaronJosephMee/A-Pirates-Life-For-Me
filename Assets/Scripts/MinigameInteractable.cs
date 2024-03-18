@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DefaultNamespace.OverworldMap;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -7,7 +8,7 @@ namespace DefaultNamespace
         public string scene;
         public void Interact(Collider collider)
         {
-            GameManager.instance.LoadScene(scene, false);
+            GameManager.instance.LoadScene(SceneName.Combat, false);
         }
     }
 }
