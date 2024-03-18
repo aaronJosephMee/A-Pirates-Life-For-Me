@@ -43,15 +43,24 @@ public class ItemPool
         int r;
         if (type == "Weapon"){
             keys = new List<string>(weaponPool.Keys);
+            if (keys.Count == 0){
+                return ItemManager.instance.GenericNoItem;
+            }
             r = random.Next(keys.Count);
             return weaponPool[keys[r]];
         }
         if (type == "Relic"){
             keys = new List<string>(relicPool.Keys);
+            if (keys.Count == 0){
+                return ItemManager.instance.GenericNoItem;
+            }
             r = random.Next(keys.Count);
             return relicPool[keys[r]];
         }
         keys = new List<string>(itemPool.Keys);
+        if (keys.Count == 0){
+            return ItemManager.instance.GenericNoItem;
+        }
         r = random.Next(keys.Count);
         return itemPool[keys[r]];
     }

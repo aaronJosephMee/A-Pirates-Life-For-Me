@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
 {
-    public bool shopItem = false;
+    [System.NonSerialized] public bool shopUpgrade = false;
     public Image image;
     public Item item;
     public TextMeshProUGUI nme;
@@ -18,21 +18,40 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
     // Start is called before the first frame update
     public void GiveItem(Item item){
+        if (item == null){
+            item = ItemManager.instance.GenericNoItem;
+        }
         this.item = item;
-        nme.text = item.name;
+        if (item == ItemManager.instance.GenericNoItem){
+            nme.text = "";
+        }
+        else{
+            nme.text = item.name;
+        }
         if (item.image != null){
             image.sprite = item.image;
         }
     }  
     public void OnPointerEnter(PointerEventData eventData)
     {
-        instance = Instantiate(widget, this.transform.parent);
-        instance.GetComponent<InfoWidget>().GiveItem(item);
-        instance.GetComponent<InfoWidget>().SetTextTotal();
+        if (this.item != ItemManager.instance.GenericNoItem){
+            instance = Instantiate(widget, this.transform.parent);
+            instance.GetComponent<InfoWidget>().GiveItem(item);
+            if (shopUpgrade){
+                instance.GetComponent<InfoWidget>().SetTextLevel();
+            }
+            else{
+                instance.GetComponent<InfoWidget>().SetTextTotal();
+            }
+        }
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        DestroyWidget();
+    }
+    public void DestroyWidget(){
         if (instance != null){
             Destroy(instance);
             instance = null;

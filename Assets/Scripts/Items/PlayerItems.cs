@@ -10,6 +10,24 @@ public class PlayerItems
     Dictionary<string, Item> upgradeables = new Dictionary<string, Item>();
     ItemScriptableObject currentItem;
     WeaponScriptableObject currentWeapon;
+    int gold = 0;
+    public Item GetRandUpgrade(){
+        if (upgradeables.Count == 0){
+            return null;
+        }
+        System.Random r = new System.Random();
+        List<string> keys = new List<string>(upgradeables.Keys);
+        return upgradeables[keys[r.Next(keys.Count - 1)]];
+    }
+    public bool IsUpgrade(Item item){
+        return upgradeables.ContainsKey(item.title);
+    }
+    public void AddGold(int goldToAdd){
+        gold += goldToAdd;
+    }
+    public int CurrentGold(){
+        return gold;
+    }
     public int RelicCount(){
         return playerRelics.Count;
     }
@@ -58,13 +76,13 @@ public class PlayerItems
         playerWeapons.TryGetValue(weapon.title, out w);
         if (w != null){
             playerWeapons[weapon.title].curlvl++;
-            if (playerRelics[weapon.title].curlvl >= weapon.maxlvl){
-                upgradeables.Remove(weapon.title);
-            }
+            // if (playerRelics[weapon.title].curlvl >= weapon.maxlvl){
+            //     upgradeables.Remove(weapon.title);
+            // }
         }
-        if (weapon.curlvl < weapon.maxlvl){
-            upgradeables.Add(weapon.title, weapon);
-        }
+        // if (weapon.curlvl < weapon.maxlvl){
+        //     upgradeables.Add(weapon.title, weapon);
+        // }
         playerWeapons.Add(weapon.title, weapon);
     }
     public ItemStats TotalStats(){

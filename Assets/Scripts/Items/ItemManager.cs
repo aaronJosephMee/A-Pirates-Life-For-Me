@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    public int MaxRelics = 21;
     public static ItemManager instance;
     public PlayerItems playerItems = new PlayerItems();
     public ItemPool itemPool;
@@ -12,6 +13,7 @@ public class ItemManager : MonoBehaviour
     public WeaponScriptableObject[] weapons;
     public WeaponScriptableObject defaultWeapon;
     public ItemScriptableObject defaultItem;
+    public Item GenericNoItem;
     void Awake(){
         if (instance == null)
         {
@@ -27,6 +29,18 @@ public class ItemManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public Item GetRandUpgrade(){
+        return playerItems.GetRandUpgrade();
+    }
+    public void AddGold(int goldToAdd){
+        playerItems.AddGold(goldToAdd);
+    }
+    public int CurrentGold(){
+        return playerItems.CurrentGold();
+    }
+    public bool IsUpgrade(Item item){
+        return playerItems.IsUpgrade(item);
+    }
     public void AddRelic(RelicScriptableObject relic){
         playerItems.AddRelic(relic);
         itemPool.RemoveItem("Relic", relic.title);
@@ -41,10 +55,10 @@ public class ItemManager : MonoBehaviour
     public int RelicCount(){
         return playerItems.RelicCount();
     }
-    public ItemScriptableObject GetItem(){
+    public ItemScriptableObject CurrentItem(){
         return playerItems.GetItem();
     }
-    public WeaponScriptableObject GetWeapon(){
+    public WeaponScriptableObject CurrentWeapon(){
         return playerItems.GetWeapon();
     }
     public void SetWeapon(string weaponName){
@@ -68,13 +82,13 @@ public class ItemManager : MonoBehaviour
     public WeaponScriptableObject GetWeapon(string title){
         return (WeaponScriptableObject)itemPool.GetItem("Weapon" ,title).Value;
     }
-    public ItemScriptableObject GetRandItem(string type){
+    public ItemScriptableObject GetRandItem(){
         return (ItemScriptableObject)itemPool.GetRandItem("Item");
     }
-    public RelicScriptableObject GetRandRelic(string type){
+    public RelicScriptableObject GetRandRelic(){
         return (RelicScriptableObject)itemPool.GetRandItem("Relic");
     }
-    public WeaponScriptableObject GetRandWeapon(string type){
+    public WeaponScriptableObject GetRandWeapon(){
         return (WeaponScriptableObject)itemPool.GetRandItem("Weapon");
     }
     public ItemStats CombineStats(ItemStats IS1, ItemStats IS2){

@@ -9,19 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: Saber
+  m_Script: {fileID: 11500000, guid: ad02a2e9d3bf55748a61c77a645d06a1, type: 3}
+  m_Name: GenericNoItem
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: a7f6e9b2c1d2ba44d8351c1b4492a6c0, type: 3}
-  title: Saber
-  maxlvl: 2
+  image: {fileID: 21300000, guid: 75ab62e25f79bb04d876deb523d76fe3, type: 3}
+  title: NoItem
+  maxlvl: 0
   baseStats:
-    damage: 212
-    defense: 12
+    damage: 0
+    defense: 0
     duration: 0
   lvlStats:
     damage: 0
     defense: 0
     duration: 0
-  price: 30
-  activator: 0
+  price: 9999999
