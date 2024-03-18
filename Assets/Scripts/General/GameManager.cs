@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static Choices choices;
     private static Vector3 _lastPosition;
-    public static Events events;
     public bool menuOpen;
     private bool movePlayerOnLoad = false;
     public GameObject pauseMenu;
@@ -19,7 +18,6 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             InitializeChoices();
-            InitializeEvents();
             DontDestroyOnLoad(this);
         }
         else if (instance != this)
@@ -70,9 +68,5 @@ public class GameManager : MonoBehaviour
     {
         choices = new Choices();
         choices.AddFlag("Wood", 0);
-    }
-    public void InitializeEvents()
-    {
-        events = new Events();
     }
 }
