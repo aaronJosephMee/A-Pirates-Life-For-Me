@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EventMenu : MonoBehaviour
 {
-    Event toDisplay;
+    EventScriptableObject toDisplay;
     ButtonSpawner buttonSpawner;
     TextMeshProUGUI title;
     TextMeshProUGUI bodyText;
@@ -13,7 +13,7 @@ public class EventMenu : MonoBehaviour
     void Start()
     {
         buttonSpawner = GetComponentInChildren<ButtonSpawner>();
-        toDisplay = OverworldMapManager.instance.GetEvent();
+        toDisplay = OverworldMapManager.Instance.GetEvent();
         //Debug.Log(toDisplay.name);
         
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();

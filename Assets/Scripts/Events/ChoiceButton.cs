@@ -11,7 +11,7 @@ public class ChoiceButton : MonoBehaviour
     void Start()
     {
         this.GetComponent<Button>().onClick.AddListener(ChoicePicked);
-        this.GetComponent<Button>().onClick.AddListener(() => OverworldMapManager.instance.TransitionBackToMap());
+        this.GetComponent<Button>().onClick.AddListener(() => OverworldMapManager.Instance.TransitionBackToMap());
     }
     public void DisplayChoice(Choice choice)
     {
@@ -21,9 +21,8 @@ public class ChoiceButton : MonoBehaviour
     void ChoicePicked()
     {
         print("Clicked");
-        foreach (string newEvent in toDisplay.eventsToAdd){
-            Debug.Log(newEvent);
-            OverworldMapManager.instance.AddToEventPool(newEvent);
+        foreach (EventScriptableObject newEvent in toDisplay.eventsToAdd){
+            OverworldMapManager.Instance.AddToEventPool(newEvent);
         }
         Destroy(this.transform.parent.gameObject);
     }
