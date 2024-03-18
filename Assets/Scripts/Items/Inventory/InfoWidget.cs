@@ -9,7 +9,7 @@ public class InfoWidget : MonoBehaviour
     TextMeshProUGUI levelText;
     TextMeshProUGUI infotext;
     string info;
-    ItemStats stats;
+    
     Item item;
     private void Awake() {
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
@@ -25,11 +25,15 @@ public class InfoWidget : MonoBehaviour
         }
     }
     public void GiveItem(Item item){
-        info = "";
-        stats = item.baseStats;
         this.item = item;
+    }
+    public void SetTextTotal(){
+        info = "";
+        ItemStats stats;
+        stats = item.baseStats;
+        
         for (int i = 1; i<item.curlvl;i++){
-            stats = ItemManager.instance.playerItems.CombineStats(stats,item.lvlStats);
+            stats = ItemManager.instance.CombineStats(stats,item.lvlStats);
         }
         if (stats.damage != 0){
             info += "Damage: " + stats.damage + "\n";
@@ -44,7 +48,7 @@ public class InfoWidget : MonoBehaviour
         }
         catch{}
         try{
-            info += ((WeaponScriptableObject) item).type;
+            info += "Type: " + ((WeaponScriptableObject) item).type + "\n";
         }
         catch{}
         try{
@@ -58,6 +62,27 @@ public class InfoWidget : MonoBehaviour
         }
         if (levelText != null){
             levelText.text = "Level: " + item.curlvl;
+        }
+    }
+    public void SetTextLevel(){
+        info = "";
+        ItemStats stats;
+        stats = item.baseStats;
+        
+        for (int i = 1; i<item.curlvl;i++){
+            stats = ItemManager.instance.CombineStats(stats,item.lvlStats);
+        }
+        if (item.lvlStats.damage != 0){
+            info += "Damage: " + stats.damage + " -> " + (stats.damage + item.lvlStats.damage) + "\n";
+        }
+        if (item.lvlStats.defense != 0){
+            info += "Defense: " + stats.defense + " -> " + (stats.defense + item.lvlStats.defense) + "\n";
+        }
+        if (infotext != null){
+            infotext.text = info;
+        }
+        if (levelText != null){
+            levelText.text = "Level: " + item.curlvl + " -> " + (item.curlvl + 1);
         }
     }
 }

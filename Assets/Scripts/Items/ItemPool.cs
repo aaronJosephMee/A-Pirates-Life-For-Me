@@ -49,7 +49,6 @@ public class ItemPool
         if (type == "Relic"){
             keys = new List<string>(relicPool.Keys);
             r = random.Next(keys.Count);
-            Debug.Log(r);
             return relicPool[keys[r]];
         }
         keys = new List<string>(itemPool.Keys);

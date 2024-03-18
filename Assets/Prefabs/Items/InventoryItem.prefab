@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b0ac91715137346875b482b9bd7b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 5999314785205567865}
+  item: {fileID: 0}
   nme: {fileID: 2776164575971987624}
   widget: {fileID: 4118169159548106396, guid: c1a1bdf8d2a0da14e8923e7ab9e146c7, type: 3}
   offset: {x: 82, y: 0, z: 0}
