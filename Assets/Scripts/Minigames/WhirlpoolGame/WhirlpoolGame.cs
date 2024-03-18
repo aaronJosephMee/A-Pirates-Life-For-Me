@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShipWhirlpoolMovement : MonoBehaviour
+public class WhirlpoolGame : MonoBehaviour
 {
     public Slider playerSlider;
     public Transform whirlpoolCenter;
