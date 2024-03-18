@@ -63,11 +63,11 @@ public class OverworldMapManager : MonoBehaviour
         GenerateNextChoices();
     }
 
-    // Start is called before the first frame update
     public void AddEvent()
     {
         Instantiate(eventCanvas);
     }
+
     public void AddToEventPool(EventScriptableObject eventToAdd){
         _events.AddEvent(eventToAdd);
     }
