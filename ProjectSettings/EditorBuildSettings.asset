@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HubShip.unity
     guid: 211051b6b2708408fb8488b1a532595f
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: ebbb1541cffcbc8428b2504d711d68fb
   m_configObjects: {}

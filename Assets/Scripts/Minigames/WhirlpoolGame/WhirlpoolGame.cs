@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,16 +50,39 @@ public class WhirlpoolGame : MonoBehaviour
         distanceFromCenter = Vector3.Distance(ship.gameObject.transform.position, whirlpoolCenter.position);
         playerSlider.value = distanceFromCenter / (whirlpoolSize / 2);
 
-        if (playerSlider.value >= 1)
+        if (isBeingPulled)
+        {
+            if (playerSlider.value >= 1)
+            {
+                EndGame(true);
+
+            } else if (playerSlider.value <= 0)
+            {
+                EndGame(false);
+            }
+        }
+    }
+
+    private void EndGame(bool won)
+    {
+        isBeingPulled = false;
+        if (won)
         {
             winningText.gameObject.SetActive(true);
-            Time.timeScale = 0f;
-
-        } else if (playerSlider.value <= 0)
+        }
+        else
         {
             losingText.gameObject.SetActive(true);
-            Time.timeScale = 0f;
         }
+        Time.timeScale = 0.0f;
+        StartCoroutine(EndGameRoutine());
+    }
+    
+    private IEnumerator EndGameRoutine()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        Time.timeScale = 1.0f;
+        OverworldMapManager.Instance.TransitionBackToMap();
     }
 
     void RotateAroundWhirlpool(GameObject obj)

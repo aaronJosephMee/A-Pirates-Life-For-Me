@@ -30,7 +30,7 @@ public class EventMenu : MonoBehaviour
                     break;
             }
         }
-        title.text = toDisplay.name;
+        title.text = toDisplay.title;
         bodyText.text = toDisplay.flavorText;
         buttons = buttonSpawner.Spawn(GetChoicesFromIndices(toDisplay.initialChoices));
     }
