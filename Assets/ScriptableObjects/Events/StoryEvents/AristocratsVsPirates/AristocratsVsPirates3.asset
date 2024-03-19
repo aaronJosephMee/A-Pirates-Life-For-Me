@@ -12,9 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
   m_Name: AristocratsVsPirates3
   m_EditorClassIdentifier: 
-  name: Aristocrats Vs Pirates 3
+  title: Pirates Vs Aristocrats
   scene: 2
   sceneIdx: 0
   flavorText: Scenario where you sided with pirates.
   isMinigame: 0
-  choices: []
+  initialChoices: 00000000
+  choices:
+    Value:
+    - text: Continue.
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 

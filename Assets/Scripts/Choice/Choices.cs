@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using DefaultNamespace.OverworldMap;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -93,7 +94,7 @@ public class Choices
             string[] flagAndVal = line.Split(" ");
             GameManager.choices.SetFlag(flagAndVal[0], int.Parse(flagAndVal[1]));
         }
-        GameManager.instance.LoadScene(nextScene, false);
+        GameManager.instance.LoadScene(SceneName.Combat, false);
     }
     //Creates a savefile storing the flags and current scene
     public void SaveState(){

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DefaultNamespace.OverworldMap;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,12 +14,12 @@ public class GameManager : MonoBehaviour
     public bool menuOpen;
     private bool movePlayerOnLoad = false;
     public GameObject pauseMenu;
+    public SceneName currentScene = SceneName.TitleScreen;
     // Start is called before the first frame update
     void Awake(){
         if (instance == null)
         {
             instance = this;
-            InitializeChoices();
             DontDestroyOnLoad(this);
         }
         else if (instance != this)
@@ -26,16 +28,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadScene(string scene, bool restorePosition)
+    public void LoadScene(SceneName scene, bool restorePosition)
     {
-        
+        if (currentScene.Equals(SceneName.OverworldMap) && scene.Equals(SceneName.TitleScreen))
+        {
+            OverworldMapManager.Instance?.MarkMapForReset();
+        }
         GameObject[] currentScenePlayer = GameObject.FindGameObjectsWithTag("Player");
         if (currentScenePlayer.Length > 0 && !restorePosition && currentScenePlayer != null)
         {
             _lastPosition = currentScenePlayer[0].transform.position;
         }
         movePlayerOnLoad = restorePosition;
-        SceneManager.LoadScene(scene);
+        currentScene = scene;
+        SceneManager.LoadScene(scene.GetSceneString());
     }
 
     // Update is called once per frame
@@ -53,7 +59,6 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
-        choices.RemakeDeps();
         GameObject[] newScenePlayer = GameObject.FindGameObjectsWithTag("Player");
         if (newScenePlayer.Length > 0 && newScenePlayer[0] != null && movePlayerOnLoad)
         {
@@ -62,11 +67,5 @@ public class GameManager : MonoBehaviour
             newScenePlayer[0].transform.position = _lastPosition;
             characterController.enabled = true;
         }
-    }
-    
-    public void InitializeChoices()
-    {
-        choices = new Choices();
-        choices.AddFlag("Wood", 0);
     }
 }

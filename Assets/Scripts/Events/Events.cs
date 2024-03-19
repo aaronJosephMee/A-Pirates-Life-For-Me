@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using DefaultNamespace.OverworldMap;
+using MyBox;
 using UnityEngine;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine.InputSystem.Interactions;
@@ -17,15 +19,34 @@ public struct Stats
 public class Choice
 {
     public string text;
-    public RelicScriptableObject[] relics;
-    public EventScriptableObject[] eventsToAdd;
-    public Stats stats;
+    public bool isTerminal;
+    [ConditionalField(nameof(isTerminal))] public RelicCollection relics;
+    [ConditionalField(nameof(isTerminal))] public EventCollection eventsToAdd;
+    [ConditionalField(nameof(isTerminal))] public Stats stats;
+    [ConditionalField(nameof(isTerminal))] public SceneName nextScene;
+
+    [ConditionalField(nameof(isTerminal), true)] [TextArea(7,15)]
+    public String followUpText;
+
+    [ConditionalField(nameof(isTerminal), true)]
+    public ChoiceIndices nextChoiceIndices;
 }
+
+[Serializable]
+public class EventCollection : CollectionWrapper<EventScriptableObject> {}
+
+[Serializable]
+public class RelicCollection : CollectionWrapper<RelicScriptableObject> {}
+
+[Serializable]
+public class ChoiceIndices : CollectionWrapper<int> {}
+
+[Serializable]
+public class ChoiceCollection : CollectionWrapper<Choice>{}
 
 public class Events
 {
     private System.Random _random = new System.Random();
-    string[] _allStats = new string[] {"Health", "Gold"};
     private List<EventScriptableObject> _eventPool = new List<EventScriptableObject>();
     private List<EventScriptableObject> _seedEvents;
     private List<EventScriptableObject> _storyEvents;
@@ -37,6 +58,10 @@ public class Events
         _storyEvents = storyEvents;
         int randomEventIndex = _random.Next(_seedEvents.Count);
         _eventPool.Add(_seedEvents[randomEventIndex]);
+        foreach (EventScriptableObject genericEvent in genericEvents)
+        {
+            _eventPool.Add(genericEvent);
+        }
     }
     
     public EventScriptableObject GetEvent()

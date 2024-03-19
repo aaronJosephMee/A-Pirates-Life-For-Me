@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +10,7 @@ public class EventMenu : MonoBehaviour
     ButtonSpawner buttonSpawner;
     TextMeshProUGUI title;
     TextMeshProUGUI bodyText;
+    private List<GameObject> buttons = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +30,30 @@ public class EventMenu : MonoBehaviour
                     break;
             }
         }
-        title.text = toDisplay.name;
+        title.text = toDisplay.title;
         bodyText.text = toDisplay.flavorText;
-        buttonSpawner.Spawn(toDisplay.choices);
+        buttons = buttonSpawner.Spawn(GetChoicesFromIndices(toDisplay.initialChoices));
+    }
+
+    private Choice[] GetChoicesFromIndices(int[] indices)
+    {
+        Choice[] choices = new Choice[indices.Length];
+        for (int i = 0; i < indices.Length; i++)
+        {
+            choices[i] = toDisplay.choices.Value[indices[i]];
+        }
+
+        return choices;
+    }
+
+    public void UpdateEventMenu(String followUpText, int[] followUpChoices)
+    {
+        bodyText.text = followUpText;
+        foreach (GameObject button in buttons)
+        {
+            Destroy(button);
+        }
+
+        buttonSpawner.Spawn(GetChoicesFromIndices(followUpChoices));
     }
 }
