@@ -13,27 +13,45 @@ public class EnemyShip : MonoBehaviour
     public float EnemyHealth = 100.0f;
 
     private bool isAttacking = false;
+    private bool Alive = true;
+
+    private Rigidbody rb;
+
+    public GameObject fire;
+
+    public AudioSource cannonSound;
+    public AudioClip cannonSFX;
+    public GameObject cannonShotVFX;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        fire.SetActive(false);
+    }
 
     private void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.position);
+        if (Alive)
+        {
+            float distance = Vector3.Distance(transform.position, player.position);
 
-        if (distance < 40 && !isAttacking)
-        {
-            isAttacking = true;
-            Attack();
-        }
-        else if (distance >= 40)
-        {
-            isAttacking = false;
-            Chase();
+            if (distance < 40 && !isAttacking)
+            {
+                isAttacking = true;
+                Attack();
+            }
+            else if (distance >= 40)
+            {
+                isAttacking = false;
+                Chase();
+            }
         }
     }
 
     private void Chase()
     {
         transform.LookAt(player.position);
-        transform.position += transform.forward * 1.0f * Time.deltaTime;
+        transform.position += transform.forward * 2.0f * Time.deltaTime;
     }
 
     private void Attack()
@@ -42,6 +60,11 @@ public class EnemyShip : MonoBehaviour
 
         var _cannonBall = Instantiate(CannonBall, EnemyCannon.position, EnemyCannon.rotation);
         _cannonBall.GetComponent<Rigidbody>().velocity = EnemyCannon.forward * cannonForce;
+
+        GameObject effect = Instantiate(cannonShotVFX, EnemyCannon.position, EnemyCannon.rotation);
+        Destroy(effect, 1.5f);
+
+        cannonSound.PlayOneShot(cannonSFX);
 
         Invoke(nameof(ResetAttack), FireRate);
     }
@@ -55,11 +78,22 @@ public class EnemyShip : MonoBehaviour
     {
         EnemyHealth -= dmg;
 
-        if (EnemyHealth <= 0) DestroyEnemy();
+        if (EnemyHealth <= 0)
+        {
+            fire.SetActive(true);
+            Alive = false;
+            DisableMovementAndAttack();
+            Invoke(nameof(DestroyEnemy), 5.0f);
+        }
     }
 
     private void DestroyEnemy()
     {
         Destroy(gameObject);
+    }
+    private void DisableMovementAndAttack()
+    {
+        isAttacking = false;
+        rb.useGravity = true;
     }
 }
