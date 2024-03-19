@@ -7,12 +7,13 @@ using UnityEngine.Animations.Rigging;
 
 public class CharacterAiming : MonoBehaviour
 {
-    [HideInInspector] public CinemachineVirtualCamera vCam;
 
     public float mouseSense = 15;
     public float aimDuration = 0.3f;
 
-    //Camera mainCamera;
+    [HideInInspector] public CinemachineVirtualCamera vCam;
+
+
     public Cinemachine.AxisState xAxis, yAxis;
     [SerializeField] Transform camLookAt;
 
@@ -30,6 +31,7 @@ public class CharacterAiming : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        vCam = GetComponentInChildren<CinemachineVirtualCamera>();
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -50,7 +52,6 @@ public class CharacterAiming : MonoBehaviour
         {
             aimLayer.weight += Time.deltaTime / aimDuration;
             MeleeAttack melee = GetComponent<MeleeAttack>();
-
             if (melee != null)
             {
                 melee.enabled = false;
@@ -63,7 +64,6 @@ public class CharacterAiming : MonoBehaviour
         {
             aimLayer.weight -= Time.deltaTime / aimDuration;
             MeleeAttack melee = GetComponent<MeleeAttack>();
-
             if (melee != null)
             {
                 melee.enabled = true;

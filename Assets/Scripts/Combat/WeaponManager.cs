@@ -25,28 +25,17 @@ public class WeaponManager : MonoBehaviour
     Ray ray;
     RaycastHit hitInfo;
 
-    /*
-    public void StartFiring()
+    public WeaponRecoil recoil;
+
+    private void Awake()
     {
-        isFiring = true;    
+        recoil = GetComponent<WeaponRecoil>();
     }
-
-    private void FireBullet()
-    {
-        
-    }
-
-
-    public void StopFiring()
-    {
-        isFiring = false;
-    }
-    */
-
 
     // Start is called before the first frame update
     void Start()
     {
+        
         aim = GetComponentInParent<CharacterAiming>();
         fireRateTimer = fireRate;
     }
@@ -87,5 +76,7 @@ public class WeaponManager : MonoBehaviour
             Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
             rb.AddForce(barrelPos.forward * bulletVelocity, ForceMode.Impulse);
         }
+
+        recoil.GenerateRecoil();
     }
 }
