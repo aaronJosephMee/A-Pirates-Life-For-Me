@@ -5,9 +5,13 @@ using UnityEngine.AI;
 
 public class enemytargeting : MonoBehaviour
 {
+    
+
     private NavMeshAgent agent;
     public Transform player;
     GameObject playerAvatar;
+    public Animator animator;
+    public Player playerScript;
 
     public float attackRange = 3.0f;
     public bool withinAttackRange = false;
@@ -15,34 +19,43 @@ public class enemytargeting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>(); 
-
+        agent = GetComponent<NavMeshAgent>();
+        Animator animator = GetComponent<Animator>();
+       
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
             player = playerObject.transform;
-        }
+        } 
         else
         {
             Debug.Log("Player object not found.");
         }
+        playerScript = playerObject.GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.position);
-
-        if (distance <= attackRange)
+        if (playerScript.isDead)
         {
-            withinAttackRange = true;
-            //attack
-            Debug.Log("enemy attacks");
+            animator.SetBool("IsPlayerDead", true);
         }
         else
         {
-            withinAttackRange = false;
-            agent.destination = player.position;
+            float distance = Vector3.Distance(transform.position, player.position);
+
+            if (distance <= attackRange)
+            {
+                withinAttackRange = true;
+                //attack
+                Debug.Log("enemy attacks");
+            }
+            else
+            {
+                withinAttackRange = false;
+                agent.destination = player.position;
+            }
         }
     }
 }

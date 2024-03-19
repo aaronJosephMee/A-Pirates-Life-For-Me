@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OverworldMap.unity
     guid: c7cb269e2c88bc04c9fdc02977ec7632
   - enabled: 1
-    path: Assets/Scenes/CombatTest.unity
+    path: Assets/Scenes/CombatScenes/CombatTest.unity
     guid: 5619ffde15521c54f82e0173c2322bb1
   - enabled: 0
     path: Assets/Scenes/Rusty's Retreat.unity

@@ -51,7 +51,7 @@ public class MeleeAttack : MonoBehaviour
     private IEnumerator AttackRoutine()
     {
         yield return new WaitForSeconds(attackDuration);
-
+        
         float animationDuration = animator.GetCurrentAnimatorStateInfo(1).length;
 
         float middleStart = animationDuration / 4;
