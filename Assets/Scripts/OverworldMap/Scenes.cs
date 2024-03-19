@@ -12,6 +12,7 @@ namespace DefaultNamespace.OverworldMap
         HubShip,
         WheelMinigame,
         WoodchopMinigame,
+        Shop,
         NoScene
     }
     
@@ -37,6 +38,8 @@ namespace DefaultNamespace.OverworldMap
                     return "WheelMiniGame";
                 case SceneName.WoodchopMinigame:
                     return "WoodchopMinigame";
+                case SceneName.Shop:
+                    return "Shop";
                 default:
                     return "Error";
             }
