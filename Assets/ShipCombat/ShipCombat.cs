@@ -17,6 +17,11 @@ public class ShipCombat : MonoBehaviour
     public GameObject cannonBall;
     public Transform cannon;
 
+    public AudioSource cannonSound;
+    public AudioClip cannonSFX;
+    public AudioClip ReloadSFX;
+    public GameObject cannonShotVFX;
+
     private int Ammo = 6;
 
     public float Health = 100.0f;
@@ -54,6 +59,11 @@ public class ShipCombat : MonoBehaviour
             var _cannonBall = Instantiate(cannonBall, cannon.position, cannon.rotation);
             _cannonBall.GetComponent<Rigidbody>().velocity = cannon.forward * cannonForce;
 
+            GameObject effect = Instantiate(cannonShotVFX, cannon.position, cannon.rotation);
+            Destroy(effect, 1.5f);
+
+            cannonSound.PlayOneShot(cannonSFX);
+
             fireTime = Time.time + fireRate;
             Ammo--;
             Debug.Log("Ammo:" + Ammo + "/6");
@@ -62,15 +72,17 @@ public class ShipCombat : MonoBehaviour
 
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         if (Ammo < 6)
         {
             Ammo++;
+            cannonSound.PlayOneShot(ReloadSFX);
         }
         else
         {
             Debug.Log("Cannot reload over 6");
         }
+
     }
 
     public void TakeDamage(float dmg)
