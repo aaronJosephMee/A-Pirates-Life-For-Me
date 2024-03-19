@@ -4,14 +4,15 @@ namespace DefaultNamespace.OverworldMap
 {
     public enum SceneName
     {
-        ButtonMashing,
         OverworldMap,
+        ButtonMashing,
         PiratesVsAristocrats,
         Combat,
         TitleScreen,
         HubShip,
         WheelMinigame,
         WoodchopMinigame,
+        Shop,
         NoScene
     }
     
@@ -21,10 +22,10 @@ namespace DefaultNamespace.OverworldMap
         {
             switch (sceneName)
             {
-                case SceneName.ButtonMashing:
-                    return "ButtonMashing";
                 case SceneName.OverworldMap:
                     return "OverworldMap";
+                case SceneName.ButtonMashing:
+                    return "ButtonMashing";
                 case SceneName.PiratesVsAristocrats:
                     return "PiratesVsAristocrats";
                 case SceneName.Combat:
@@ -37,6 +38,8 @@ namespace DefaultNamespace.OverworldMap
                     return "WheelMiniGame";
                 case SceneName.WoodchopMinigame:
                     return "WoodchopMinigame";
+                case SceneName.Shop:
+                    return "Shop";
                 default:
                     return "Error";
             }

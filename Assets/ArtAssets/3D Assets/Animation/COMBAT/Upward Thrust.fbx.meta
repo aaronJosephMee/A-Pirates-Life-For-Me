@@ -40,7 +40,7 @@ ModelImporter:
       lastFrame: 140
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: 0.13
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -53,7 +53,7 @@ ModelImporter:
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
-      mirror: 1
+      mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []

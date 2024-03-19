@@ -19,6 +19,6 @@ public class ReturnTitle : MonoBehaviour
     }
     void ReturnToTitle(){
         GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>()?.DisablePlayerInput();
-        GameManager.instance.LoadScene(SceneName.TitleScreen.GetSceneString(), false);
+        GameManager.instance.LoadScene(SceneName.TitleScreen, false);
     }
 }

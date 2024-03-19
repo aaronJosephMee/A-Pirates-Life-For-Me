@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad02a2e9d3bf55748a61c77a645d06a1, type: 3}
+  m_Name: GenericNoItem
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 75ab62e25f79bb04d876deb523d76fe3, type: 3}
+  title: NoItem
+  maxlvl: 0
+  baseStats:
+    damage: 0
+    defense: 0
+    duration: 0
+  lvlStats:
+    damage: 0
+    defense: 0
+    duration: 0
+  price: 9999999

@@ -49,6 +49,9 @@ namespace DefaultNamespace.OverworldMap
                 // TODO: Add logic to generate choice node based on specific combat/event/shop being generated
                 switch (choiceType)
                 {
+                    case ChoiceType.Shop:
+                        choiceNodes.Add(new ChoiceNode(choiceType, SceneName.Shop));
+                        break;
                     case ChoiceType.Event:
                         _currentEvent = events.GetEvent();
                         choiceNodes.Add(new ChoiceNode(choiceType, _currentEvent.scene));
