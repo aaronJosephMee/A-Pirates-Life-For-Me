@@ -13,6 +13,9 @@ namespace DefaultNamespace.OverworldMap
         WheelMinigame,
         WoodchopMinigame,
         Shop,
+        IsleOfTorrent,
+        RustysRetreat,
+        Jungle,
         NoScene
     }
     
@@ -40,6 +43,12 @@ namespace DefaultNamespace.OverworldMap
                     return "WoodchopMinigame";
                 case SceneName.Shop:
                     return "Shop";
+                case SceneName.IsleOfTorrent:
+                    return "Isle of Torrent";
+                case SceneName.RustysRetreat:
+                    return "Rusty's Retreat";
+                case SceneName.Jungle:
+                    return "Jungle";
                 default:
                     return "Error";
             }

@@ -8,7 +8,7 @@ namespace DefaultNamespace
         public string scene;
         public void Interact(Collider collider)
         {
-            GameManager.instance.LoadScene(SceneName.Combat, false);
+            GameManager.instance.LoadScene(SceneName.Combat);
         }
     }
 }

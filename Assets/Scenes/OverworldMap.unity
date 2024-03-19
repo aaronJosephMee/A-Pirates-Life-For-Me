@@ -244,6 +244,8 @@ MonoBehaviour:
   storyEvents:
   - {fileID: 11400000, guid: 598f8f3309020734997774727ad3a69e, type: 2}
   - {fileID: 11400000, guid: cd221cf525957834984137e1ce49b805, type: 2}
+  - {fileID: 11400000, guid: a7f601e931c5c9d40a97a2406fe88d20, type: 2}
+  - {fileID: 11400000, guid: 7ff94567036b32e46b50ada4fbc5f8c8, type: 2}
   genericEvents:
   - {fileID: 11400000, guid: 3d561b9c49592f54097a0a76e4229464, type: 2}
   - {fileID: 11400000, guid: 44670fcc19bce744abe923946ab8bf0b, type: 2}
