@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: AristocratsVsPirates5
+  m_EditorClassIdentifier: 
+  title: Pirates Vs Aristocrats - Part III
+  scene: 11
+  sceneIdx: 1
+  flavorText: "\u201CAs you walk onto the shores of an unfamiliar island, you see
+    the unmistakable peg leg of a certain pirate. He approaches and points to a nearby
+    structure \u2013 a mansion to be exact. \u201CAhoy there, me hearty! Ye\u2019ve
+    proven yeself to be a real mate in tough times. See that mansion over there?
+    Entitled scoundrels, the lot of them. Born into wealth, yet they continue to
+    take and take from the poor. They\u2019ve been needing to walk the plank for
+    a long time now. What do ye say, will you feed em to the fishes fer me?\u201D"
+  isMinigame: 0
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Attack and kill the aristocrats. [Gain 1000 gold].
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 3
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: Refuse. Pirate becomes hostile, forcing you to attack him. [Gain relic].
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 3
+      followUpText: 
+      nextChoiceIndices:
+        Value: 

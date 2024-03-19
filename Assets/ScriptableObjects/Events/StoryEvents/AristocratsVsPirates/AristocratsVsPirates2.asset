@@ -12,24 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
   m_Name: AristocratsVsPirates2
   m_EditorClassIdentifier: 
-  title: Pirates Vs Aristocrats
-  scene: 2
-  sceneIdx: 0
-  flavorText: Scenario where you sided with aristocrats.
+  title: Pirates Vs Aristocrats - Part II
+  scene: 9
+  sceneIdx: 2
+  flavorText: "You make a quick supply run at the Isle of Torrent. On the way back
+    to your ship, a group of pirates blocks your way. \u201CArrrrr! That\u2019s the
+    one! That\u2019s the one that attacked our comrades!... You! You\u2019re not
+    getting away so easily!\u201D How do you respond?"
   isMinigame: 0
-  initialChoices: 00000000
+  initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Continue.
+    - text: Bribe the pirates. [Lose 300 gold].
       isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: a7f601e931c5c9d40a97a2406fe88d20, type: 2}
+      stats:
+        health: 0
+        gold: -300
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: Stand your ground. [Fight].
+      isTerminal: 1
+      relics:
         Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: a7f601e931c5c9d40a97a2406fe88d20, type: 2}
       stats:
         health: 0
         gold: 0
-      nextScene: 0
+      nextScene: 3
       followUpText: 
       nextChoiceIndices:
         Value: 

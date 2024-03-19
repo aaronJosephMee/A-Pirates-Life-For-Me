@@ -129,8 +129,13 @@ public class OverworldMapManager : MonoBehaviour
             {
                 callbacks.Add(() => _wasEventChosen = true);
             }
+            callbacks.Add(() => GameManager.instance.LoadScene(choiceNode.SceneName, _choiceGenerator.GetCurrentEvent().sceneIdx));
         }
-        callbacks.Add(() => GameManager.instance.LoadScene(choiceNode.SceneName, false));
+        else
+        {
+            callbacks.Add(() => GameManager.instance.LoadScene(choiceNode.SceneName));
+        }
+        
         return callbacks;
     }
 
@@ -176,7 +181,7 @@ public class OverworldMapManager : MonoBehaviour
     {
         return new List<UnityAction>()
         {
-            () => GameManager.instance.LoadScene(SceneName.HubShip, false)
+            () => GameManager.instance.LoadScene(SceneName.HubShip)
         };
     }
 
@@ -202,10 +207,11 @@ public class OverworldMapManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        GameManager.instance.LoadScene(SceneName.OverworldMap, false);
+        GameManager.instance.LoadScene(SceneName.OverworldMap);
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
         if (scene.name == SceneName.OverworldMap.GetSceneString())
         {
             if (_resetMap)
