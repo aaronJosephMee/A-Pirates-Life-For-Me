@@ -749,6 +749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombatManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5930130255283367119, guid: d53ed7f47f2a3a7478583556fd5953ec, type: 3}
+      propertyPath: itemDrop
+      value: 
+      objectReference: {fileID: 1168280414694848838, guid: 7ab25544d4edeef4c91c987279cbee30, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1196,6 +1200,10 @@ PrefabInstance:
       objectReference: {fileID: 1456408156341259848}
     - target: {fileID: 5520484091843396569, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
       propertyPath: fireRate
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520484091843396569, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: baseFireRate
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5520484091843396569, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}

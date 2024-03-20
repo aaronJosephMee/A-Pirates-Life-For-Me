@@ -11,6 +11,7 @@ public struct ItemStats{
     public int defense;
     public int duration;
     public int maxStacks;
+    public float fireRate;
 }
 public class ItemPool
 {

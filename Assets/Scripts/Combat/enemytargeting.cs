@@ -49,7 +49,7 @@ public class enemytargeting : MonoBehaviour
             {
                 withinAttackRange = true;
                 //attack
-                Debug.Log("enemy attacks");
+                //Debug.Log("enemy attacks");
             }
             else
             {

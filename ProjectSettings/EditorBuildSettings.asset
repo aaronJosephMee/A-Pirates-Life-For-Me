@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jungle.unity
     guid: 4ff626455241dc94eadf68eea63ddff1
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/Combat2.unity
+    guid: 9493cf34efc50424faacd1838213a862
   m_configObjects: {}

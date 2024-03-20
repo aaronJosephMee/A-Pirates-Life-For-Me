@@ -32,7 +32,7 @@ namespace DefaultNamespace.OverworldMap
                 case SceneName.PiratesVsAristocrats:
                     return "PiratesVsAristocrats";
                 case SceneName.Combat:
-                    return "CombatTest";
+                    return "Combat2";
                 case SceneName.TitleScreen:
                     return "TitleScreen";
                 case SceneName.HubShip:

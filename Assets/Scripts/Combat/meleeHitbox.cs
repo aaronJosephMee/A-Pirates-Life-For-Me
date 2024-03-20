@@ -15,7 +15,9 @@ public class meleeHitbox : MonoBehaviour
             enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
+                Debug.Log(swordDamage);
                 enemyHealth.DecreaseHealth(swordDamage);
+                ItemManager.instance.OnMelee();
             }
         }
     }
