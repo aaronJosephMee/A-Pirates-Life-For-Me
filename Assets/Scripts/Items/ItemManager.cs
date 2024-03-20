@@ -96,12 +96,15 @@ public class ItemManager : MonoBehaviour
         IS1.maxStacks += IS2.maxStacks;
         IS1.defense += IS2.defense;
         IS1.damage += IS2.damage;
+        IS1.fireRate += IS2.fireRate;
         return IS1;
     }
     public ItemStats SubtractStats(ItemStats IS1, ItemStats IS2){
         IS1.duration -= IS2.duration;
         IS1.defense -= IS2.defense;
         IS1.damage -= IS2.damage;
+        IS1.fireRate -= IS2.fireRate;
+        IS1.maxStacks -= IS2.maxStacks;
         return IS1;
     }
     public ItemStats GetItemStats(Item item){

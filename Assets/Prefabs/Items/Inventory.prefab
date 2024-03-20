@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6816214129317027200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: -110.009995}
+  m_AnchoredPosition: {x: -6, y: -117}
   m_SizeDelta: {x: 200, y: 34.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8770164281424415384
@@ -906,7 +906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21.548813, y: -174.68999}
+  m_AnchoredPosition: {x: -21.548813, y: -183}
   m_SizeDelta: {x: 168.9024, y: 94.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4318373139640357729
@@ -1217,7 +1217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1116320201378649800
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2539,6 +2539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponWidget
       objectReference: {fileID: 0}
+    - target: {fileID: 2790307117013820420, guid: 1eea33ab078747242ac31e7041abab29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6080211470937172972, guid: 1eea33ab078747242ac31e7041abab29, type: 3}
       propertyPath: m_LocalPosition.x
       value: -345
@@ -2640,6 +2644,10 @@ PrefabInstance:
     - target: {fileID: 6585540094237533022, guid: 5b00f3cd565e32948a7d5fd2b5eadd24, type: 3}
       propertyPath: m_Name
       value: ItemWidget
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585540094237533022, guid: 5b00f3cd565e32948a7d5fd2b5eadd24, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

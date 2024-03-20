@@ -49,6 +49,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        ItemManager.instance.OnKill();
         isDead = true;
         enemytargeting targeting = GetComponent<enemytargeting>();
         if (targeting != null)

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class combatManager : MonoBehaviour
 {
     public static combatManager Instance;
-
+    public GameObject itemDrop;
+    private CharacterAiming characterAiming;
     public int enemyCount;
 
     private void Awake()
@@ -38,5 +40,13 @@ public class combatManager : MonoBehaviour
     {
         Debug.Log("enemies all clear");
         //OverworldMapManager.Instance.TransitionBackToMap();
+        //Time.timeScale = 0f;
+        FindAnyObjectByType<Player>().aiming.enabled = false;
+        FindAnyObjectByType<CharacterLocomotion>().enabld = false;
+        FindAnyObjectByType<WeaponManager>().enabled = false;
+        FindAnyObjectByType<MeleeAttack>().enabld = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Instantiate(itemDrop);
     }
 }

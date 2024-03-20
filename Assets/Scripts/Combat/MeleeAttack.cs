@@ -11,11 +11,12 @@ public class MeleeAttack : MonoBehaviour
 
     private bool attackActive = false;
     private bool isSwing1 = true;
+    [System.NonSerialized]public bool enabld = true;
 
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && enabld)
         {
             StartAttack();
         }
