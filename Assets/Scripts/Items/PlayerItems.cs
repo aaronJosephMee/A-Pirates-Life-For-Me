@@ -11,7 +11,8 @@ public class PlayerItems
     List<string> onKill = new List<string>();
     List<string> onTakeDamage = new List<string>();
     ItemScriptableObject currentItem;
-    WeaponScriptableObject currentWeapon;
+    public WeaponScriptableObject currentGun;
+    public WeaponScriptableObject currentSword;
     int gold = 0;
     public List<string> GetMeleeRelics(){
         return onMelee;
@@ -53,16 +54,34 @@ public class PlayerItems
     public void SetItem(ItemScriptableObject item){
         currentItem = item;
     }
-    public WeaponScriptableObject GetWeapon(){
-        return currentWeapon;
+    public WeaponScriptableObject GetGun()
+    {
+        return currentGun;
     }
-    public void SetWeapon(string weapon){
-        if (currentWeapon != null){
-            totalStats = ItemManager.instance.SubtractStats(totalStats, ItemManager.instance.GetItemStats(currentWeapon));
+
+    public WeaponScriptableObject GetSword()
+    {
+        return currentSword;
+    }
+
+    public void SetGun(string weapon){
+        if (currentGun != null){
+            totalStats = ItemManager.instance.SubtractStats(totalStats, ItemManager.instance.GetItemStats(currentGun));
         }
-        currentWeapon = playerWeapons[weapon];
-        totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(currentWeapon));
+        currentGun = playerWeapons[weapon];
+        totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(currentGun));
     }
+
+    public void SetSword(string weapon)
+    {
+        if (currentSword != null)
+        {
+            totalStats = ItemManager.instance.SubtractStats(totalStats, ItemManager.instance.GetItemStats(currentSword));
+        }
+        currentSword = playerWeapons[weapon];
+        totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(currentSword));
+    }
+
     public Dictionary<string, RelicScriptableObject> GetRelics(){
         return playerRelics;
     }

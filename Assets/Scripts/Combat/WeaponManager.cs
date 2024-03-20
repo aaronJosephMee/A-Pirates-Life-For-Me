@@ -11,15 +11,21 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] bool semiAuto;
 
     [Header("Bullet Properties")]
-    [SerializeField] GameObject bullet;
-    [SerializeField] float bulletVelocity;
+    [SerializeField] public GameObject bullet;
+    [SerializeField] public float bulletVelocity;
     [SerializeField] Transform barrelPos;
-    [SerializeField] int bulletsPerShot;
+    [SerializeField] public int bulletsPerShot;
     public float damage = 25;
+    [SerializeField] public Vector3 bulletSize = Vector3.one;
+
+
+    public AudioClip[] audioClips;
+    [SerializeField] private AudioSource audioSource;
+
+    public ParticleSystem muzzleFlash;
+
     CharacterAiming aim;
 
-
-    public bool isFiring = false;
 
     [SerializeField] Transform raycastOrigin;
     public Transform raycastDesination;
@@ -27,7 +33,7 @@ public class WeaponManager : MonoBehaviour
     RaycastHit hitInfo;
 
     public WeaponRecoil recoil;
-    [System.NonSerialized] bool enabld = true;
+    [System.NonSerialized] public bool enabld = true;
 
     private void Awake()
     {
@@ -37,7 +43,6 @@ public class WeaponManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         aim = GetComponentInParent<CharacterAiming>();
         fireRateTimer = fireRate;
     }
@@ -61,7 +66,14 @@ public class WeaponManager : MonoBehaviour
     {
         fireRateTimer = 0;
         Debug.Log("Fire");
-        
+
+        ParticleSystem muzzleFlashInstance = Instantiate(muzzleFlash, raycastOrigin.position, raycastOrigin.rotation);
+        muzzleFlashInstance.Play();
+
+        int randomClip = Random.Range(0, audioClips.Length);
+        audioSource.clip = audioClips[randomClip];
+        audioSource.Play();
+
         ray.origin = raycastOrigin.position;
         ray.direction = raycastDesination.position - raycastOrigin.position;
         if(Physics.Raycast(ray, out hitInfo))
@@ -72,6 +84,8 @@ public class WeaponManager : MonoBehaviour
         for(int i = 0; i < bulletsPerShot; i++)
         {
             GameObject currentBullet = Instantiate(bullet, barrelPos.position, barrelPos.rotation);
+            currentBullet.transform.localScale = bulletSize;
+
             Bullet bulletScript = currentBullet.GetComponent<Bullet>();
             bulletScript.weapon = this;
 

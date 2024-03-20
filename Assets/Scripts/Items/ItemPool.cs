@@ -7,11 +7,17 @@ using UnityEngine.UIElements;
 
 [System.Serializable]
 public struct ItemStats{
-    public int damage;
+    public int gunDamage;
+    public int swordDamage;
     public int defense;
     public int duration;
     public int maxStacks;
+    public int bulletCount;
     public float fireRate;
+    public float projectileSize;
+    public string swordDebuff;
+    public string gunDebuff;
+    public float accuracy;
 }
 public class ItemPool
 {

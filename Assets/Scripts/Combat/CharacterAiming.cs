@@ -16,7 +16,7 @@ public class CharacterAiming : MonoBehaviour
 
     public Cinemachine.AxisState xAxis, yAxis;
     [SerializeField] Transform camLookAt;
-
+    public combatManager combat_Manager;
 
     public Rig handLayer;
     public Rig aimLayer;
@@ -47,31 +47,41 @@ public class CharacterAiming : MonoBehaviour
         yAxis.Value -= Input.GetAxisRaw("Mouse Y") * mouseSense;
         yAxis.Value = Mathf.Clamp(yAxis.Value, -80, 80);
         
-
-        if (Input.GetMouseButton(1))
+        if(combat_Manager.waveCleared == false)
         {
-            aimLayer.weight += Time.deltaTime / aimDuration;
-            MeleeAttack melee = GetComponent<MeleeAttack>();
-            if (melee != null)
+            if (Input.GetMouseButton(1) )
             {
-                melee.enabled = false;
+                aimLayer.weight += Time.deltaTime / aimDuration;
+                MeleeAttack melee = GetComponent<MeleeAttack>();
+                if (melee != null)
+                {
+                    melee.enabled = false;
+                }
+                sword.SetActive(false);
+                gun.SetActive(true);
+                handLayer.weight += Time.deltaTime / aimDuration;
             }
-            sword.SetActive(false);
-            gun.SetActive(true);
-            handLayer.weight += Time.deltaTime / aimDuration;
+            else
+            {
+                aimLayer.weight -= Time.deltaTime / aimDuration;
+                MeleeAttack melee = GetComponent<MeleeAttack>();
+                if (melee != null)
+                {
+                    melee.enabled = true;
+                }
+                sword.SetActive(true);
+                gun.SetActive(false);
+                handLayer.weight -= Time.deltaTime / aimDuration;
+            } 
         }
+
         else
         {
-            aimLayer.weight -= Time.deltaTime / aimDuration;
-            MeleeAttack melee = GetComponent<MeleeAttack>();
-            if (melee != null)
-            {
-                melee.enabled = true;
-            }
-            sword.SetActive(true);
-            gun.SetActive(false);
-            handLayer.weight -= Time.deltaTime / aimDuration;
+            handLayer.weight = 0;
+            aimLayer.weight = 0;
         }
+
+        
 
     }
 

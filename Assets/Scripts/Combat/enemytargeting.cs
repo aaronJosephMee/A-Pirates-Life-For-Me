@@ -48,12 +48,13 @@ public class enemytargeting : MonoBehaviour
             if (distance <= attackRange)
             {
                 withinAttackRange = true;
-                //attack
-                //Debug.Log("enemy attacks");
+                animator.SetBool("inRange", true);
+                transform.LookAt(player.position); 
             }
             else
             {
                 withinAttackRange = false;
+                animator.SetBool("inRange", false); 
                 agent.destination = player.position;
             }
         }

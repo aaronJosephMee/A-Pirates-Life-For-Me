@@ -6,83 +6,94 @@ public class MeleeAttack : MonoBehaviour
 {
     public Animator animator;
     public Collider hitbox;
-    public float attackDuration = 0.5f;
-    public float blendSpeed = 0.5f;
 
     private bool attackActive = false;
     private bool isSwing1 = true;
     [System.NonSerialized]public bool enabld = true;
 
+    public AudioClip swing1Audio;
+    public AudioClip swing2Audio;
+
+    [SerializeField] private AudioSource audioSource;
+
+
+    public float blendSpeed = 0.1f;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && enabld)
+        if (Input.GetMouseButtonDown(0) && enabld && !attackActive )
         {
             StartAttack();
+            attackActive = true;
+
         }
     }
+
 
     //TODO: make modular combo system with a 3rd swing
 
     private void StartAttack()
     {
-        if (!attackActive)
-        {
-            attackActive = true;
 
-            if (isSwing1)
-            {
-                animator.Play("SwordSwing", 1, 0f);
-
-            }
-            else
-            {
-                animator.Play("swordSwing2", 1, 0f);
-
-            }
-
-            isSwing1 = !isSwing1;
-
-            animator.SetLayerWeight(1, 1);
-
-            StartCoroutine(AttackRoutine());
-        }
-    }
-
-    private IEnumerator AttackRoutine()
-    {
-        yield return new WaitForSeconds(attackDuration);
-        
-        float animationDuration = animator.GetCurrentAnimatorStateInfo(1).length;
-
-        float middleStart = animationDuration / 4;
-        float middleEnd = 2 * animationDuration /3;
-
-        while (animator.GetCurrentAnimatorStateInfo(1).normalizedTime < middleStart)
-        {
-            yield return null;
-        }
-
-        hitbox.enabled = true;
-
-        while (animator.GetCurrentAnimatorStateInfo(1).normalizedTime < middleEnd)
-        {
-            yield return null;
-        }
 
         hitbox.enabled = false;
-
-        float elapsedTime = 0f;
-        while (elapsedTime < blendSpeed)
+        if (isSwing1)
         {
-            float newWeight = Mathf.Lerp(1, 0, elapsedTime / blendSpeed);
-            animator.SetLayerWeight(1, newWeight);
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            animator.Play("SwordSwing", 1, 0f);
+            audioSource.PlayOneShot(swing1Audio);
+        }
+        if (!isSwing1)
+        {
+
+            animator.Play("swordSwing2", 1, 0f);
+            audioSource.PlayOneShot(swing2Audio);
         }
 
-        animator.SetLayerWeight(1, 0);
 
-        attackActive = false;
+
+        animator.SetLayerWeight(1, 1);
+
     }
+
+    public void EnableHitbox()
+    {
+        hitbox.enabled = true;
+        
+    }
+
+    public void DisableHitbox()
+    {
+        hitbox.enabled = false;
+        
+
+    }
+    //public void layerBlend()
+    //{
+    //    StartCoroutine(BlendLayer());
+    //}
+    
+
+    //public IEnumerator BlendLayer()
+    //{
+    //    float elapsedTime = 0f;
+    //    while (elapsedTime < blendSpeed)
+    //    {
+    //        float newWeight = Mathf.Lerp(1, 0, elapsedTime / blendSpeed);
+    //        animator.SetLayerWeight(1, newWeight);
+    //        elapsedTime += Time.deltaTime;
+    //        yield return null;
+    //    }
+
+    //    animator.SetLayerWeight(1, 0);
+    //    attackActive = false;
+    //}
+
+    public void AnimEnd()
+    {
+        isSwing1 = !isSwing1;
+        attackActive = false;
+        animator.SetLayerWeight(1, 0); //move after anim fix
+    }
+
+
 }

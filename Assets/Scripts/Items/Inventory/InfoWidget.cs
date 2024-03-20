@@ -35,8 +35,8 @@ public class InfoWidget : MonoBehaviour
         for (int i = 1; i<item.curlvl;i++){
             stats = ItemManager.instance.CombineStats(stats,item.lvlStats);
         }
-        if (stats.damage != 0){
-            info += "Damage: " + stats.damage + "\n";
+        if (stats.gunDamage != 0){
+            info += "Damage: " + stats.gunDamage + "\n";
         }
         if (stats.defense != 0){
             info += "Defense: " + stats.defense + "\n";
@@ -72,8 +72,8 @@ public class InfoWidget : MonoBehaviour
         for (int i = 1; i<item.curlvl;i++){
             stats = ItemManager.instance.CombineStats(stats,item.lvlStats);
         }
-        if (item.lvlStats.damage != 0){
-            info += "Damage: " + stats.damage + " -> " + (stats.damage + item.lvlStats.damage) + "\n";
+        if (item.lvlStats.gunDamage != 0){
+            info += "Damage: " + stats.gunDamage + " -> " + (stats.gunDamage + item.lvlStats.gunDamage) + "\n";
         }
         if (item.lvlStats.defense != 0){
             info += "Defense: " + stats.defense + " -> " + (stats.defense + item.lvlStats.defense) + "\n";

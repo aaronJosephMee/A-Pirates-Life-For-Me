@@ -8,7 +8,7 @@ public class WeaponWidget : InventoryItem
     // Start is called before the first frame update
     void Start()
     {
-        weapon = ItemManager.instance.playerItems.GetWeapon();
+        //weapon = ItemManager.instance.playerItems.GetWeapon();
         this.GiveItem(weapon);
     }
 
