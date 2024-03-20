@@ -8,8 +8,7 @@ public class EventMenu : MonoBehaviour
 {
     EventScriptableObject toDisplay;
     ButtonSpawner buttonSpawner;
-    TextMeshProUGUI title;
-    TextMeshProUGUI bodyText;
+    [SerializeField] private TextMeshProUGUI bodyText;
     private List<GameObject> buttons = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -22,15 +21,11 @@ public class EventMenu : MonoBehaviour
         foreach (TextMeshProUGUI tmp in tmps){
             Debug.Log(tmp.name);
             switch(tmp.name){
-                case "Name":
-                    title = tmp;
-                    break;
                 case "Body Text":
                     bodyText = tmp;
                     break;
             }
         }
-        title.text = toDisplay.title;
         bodyText.text = toDisplay.flavorText;
         buttons = buttonSpawner.Spawn(GetChoicesFromIndices(toDisplay.initialChoices));
     }
