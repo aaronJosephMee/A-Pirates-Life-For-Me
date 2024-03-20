@@ -61,73 +61,51 @@ public class wheelRotation : MonoBehaviour
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 45 - 23);
             StartCoroutine(relicWait());
-            Win(1);
-            
-            
         }
         else if (rot > 45 && rot <= 90)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,90-23);
-            StartCoroutine(relicWait());
-            
-           
             ItemManager.instance.AddGold(100);
-            Win(2);
+            StartCoroutine(WinWait());
         }
         else if (rot > 90 && rot <= 135)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,135-23);
             StartCoroutine(relicWait()); 
-           
-            Win(3);
         }
         else if (rot > 135 && rot <= 180)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,180-23);
-            StartCoroutine(relicWait()); 
-          
             ItemManager.instance.AddGold(100);
-            
-            Win(4);
-            
+            StartCoroutine(WinWait());
         }
         else if (rot > 180 && rot <= 225)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,225-23);
-            StartCoroutine(relicWait()); 
-          
             ItemManager.instance.AddGold(-100);
-            
-            Win(5);
+            StartCoroutine(WinWait());
         }
         
         else if (rot > 225 && rot <= 270)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,270-23);
-            StartCoroutine(relicWait()); 
-            
             ItemManager.instance.AddGold(100);
-            
-            Win(6);
+            StartCoroutine(WinWait());
             
         }
         
         else if (rot > 270 && rot <= 315)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,315-23);
-            StartCoroutine(relicWait()); 
             ItemManager.instance.AddGold(-100);
-            Win(7);
+            StartCoroutine(WinWait());
         }
         
         else if (rot > 315 && rot <= 360)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,315+23);
-            StartCoroutine(relicWait()); 
-            
             ItemManager.instance.AddGold(100);
-            Win(8);
-            
+            StartCoroutine(WinWait());
         }
     }
     
@@ -139,9 +117,9 @@ public class wheelRotation : MonoBehaviour
     }
     
     
-    public void Win(int Score)
+    public IEnumerator WinWait()
     {
-        print(Score);
+        yield return new WaitForSeconds(_delay); 
         OverworldMapManager.Instance.TransitionBackToMap();
     }
 
