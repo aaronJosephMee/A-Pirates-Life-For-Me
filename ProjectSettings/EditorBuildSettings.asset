@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: 1bf5dafb44e23b94d9310f206b01ff56
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Isle of Torrent.unity
     guid: 4f9b006b43604c945a24b153bfcc3b15
   - enabled: 1
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatScenes/CombatTest.unity
     guid: 5619ffde15521c54f82e0173c2322bb1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Rusty's Retreat.unity
     guid: 6e930e78f6f073042ae41a9aaafeefa1
   - enabled: 1
@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: ebbb1541cffcbc8428b2504d711d68fb
+  - enabled: 1
+    path: Assets/Scenes/Jungle.unity
+    guid: 4ff626455241dc94eadf68eea63ddff1
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/Combat2.unity
+    guid: 9493cf34efc50424faacd1838213a862
   m_configObjects: {}
