@@ -2,13 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Animations.Rigging;
+
 
 public class combatManager : MonoBehaviour
 {
     public static combatManager Instance;
     public GameObject itemDrop;
-    private CharacterAiming characterAiming;
     public int enemyCount;
+    public GameObject playerObject;
+
+    public Animator playerAnim;
+    public CharacterLocomotion playerMove;
+    public CharacterAiming playerAim;
+    public WeaponManager playerGun;
+    public MeleeAttack playerSword;
+    CameraManager cameraManager;
+    public bool waveCleared = false;
+    [SerializeField] GameObject sword;
+    [SerializeField] GameObject gun;
+
+    void Start()
+    {
+
+        waveCleared = false;
+
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+        playerAnim = playerObject.GetComponent<Animator>();
+
+        playerMove = playerObject.GetComponent<CharacterLocomotion>();
+
+        playerAim = playerObject.GetComponent<CharacterAiming>();
+
+        playerGun = playerObject.GetComponentInChildren<WeaponManager>();
+
+        playerSword = playerObject.GetComponentInChildren<MeleeAttack>();
+
+        cameraManager = FindObjectOfType<CameraManager>();
+    }
 
     private void Awake()
     {
@@ -37,16 +69,34 @@ public class combatManager : MonoBehaviour
     }
 
     public void CombatCleared()
+    {   
+        waveCleared = true;
+        sword.SetActive(false);
+        gun.SetActive(false);
+        cameraManager.EnableWinCam();
+        playerAnim.SetBool("clearedWave", true);
+        
+        StartCoroutine(DelayedCombatClear());
+    }
+
+    IEnumerator DelayedCombatClear()
     {
+ 
+        yield return new WaitForSeconds(2f);
+
+        
         Debug.Log("enemies all clear");
         //OverworldMapManager.Instance.TransitionBackToMap();
-        //Time.timeScale = 0f;
-        FindAnyObjectByType<Player>().aiming.enabled = false;
-        FindAnyObjectByType<CharacterLocomotion>().enabld = false;
-        FindAnyObjectByType<WeaponManager>().enabled = false;
-        FindAnyObjectByType<MeleeAttack>().enabld = false;
+        
+
+        playerMove.enabled = false;
+        playerGun.enabled = false;
+        playerSword.enabled = false;
+        playerAim.enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        yield return new WaitForSeconds(4f);
         Instantiate(itemDrop);
     }
 }

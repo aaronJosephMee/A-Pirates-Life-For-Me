@@ -36,8 +36,8 @@ ModelImporter:
       name: mixamo.com
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 4
-      lastFrame: 82
+      firstFrame: 0
+      lastFrame: 89
       wrapMode: 0
       orientationOffsetY: 20.37
       level: 0.13
@@ -56,7 +56,28 @@ ModelImporter:
       mirror: 1
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.44047618
+        functionName: EnableHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 9ea8a501cebe07b489750dd0cbe03a88, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.68253964
+        functionName: DisableHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 9ea8a501cebe07b489750dd0cbe03a88, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.984127
+        functionName: AnimEnd
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 9ea8a501cebe07b489750dd0cbe03a88, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

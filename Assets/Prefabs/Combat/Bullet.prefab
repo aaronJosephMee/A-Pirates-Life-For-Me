@@ -187,7 +187,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.11174938
+        value: 0.06762859
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -252,3 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 10
+  bulletLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  weapon: {fileID: 0}
