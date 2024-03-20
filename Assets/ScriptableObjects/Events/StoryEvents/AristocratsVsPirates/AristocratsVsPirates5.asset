@@ -15,13 +15,13 @@ MonoBehaviour:
   title: Pirates Vs Aristocrats - Part III
   scene: 11
   sceneIdx: 1
-  flavorText: "\u201CAs you walk onto the shores of an unfamiliar island, you see
-    the unmistakable peg leg of a certain pirate. He approaches and points to a nearby
-    structure \u2013 a mansion to be exact. \u201CAhoy there, me hearty! Ye\u2019ve
-    proven yeself to be a real mate in tough times. See that mansion over there?
-    Entitled scoundrels, the lot of them. Born into wealth, yet they continue to
-    take and take from the poor. They\u2019ve been needing to walk the plank for
-    a long time now. What do ye say, will you feed em to the fishes fer me?\u201D"
+  flavorText: "As you walk onto the shores of an unfamiliar island, you see the unmistakable
+    peg leg of a certain pirate. He approaches and points to a nearby structure \u2013
+    a mansion to be exact. \u201CAhoy there, me hearty! Ye\u2019ve proven yeself
+    to be a real mate in tough times. See that mansion over there? Entitled scoundrels,
+    the lot of them. Born into wealth, yet they continue to take and take from the
+    poor. They\u2019ve been needing to walk the plank for a long time now. What do
+    ye say, will you feed em to the fishes fer me?"
   isMinigame: 0
   initialChoices: 0000000001000000
   choices:
