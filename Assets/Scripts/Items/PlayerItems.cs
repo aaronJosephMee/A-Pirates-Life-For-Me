@@ -35,6 +35,11 @@ public class PlayerItems
     }
     public void AddGold(int goldToAdd){
         gold += goldToAdd;
+
+        if (gold < 0)
+        {
+            gold = 0; 
+        }
     }
     public int CurrentGold(){
         return gold;
