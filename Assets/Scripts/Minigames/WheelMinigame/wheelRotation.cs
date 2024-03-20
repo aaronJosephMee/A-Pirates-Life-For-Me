@@ -10,6 +10,8 @@ public class wheelRotation : MonoBehaviour
     int inRotate;
     float stop;
 
+    public GameObject relicChoice;
+    private int _delay = 1; 
     private void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
@@ -32,12 +34,14 @@ public class wheelRotation : MonoBehaviour
             t += 1 * Time.deltaTime;
             if (t >= 0.5f)
             {
-                GetReward();
+                
                 inRotate = 0;
                 t = 0;
                 stop = Random.Range(500f, 1500f); // Generate a new random stop value
+                GetReward();
             }
         }
+        
     }
 
     public void Rotate() 
@@ -53,27 +57,93 @@ public class wheelRotation : MonoBehaviour
     {
         float rot = transform.eulerAngles.z;
 
-        if (rot >= 0 && rot <= 90)
+        if (rot > 0 && rot <= 45)
         {
-            Win(100);
+            GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 45 - 23);
+            StartCoroutine(relicWait());
+            Win(1);
+            
+            
         }
-        else if (rot > 90 && rot <= 180)
+        else if (rot > 45 && rot <= 90)
         {
-            Win(200);
+            GetComponent<Transform>().eulerAngles = new Vector3(0,0,90-23);
+            StartCoroutine(relicWait());
+            
+           
+            ItemManager.instance.AddGold(100);
+            Win(2);
         }
-        else if (rot > 180 && rot <= 270)
+        else if (rot > 90 && rot <= 135)
         {
-            Win(300);
+            GetComponent<Transform>().eulerAngles = new Vector3(0,0,135-23);
+            StartCoroutine(relicWait()); 
+           
+            Win(3);
         }
-        else if (rot > 270 && rot <= 360)
+        else if (rot > 135 && rot <= 180)
         {
-            Win(400);
+            GetComponent<Transform>().eulerAngles = new Vector3(0,0,180-23);
+            StartCoroutine(relicWait()); 
+          
+            ItemManager.instance.AddGold(100);
+            
+            Win(4);
+            
+        }
+        else if (rot > 180 && rot <= 225)
+        {
+            GetComponent<Transform>().eulerAngles = new Vector3(0,0,225-23);
+            StartCoroutine(relicWait()); 
+          
+            ItemManager.instance.AddGold(-100);
+            
+            Win(5);
+        }
+        
+        else if (rot > 225 && rot <= 270)
+        {
+            GetComponent<Transform>().eulerAngles = new Vector3(0,0,270-23);
+            StartCoroutine(relicWait()); 
+            
+            ItemManager.instance.AddGold(100);
+            
+            Win(6);
+            
+        }
+        
+        else if (rot > 270 && rot <= 315)
+        {
+            GetComponent<Transform>().eulerAngles = new Vector3(0,0,315-23);
+            StartCoroutine(relicWait()); 
+            ItemManager.instance.AddGold(-100);
+            Win(7);
+        }
+        
+        else if (rot > 315 && rot <= 360)
+        {
+            GetComponent<Transform>().eulerAngles = new Vector3(0,0,315+23);
+            StartCoroutine(relicWait()); 
+            
+            ItemManager.instance.AddGold(100);
+            Win(8);
+            
         }
     }
-
+    
+    
+    private IEnumerator relicWait()
+    {
+        yield return new WaitForSeconds(_delay); 
+        Instantiate(relicChoice);
+    }
+    
+    
     public void Win(int Score)
     {
         print(Score);
         OverworldMapManager.Instance.TransitionBackToMap();
     }
+
+    
 }
