@@ -5,8 +5,9 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     [Header("Fire Rate")]
-    [SerializeField] float fireRate;
+    [SerializeField] public float fireRate;
     float fireRateTimer;
+    [SerializeField] public float baseFireRate;
     [SerializeField] bool semiAuto;
 
     [Header("Bullet Properties")]
@@ -25,28 +26,18 @@ public class WeaponManager : MonoBehaviour
     Ray ray;
     RaycastHit hitInfo;
 
-    /*
-    public void StartFiring()
+    public WeaponRecoil recoil;
+    [System.NonSerialized] bool enabld = true;
+
+    private void Awake()
     {
-        isFiring = true;    
+        recoil = GetComponent<WeaponRecoil>();
     }
-
-    private void FireBullet()
-    {
-        
-    }
-
-
-    public void StopFiring()
-    {
-        isFiring = false;
-    }
-    */
-
 
     // Start is called before the first frame update
     void Start()
     {
+        
         aim = GetComponentInParent<CharacterAiming>();
         fireRateTimer = fireRate;
     }
@@ -54,7 +45,7 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ShouldFire()) Fire();
+        if (ShouldFire() && enabld) Fire();
     }
 
     bool ShouldFire()
@@ -87,5 +78,7 @@ public class WeaponManager : MonoBehaviour
             Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
             rb.AddForce(barrelPos.forward * bulletVelocity, ForceMode.Impulse);
         }
+
+        recoil.GenerateRecoil();
     }
 }

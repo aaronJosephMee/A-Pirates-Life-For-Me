@@ -37,7 +37,7 @@ public class ChoiceButton : MonoBehaviour
             ItemManager.instance.AddGold(toDisplay.stats.gold);
             // TODO: Add logic to reward player with stats and relics
             Destroy(this.transform.parent.gameObject);
-            GameManager.instance.LoadScene(toDisplay.nextScene, false);
+            GameManager.instance.LoadScene(toDisplay.nextScene);
         }
         else
         {

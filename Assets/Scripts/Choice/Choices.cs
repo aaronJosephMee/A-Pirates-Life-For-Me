@@ -94,7 +94,7 @@ public class Choices
             string[] flagAndVal = line.Split(" ");
             GameManager.choices.SetFlag(flagAndVal[0], int.Parse(flagAndVal[1]));
         }
-        GameManager.instance.LoadScene(SceneName.Combat, false);
+        GameManager.instance.LoadScene(SceneName.Combat);
     }
     //Creates a savefile storing the flags and current scene
     public void SaveState(){

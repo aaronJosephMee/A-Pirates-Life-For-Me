@@ -9,6 +9,11 @@ public class EnemyHealth : MonoBehaviour
 
     Ragdoll ragdoll;
 
+    SkinnedMeshRenderer skinnedMeshRenderer;
+    public float blinkIntensity;
+    public float blinkDuration;
+    float blinkTimer;
+
     combatManager combatManager;
 
     // Start is called before the first frame update
@@ -16,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
     {
         ragdoll = GetComponent<Ragdoll>();
         currentHealth = maxHealth;
-
+        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         combatManager = FindObjectOfType<combatManager>();
 
         isDead = false;
@@ -25,7 +30,10 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        blinkTimer -= Time.deltaTime;
+        float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
+        float intensity = (lerp * blinkIntensity) + 1.0f;
+        skinnedMeshRenderer.material.color = Color.white * intensity;
     }
 
     public void DecreaseHealth(float amount)
@@ -36,16 +44,13 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
-        
+        blinkTimer = blinkDuration;
     }
 
     private void Die()
     {
+        ItemManager.instance.OnKill();
         isDead = true;
-
-        ragdoll.ActivateRagdoll();
-        combatManager.Instance.DecreaseEnemyCount();
-
         enemytargeting targeting = GetComponent<enemytargeting>();
         if (targeting != null)
         {
@@ -58,6 +63,10 @@ public class EnemyHealth : MonoBehaviour
             agent.enabled = false;
         }
 
+        ragdoll.ActivateRagdoll();
+        combatManager.Instance.DecreaseEnemyCount();
+
+        
 
         //StartCoroutine(DestroyAfterDelay(1.5f));
     }

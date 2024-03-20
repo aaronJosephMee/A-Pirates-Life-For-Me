@@ -20,6 +20,7 @@ public class DropItem : ShopItem
     {
         if (item != null && item != ItemManager.instance.GenericNoItem){
             base.OnPointerDown(eventData);
+            OverworldMapManager.Instance.TransitionBackToMap();
             Destroy(this.transform.parent.parent.parent.gameObject);
         }
     }

@@ -11,11 +11,12 @@ public class MeleeAttack : MonoBehaviour
 
     private bool attackActive = false;
     private bool isSwing1 = true;
+    [System.NonSerialized]public bool enabld = true;
 
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && enabld)
         {
             StartAttack();
         }
@@ -51,7 +52,7 @@ public class MeleeAttack : MonoBehaviour
     private IEnumerator AttackRoutine()
     {
         yield return new WaitForSeconds(attackDuration);
-
+        
         float animationDuration = animator.GetCurrentAnimatorStateInfo(1).length;
 
         float middleStart = animationDuration / 4;
