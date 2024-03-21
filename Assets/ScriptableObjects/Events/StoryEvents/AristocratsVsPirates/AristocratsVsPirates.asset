@@ -23,7 +23,7 @@ MonoBehaviour:
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Side with the aristocrats. Gain 300 gold.
+    - text: Side with the aristocrats.
       isTerminal: 0
       relics:
         Value: []
@@ -34,10 +34,10 @@ MonoBehaviour:
         gold: 0
       nextScene: 0
       followUpText: The aristocrats easily dispatch the pirates with your help. You
-        are handsomly rewarded for your efforts.
+        are handsomly rewarded for your efforts. [Gain 300 gold].
       nextChoiceIndices:
         Value: 02000000
-    - text: Side with the pirates. Gain pirate flag relic.
+    - text: Side with the pirates.
       isTerminal: 0
       relics:
         Value: []
@@ -48,7 +48,8 @@ MonoBehaviour:
         gold: 0
       nextScene: 0
       followUpText: The pirates easily dispatch the aristocrats with your help. The
-        pirate captain gives you a strange artifact for your efforts.
+        pirate captain gives you a strange artifact for your efforts. [Gain Pirate
+        Flag].
       nextChoiceIndices:
         Value: 03000000
     - text: Continue.
