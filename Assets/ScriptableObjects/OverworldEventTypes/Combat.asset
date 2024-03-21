@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceType: 2
   sprite: {fileID: 21300000, guid: 784e1bb60b2c59e419a328076cb18d7a, type: 3}
+  icon: {fileID: 1238768082479332, guid: 1c667b53584c9a1428c434f2e41be489, type: 3}

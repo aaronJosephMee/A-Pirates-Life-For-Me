@@ -79,9 +79,7 @@ namespace DefaultNamespace.OverworldMap
             {
                 ChoiceType.Event, 
                 ChoiceType.Shop, 
-                ChoiceType.Combat, 
-                ChoiceType.EliteCombat, 
-                ChoiceType.Healing
+                ChoiceType.Combat
             };
 
             if (_previousChoice != ChoiceType.Ship)

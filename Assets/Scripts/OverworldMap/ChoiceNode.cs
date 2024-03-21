@@ -50,6 +50,11 @@ namespace DefaultNamespace.OverworldMap
             return _button;
         }
 
+        public Vector3 GetSavedPosition()
+        {
+            return _savedPosition;
+        }
+
         public void TravelToNode(Sprite sprite, List<UnityAction> callbacks)
         {
             _image.sprite = sprite;
