@@ -7,7 +7,7 @@ public class CharacterLocomotion : MonoBehaviour
 {
     Animator animator;
     Vector2 input;
-    [NonSerialized] public bool enabld = true; 
+    [System.NonSerialized] public bool enabld = true; 
 
     // Start is called before the first frame update
     void Start()

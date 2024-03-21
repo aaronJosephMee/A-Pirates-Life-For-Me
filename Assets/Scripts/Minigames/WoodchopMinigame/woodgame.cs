@@ -4,7 +4,11 @@ using System.Collections;
 
 public class WoodMiniGame : MonoBehaviour
 {
-    public Canvas image;
+    public Canvas WImage;
+    public Canvas AImage;
+    public Canvas SImage;
+    public Canvas DImage;
+    public int keyNumber;
     public int treeHP = 6;
 
     private int chops;
@@ -18,7 +22,10 @@ public class WoodMiniGame : MonoBehaviour
 
     void Start()
     {
-        image.enabled = false;
+        WImage.enabled = false;
+        AImage.enabled = false;
+        SImage.enabled = false;
+        DImage.enabled = false;
         input = false;
         chops = 0;
         SwingTime = Time.time + Random.Range(1.5f, 3.0f);
@@ -40,7 +47,19 @@ public class WoodMiniGame : MonoBehaviour
 
     void DisplayKey()
     {
-        image.enabled = true;
+        keyNumber = Random.Range(1,5);
+        if (keyNumber == 1) {
+            WImage.enabled = true;
+        }
+        else if (keyNumber == 2) {
+            AImage.enabled = true;
+        }
+        else if (keyNumber == 3) {
+            SImage.enabled = true;
+        }
+        else if (keyNumber == 4) {
+            DImage.enabled = true;
+        }
         input = true;
         StartCoroutine(HideKey());
         Destroy(particle);
@@ -48,7 +67,9 @@ public class WoodMiniGame : MonoBehaviour
 
     void CheckInput()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if ( (keyNumber == 1 && Input.GetKeyDown(KeyCode.W)) ||
+        (keyNumber == 2 && Input.GetKeyDown(KeyCode.A)) || (keyNumber == 3 && Input.GetKeyDown(KeyCode.S))
+        || (keyNumber == 4 && Input.GetKeyDown(KeyCode.D)))
         {
             chops++;
             Debug.Log("Chop " + chops + "/" + treeHP);
@@ -68,7 +89,18 @@ public class WoodMiniGame : MonoBehaviour
     IEnumerator HideKey()
     {
         yield return new WaitForSeconds(0.5f);
-        image.enabled = false;
+        if (keyNumber == 1) {
+            WImage.enabled = false;
+        }
+        else if (keyNumber == 2) {
+            AImage.enabled = false;
+        }
+        else if (keyNumber == 3) {
+            SImage.enabled = false;
+        }
+        else if (keyNumber == 4) {
+            DImage.enabled = false;
+        }
         input = false;
     }
 }

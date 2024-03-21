@@ -1,17 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UIElements;
+public enum Debuffs {
+    [Description("None")]
+    None,
+    [Description("Fire")]
+    Fire,
+}
 
 [System.Serializable]
 public struct ItemStats{
-    public int damage;
+    public int gunDamage;
+    public int swordDamage;
     public int defense;
     public int duration;
     public int maxStacks;
+    public int bulletCount;
     public float fireRate;
+    public float projectileSize;
+    public Debuffs swordDebuff;
+    public Debuffs gunDebuff;
+    public float accuracy;
 }
 public class ItemPool
 {
