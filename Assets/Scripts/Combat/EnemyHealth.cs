@@ -47,7 +47,7 @@ public class EnemyHealth : MonoBehaviour
         skinnedMeshRenderer.material.color = Color.white * intensity;
     }
 
-    public void DecreaseHealth(float amount, string type, string debuff)
+    public void DecreaseHealth(float amount, string type)
     {
         currentHealth -= amount;
         if (type == "gun")
@@ -72,7 +72,16 @@ public class EnemyHealth : MonoBehaviour
         if (type=="gun")
         {Debug.Log("Gun Hit"); }
         if(type == "sword")
-        { Debug.Log("sword Hit" + debuff); }
+        { 
+            Dictionary<string, int> debuffs = ItemManager.instance.GetSwordDebuffs();    
+            foreach (KeyValuePair<string, int> debuff in debuffs){
+                if (debuff.Key == Debuffs.Fire.ToString()){
+                    Debug.Log("On fire halp");
+                    StartCoroutine(OnFire(debuff.Value));
+                }
+            }
+
+        }
         ShowFloatingText(amount);
 
         
@@ -122,5 +131,15 @@ public class EnemyHealth : MonoBehaviour
 
 
         Destroy(gameObject);
+    }
+    IEnumerator OnFire(int duration){
+        int damage = 1;
+        while (duration > 0){
+            yield return new WaitForSeconds(0.5f);
+            this.DecreaseHealth(damage, "fire");
+            duration--;
+            damage++;
+        }
+
     }
 }

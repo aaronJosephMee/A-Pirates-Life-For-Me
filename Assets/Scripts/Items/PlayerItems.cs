@@ -10,10 +10,19 @@ public class PlayerItems
     List<string> onMelee = new List<string>();
     List<string> onKill = new List<string>();
     List<string> onTakeDamage = new List<string>();
+    Dictionary<string, int> meleeDebuffs = new Dictionary<string, int>();
+    Dictionary<string, int> gunDebuffs = new Dictionary<string, int>();
+
     ItemScriptableObject currentItem;
     public WeaponScriptableObject currentGun;
     public WeaponScriptableObject currentSword;
     int gold = 0;
+    public Dictionary<string, int> GetSwordDebuffs(){
+        return meleeDebuffs;
+    }
+    public Dictionary<string, int>GetGunDebuffs(){
+        return gunDebuffs;
+    }
     public List<string> GetMeleeRelics(){
         return onMelee;
     }
@@ -67,9 +76,23 @@ public class PlayerItems
     public void SetGun(string weapon){
         if (currentGun != null){
             totalStats = ItemManager.instance.SubtractStats(totalStats, ItemManager.instance.GetItemStats(currentGun));
+            if (currentGun.baseStats.gunDebuff != Debuffs.None){
+                gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] = gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] - ItemManager.instance.GetItemStats(currentGun).duration;
+                if (gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] <= 0){
+                    gunDebuffs.Remove(currentGun.baseStats.gunDebuff.ToString());
+                }
+            }
         }
         currentGun = playerWeapons[weapon];
         totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(currentGun));
+        if (currentGun.baseStats.gunDebuff != Debuffs.None){
+            if (gunDebuffs.TryGetValue(currentGun.baseStats.gunDebuff.ToString(), out int i)){
+                gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] = i + ItemManager.instance.GetItemStats(currentGun).duration;
+            }
+            else{
+                gunDebuffs.Add(currentGun.baseStats.gunDebuff.ToString(), ItemManager.instance.GetItemStats(currentGun).duration);             
+            }
+        }
     }
 
     public void SetSword(string weapon)
@@ -77,9 +100,23 @@ public class PlayerItems
         if (currentSword != null)
         {
             totalStats = ItemManager.instance.SubtractStats(totalStats, ItemManager.instance.GetItemStats(currentSword));
+            if (currentSword.baseStats.swordDebuff != Debuffs.None){
+                meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] = meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] - ItemManager.instance.GetItemStats(currentSword).duration;
+                if (meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] <= 0){
+                    meleeDebuffs.Remove(currentSword.baseStats.swordDebuff.ToString());
+                }
+            }
         }
         currentSword = playerWeapons[weapon];
         totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(currentSword));
+        if (currentSword.baseStats.swordDebuff != Debuffs.None){
+            if (meleeDebuffs.TryGetValue(currentSword.baseStats.swordDebuff.ToString(), out int i)){
+                meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] = i + ItemManager.instance.GetItemStats(currentSword).duration;
+            }
+            else{
+                meleeDebuffs.Add(currentSword.baseStats.swordDebuff.ToString(), ItemManager.instance.GetItemStats(currentSword).duration);             
+            }
+        }
     }
 
     public Dictionary<string, RelicScriptableObject> GetRelics(){
@@ -93,6 +130,17 @@ public class PlayerItems
             if (r.activator == Activators.Passive){
                 totalStats = ItemManager.instance.CombineStats(totalStats, relic.lvlStats); 
             }
+            if (relic.baseStats.swordDebuff != Debuffs.None){
+                Debug.Log("Upgrading fire");
+                if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out int i)){
+                    meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i + relic.lvlStats.duration;
+                }
+            }
+            if (relic.baseStats.gunDebuff != Debuffs.None){
+                if (gunDebuffs.TryGetValue(relic.baseStats.gunDebuff.ToString(), out int i)){
+                    gunDebuffs[relic.baseStats.gunDebuff.ToString()] = i + relic.lvlStats.duration;
+                }
+            }
             if (playerRelics[relic.title].curlvl >= relic.maxlvl){
                 upgradeables.Remove(relic.title);
             }
@@ -103,7 +151,6 @@ public class PlayerItems
                 upgradeables.Add(relic.title, relic);
             }
             if (relic.activator == Activators.Melee){
-                Debug.Log("Added " + relic.title + " to melee activators");
                 onMelee.Add(relic.title);
             }
             else if (relic.activator == Activators.OnKill){
@@ -114,6 +161,24 @@ public class PlayerItems
             }
             else{
                 totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(relic)); 
+                
+            }
+            if (relic.baseStats.swordDebuff != Debuffs.None){
+                Debug.Log("Adding fire");
+                if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out int i)){
+                    meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i + ItemManager.instance.GetItemStats(relic).duration;
+                }
+                else{
+                    meleeDebuffs.Add(relic.baseStats.swordDebuff.ToString(), ItemManager.instance.GetItemStats(relic).duration);             
+                }
+            }
+            if (relic.baseStats.gunDebuff != Debuffs.None){
+                if (gunDebuffs.TryGetValue(relic.baseStats.gunDebuff.ToString(), out int i)){
+                    gunDebuffs[relic.baseStats.gunDebuff.ToString()] = i + ItemManager.instance.GetItemStats(relic).duration;
+                }
+                else{
+                    gunDebuffs.Add(relic.baseStats.gunDebuff.ToString(), ItemManager.instance.GetItemStats(relic).duration);             
+                }
             }
         } 
     }

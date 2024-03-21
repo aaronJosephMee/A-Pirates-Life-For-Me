@@ -32,6 +32,12 @@ public class ItemManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public Dictionary<string, int> GetSwordDebuffs(){
+        return playerItems.GetSwordDebuffs();
+    }
+    public Dictionary<string, int> GetGunDebuffs(){
+        return playerItems.GetGunDebuffs();
+    }
     public Item GetRandUpgrade(){
         return playerItems.GetRandUpgrade();
     }
