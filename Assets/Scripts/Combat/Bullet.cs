@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.GetComponentInParent<EnemyHealth>())
         {
             EnemyHealth enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
-            enemyHealth.DecreaseHealth(weapon.damage,"gun", null);
+            enemyHealth.DecreaseHealth(weapon.damage,"gun");
         }
 
         Destroy(this.gameObject);
