@@ -35,7 +35,7 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 3
+      nextScene: 13
       followUpText: 
       nextChoiceIndices:
         Value: 
@@ -48,7 +48,7 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 3
+      nextScene: 13
       followUpText: 
       nextChoiceIndices:
         Value: 
