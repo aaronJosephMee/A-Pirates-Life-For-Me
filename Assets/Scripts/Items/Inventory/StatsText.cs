@@ -13,8 +13,12 @@ public class StatsText : MonoBehaviour
         text = this.GetComponent<TextMeshProUGUI>();
         stats = ItemManager.instance.playerItems.TotalStats();
         string statText = "";
-        statText += "Damage: " + stats.gunDamage + "\n";
-        statText += "Defense: " + stats.defense + "\n";
+        statText += "Gun Damage: " + stats.gunDamage + "   ";
+        statText += "Sword Damage: " + stats.swordDamage + "\n";
+        statText += "Bullet Count: " + stats.bulletCount + "   ";
+        statText += "Fire Rate: " + stats.fireRate + "\n";
+        statText += "Bullet Size: " + stats.projectileSize + "   ";
+        statText += "Accuracy: " + stats.accuracy + "\n";
         text.text = statText;
     }
 
