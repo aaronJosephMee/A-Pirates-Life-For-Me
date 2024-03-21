@@ -15,16 +15,16 @@ MonoBehaviour:
   title: Pirates Vs Aristocrats - Part II
   scene: 9
   sceneIdx: 1
-  flavorText: "\u201CYou make a quick supply run at the Isle of Torrent. On the way
-    back to your ship, a group of aristocrats blocks your way. \u201CThere\u2019s
-    the scoundrel that aided those blasted pirates!... You! Give us one good reason
-    we shouldn\u2019t end you right now!\u201D. What do you do?"
+  flavorText: "You make a quick supply run at the Isle of Torrent. On the way back
+    to your ship, a group of aristocrats blocks your way. \u201CThere\u2019s the
+    scoundrel that aided those blasted pirates!... You! Give us one good reason we
+    shouldn\u2019t end you right now!\u201D. What do you do?"
   isMinigame: 0
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Bribe them. [Lose 300 gold].
-      isTerminal: 1
+    - text: Bribe them.
+      isTerminal: 0
       relics:
         Value: []
       eventsToAdd:
@@ -34,10 +34,12 @@ MonoBehaviour:
         health: 0
         gold: -300
       nextScene: 0
-      followUpText: 
+      followUpText: You reach for your coin pouch and awkwardly hand over a pile
+        of coins to the aristocrats. "Hmm, I suppose this will do. For now...". [Lose
+        300 gold].
       nextChoiceIndices:
-        Value: 
-    - text: Eat the rich. [Fight].
+        Value: 02000000
+    - text: Eat the rich (fight).
       isTerminal: 1
       relics:
         Value: []
@@ -48,6 +50,20 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 3
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: Continue.
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: 7ff94567036b32e46b50ada4fbc5f8c8, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
       followUpText: 
       nextChoiceIndices:
         Value: 

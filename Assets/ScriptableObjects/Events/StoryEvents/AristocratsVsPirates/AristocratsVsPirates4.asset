@@ -25,7 +25,7 @@ MonoBehaviour:
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Comply. Kill the pirates and destroy their base. [Gain relic].
+    - text: Comply (kill the pirates and destroy their base).
       isTerminal: 1
       relics:
         Value: []
@@ -38,7 +38,7 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
-    - text: Refuse. Kill the governor. [Gain relic].
+    - text: Refuse (kill the governor).
       isTerminal: 1
       relics:
         Value: []
