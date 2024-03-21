@@ -84,7 +84,12 @@ public class InfoWidget : MonoBehaviour
             infotext.text = info;
         }
         if (levelText != null){
-            levelText.text = "Level: " + item.curlvl;
+            if (item.curlvl < item.maxlvl){
+                levelText.text = "Level: " + item.curlvl;
+            }
+            else{
+                levelText.text = "Level: MAX";
+            }
         }
     }
     public void SetTextLevel(){
@@ -144,7 +149,12 @@ public class InfoWidget : MonoBehaviour
             infotext.text = info;
         }
         if (levelText != null){
-            levelText.text = "Level: " + item.curlvl + " -> " + (item.curlvl + 1);
+            if (item.curlvl + 1 < item.maxlvl){
+                levelText.text = "Level: " + item.curlvl + " -> " + (item.curlvl + 1);
+            }
+            else{
+                levelText.text = "Level: " + item.curlvl + " -> MAX";
+            }
         }
     }
 }

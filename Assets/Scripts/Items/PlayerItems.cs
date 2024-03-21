@@ -131,7 +131,6 @@ public class PlayerItems
                 totalStats = ItemManager.instance.CombineStats(totalStats, relic.lvlStats); 
             }
             if (relic.baseStats.swordDebuff != Debuffs.None){
-                Debug.Log("Upgrading fire");
                 if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out int i)){
                     meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i + relic.lvlStats.duration;
                 }
@@ -147,6 +146,9 @@ public class PlayerItems
         }
         else{
             playerRelics.Add(relic.title, relic);
+            Debug.Log("Adding " + relic.title);
+            Debug.Log("Curlvl " + relic.curlvl + ", Maxlvl: " + relic.maxlvl);
+
             if (relic.curlvl < relic.maxlvl){
                 upgradeables.Add(relic.title, relic);
             }
@@ -164,7 +166,6 @@ public class PlayerItems
                 
             }
             if (relic.baseStats.swordDebuff != Debuffs.None){
-                Debug.Log("Adding fire");
                 if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out int i)){
                     meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i + ItemManager.instance.GetItemStats(relic).duration;
                 }
