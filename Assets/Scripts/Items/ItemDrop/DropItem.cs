@@ -13,14 +13,12 @@ public class DropItem : ShopItem
         if (ItemManager.instance.IsUpgrade(item)){
             inventoryItem.shopUpgrade = true;
         }
-
-        int preveiousPrice = item.price;
-        item.price = 0;
+        
         inventoryItem.GiveItem(item);
-        item.price = preveiousPrice;
     }
     public override void OnPointerDown(PointerEventData eventData)
     {
+        takeMoney = false;
         if (item != null && item != ItemManager.instance.GenericNoItem){
             base.OnPointerDown(eventData);
             OverworldMapManager.Instance.TransitionBackToMap();

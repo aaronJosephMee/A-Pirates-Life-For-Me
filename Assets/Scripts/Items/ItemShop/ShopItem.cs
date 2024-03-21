@@ -14,6 +14,7 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
     public Color highlight;
     public Color regular;
     [System.NonSerialized] public InventoryItem inventoryItem;
+    public bool takeMoney = true;
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (item != null && item != ItemManager.instance.GenericNoItem && ItemManager.instance.CurrentGold() >= item.price){
@@ -52,7 +53,10 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         if (item != null && item != ItemManager.instance.GenericNoItem && ItemManager.instance.CurrentGold() >= item.price){
-            ItemManager.instance.AddGold(-item.price);
+            if (takeMoney)
+            {
+                ItemManager.instance.AddGold(-item.price);
+            }
             try{
                 ItemManager.instance.AddRelic((RelicScriptableObject)item);
             }
