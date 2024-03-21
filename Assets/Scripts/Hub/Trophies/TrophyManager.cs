@@ -14,6 +14,8 @@ namespace DefaultNamespace.Hub
         public Boolean trophy7Flag = false;
         public Boolean trophy8Flag = false;
         public Boolean trophy9Flag = false;
+        public Boolean trophy10Flag = false; 
+        
         private Transform trophy1;
         private Transform trophy2;
         private Transform trophy3;
@@ -23,6 +25,7 @@ namespace DefaultNamespace.Hub
         private Transform trophy7;
         private Transform trophy8;
         private Transform trophy9;
+        private Transform trophy10; 
         
         public void Start()
         {
@@ -35,6 +38,7 @@ namespace DefaultNamespace.Hub
             trophy7 = transform.Find("7");
             trophy8 = transform.Find("8");
             trophy9 = transform.Find("9");
+            trophy10 = transform.Find("10"); 
         }
 
         public void Update()
@@ -83,7 +87,11 @@ namespace DefaultNamespace.Hub
             {
                 trophy9.gameObject.SetActive(true);
             }
-            
+
+            if (trophy10Flag)
+            {
+                trophy10.gameObject.SetActive(true);
+            }
             
         }
     }
