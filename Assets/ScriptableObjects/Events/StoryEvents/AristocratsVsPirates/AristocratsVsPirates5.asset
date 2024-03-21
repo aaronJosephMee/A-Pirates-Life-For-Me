@@ -21,12 +21,12 @@ MonoBehaviour:
     to be a real mate in tough times. See that mansion over there? Entitled scoundrels,
     the lot of them. Born into wealth, yet they continue to take and take from the
     poor. They\u2019ve been needing to walk the plank for a long time now. What do
-    ye say, will you feed em to the fishes fer me?"
+    ye say, will you feed em to the fishes fer me?\u201D"
   isMinigame: 0
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Attack and kill the aristocrats. [Gain 1000 gold].
+    - text: Comply (attack and kill the aristocrats).
       isTerminal: 1
       relics:
         Value: []
@@ -39,7 +39,7 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
-    - text: Refuse. Pirate becomes hostile, forcing you to attack him. [Gain relic].
+    - text: Refuse (fight the captain).
       isTerminal: 1
       relics:
         Value: []

@@ -3276,6 +3276,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: df219dfb676703f4790ef8c7a80943b5, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ac5d98a3898e4c04dbc498d0e2ad4162, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: ac5551fa4ebfcfa4ba2bf34508984f69, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 920b81b77cb8f1d46a5012b048e47d79, type: 2}
     - target: {fileID: 4570886627651428899, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
       propertyPath: m_Name
       value: ItemManager
@@ -3493,6 +3513,10 @@ PrefabInstance:
     - target: {fileID: 5782748365531468155, guid: 619a42f23190df845be65e3f6a115eec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905804454303618503, guid: 619a42f23190df845be65e3f6a115eec, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -205
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

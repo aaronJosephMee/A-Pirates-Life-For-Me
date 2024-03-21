@@ -10,34 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: FireRate1
+  m_Name: Heal 10 HP
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: f0c6d5ee29df7134e8eeb10345ba8035, type: 3}
-  title: FireRate1
+  image: {fileID: 21300000, guid: c68944e75aa01804585cc15e77fff116, type: 3}
+  title: Heal 10 HP
   maxlvl: 2
   baseStats:
-    gunDamage: 0
-    swordDamage: 0
-    defense: 0
-    duration: 5
-    maxStacks: 3
-    bulletCount: 0
-    fireRate: -0.5
-    projectileSize: 0
-    swordDebuff: 
-    gunDebuff: 
-    accuracy: 0
-  lvlStats:
-    gunDamage: 0
-    swordDamage: 0
+    damage: 0
     defense: 0
     duration: 0
     maxStacks: 0
-    bulletCount: 0
-    fireRate: -0.1
-    projectileSize: 0
-    swordDebuff: 
-    gunDebuff: 
-    accuracy: 0
-  price: 0
+    fireRate: 0
+  lvlStats:
+    damage: 0
+    defense: 0
+    duration: 0
+    maxStacks: 0
+    fireRate: 0
+  price: 20
   activator: 0
