@@ -6,4 +6,5 @@ public class ChoiceScriptableObject : ScriptableObject
 {
     public ChoiceType choiceType;
     public Sprite sprite;
+    public GameObject icon;
 }
