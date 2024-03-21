@@ -419,11 +419,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1434236759807602097, guid: 00735023a0e6d5d48ae6ecd964bb1c38, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.025811328
+      value: 0.025811313
       objectReference: {fileID: 0}
     - target: {fileID: 1434236759807602097, guid: 00735023a0e6d5d48ae6ecd964bb1c38, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008782016
+      value: -0.0087820105
       objectReference: {fileID: 0}
     - target: {fileID: 1687568105451280826, guid: 00735023a0e6d5d48ae6ecd964bb1c38, type: 3}
       propertyPath: m_AnchorMax.x

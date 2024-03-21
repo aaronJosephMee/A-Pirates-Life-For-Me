@@ -21,7 +21,12 @@ public class enemytargeting : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         Animator animator = GetComponent<Animator>();
-       
+
+        AnimationClip clip = animator.runtimeAnimatorController.animationClips[0]; 
+        float animationLength = clip.length;
+        float randomTimeOffset = Random.Range(0f, animationLength);
+        animator.Play("slow walk", 0, randomTimeOffset);
+
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
@@ -49,12 +54,15 @@ public class enemytargeting : MonoBehaviour
             {
                 withinAttackRange = true;
                 animator.SetBool("inRange", true);
+                int randomAttack = Random.Range(1, 3);
+                animator.SetInteger("attackNum", randomAttack);
                 transform.LookAt(player.position); 
             }
             else
             {
                 withinAttackRange = false;
                 animator.SetBool("inRange", false); 
+
                 agent.destination = player.position;
             }
         }

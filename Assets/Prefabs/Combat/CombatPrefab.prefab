@@ -1041,7 +1041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5407806948661000969}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.025811313, y: 0.32198566, z: -0.0087820105, w: 0.9463519}
+  m_LocalRotation: {x: 0.025811328, y: 0.32198566, z: -0.008782016, w: 0.9463519}
   m_LocalPosition: {x: -28.229427, y: 6.404709, z: -43.44098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2029,7 +2029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1643095514989456559, guid: 2bfe84637256c78469ba3f5d6de3be7c, type: 3}
       propertyPath: damageRadius
-      value: 0.35
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1643095514989456559, guid: 2bfe84637256c78469ba3f5d6de3be7c, type: 3}
       propertyPath: targetLayer.m_Bits
