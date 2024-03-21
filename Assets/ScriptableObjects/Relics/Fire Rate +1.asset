@@ -39,5 +39,5 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-  price: 150
+  price: 100
   activator: 0

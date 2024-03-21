@@ -49,6 +49,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 38dc0d34e6414d0439ffd671306fdc1b, type: 2}
   - {fileID: 11400000, guid: b880b0d643c3e49449d72e5e468bb65c, type: 2}
   - {fileID: 11400000, guid: ab0b6d2a012745e4d925a79ad1cd4afa, type: 2}
+  - {fileID: 11400000, guid: 920b81b77cb8f1d46a5012b048e47d79, type: 2}
+  - {fileID: 11400000, guid: ac5551fa4ebfcfa4ba2bf34508984f69, type: 2}
+  - {fileID: 11400000, guid: df219dfb676703f4790ef8c7a80943b5, type: 2}
   items: []
   weapons: []
   defaultGun: {fileID: 11400000, guid: 98a39c2b587d2b042825576258221e9c, type: 2}

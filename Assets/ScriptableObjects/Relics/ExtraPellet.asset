@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
   m_Name: ExtraPellet
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 365622690f67d6a4988669cb50f55ca8, type: 3}
   title: Extra Bullet
   maxlvl: 2
   baseStats:
@@ -33,11 +33,11 @@ MonoBehaviour:
     defense: 0
     duration: 0
     maxStacks: 0
-    bulletCount: 0
+    bulletCount: 1
     fireRate: 0
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-  price: 150
+  price: 120
   activator: 0
