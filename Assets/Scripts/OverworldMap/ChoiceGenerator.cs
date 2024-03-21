@@ -57,7 +57,7 @@ namespace DefaultNamespace.OverworldMap
                         choiceNodes.Add(new ChoiceNode(choiceType, _currentEvent.scene));
                         break;
                     case ChoiceType.Combat:
-                        choiceNodes.Add(new ChoiceNode(choiceType, SceneName.Combat));
+                        choiceNodes.Add(new ChoiceNode(choiceType, SceneName.CombatNight));
                         break;
                     default:
                         choiceNodes.Add(new ChoiceNode(choiceType, SceneName.ButtonMashing));

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace.OverworldMap;
 using UnityEngine;
 using UnityEngine.UI;
 public class Player : MonoBehaviour
@@ -53,6 +54,14 @@ public class Player : MonoBehaviour
         aiming.enabled = false;
 
         cameraManager.EnableKillCam();
+        StartCoroutine(ReturnToTitle());
+    }
+
+    private IEnumerator ReturnToTitle()
+    {
+        yield return new WaitForSeconds(2);
+        OverworldMapManager.Instance?.MarkMapForReset();
+        GameManager.instance.LoadScene(SceneName.TitleScreen);
     }
     private IEnumerator PollRelics(){
         ItemStats newStats = ItemManager.instance.TotalStats();
