@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Extra Bullet
-  maxlvl: 0
+  maxlvl: 2
   baseStats:
     gunDamage: 0
     swordDamage: 0
@@ -24,8 +24,8 @@ MonoBehaviour:
     bulletCount: 1
     fireRate: 0
     projectileSize: 0
-    swordDebuff: 
-    gunDebuff: 
+    swordDebuff: 0
+    gunDebuff: 0
     accuracy: 0
   lvlStats:
     gunDamage: 0
@@ -36,8 +36,8 @@ MonoBehaviour:
     bulletCount: 0
     fireRate: 0
     projectileSize: 0
-    swordDebuff: 
-    gunDebuff: 
+    swordDebuff: 0
+    gunDebuff: 0
     accuracy: 0
   price: 0
   activator: 0
