@@ -24,8 +24,8 @@ MonoBehaviour:
     bulletCount: 0
     fireRate: -0.5
     projectileSize: 0
-    swordDebuff: 
-    gunDebuff: 
+    swordDebuff: 0
+    gunDebuff: 0
     accuracy: 0
   lvlStats:
     gunDamage: 0
@@ -36,8 +36,8 @@ MonoBehaviour:
     bulletCount: 0
     fireRate: -0.1
     projectileSize: 0
-    swordDebuff: 
-    gunDebuff: 
+    swordDebuff: 0
+    gunDebuff: 0
     accuracy: 0
-  price: 0
+  price: 150
   activator: 0
