@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Animations.Rigging;
@@ -81,7 +82,7 @@ public class combatManager : MonoBehaviour
 
     IEnumerator DelayedCombatClear()
     {
- 
+        ItemManager.instance.AddGold(100);
         yield return new WaitForSeconds(2f);
 
         
