@@ -11,7 +11,8 @@ public class ItemManager : MonoBehaviour
     public RelicScriptableObject[] relics;
     public ItemScriptableObject[] items;
     public WeaponScriptableObject[] weapons;
-    public WeaponScriptableObject defaultWeapon;
+    public WeaponScriptableObject defaultGun;
+    public WeaponScriptableObject defaultSword;
     public ItemScriptableObject defaultItem;
     public Item GenericNoItem;
     void Awake(){
@@ -20,14 +21,22 @@ public class ItemManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
             itemPool = new ItemPool(relics, items, weapons);
-            playerItems.AddWeapon(defaultWeapon);
-            playerItems.SetWeapon(defaultWeapon.title);
+            playerItems.AddWeapon(defaultGun);
+            playerItems.AddWeapon(defaultSword);
+            playerItems.SetGun(defaultGun.title);
+            playerItems.SetSword(defaultSword.title);
             playerItems.SetItem(defaultItem);
         }
         else if (instance != this)
         {
             Destroy(gameObject);
         }
+    }
+    public Dictionary<string, int> GetSwordDebuffs(){
+        return playerItems.GetSwordDebuffs();
+    }
+    public Dictionary<string, int> GetGunDebuffs(){
+        return playerItems.GetGunDebuffs();
     }
     public Item GetRandUpgrade(){
         return playerItems.GetRandUpgrade();
@@ -58,12 +67,12 @@ public class ItemManager : MonoBehaviour
     public ItemScriptableObject CurrentItem(){
         return playerItems.GetItem();
     }
-    public WeaponScriptableObject CurrentWeapon(){
-        return playerItems.GetWeapon();
-    }
-    public void SetWeapon(string weaponName){
-        playerItems.SetWeapon(weaponName);
-    }
+    //public WeaponScriptableObject CurrentWeapon(){
+    //    return playerItems.GetWeapon();
+    //}
+    //public void SetWeapon(string weaponName){
+    //    playerItems.SetWeapon(weaponName);
+    //}
     public Dictionary<string, RelicScriptableObject> GetRelics(){
         return playerItems.GetRelics();
     }
@@ -82,6 +91,27 @@ public class ItemManager : MonoBehaviour
     public WeaponScriptableObject GetWeapon(string title){
         return (WeaponScriptableObject)itemPool.GetItem("Weapon" ,title).Value;
     }
+
+    public void SetGun(string weaponName)
+    {
+        playerItems.SetGun(weaponName);
+    }
+
+    public void SetSword(string weaponName)
+    {
+        playerItems.SetSword(weaponName);
+    }
+
+    public WeaponScriptableObject CurrentGun()
+    {
+        return playerItems.GetGun();
+    }
+
+    public WeaponScriptableObject CurrentSword()
+    {
+        return playerItems.GetSword();
+    }
+
     public ItemScriptableObject GetRandItem(){
         return (ItemScriptableObject)itemPool.GetRandItem("Item");
     }
@@ -95,16 +125,20 @@ public class ItemManager : MonoBehaviour
         IS1.duration += IS2.duration;
         IS1.maxStacks += IS2.maxStacks;
         IS1.defense += IS2.defense;
-        IS1.damage += IS2.damage;
+        IS1.gunDamage += IS2.gunDamage;
+        IS1.swordDamage += IS2.swordDamage;
         IS1.fireRate += IS2.fireRate;
+        IS1.bulletCount += IS2.bulletCount;
         return IS1;
     }
     public ItemStats SubtractStats(ItemStats IS1, ItemStats IS2){
         IS1.duration -= IS2.duration;
         IS1.defense -= IS2.defense;
-        IS1.damage -= IS2.damage;
+        IS1.gunDamage -= IS2.gunDamage;
         IS1.fireRate -= IS2.fireRate;
+        IS1.swordDamage += IS2.swordDamage;
         IS1.maxStacks -= IS2.maxStacks;
+        IS1.bulletCount -= IS2.bulletCount;
         return IS1;
     }
     public ItemStats GetItemStats(Item item){

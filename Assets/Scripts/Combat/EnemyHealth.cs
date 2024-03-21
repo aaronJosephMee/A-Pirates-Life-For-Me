@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,12 +10,22 @@ public class EnemyHealth : MonoBehaviour
 
     Ragdoll ragdoll;
 
+    [Header("Visuals")]
     SkinnedMeshRenderer skinnedMeshRenderer;
     public float blinkIntensity;
     public float blinkDuration;
     float blinkTimer;
+    public GameObject FloatingText;
+
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip[] gunhitClips;
+    public AudioClip[] swordhitSounds;
 
     combatManager combatManager;
+
+    [Header("Debuff Types")]
+    public bool isIgnitable = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -36,16 +47,58 @@ public class EnemyHealth : MonoBehaviour
         skinnedMeshRenderer.material.color = Color.white * intensity;
     }
 
-    public void DecreaseHealth(float amount)
+    public void DecreaseHealth(float amount, string type)
     {
         currentHealth -= amount;
-        Debug.Log("Hit");
+        if (type == "gun")
+        {
+            if (gunhitClips != null)
+            {
+                int randomClip = Random.Range(0, gunhitClips.Length - 1);
+                audioSource.clip = gunhitClips[randomClip];
+                audioSource.Play();
+            }
+        }
+
+        if (type == "sword")
+        {
+            if (swordhitSounds != null)
+            {
+                int randomClip = Random.Range(0, swordhitSounds.Length - 1);
+                audioSource.clip = swordhitSounds[randomClip];
+                audioSource.Play();
+            }
+        }
+        if (type=="gun")
+        {Debug.Log("Gun Hit"); }
+        if(type == "sword")
+        { 
+            Dictionary<string, int> debuffs = ItemManager.instance.GetSwordDebuffs();    
+            foreach (KeyValuePair<string, int> debuff in debuffs){
+                if (debuff.Key == Debuffs.Fire.ToString()){
+                    Debug.Log("On fire halp");
+                    StartCoroutine(OnFire(debuff.Value));
+                }
+            }
+
+        }
+        ShowFloatingText(amount);
+
+        
+
         if (currentHealth <= 0 && !isDead)
         {
             Die();
         }
         blinkTimer = blinkDuration;
     }
+
+    void ShowFloatingText(float amount)
+    {
+        var go = Instantiate(FloatingText, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMeshPro>().text = amount.ToString();
+    }
+
 
     private void Die()
     {
@@ -78,5 +131,15 @@ public class EnemyHealth : MonoBehaviour
 
 
         Destroy(gameObject);
+    }
+    IEnumerator OnFire(int duration){
+        int damage = 1;
+        while (duration > 0){
+            yield return new WaitForSeconds(0.5f);
+            this.DecreaseHealth(damage, "fire");
+            duration--;
+            damage++;
+        }
+
     }
 }

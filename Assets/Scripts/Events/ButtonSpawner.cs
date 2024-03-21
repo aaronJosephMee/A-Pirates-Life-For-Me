@@ -15,7 +15,7 @@ public class ButtonSpawner : MonoBehaviour
             GameObject instance = Instantiate(toSpawn, this.transform.position - new Vector3(0,curheight,0), Quaternion.identity);
             instance.transform.SetParent(this.transform.parent);
             instance.GetComponent<ChoiceButton>().DisplayChoice(choices[i]);
-            curheight += heightOfArea/choices.Length;
+            curheight += 2 * (heightOfArea/choices.Length);
             buttons.Add(instance);
         }
 

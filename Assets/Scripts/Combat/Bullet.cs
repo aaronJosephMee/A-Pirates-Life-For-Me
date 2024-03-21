@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] float timeToDestroy;
     float timer;
-
+    [SerializeField] LayerMask bulletLayer;
     [HideInInspector] public WeaponManager weapon;
 
     // Start is called before the first frame update
@@ -25,10 +25,13 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponentInParent<EnemyHealth>())
+        if (((1 << collision.gameObject.layer) & bulletLayer) != 0)
+            return;
+
+        if (collision.gameObject.GetComponentInParent<EnemyHealth>())
         {
             EnemyHealth enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
-            enemyHealth.DecreaseHealth(weapon.damage);
+            enemyHealth.DecreaseHealth(weapon.damage,"gun");
         }
 
         Destroy(this.gameObject);

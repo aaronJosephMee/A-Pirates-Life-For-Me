@@ -279,6 +279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_English_Captain_01_FixedScale
       objectReference: {fileID: 0}
+    - target: {fileID: 1116331867065432, guid: 0d5d4e21951c8204c9e920360baba427, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1205909123397096, guid: 0d5d4e21951c8204c9e920360baba427, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -288,6 +292,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1799556190364364, guid: 0d5d4e21951c8204c9e920360baba427, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905331091971532, guid: 0d5d4e21951c8204c9e920360baba427, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -339,6 +347,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c39cdacd908d47d419ab94403bc98831, type: 2}
+    - target: {fileID: 5017552446728857178, guid: 0d5d4e21951c8204c9e920360baba427, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

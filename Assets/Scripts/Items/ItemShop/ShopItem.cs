@@ -30,7 +30,6 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
     void Awake()
     {
         inventoryItem = this.GetComponent<InventoryItem>();
-        Debug.Log(inventoryItem);
     }
     public virtual void GiveItem(Item item){
         if (item == null){
