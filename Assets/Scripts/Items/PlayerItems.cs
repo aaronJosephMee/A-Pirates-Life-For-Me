@@ -127,9 +127,7 @@ public class PlayerItems
         playerRelics.TryGetValue(relic.title, out r);
         if (r != null){
             playerRelics[relic.title].curlvl++;
-            if (r.activator == Activators.Passive){
-                totalStats = ItemManager.instance.CombineStats(totalStats, relic.lvlStats); 
-            }
+            totalStats = ItemManager.instance.CombineStats(totalStats, relic.lvlStats); 
             if (relic.baseStats.swordDebuff != Debuffs.None){
                 if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out int i)){
                     meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i + relic.lvlStats.duration;
@@ -161,10 +159,10 @@ public class PlayerItems
             else if (relic.activator == Activators.OnTakeDamage){
                 onTakeDamage.Add(relic.title);
             }
-            else{
-                totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(relic)); 
+            
+            totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(relic)); 
                 
-            }
+            
             if (relic.baseStats.swordDebuff != Debuffs.None){
                 if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out int i)){
                     meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i + ItemManager.instance.GetItemStats(relic).duration;
@@ -204,15 +202,17 @@ public class PlayerItems
         return totalStats;
     }
     public IEnumerator AddEffect(RelicScriptableObject relic){
-        ItemStats stats = ItemManager.instance.GetItemStats(relic);
+        ItemStats stats = ItemManager.instance.GetActivatorStats(relic);
         Debug.Log("CurStacks = " + relic.curStacks + ", MaxStacks = " + stats.maxStacks);
-        if (relic.curStacks < stats.maxStacks){
+        if (playerRelics[relic.title].curStacks < stats.maxStacks){
             totalStats = ItemManager.instance.CombineStats(totalStats, stats); 
-            playerRelics.TryGetValue(relic.title, out RelicScriptableObject r);
-            r.curStacks++;
+            playerRelics[relic.title].curStacks++;
+            Debug.Log(stats.duration);
             yield return new WaitForSeconds(stats.duration);
+            Debug.Log(totalStats.swordDamage);
             totalStats = ItemManager.instance.SubtractStats(totalStats, stats);
-            r.curStacks--;
+            Debug.Log(totalStats.swordDamage);
+            playerRelics[relic.title].curStacks--;
         }
     }
 }
