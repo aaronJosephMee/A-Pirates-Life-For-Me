@@ -22,7 +22,7 @@ public class ShipCombat : MonoBehaviour
     public AudioClip ReloadSFX;
     public GameObject cannonShotVFX;
 
-    private int Ammo = 6;
+    private int Ammo = 1000000;
 
     public float Health = 100.0f;
 
