@@ -115,6 +115,11 @@ public class EnemyHealth : MonoBehaviour
         {
             agent.enabled = false;
         }
+        EnemyDamage damage = GetComponent<EnemyDamage>();
+        if (damage != null)
+        {
+            damage.enabled = false;
+        }
 
         ragdoll.ActivateRagdoll();
         combatManager.Instance.DecreaseEnemyCount();

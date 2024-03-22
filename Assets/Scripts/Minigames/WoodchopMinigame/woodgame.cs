@@ -88,7 +88,7 @@ public class WoodMiniGame : MonoBehaviour
 
     IEnumerator HideKey()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         if (keyNumber == 1) {
             WImage.enabled = false;
         }
