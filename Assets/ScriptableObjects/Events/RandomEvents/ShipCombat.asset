@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShipCombat
   m_EditorClassIdentifier: 
   title: 
-  scene: 14
+  scene: 15
   sceneIdx: 0
   flavorText: 
   isMinigame: 1

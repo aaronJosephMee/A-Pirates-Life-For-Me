@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/ScriptableObjects/Events/RandomEvents/ShipCombat.asset.meta
 guid: 11c9afd8717eee74ba6fac72b2987664
 NativeFormatImporter:
+=======
+guid: 92f9cd028443b7645a5012a799b57dab
+DefaultImporter:
+>>>>>>> d7db7a1 (invisble wall colliders):Assets/ArtAssets/2D Assets/3D Assets/NatureBiomes/URP_ExtractMe_Nature_Biomes.unitypackage.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
