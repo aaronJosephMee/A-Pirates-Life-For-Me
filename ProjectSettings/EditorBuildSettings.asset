@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CombatScenes/COMBAT_NightScene.unity
     guid: 780ce8591070a19428cca0039b4d2e53
   - enabled: 1
-    path: Assets/Scenes/CombatScenes/COMBAT_IsleofTorrent.unity
+    path: Assets/Scenes/CombatScenes/COMBAT(pirate)_IsleofTorrent.unity
     guid: 5fddd8b66d48d6c4a9f12d92858bf101
   - enabled: 1
     path: Assets/Scenes/sea combat demo.unity
