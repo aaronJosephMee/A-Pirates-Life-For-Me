@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class DropItem : ShopItem
 {
     public override void GiveItem(Item item){
+        this.free = true;
         if (item == null){
             item = ItemManager.instance.GenericNoItem;
         }
@@ -18,7 +19,6 @@ public class DropItem : ShopItem
     }
     public override void OnPointerDown(PointerEventData eventData)
     {
-        takeMoney = false;
         if (item != null && item != ItemManager.instance.GenericNoItem){
             base.OnPointerDown(eventData);
             OverworldMapManager.Instance.TransitionBackToMap();

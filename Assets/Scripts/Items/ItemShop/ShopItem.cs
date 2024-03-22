@@ -14,10 +14,11 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
     public Color highlight;
     public Color regular;
     [System.NonSerialized] public InventoryItem inventoryItem;
-    public bool takeMoney = true;
+    public bool free = false;
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (item != null && item != ItemManager.instance.GenericNoItem && ItemManager.instance.CurrentGold() >= item.price){
+        Debug.Log(free);
+        if (item != null && item != ItemManager.instance.GenericNoItem && (ItemManager.instance.CurrentGold() >= item.price || free)){
             this.background.color = highlight;
         }
     }
@@ -52,8 +53,8 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        if (item != null && item != ItemManager.instance.GenericNoItem && ItemManager.instance.CurrentGold() >= item.price){
-            if (takeMoney)
+        if (item != null && item != ItemManager.instance.GenericNoItem && (ItemManager.instance.CurrentGold() >= item.price || free)){
+            if (!free)
             {
                 ItemManager.instance.AddGold(-item.price);
             }
