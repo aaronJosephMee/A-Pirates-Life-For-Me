@@ -21,7 +21,11 @@ public class CannonBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<EnemyShip>().TakeDamage(damage);
+        EnemyShip enemyShip = other.GetComponent<EnemyShip>();
+        if (enemyShip != null)
+        {
+            enemyShip.TakeDamage(damage);
+        }
         meshRenderer.enabled = false;
         boxCollider.enabled = false;
         Destroy(this.gameObject, 3.0f);
