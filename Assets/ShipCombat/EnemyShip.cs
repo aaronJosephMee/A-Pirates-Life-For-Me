@@ -31,7 +31,7 @@ public class EnemyShip : MonoBehaviour
 
     private void Update()
     {
-        if (Alive)
+        if (!SeaGameManager.instance.stopCombat)
         {
             float distance = Vector3.Distance(transform.position, player.position);
 
@@ -80,6 +80,7 @@ public class EnemyShip : MonoBehaviour
 
         if (EnemyHealth <= 0)
         {
+            SeaGameManager.instance.AddPoint(1);
             fire.SetActive(true);
             Alive = false;
             DisableMovementAndAttack();

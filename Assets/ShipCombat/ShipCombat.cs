@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ShipCombat : MonoBehaviour
 {
@@ -22,14 +24,30 @@ public class ShipCombat : MonoBehaviour
     public AudioClip ReloadSFX;
     public GameObject cannonShotVFX;
 
+    public GameObject fire;
+
     private int Ammo = 1000000;
 
     public float Health = 100.0f;
 
+    public bool PlayerAlive = true;
+
+    public TextMeshProUGUI losingText;
+
+    private void Start()
+    {
+        fire.SetActive(false);
+        losingText.gameObject.SetActive(false);
+    }
+
     void Update()
     {
-        ShipMovement();
-        shoot();
+        if (!SeaGameManager.instance.stopCombat)
+        {
+            ShipMovement();
+            shoot();
+        }
+
         if (Input.GetKey(KeyCode.R))
         {
             StartCoroutine(Reload());
@@ -89,7 +107,22 @@ public class ShipCombat : MonoBehaviour
     {
         Health -= dmg;
 
-        if (Health < 0) Invoke(nameof(DestroyShip), 1.0f);
+        if (Health < 0)
+        {
+            fire.SetActive(true);
+            PlayerAlive = false;
+            StartCoroutine(EndGameRoutine());
+        }
+    }
+
+    private IEnumerator EndGameRoutine()
+    {
+        losingText.gameObject.SetActive(true);
+        SeaGameManager.instance.stopCombat = true;
+        ItemManager.instance.AddGold(-100);
+        yield return new WaitForSecondsRealtime(2);
+        Time.timeScale = 1.0f;
+        OverworldMapManager.Instance.TransitionBackToMap();
     }
 
     private void DestroyShip()

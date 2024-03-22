@@ -19,8 +19,8 @@ TagManager:
   - Bullet
   - EnemyShip
   - BulletShip
-  - 
-  - 
+  - PlayerShip
+  - collider
   - 
   - 
   - 
