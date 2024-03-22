@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 622179149514175820}
   - component: {fileID: 622179149514175818}
   - component: {fileID: 622179149514175821}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4671,7 +4671,7 @@ GameObject:
   - component: {fileID: 2026373880074257486}
   - component: {fileID: 2026373880074257484}
   - component: {fileID: 2026373880074257485}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ember
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9512,7 +9512,7 @@ GameObject:
   - component: {fileID: 2026373880562331274}
   - component: {fileID: 2026373880562331275}
   - component: {fileID: 9156119306170852609}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CFXR Fire
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -14579,7 +14579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4729983352781624350}
   - component: {fileID: 8690300605288744804}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemyCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14707,7 +14707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5519028874214862215}
   - component: {fileID: 2586571276140107045}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14802,7 +14802,7 @@ GameObject:
   - component: {fileID: 8914077788618684111}
   - component: {fileID: 8914077788619946903}
   - component: {fileID: 8914077788621048055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Sails_01_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14885,7 +14885,7 @@ GameObject:
   - component: {fileID: 8914077788618642235}
   - component: {fileID: 8914077788620050365}
   - component: {fileID: 8914077788620912873}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Rigging_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14968,7 +14968,7 @@ GameObject:
   - component: {fileID: 8914077788618661285}
   - component: {fileID: 8914077788620053903}
   - component: {fileID: 8914077788620887125}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Sails_04_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15052,7 +15052,7 @@ GameObject:
   - component: {fileID: 8914077788620024895}
   - component: {fileID: 8914077788620889607}
   - component: {fileID: 8885786835025638595}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Hull_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15171,7 +15171,7 @@ GameObject:
   - component: {fileID: 8885966934653542395}
   - component: {fileID: 8885660304220807941}
   - component: {fileID: 8885910981303639519}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Mast_03_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15347,7 +15347,7 @@ GameObject:
   - component: {fileID: 8887459239186841485}
   - component: {fileID: 8886001634535599441}
   - component: {fileID: 8886599445216560489}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Mast_01_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15519,7 +15519,7 @@ GameObject:
   - component: {fileID: 8914077788618681565}
   - component: {fileID: 8914077788620060189}
   - component: {fileID: 8914077788620895903}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Mast_SailUp_01_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15602,7 +15602,7 @@ GameObject:
   - component: {fileID: 8914077788618631241}
   - component: {fileID: 8914077788620021089}
   - component: {fileID: 8914077788620873513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Mast_SailUp_03_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15685,7 +15685,7 @@ GameObject:
   - component: {fileID: 8914077788618748635}
   - component: {fileID: 8914077788620034693}
   - component: {fileID: 8914077788621085263}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Sails_02_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15768,7 +15768,7 @@ GameObject:
   - component: {fileID: 8914077788618622745}
   - component: {fileID: 8914077788620036887}
   - component: {fileID: 8914077788620913289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Sails_05_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15851,7 +15851,7 @@ GameObject:
   - component: {fileID: 8914077788618673925}
   - component: {fileID: 8914077788620035301}
   - component: {fileID: 8914077788620885433}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Mast_SailUp_04_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15934,7 +15934,7 @@ GameObject:
   - component: {fileID: 8914077788618650071}
   - component: {fileID: 8914077788619933457}
   - component: {fileID: 8914077788620908335}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Sails_03_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16017,7 +16017,7 @@ GameObject:
   - component: {fileID: 8914077788618624015}
   - component: {fileID: 8914077788619961493}
   - component: {fileID: 8914077788621075335}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Mast_SailUp_02_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16104,7 +16104,7 @@ GameObject:
   - component: {fileID: 8885712137734248467}
   - component: {fileID: 8886049195794615663}
   - component: {fileID: 8886045845906263603}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Veh_Boat_Warship_01_Mast_02_Upsized
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 385708216}
   - component: {fileID: 385708217}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 385708215}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.005, y: 3.6, z: 7.102}
+  m_LocalPosition: {x: -0.005, y: 3.6, z: 8.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 1015102855}
   - component: {fileID: 1015102857}
   - component: {fileID: 1015102856}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerShip
   m_TagString: PlayerShip
   m_Icon: {fileID: 0}
@@ -729,9 +729,73 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1015102855}
     m_Modifications:
+    - target: {fileID: 101028, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 102710, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 104038, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 105260, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 118564, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 118874, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 125032, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 140122, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 144696, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 144900, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 146764, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 152568, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Boat_Medium_01_Hull_Pirate_Attachments
+      objectReference: {fileID: 0}
+    - target: {fileID: 152568, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 164738, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 172130, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 173414, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 194198, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 480178, guid: 08fa080060d162343b94ac13ffbe8f1e, type: 3}
       propertyPath: m_LocalPosition.x
