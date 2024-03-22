@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 250 Gold
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fdba32c4d5576c741adf1788e9892939, type: 2}
+  m_sharedMaterial: {fileID: 3023532362834873437, guid: fdba32c4d5576c741adf1788e9892939, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.95
+  m_fontSize: 19.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -304,6 +304,7 @@ MonoBehaviour:
   background: {fileID: 3761233506377460240}
   highlight: {r: 0.8301887, g: 0.76954997, b: 0.06578848, a: 1}
   regular: {r: 0, g: 0, b: 0, a: 1}
+  free: 0
 --- !u!224 &5738005890056591860 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7651044132614326065, guid: 0777adbfc701ea749a2199e00596836f, type: 3}
