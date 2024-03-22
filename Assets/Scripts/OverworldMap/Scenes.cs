@@ -52,7 +52,7 @@ namespace DefaultNamespace.OverworldMap
                 case SceneName.Jungle:
                     return "Jungle";
                 case SceneName.CombatNight:
-                    return "NightScene";
+                    return "COMBAT_NightScene";
                 case SceneName.CombatIsleOfTorrent:
                     return "COMBAT_IsleofTorrent";
                 default:
