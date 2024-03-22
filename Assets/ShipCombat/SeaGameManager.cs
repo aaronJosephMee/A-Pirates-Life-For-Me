@@ -35,7 +35,7 @@ public class SeaGameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Killed == enemyCount)
+        if (Killed == enemyCount && !winningText.gameObject.activeSelf)
         {
             StartCoroutine(EndGameRoutine());
         }
