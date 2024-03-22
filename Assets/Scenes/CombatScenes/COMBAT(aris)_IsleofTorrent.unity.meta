@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/ScriptableObjects/Relics/Both Damage.asset.meta
-guid: fce3216bb6b4a414d967183f6a0da259
-NativeFormatImporter:
-=======
 guid: c06e4f070f2743940abe2949f6ace27b
 DefaultImporter:
->>>>>>> d7db7a1 (invisble wall colliders):Assets/Scenes/CombatScenes/COMBAT(aris)_IsleofTorrent.unity.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
