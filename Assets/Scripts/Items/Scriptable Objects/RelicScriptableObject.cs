@@ -7,6 +7,8 @@ using UnityEngine;
 public class RelicScriptableObject :  Item
 {
     public Activators activator;
+    public ItemStats ActivatorStats;
+    public ItemStats Activatorlvl;
     [System.NonSerialized] public int curStacks;
 }
 

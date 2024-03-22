@@ -136,7 +136,7 @@ public class ItemManager : MonoBehaviour
         IS1.defense -= IS2.defense;
         IS1.gunDamage -= IS2.gunDamage;
         IS1.fireRate -= IS2.fireRate;
-        IS1.swordDamage += IS2.swordDamage;
+        IS1.swordDamage -= IS2.swordDamage;
         IS1.maxStacks -= IS2.maxStacks;
         IS1.bulletCount -= IS2.bulletCount;
         return IS1;
@@ -145,6 +145,13 @@ public class ItemManager : MonoBehaviour
         ItemStats stats = item.baseStats;
         for (int i = 1; i<item.curlvl;i++){
             stats = CombineStats(stats,item.lvlStats);
+        }
+        return stats;
+    }
+    public ItemStats GetActivatorStats(RelicScriptableObject item){
+        ItemStats stats = item.ActivatorStats;
+        for (int i = 1; i<item.curlvl;i++){
+            stats = CombineStats(stats,item.Activatorlvl);
         }
         return stats;
     }
