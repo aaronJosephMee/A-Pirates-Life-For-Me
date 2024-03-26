@@ -22,6 +22,10 @@ public class WoodMiniGame : MonoBehaviour
     public Transform goalObject;
     private GameObject particle;
 
+    public AudioClip swing1Audio;
+
+    [SerializeField] private AudioSource audioSource;
+
     void Start()
     {
         WImage.enabled = false;
@@ -74,6 +78,7 @@ public class WoodMiniGame : MonoBehaviour
         (keyNumber == 2 && Input.GetKeyDown(KeyCode.A)) || (keyNumber == 3 && Input.GetKeyDown(KeyCode.S))
         || (keyNumber == 4 && Input.GetKeyDown(KeyCode.D)))
         {
+            audioSource.PlayOneShot(swing1Audio);
             howToPlayText.gameObject.SetActive(false);
             chops++;
             Debug.Log("Chop " + chops + "/" + treeHP);
