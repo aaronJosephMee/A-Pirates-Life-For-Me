@@ -12,12 +12,12 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     public Image image;
     public Item item;
     public TextMeshProUGUI nme;
-    public TextMeshProUGUI desc;
-    public TextMeshProUGUI expandedName;
-    public GameObject nameAndDesc;
     public GameObject widget;
+    public GameObject nameAndDesc;
     private GameObject instance;
+    private GameObject instanceDesc;
     public bool ownedItem = false;
+    public bool isShopItem;
 
     // Start is called before the first frame update
     public void GiveItem(Item item){
@@ -30,18 +30,26 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
         }
         else{
             nme.text = item.name;
-            expandedName.text = item.name;
-            desc.text = item.description;
         }
-        nameAndDesc.SetActive(false);
         if (item.image != null){
             image.sprite = item.image;
         }
+        try{
+            if (((ItemScriptableObject)item)){
+                nme.color = Color.cyan;
+            }
+        }
+        catch{}
+        try{
+            if (((RelicScriptableObject)item)){
+                nme.color = new Color(255f/255, 218f/255, 1f/255);
+            }
+        }
+        catch{}
     }  
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (this.item != ItemManager.instance.GenericNoItem){
-            nameAndDesc.SetActive(true);
             instance = Instantiate(widget, this.transform.parent);
             instance.GetComponent<InfoWidget>().ownedItem = ownedItem;
             instance.GetComponent<InfoWidget>().GiveItem(item);
@@ -51,6 +59,8 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
             else{
                 instance.GetComponent<InfoWidget>().SetTextTotal();
             }
+            instanceDesc = Instantiate(nameAndDesc, this.transform.parent);
+            instanceDesc.GetComponent<ExpandedInfo>().GiveItem(item, isShopItem);
         }
         
     }
@@ -58,12 +68,15 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     public void OnPointerExit(PointerEventData eventData)
     {
         DestroyWidget();
-        nameAndDesc.SetActive(false);
     }
     public void DestroyWidget(){
         if (instance != null){
             Destroy(instance);
             instance = null;
+        }
+        if (instanceDesc != null){
+            Destroy(instanceDesc);
+            instanceDesc = null;
         }
     }
 }
