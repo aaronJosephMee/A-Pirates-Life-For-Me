@@ -32,7 +32,7 @@ public class OverworldCameraController : MonoBehaviour
         {
             Vector3 newPosition = transform.position;
             newPosition.x += _input.x * _cameraSpeed * Time.deltaTime;
-            newPosition.x = Mathf.Clamp(newPosition.x, -165.0f, 165.0f);
+            newPosition.x = Mathf.Clamp(newPosition.x, -250.0f, 250.0f);
             transform.position = newPosition;
         }
     }
