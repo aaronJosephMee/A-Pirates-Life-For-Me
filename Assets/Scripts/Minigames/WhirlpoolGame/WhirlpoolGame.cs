@@ -13,6 +13,8 @@ public class WhirlpoolGame : MonoBehaviour
     public float translationSpeed;
     public float distanceFromCenter;
     public float whirlpoolSize;
+
+    public AudioSource backgroundMusic;
     
     public TextMeshProUGUI winningText;
     public TextMeshProUGUI losingText;
@@ -75,6 +77,8 @@ public class WhirlpoolGame : MonoBehaviour
             losingText.gameObject.SetActive(true);
         }
         Time.timeScale = 0.0f;
+        backgroundMusic.Stop();
+        
         StartCoroutine(EndGameRoutine());
     }
     
@@ -98,17 +102,36 @@ public class WhirlpoolGame : MonoBehaviour
         float step = translationSpeed * Time.deltaTime;
         obj.transform.position = Vector3.MoveTowards(obj.transform.position, whirlpoolCenter.position, step);
         
-        if (playerSlider.value <= 0.25)
+        // Music and difficulty adjustments
+        
+        if (playerSlider.value <= 0.10)
         {
+            backgroundMusic.pitch += 0.2f * Time.deltaTime;
+        }
+        
+        else if (playerSlider.value <= 0.25)
+        {
+            backgroundMusic.pitch += 0.1f * Time.deltaTime;
+            
             translationSpeed = 5;
         }
+        
         else if (playerSlider.value <= 0.75)
         {
+            backgroundMusic.pitch += 0.05f * Time.deltaTime;
+        }
+        
+        else if (playerSlider.value <= 0.75)
+        {
+            backgroundMusic.pitch = 1f;
+            
             translationSpeed = 10;
         }
         else
         {
             translationSpeed = 20;
+
+            backgroundMusic.pitch -= 0.2f * Time.deltaTime;
         }
     }
 
@@ -118,6 +141,8 @@ public class WhirlpoolGame : MonoBehaviour
         {
             // Controls how fast you are moving away from the whirlpool when you press Z
             ship.transform.position = Vector3.MoveTowards(ship.transform.position, whirlpoolCenter.position, -5.0f);
+            
+            backgroundMusic.pitch -= 5f * Time.deltaTime;
         }
     }
 }
