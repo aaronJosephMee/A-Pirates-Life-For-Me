@@ -14,11 +14,13 @@ public class StatsText : MonoBehaviour
         stats = ItemManager.instance.playerItems.TotalStats();
         string statText = "";
         statText += "Gun Damage: " + stats.gunDamage + "   ";
-        statText += "Sword Damage: " + stats.swordDamage + "\n";
-        statText += "Bullet Count: " + stats.bulletCount + "   ";
-        statText += "Fire Rate: " + stats.fireRate + "\n";
-        statText += "Bullet Size: " + stats.projectileSize + "   ";
+        statText += "Sword Damage: " + stats.swordDamage + "   ";
+        statText += "Bullet Count: " + stats.bulletCount + "\n";
+        statText += "Fire Rate: " + stats.fireRate + "      ";
+        statText += "Bullet Size: " + stats.projectileSize + "       ";
         statText += "Accuracy: " + stats.accuracy + "\n";
+        statText += "Crit Chance: " + stats.critChance + "       ";
+        statText += "Crit Multiplier: " + stats.critMultiplier + "\n";
         text.text = statText;
     }
 

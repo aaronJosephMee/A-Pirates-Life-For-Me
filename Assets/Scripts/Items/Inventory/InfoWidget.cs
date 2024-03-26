@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class InfoWidget : MonoBehaviour
@@ -10,7 +12,7 @@ public class InfoWidget : MonoBehaviour
     TextMeshProUGUI levelText;
     TextMeshProUGUI infotext;
     string info;
-    
+    public bool ownedItem = false;
     Item item;
     private void Awake() {
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
@@ -60,6 +62,12 @@ public class InfoWidget : MonoBehaviour
         if (stats.speedBoost != 0){
             info += "Speed: " + stats.speedBoost + "\n";
         }
+        if (stats.critChance != 0){
+            info += "Crit Chance: " + stats.critChance + "\n";
+        }
+        if (stats.critMultiplier != 0){
+            info += "Crit Multiplier: " + stats.critMultiplier + "\n";
+        }
         if (stats.gunDebuff != Debuffs.None){
             info += "Gun Debuff: " + stats.gunDebuff + "\n";
         }
@@ -77,7 +85,12 @@ public class InfoWidget : MonoBehaviour
         }
         try{
             if (((ItemScriptableObject) item).uses != 0){
-                info += "Uses: " + ((ItemScriptableObject) item).uses + "\n";
+                if (ownedItem){
+                    info += "Uses Left: " + (((ItemScriptableObject) item).uses - ItemManager.instance.GetItemUses()) + "\n";
+                }
+                else{
+                    info += "Uses: " + ((ItemScriptableObject) item).uses + "\n"; 
+                }
                 info += "Cooldown: " + ((ItemScriptableObject)item).cooldown + " sec\n";
             }
             info += "Class: Item\n";
@@ -91,7 +104,16 @@ public class InfoWidget : MonoBehaviour
         try{
             if (((RelicScriptableObject) item).activator != Activators.Passive){
                 info += "Active Effects: \n";
-                info += "Condition: " + ((RelicScriptableObject) item).activator + "\n";
+                if (((RelicScriptableObject) item).activator == Activators.OnTakeDamage){
+                    info += "Condition: Take Damage\n";
+                }
+                else if (((RelicScriptableObject) item).activator == Activators.OnKill){
+                    info += "Condition: On Kill\n";
+                }
+                else{
+                    info += "Condition: " + ((RelicScriptableObject) item).activator + "\n";
+                }
+                
                 stats = ItemManager.instance.GetActivatorStats((RelicScriptableObject)item);
                 info += "Duration: " + stats.duration + " sec\n";
                 info += "Max Stacks: " + stats.maxStacks + "\n";
@@ -118,6 +140,12 @@ public class InfoWidget : MonoBehaviour
                 }
                 if (stats.speedBoost != 0){
                     info += "Speed: " + stats.speedBoost + "\n";
+                }
+                if (stats.critChance != 0){
+                    info += "Crit Chance: " + stats.critChance + "\n";
+                }
+                if (stats.critMultiplier != 0){
+                    info += "Crit Multiplier: " + stats.critMultiplier + "\n";
                 }
             }
             info += "Class: Relic\n";
@@ -169,6 +197,12 @@ public class InfoWidget : MonoBehaviour
         }
         if (item.lvlStats.speedBoost != 0){
             info += "Speed: " + stats.speedBoost + " -> " + (stats.speedBoost + item.lvlStats.speedBoost) + "\n";
+        }
+        if (item.lvlStats.critChance != 0){
+            info += "Crit Chance: " + stats.critChance + " -> " + (stats.critChance + item.lvlStats.critChance) + "\n";
+        }
+        if (item.lvlStats.critMultiplier != 0){
+            info += "Crit Multiplier: " + stats.critMultiplier + " -> " + (stats.critMultiplier + item.lvlStats.critMultiplier) + "\n";
         }
         if (item.lvlStats.duration != 0){
             info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + "\n";
@@ -224,10 +258,16 @@ public class InfoWidget : MonoBehaviour
                     active += "Bullet Size: " + stats.projectileSize + " -> " + (stats.projectileSize + relic.Activatorlvl.projectileSize) + "\n";
                 }
                 if (relic.Activatorlvl.hpRegen != 0){
-                    info += "Health Regen: " + stats.hpRegen + " -> " + (stats.hpRegen + relic.Activatorlvl.hpRegen) + "\n";
+                    active += "Health Regen: " + stats.hpRegen + " -> " + (stats.hpRegen + relic.Activatorlvl.hpRegen) + "\n";
                 }
                 if (relic.Activatorlvl.speedBoost != 0){
-                    info += "Speed: " + stats.speedBoost + " -> " + (stats.speedBoost + relic.Activatorlvl.speedBoost) + "\n";
+                    active += "Speed: " + stats.speedBoost + " -> " + (stats.speedBoost + relic.Activatorlvl.speedBoost) + "\n";
+                }
+                if (relic.Activatorlvl.critChance != 0){
+                    active += "Crit Chance: " + stats.critChance + " -> " + (stats.critChance + relic.Activatorlvl.critChance) + "\n";
+                }
+                if (relic.Activatorlvl.critMultiplier != 0){
+                    active += "Crit Multiplier: " + stats.critMultiplier + " -> " + (stats.critMultiplier + relic.Activatorlvl.critMultiplier) + "\n";
                 }
                 if (active != ""){
                     active = "Active Effects: \n" + active;

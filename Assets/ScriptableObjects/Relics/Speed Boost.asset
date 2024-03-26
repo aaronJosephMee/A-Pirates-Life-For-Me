@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Speed Boost
-  maxlvl: 2
+  maxlvl: 3
   baseStats:
     gunDamage: 0
     swordDamage: 0
@@ -29,6 +29,8 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -37,13 +39,15 @@ MonoBehaviour:
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
-    speedBoost: 0
+    speedBoost: 1
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-  price: 0
+    critChance: 0
+    critMultiplier: 0
+  price: 50
   activator: 1
   ActivatorStats:
     gunDamage: 0
@@ -59,6 +63,8 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -67,9 +73,11 @@ MonoBehaviour:
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
-    speedBoost: 0
+    speedBoost: 1
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0

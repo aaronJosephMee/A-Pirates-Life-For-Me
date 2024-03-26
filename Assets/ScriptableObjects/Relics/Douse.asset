@@ -19,7 +19,7 @@ MonoBehaviour:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 3
+    duration: 4
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
@@ -29,11 +29,13 @@ MonoBehaviour:
     swordDebuff: 1
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
   lvlStats:
     gunDamage: 0
-    swordDamage: 0
+    swordDamage: 10
     defense: 0
-    duration: 10
+    duration: 2
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
@@ -43,7 +45,9 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-  price: 0
+    critChance: 0
+    critMultiplier: 0
+  price: 60
   activator: 0
   ActivatorStats:
     gunDamage: 0
@@ -59,6 +63,8 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -73,3 +79,5 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0

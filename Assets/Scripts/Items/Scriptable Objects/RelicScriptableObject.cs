@@ -19,6 +19,6 @@ public enum Activators{
     Melee,
     [Description("On Kill")]
     OnKill,
-    [Description("On Take Damage")]
+    [Description("Take Damage")]
     OnTakeDamage,
 }
