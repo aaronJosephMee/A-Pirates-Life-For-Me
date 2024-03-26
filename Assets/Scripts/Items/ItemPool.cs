@@ -10,6 +10,8 @@ public enum Debuffs {
     None,
     [Description("Fire")]
     Fire,
+    Poison,
+    Freeze,
 }
 
 [System.Serializable]
@@ -21,6 +23,8 @@ public struct ItemStats{
     public int maxStacks;
     public int bulletCount;
     public float fireRate;
+    public float speedBoost;
+    public float hpRegen;
     public float projectileSize;
     public Debuffs swordDebuff;
     public Debuffs gunDebuff;

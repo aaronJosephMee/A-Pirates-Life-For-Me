@@ -32,10 +32,10 @@ public class ItemManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public Dictionary<string, int> GetSwordDebuffs(){
+    public Dictionary<string, DebuffStats> GetSwordDebuffs(){
         return playerItems.GetSwordDebuffs();
     }
-    public Dictionary<string, int> GetGunDebuffs(){
+    public Dictionary<string, DebuffStats> GetGunDebuffs(){
         return playerItems.GetGunDebuffs();
     }
     public Item GetRandUpgrade(){
@@ -60,6 +60,15 @@ public class ItemManager : MonoBehaviour
     }
     public void SetItem(ItemScriptableObject item){
         playerItems.SetItem(item);
+    }
+    public void UseItem(){
+        ItemScriptableObject item = playerItems.GetItem();
+        StartCoroutine(playerItems.AddEffect(item));
+        playerItems.itemUses++;
+        if (playerItems.itemUses >= item.uses){
+            playerItems.SetItem(null);
+        }
+        
     }
     public int RelicCount(){
         return playerItems.RelicCount();
@@ -129,6 +138,8 @@ public class ItemManager : MonoBehaviour
         IS1.swordDamage += IS2.swordDamage;
         IS1.fireRate += IS2.fireRate;
         IS1.bulletCount += IS2.bulletCount;
+        IS1.hpRegen += IS2.hpRegen;
+        IS1.speedBoost += IS2.speedBoost;
         return IS1;
     }
     public ItemStats SubtractStats(ItemStats IS1, ItemStats IS2){
@@ -139,6 +150,8 @@ public class ItemManager : MonoBehaviour
         IS1.swordDamage -= IS2.swordDamage;
         IS1.maxStacks -= IS2.maxStacks;
         IS1.bulletCount -= IS2.bulletCount;
+        IS1.hpRegen -= IS2.hpRegen;
+        IS1.speedBoost -= IS2.speedBoost;
         return IS1;
     }
     public ItemStats GetItemStats(Item item){

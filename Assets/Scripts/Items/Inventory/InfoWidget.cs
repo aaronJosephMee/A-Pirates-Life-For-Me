@@ -54,11 +54,23 @@ public class InfoWidget : MonoBehaviour
         if (stats.projectileSize != 0){
             info += "Bullet Size: " + stats.projectileSize + "\n";
         }
+        if (stats.hpRegen != 0){
+            info += "Health Regen: " + stats.hpRegen + "hp/sec\n";
+        }
+        if (stats.speedBoost != 0){
+            info += "Speed: " + stats.speedBoost + "\n";
+        }
         if (stats.gunDebuff != Debuffs.None){
             info += "Gun Debuff: " + stats.gunDebuff + "\n";
         }
         if (stats.swordDebuff != Debuffs.None){
             info += "Sword Debuff: " + stats.swordDebuff + "\n";
+        }
+        if (stats.duration != 0){
+            info += "Duration: " + stats.duration + "\n";
+        }
+        if (stats.maxStacks != 0 && stats.gunDebuff != Debuffs.Fire){
+            info += "Max Stacks: " + stats.maxStacks + "\n";
         }
         if (info != ""){
             info = "Passive Effects: \n" + info;
@@ -66,6 +78,7 @@ public class InfoWidget : MonoBehaviour
         try{
             if (((ItemScriptableObject) item).uses != 0){
                 info += "Uses: " + ((ItemScriptableObject) item).uses + "\n";
+                info += "Cooldown: " + ((ItemScriptableObject)item).cooldown + " sec\n";
             }
             info += "Class: Item\n";
         }
@@ -100,13 +113,12 @@ public class InfoWidget : MonoBehaviour
                 if (stats.projectileSize != 0){
                     info += "Bullet Size: " + stats.projectileSize + "\n";
                 }
-                if (stats.gunDebuff != Debuffs.None){
-                    info += "Gun Debuff: " + stats.gunDebuff + "\n";
+                if (stats.hpRegen != 0){
+                    info += "Health Regen: " + stats.hpRegen + "hp/sec\n";
                 }
-                if (stats.swordDebuff != Debuffs.None){
-                    info += "Sword Debuff: " + stats.swordDebuff + "\n";
+                if (stats.speedBoost != 0){
+                    info += "Speed: " + stats.speedBoost + "\n";
                 }
-
             }
             info += "Class: Relic\n";
         }
@@ -151,6 +163,18 @@ public class InfoWidget : MonoBehaviour
         }
         if (item.lvlStats.projectileSize != 0){
             info += "Bullet Size: " + stats.projectileSize + " -> " + (stats.projectileSize + item.lvlStats.projectileSize) + "\n";
+        }
+        if (item.lvlStats.hpRegen != 0){
+            info += "Health Regen: " + stats.hpRegen + " -> " + (stats.hpRegen + item.lvlStats.hpRegen) + "\n";
+        }
+        if (item.lvlStats.speedBoost != 0){
+            info += "Speed: " + stats.speedBoost + " -> " + (stats.speedBoost + item.lvlStats.speedBoost) + "\n";
+        }
+        if (item.lvlStats.duration != 0){
+            info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + "\n";
+        }
+        if (item.lvlStats.maxStacks != 0){
+            info += "Max Stacks: " + stats.maxStacks + " -> " + (stats.maxStacks + item.lvlStats.maxStacks) + "\n";
         }
         if (info != ""){
             info = "Passive Effects: \n" + info;
@@ -198,6 +222,12 @@ public class InfoWidget : MonoBehaviour
                 }
                 if (relic.Activatorlvl.projectileSize != 0){
                     active += "Bullet Size: " + stats.projectileSize + " -> " + (stats.projectileSize + relic.Activatorlvl.projectileSize) + "\n";
+                }
+                if (relic.Activatorlvl.hpRegen != 0){
+                    info += "Health Regen: " + stats.hpRegen + " -> " + (stats.hpRegen + relic.Activatorlvl.hpRegen) + "\n";
+                }
+                if (relic.Activatorlvl.speedBoost != 0){
+                    info += "Speed: " + stats.speedBoost + " -> " + (stats.speedBoost + relic.Activatorlvl.speedBoost) + "\n";
                 }
                 if (active != ""){
                     active = "Active Effects: \n" + active;
