@@ -20,11 +20,11 @@ public class OverworldMapManager : MonoBehaviour
     public GameObject eventCanvas;
     
     // Variables used to space choice nodes equally when placed
-    private float _mapLength = 1042.0f;
+    private float _mapLength = 1242.0f;
     private float _margin = 25.0f;
     private float _horizontalIconMargin;
     private float _verticalIconMargin = 70.0f;
-    private int _numChoices = 12;
+    private int _numChoices = 15;
     private ButtonPositioner _buttonPositioner;
 
     // Variables used to keep track of and generate choices
