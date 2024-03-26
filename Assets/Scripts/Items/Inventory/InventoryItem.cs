@@ -12,9 +12,11 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     public Image image;
     public Item item;
     public TextMeshProUGUI nme;
+    public TextMeshProUGUI desc;
+    public TextMeshProUGUI expandedName;
+    public GameObject nameAndDesc;
     public GameObject widget;
     private GameObject instance;
-    public Vector3 offset;
     public bool ownedItem = false;
 
     // Start is called before the first frame update
@@ -28,7 +30,10 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
         }
         else{
             nme.text = item.name;
+            expandedName.text = item.name;
+            desc.text = item.description;
         }
+        nameAndDesc.SetActive(false);
         if (item.image != null){
             image.sprite = item.image;
         }
@@ -36,6 +41,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (this.item != ItemManager.instance.GenericNoItem){
+            nameAndDesc.SetActive(true);
             instance = Instantiate(widget, this.transform.parent);
             instance.GetComponent<InfoWidget>().ownedItem = ownedItem;
             instance.GetComponent<InfoWidget>().GiveItem(item);
@@ -52,6 +58,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     public void OnPointerExit(PointerEventData eventData)
     {
         DestroyWidget();
+        nameAndDesc.SetActive(false);
     }
     public void DestroyWidget(){
         if (instance != null){
