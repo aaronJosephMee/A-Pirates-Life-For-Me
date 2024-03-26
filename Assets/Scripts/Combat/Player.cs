@@ -76,7 +76,11 @@ public class Player : MonoBehaviour
         weaponManager.damage = newStats.gunDamage;
         weaponManager.bulletsPerShot = newStats.bulletCount;
         weaponManager.fireRate = weaponManager.baseFireRate * newStats.fireRate;
+        weaponManager.critChance = newStats.critChance;
+        weaponManager.critMultiplier = newStats.critMultiplier;
         meleeWeapon.swordDamage = newStats.swordDamage;
+        meleeWeapon.critChance = newStats.critChance;
+        meleeWeapon.critMultiplier = newStats.critMultiplier;
         toHeal = newStats.hpRegen;
         anim.SetFloat("Speed", newStats.speedBoost/speedDenominator);
         yield return new WaitForSeconds(0.5f);

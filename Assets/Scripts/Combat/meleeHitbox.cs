@@ -6,6 +6,8 @@ public class meleeHitbox : MonoBehaviour
 {
     public EnemyHealth enemyHealth;
     public float swordDamage;
+    public float critChance;
+    public float critMultiplier;
     public string swordDebuff=null;
 
     void OnTriggerEnter(Collider collision)
@@ -17,7 +19,13 @@ public class meleeHitbox : MonoBehaviour
             if (enemyHealth != null)
             {
                 Debug.Log(swordDebuff);
-                enemyHealth.DecreaseHealth(swordDamage,"sword");
+                if (new System.Random().NextDouble() < critChance){
+                    enemyHealth.DecreaseHealth(swordDamage * critMultiplier,"sword");
+                }
+                else{
+                    enemyHealth.DecreaseHealth(swordDamage,"sword");
+                }
+                
                 ItemManager.instance.OnMelee();
             }
         }

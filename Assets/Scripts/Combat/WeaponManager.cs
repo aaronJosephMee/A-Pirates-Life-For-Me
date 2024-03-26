@@ -16,6 +16,8 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Transform barrelPos;
     [SerializeField] public int bulletsPerShot;
     public float damage = 25;
+    public float critChance;
+    public float critMultiplier;
     [SerializeField] public Vector3 bulletSize = Vector3.one;
 
 

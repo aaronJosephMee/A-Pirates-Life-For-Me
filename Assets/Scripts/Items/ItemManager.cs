@@ -41,6 +41,9 @@ public class ItemManager : MonoBehaviour
     public Item GetRandUpgrade(){
         return playerItems.GetRandUpgrade();
     }
+    public int GetItemUses(){
+        return playerItems.itemUses;
+    }
     public void AddGold(int goldToAdd){
         playerItems.AddGold(goldToAdd);
     }
@@ -65,6 +68,7 @@ public class ItemManager : MonoBehaviour
         ItemScriptableObject item = playerItems.GetItem();
         StartCoroutine(playerItems.AddEffect(item));
         playerItems.itemUses++;
+        Debug.Log("Used item: " + playerItems.itemUses);
         if (playerItems.itemUses >= item.uses){
             playerItems.SetItem(null);
         }
@@ -140,6 +144,8 @@ public class ItemManager : MonoBehaviour
         IS1.bulletCount += IS2.bulletCount;
         IS1.hpRegen += IS2.hpRegen;
         IS1.speedBoost += IS2.speedBoost;
+        IS1.critChance += IS2.critChance;
+        IS1.critMultiplier += IS2.critMultiplier;
         return IS1;
     }
     public ItemStats SubtractStats(ItemStats IS1, ItemStats IS2){
@@ -152,6 +158,8 @@ public class ItemManager : MonoBehaviour
         IS1.bulletCount -= IS2.bulletCount;
         IS1.hpRegen -= IS2.hpRegen;
         IS1.speedBoost -= IS2.speedBoost;
+        IS1.critChance -= IS2.critChance;
+        IS1.critMultiplier -= IS2.critMultiplier;
         return IS1;
     }
     public ItemStats GetItemStats(Item item){

@@ -29,6 +29,8 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -43,6 +45,8 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-  price: 0
+    critChance: 0
+    critMultiplier: 0
+  price: 20
   uses: 3
   cooldown: 3

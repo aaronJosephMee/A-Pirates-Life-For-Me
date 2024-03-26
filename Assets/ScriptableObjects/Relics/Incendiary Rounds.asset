@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: Freeze
+  m_Name: Incendiary Rounds
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: Freeze
+  title: Incendiary Rounds
   maxlvl: 2
   baseStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 6
-    maxStacks: 3
+    duration: 3
+    maxStacks: 0
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
     hpRegen: 0
     projectileSize: 0
-    swordDebuff: 3
-    gunDebuff: 3
+    swordDebuff: 0
+    gunDebuff: 1
     accuracy: 0
     critChance: 0
     critMultiplier: 0
@@ -35,10 +35,10 @@ MonoBehaviour:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 2
-    maxStacks: 1
+    duration: 1
+    maxStacks: 0
     bulletCount: 0
-    fireRate: 0
+    fireRate: 0.2
     speedBoost: 0
     hpRegen: 0
     projectileSize: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
-  price: 60
+  price: 50
   activator: 0
   ActivatorStats:
     gunDamage: 0
