@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -615,6 +615,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f1632713a98ea346bf9413c2f7a7a3e, type: 2}
   - {fileID: 11400000, guid: eaba89e3210a388419af92f1e2bbb75d, type: 2}
   eventCanvas: {fileID: 3490997076418267859, guid: 2d2915eb645a7b84ca6167958e500fcf, type: 3}
+  _canvas2: {fileID: 1518890943}
   seedEvents:
   - {fileID: 11400000, guid: c7db6eec88e1bc848b4966b923b1907a, type: 2}
   storyEvents:
@@ -627,6 +628,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44670fcc19bce744abe923946ab8bf0b, type: 2}
   - {fileID: 11400000, guid: bc2587b48b676624382594dc0c6b459b, type: 2}
   - {fileID: 11400000, guid: 11c9afd8717eee74ba6fac72b2987664, type: 2}
+  victoryText: {fileID: 5688606504921768942, guid: 041c00f4d94f94ae7ac50b673a957bab, type: 3}
 --- !u!1001 &690497959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1339,7 +1341,7 @@ GameObject:
   - component: {fileID: 1518890944}
   - component: {fileID: 1518890948}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
