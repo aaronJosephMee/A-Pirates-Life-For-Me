@@ -10,44 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: Freeze
+  m_Name: Confidence
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: Freeze
+  title: Confidence
   maxlvl: 2
   baseStats:
-    gunDamage: 0
-    swordDamage: 0
-    defense: 0
-    duration: 6
-    maxStacks: 3
-    bulletCount: 0
-    fireRate: 0
-    speedBoost: 0
-    hpRegen: 0
-    projectileSize: 0
-    swordDebuff: 3
-    gunDebuff: 0
-    accuracy: 0
-  lvlStats:
-    gunDamage: 0
-    swordDamage: 0
-    defense: 0
-    duration: 2
-    maxStacks: 1
-    bulletCount: 0
-    fireRate: 0
-    speedBoost: 0
-    hpRegen: 0
-    projectileSize: 0
-    swordDebuff: 0
-    gunDebuff: 0
-    accuracy: 0
-  price: 0
-  activator: 0
-  ActivatorStats:
-    gunDamage: 0
-    swordDamage: 0
+    gunDamage: 20
+    swordDamage: 20
     defense: 0
     duration: 0
     maxStacks: 0
@@ -59,11 +29,41 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-  Activatorlvl:
-    gunDamage: 0
-    swordDamage: 0
+  lvlStats:
+    gunDamage: 10
+    swordDamage: 10
     defense: 0
     duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+  price: 0
+  activator: 3
+  ActivatorStats:
+    gunDamage: -30
+    swordDamage: -30
+    defense: 0
+    duration: 4
+    maxStacks: 1
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+  Activatorlvl:
+    gunDamage: 10
+    swordDamage: 10
+    defense: 0
+    duration: 1
     maxStacks: 0
     bulletCount: 0
     fireRate: 0

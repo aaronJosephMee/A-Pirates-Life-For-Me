@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Fire Gun
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: 
-  maxlvl: 0
+  title: Fire Gun
+  maxlvl: 2
   baseStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 0
+    duration: 3
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
@@ -27,14 +27,14 @@ MonoBehaviour:
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
-    gunDebuff: 0
+    gunDebuff: 1
     accuracy: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 0
-    maxStacks: 0
+    duration: 1
+    maxStacks: 1
     bulletCount: 0
     fireRate: 0
     speedBoost: 0

@@ -2052,7 +2052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
       propertyPath: relics.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
       propertyPath: items.Array.data[0]
@@ -2063,25 +2063,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3ad744658ecc39d4688a2014a935b2e2, type: 2}
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
-      propertyPath: relics.Array.data[6]
+      propertyPath: relics.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: df219dfb676703f4790ef8c7a80943b5, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: a2631024bd394424b9a34384717d51a0, type: 2}
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
-      propertyPath: relics.Array.data[7]
+      propertyPath: relics.Array.data[5]
       value: 
       objectReference: {fileID: 11400000, guid: 76865ce773c4eed4da3f688079b6faa7, type: 2}
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
-      propertyPath: relics.Array.data[8]
+      propertyPath: relics.Array.data[6]
       value: 
       objectReference: {fileID: 11400000, guid: d325010fa7778ce469a0cf229a4243c4, type: 2}
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
-      propertyPath: relics.Array.data[9]
+      propertyPath: relics.Array.data[7]
       value: 
       objectReference: {fileID: 11400000, guid: defc1ed24cfe4d44d8a92b5676a90cf5, type: 2}
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
-      propertyPath: relics.Array.data[10]
+      propertyPath: relics.Array.data[8]
       value: 
       objectReference: {fileID: 11400000, guid: 0b9174512d7057744b1b26363a0f02b5, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: a48aa792f4137e54588723e7a1ca0e7b, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 56ea94f62ba40ef4c9fb4144d86c7fa5, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: ef8070011f5d5014091b21997c26416e, type: 2}
     - target: {fileID: 4570886627651428899, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
       propertyPath: m_Name
       value: ItemManager
