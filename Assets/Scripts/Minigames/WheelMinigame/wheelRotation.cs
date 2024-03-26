@@ -11,11 +11,11 @@ public class wheelRotation : MonoBehaviour
     float stop;
 
     public GameObject relicChoice;
-    private int _delay = 1; 
+    private int _delay = 1; // test later for 2 secs 
     private void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-        stop = Random.Range(500f, 1500f); // Adjust the range as needed
+        stop = Random.Range(500f, 1500f); 
         Rotate();
     }
 
@@ -26,7 +26,7 @@ public class wheelRotation : MonoBehaviour
         if (rbody.angularVelocity > 0)
         {
             rbody.angularVelocity -= stop * Time.deltaTime;
-            rbody.angularVelocity = Mathf.Clamp(rbody.angularVelocity, 0, 1440);
+            rbody.angularVelocity = Mathf.Clamp(rbody.angularVelocity, 0, 1440); // increase for roulette 
         }
 
         if (Mathf.Approximately(rbody.angularVelocity, 0) && inRotate == 1)
@@ -37,8 +37,8 @@ public class wheelRotation : MonoBehaviour
                 
                 inRotate = 0;
                 t = 0;
-                stop = Random.Range(500f, 1500f); // Generate a new random stop value
-                GetReward();
+                stop = Random.Range(500f, 1500f);
+                GetReward(); 
             }
         }
         
