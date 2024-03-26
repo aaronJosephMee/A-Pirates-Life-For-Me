@@ -30,8 +30,10 @@ public class EnemyHealth : MonoBehaviour
     [Header("Debuff Types")]
     public bool isIgnitable = false; 
     int fireDuration = 0;
-    int poisonStacks = 0;
-    int freezeStacks = 0;
+    int poisonGunStacks = 0;
+    int freezeGunStacks = 0;
+    int poisonMeleeStacks = 0;
+    int freezeMeleeStacks = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -89,15 +91,15 @@ public class EnemyHealth : MonoBehaviour
                     }
                 }
                 if (debuff.Key == Debuffs.Poison.ToString()){
-                    if (poisonStacks < debuff.Value.maxStacks){
-                        poisonStacks++;
-                        StartCoroutine(Poisoned(debuff.Value.duration));
+                    if (poisonGunStacks < debuff.Value.maxStacks){
+                        poisonGunStacks++;
+                        StartCoroutine(Poisoned(debuff.Value.duration, true));
                     }
                 }
                 if (debuff.Key == Debuffs.Freeze.ToString()){
-                    if (freezeStacks < debuff.Value.maxStacks){
-                        freezeStacks++;
-                        StartCoroutine(Freeze(debuff.Value.duration));
+                    if (freezeGunStacks < debuff.Value.maxStacks){
+                        freezeGunStacks++;
+                        StartCoroutine(Freeze(debuff.Value.duration, true));
                     }
                 }
             } }
@@ -115,15 +117,15 @@ public class EnemyHealth : MonoBehaviour
                     }
                 }
                 if (debuff.Key == Debuffs.Poison.ToString()){
-                    if (poisonStacks < debuff.Value.maxStacks){
-                        poisonStacks++;
-                        StartCoroutine(Poisoned(debuff.Value.duration));
+                    if (poisonMeleeStacks < debuff.Value.maxStacks){
+                        poisonMeleeStacks++;
+                        StartCoroutine(Poisoned(debuff.Value.duration, false));
                     }
                 }
                 if (debuff.Key == Debuffs.Freeze.ToString()){
-                    if (freezeStacks < debuff.Value.maxStacks){
-                        freezeStacks++;
-                        StartCoroutine(Freeze(debuff.Value.duration));
+                    if (freezeMeleeStacks < debuff.Value.maxStacks){
+                        freezeMeleeStacks++;
+                        StartCoroutine(Freeze(debuff.Value.duration, false));
                     }
                 }
             }
@@ -194,23 +196,33 @@ public class EnemyHealth : MonoBehaviour
         }
 
     }
-    IEnumerator Poisoned(int duration){
+    IEnumerator Poisoned(int duration, bool isGun){
         int damage = 5;
         while (duration > 0){
             yield return new WaitForSeconds(1f);
             this.DecreaseHealth(damage, "poison");
             duration--;
         }
-        poisonStacks--;
+        if (isGun){
+            poisonGunStacks--;
+        }
+        else{
+            poisonMeleeStacks--;
+        }
     }
-    IEnumerator Freeze(int duration){
+    IEnumerator Freeze(int duration, bool isGun){
         moveSpeed *= 0.7f;
         navMeshAgent.speed = moveSpeed;
         while (duration > 0){
             yield return new WaitForSeconds(1f);
             duration--;
         }
-        freezeStacks--;
+        if (isGun){
+            freezeGunStacks--;
+        }
+        else{
+            freezeMeleeStacks--;
+        }
         moveSpeed = moveSpeed / 0.7f;
         navMeshAgent.speed = moveSpeed;
     }

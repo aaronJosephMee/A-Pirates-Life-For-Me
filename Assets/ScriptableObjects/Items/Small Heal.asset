@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f9e5ccdd96a356458566500df21e961, type: 3}
-  m_Name: Heal Bottle
+  m_Name: Small Heal
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  title: Bottle
+  image: {fileID: 21300000, guid: c68944e75aa01804585cc15e77fff116, type: 3}
+  title: Small Heal
   maxlvl: 5
   baseStats:
     gunDamage: 0
@@ -44,5 +44,5 @@ MonoBehaviour:
     gunDebuff: 0
     accuracy: 0
   price: 0
-  uses: 2
-  cooldown: 4
+  uses: 3
+  cooldown: 3

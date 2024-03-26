@@ -33,8 +33,8 @@ MonoBehaviour:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 0
-    maxStacks: 0
+    duration: 2
+    maxStacks: 1
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
