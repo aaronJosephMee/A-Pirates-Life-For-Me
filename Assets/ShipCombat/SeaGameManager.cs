@@ -10,9 +10,11 @@ public class SeaGameManager : MonoBehaviour
 
     public GameObject Player;
 
-    public int enemyCount = 1;
+    public int enemyCount = 5;
 
     public int Killed = 0;
+
+    public int Spawned = 0;
 
     public TextMeshProUGUI winningText;
 
@@ -51,6 +53,10 @@ public class SeaGameManager : MonoBehaviour
         OverworldMapManager.Instance.TransitionBackToMap();
     }
 
+    public void AddEnemySpawned()
+    {
+        Spawned++;
+    }
     public void AddPoint(int add)
     {
         Killed += add;
