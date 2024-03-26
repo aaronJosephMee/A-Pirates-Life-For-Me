@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public struct DebuffStats{
+    public int maxStacks;
+    public int duration;
+}
+
 public class PlayerItems
 {
     ItemStats totalStats = new ItemStats();
@@ -10,17 +15,18 @@ public class PlayerItems
     List<string> onMelee = new List<string>();
     List<string> onKill = new List<string>();
     List<string> onTakeDamage = new List<string>();
-    Dictionary<string, int> meleeDebuffs = new Dictionary<string, int>();
-    Dictionary<string, int> gunDebuffs = new Dictionary<string, int>();
+    Dictionary<string, DebuffStats> meleeDebuffs = new Dictionary<string, DebuffStats>();
+    Dictionary<string, DebuffStats> gunDebuffs = new Dictionary<string, DebuffStats>();
 
     ItemScriptableObject currentItem;
     public WeaponScriptableObject currentGun;
     public WeaponScriptableObject currentSword;
+    public int itemUses = 0;
     int gold = 0;
-    public Dictionary<string, int> GetSwordDebuffs(){
+    public Dictionary<string, DebuffStats> GetSwordDebuffs(){
         return meleeDebuffs;
     }
-    public Dictionary<string, int>GetGunDebuffs(){
+    public Dictionary<string, DebuffStats>GetGunDebuffs(){
         return gunDebuffs;
     }
     public List<string> GetMeleeRelics(){
@@ -62,6 +68,7 @@ public class PlayerItems
     }
     public void SetItem(ItemScriptableObject item){
         currentItem = item;
+        itemUses = 0;
     }
     public WeaponScriptableObject GetGun()
     {
@@ -77,8 +84,12 @@ public class PlayerItems
         if (currentGun != null){
             totalStats = ItemManager.instance.SubtractStats(totalStats, ItemManager.instance.GetItemStats(currentGun));
             if (currentGun.baseStats.gunDebuff != Debuffs.None){
-                gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] = gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] - ItemManager.instance.GetItemStats(currentGun).duration;
-                if (gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] <= 0){
+                DebuffStats stats = new DebuffStats{
+                    duration = gunDebuffs[currentGun.baseStats.gunDebuff.ToString()].duration - ItemManager.instance.GetItemStats(currentGun).duration,
+                    maxStacks = gunDebuffs[currentGun.baseStats.gunDebuff.ToString()].maxStacks - ItemManager.instance.GetItemStats(currentGun).maxStacks,
+                };
+                gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] = stats;
+                if (gunDebuffs[currentGun.baseStats.gunDebuff.ToString()].duration <= 0){
                     gunDebuffs.Remove(currentGun.baseStats.gunDebuff.ToString());
                 }
             }
@@ -86,11 +97,17 @@ public class PlayerItems
         currentGun = playerWeapons[weapon];
         totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(currentGun));
         if (currentGun.baseStats.gunDebuff != Debuffs.None){
-            if (gunDebuffs.TryGetValue(currentGun.baseStats.gunDebuff.ToString(), out int i)){
-                gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] = i + ItemManager.instance.GetItemStats(currentGun).duration;
+            if (gunDebuffs.TryGetValue(currentGun.baseStats.gunDebuff.ToString(), out DebuffStats i)){
+                i.duration = i.duration + ItemManager.instance.GetItemStats(currentGun).duration;
+                i.maxStacks = i.maxStacks + ItemManager.instance.GetItemStats(currentGun).maxStacks;
+                gunDebuffs[currentGun.baseStats.gunDebuff.ToString()] = i;
             }
             else{
-                gunDebuffs.Add(currentGun.baseStats.gunDebuff.ToString(), ItemManager.instance.GetItemStats(currentGun).duration);             
+                DebuffStats stats = new DebuffStats{
+                    duration = ItemManager.instance.GetItemStats(currentGun).duration,
+                    maxStacks = ItemManager.instance.GetItemStats(currentGun).maxStacks,
+                };
+                gunDebuffs.Add(currentGun.baseStats.gunDebuff.ToString(), stats);             
             }
         }
     }
@@ -101,8 +118,12 @@ public class PlayerItems
         {
             totalStats = ItemManager.instance.SubtractStats(totalStats, ItemManager.instance.GetItemStats(currentSword));
             if (currentSword.baseStats.swordDebuff != Debuffs.None){
-                meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] = meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] - ItemManager.instance.GetItemStats(currentSword).duration;
-                if (meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] <= 0){
+                DebuffStats stats = new DebuffStats{
+                    duration = meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()].duration - ItemManager.instance.GetItemStats(currentSword).duration,
+                    maxStacks = meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()].maxStacks - ItemManager.instance.GetItemStats(currentSword).maxStacks,
+                };
+                meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] = stats;
+                if (meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()].duration <= 0){
                     meleeDebuffs.Remove(currentSword.baseStats.swordDebuff.ToString());
                 }
             }
@@ -110,11 +131,17 @@ public class PlayerItems
         currentSword = playerWeapons[weapon];
         totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(currentSword));
         if (currentSword.baseStats.swordDebuff != Debuffs.None){
-            if (meleeDebuffs.TryGetValue(currentSword.baseStats.swordDebuff.ToString(), out int i)){
-                meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] = i + ItemManager.instance.GetItemStats(currentSword).duration;
+            if (meleeDebuffs.TryGetValue(currentSword.baseStats.swordDebuff.ToString(), out DebuffStats i)){
+                i.duration = i.duration + ItemManager.instance.GetItemStats(currentSword).duration;
+                i.maxStacks = i.maxStacks + ItemManager.instance.GetItemStats(currentSword).maxStacks;
+                meleeDebuffs[currentSword.baseStats.swordDebuff.ToString()] = i;
             }
             else{
-                meleeDebuffs.Add(currentSword.baseStats.swordDebuff.ToString(), ItemManager.instance.GetItemStats(currentSword).duration);             
+                DebuffStats stats = new DebuffStats{
+                    duration = ItemManager.instance.GetItemStats(currentSword).duration,
+                    maxStacks = ItemManager.instance.GetItemStats(currentSword).maxStacks,
+                };
+                meleeDebuffs.Add(currentSword.baseStats.swordDebuff.ToString(), stats);             
             }
         }
     }
@@ -129,13 +156,17 @@ public class PlayerItems
             playerRelics[relic.title].curlvl++;
             totalStats = ItemManager.instance.CombineStats(totalStats, relic.lvlStats); 
             if (relic.baseStats.swordDebuff != Debuffs.None){
-                if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out int i)){
-                    meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i + relic.lvlStats.duration;
+                if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out DebuffStats i)){
+                    i.duration = i.duration + relic.lvlStats.duration;
+                    i.maxStacks = i.maxStacks + relic.lvlStats.maxStacks;
+                    meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i;
                 }
             }
             if (relic.baseStats.gunDebuff != Debuffs.None){
-                if (gunDebuffs.TryGetValue(relic.baseStats.gunDebuff.ToString(), out int i)){
-                    gunDebuffs[relic.baseStats.gunDebuff.ToString()] = i + relic.lvlStats.duration;
+                if (gunDebuffs.TryGetValue(relic.baseStats.gunDebuff.ToString(), out DebuffStats i)){
+                    i.duration = i.duration + relic.lvlStats.duration;
+                    i.maxStacks = i.maxStacks + relic.lvlStats.maxStacks;
+                    gunDebuffs[relic.baseStats.gunDebuff.ToString()] = i;
                 }
             }
             if (playerRelics[relic.title].curlvl >= relic.maxlvl){
@@ -164,19 +195,31 @@ public class PlayerItems
                 
             
             if (relic.baseStats.swordDebuff != Debuffs.None){
-                if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out int i)){
-                    meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i + ItemManager.instance.GetItemStats(relic).duration;
+                if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out DebuffStats i)){
+                    i.duration = i.duration + ItemManager.instance.GetItemStats(relic).duration;
+                    i.maxStacks = i.maxStacks + ItemManager.instance.GetItemStats(relic).maxStacks;
+                    meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i;
                 }
                 else{
-                    meleeDebuffs.Add(relic.baseStats.swordDebuff.ToString(), ItemManager.instance.GetItemStats(relic).duration);             
+                    DebuffStats stats = new DebuffStats{
+                        duration = ItemManager.instance.GetItemStats(relic).duration,
+                        maxStacks = ItemManager.instance.GetItemStats(relic).maxStacks,
+                    };
+                    meleeDebuffs.Add(relic.baseStats.swordDebuff.ToString(), stats);             
                 }
             }
             if (relic.baseStats.gunDebuff != Debuffs.None){
-                if (gunDebuffs.TryGetValue(relic.baseStats.gunDebuff.ToString(), out int i)){
-                    gunDebuffs[relic.baseStats.gunDebuff.ToString()] = i + ItemManager.instance.GetItemStats(relic).duration;
+                if (gunDebuffs.TryGetValue(relic.baseStats.gunDebuff.ToString(), out DebuffStats i)){
+                    i.duration = i.duration + ItemManager.instance.GetItemStats(relic).duration;
+                    i.maxStacks = i.maxStacks + ItemManager.instance.GetItemStats(relic).maxStacks;
+                    gunDebuffs[relic.baseStats.gunDebuff.ToString()] = i;
                 }
                 else{
-                    gunDebuffs.Add(relic.baseStats.gunDebuff.ToString(), ItemManager.instance.GetItemStats(relic).duration);             
+                    DebuffStats stats = new DebuffStats{
+                        duration = ItemManager.instance.GetItemStats(relic).duration,
+                        maxStacks = ItemManager.instance.GetItemStats(relic).maxStacks,
+                    };
+                    gunDebuffs.Add(relic.baseStats.gunDebuff.ToString(), stats);             
                 }
             }
         } 
@@ -214,5 +257,11 @@ public class PlayerItems
             Debug.Log(totalStats.swordDamage);
             playerRelics[relic.title].curStacks--;
         }
+    }
+    public IEnumerator AddEffect(ItemScriptableObject item){
+        ItemStats stats = ItemManager.instance.GetItemStats(item);
+        totalStats = ItemManager.instance.CombineStats(totalStats,stats);
+        yield return new WaitForSeconds(stats.duration);
+        totalStats = ItemManager.instance.SubtractStats(totalStats, stats);
     }
 }

@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] float currentHealth, maxHealth = 100f;
-
+    [SerializeField] float speedDenominator = 10f;
     Ragdoll ragdoll;
     public bool isDead;
     public CharacterAiming aiming;
-
+    Animator anim;
     meleeHitbox meleeWeapon;
     CameraManager cameraManager;
     WeaponManager weaponManager;
-
+    float toHeal = 0;
     [SerializeField] public Slider slider;
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         cameraManager = FindObjectOfType<CameraManager>();
         meleeWeapon = GetComponentInChildren<meleeHitbox>();
         weaponManager = GetComponentInChildren<WeaponManager>();
+        anim = GetComponent<Animator>();
         StartCoroutine(PollRelics());
     }
 
@@ -32,6 +33,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         slider.value = currentHealth / maxHealth;
+        if (toHeal > 0 && currentHealth < maxHealth){
+            currentHealth += toHeal * Time.deltaTime;
+            if (currentHealth > maxHealth){
+                currentHealth = maxHealth;
+            }
+        }
     }
     
     public void takeDamage(float damage)
@@ -70,7 +77,8 @@ public class Player : MonoBehaviour
         weaponManager.bulletsPerShot = newStats.bulletCount;
         weaponManager.fireRate = weaponManager.baseFireRate * newStats.fireRate;
         meleeWeapon.swordDamage = newStats.swordDamage;
-
+        toHeal = newStats.hpRegen;
+        anim.SetFloat("Speed", newStats.speedBoost/speedDenominator);
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(PollRelics());
     }
