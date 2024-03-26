@@ -81,5 +81,8 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
         if (item != null && ItemManager.instance.IsUpgrade(item) && !inventoryItem.shopUpgrade){
             GiveItem(this.item);
         }
+        if (ItemManager.instance.CurrentGold() < item.price){
+            price.color = Color.red;
+        }
     }
 }
