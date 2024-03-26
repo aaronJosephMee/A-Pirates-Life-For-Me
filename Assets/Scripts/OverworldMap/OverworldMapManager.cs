@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace.OverworldMap;
+using TMPro;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,6 +20,7 @@ public class OverworldMapManager : MonoBehaviour
     private Dictionary<ChoiceType, GameObject> _choiceIcons = new Dictionary<ChoiceType, GameObject>();
     private GameObject _canvas;
     public GameObject eventCanvas;
+    public GameObject _canvas2; 
     
     // Variables used to space choice nodes equally when placed
     private float _mapLength = 1242.0f;
@@ -41,6 +44,7 @@ public class OverworldMapManager : MonoBehaviour
     private bool _wasEventChosen = false;
     private bool _advanceMap = false;
     private bool _resetMap = false;
+    public GameObject victoryText; 
     
     void Awake(){
         if (Instance == null)
@@ -55,9 +59,11 @@ public class OverworldMapManager : MonoBehaviour
     }
     private void Start()
     {
+        
         _events = new Events(seedEvents, storyEvents, genericEvents);
         SceneManager.sceneLoaded += OnSceneLoaded;
         _canvas = GameObject.Find("Canvas");
+        _canvas2 = GameObject.Find("Canvas2");
         _choiceSprites = CreateChoiceSpritesDictionary();
         _horizontalIconMargin = (_mapLength - (2 * _margin)) / (_numChoices + 2);
         _choiceGenerator = new ChoiceGenerator(_numChoices);
@@ -198,10 +204,15 @@ public class OverworldMapManager : MonoBehaviour
             if (_choiceGenerator.IsAtGoal())
             {
                 print("You made it to the goal!");
+                GameObject placement = Instantiate(victoryText, _canvas2.transform.position, Quaternion.identity,_canvas2.transform);
             }
             else
             {
                 print("You have not made it to the goal yet.");
+            
+                
+                
+                
             }
         }
 
@@ -226,6 +237,7 @@ public class OverworldMapManager : MonoBehaviour
                 return;
             }
             _canvas = GameObject.Find("Canvas");
+            _canvas2 = GameObject.Find("Canvas2");
             ReloadMapIcons();
             _advanceMap = false;
         }
@@ -265,6 +277,7 @@ public class OverworldMapManager : MonoBehaviour
         _wasEventChosen = false;
         _advanceMap = false;
         _canvas = GameObject.Find("Canvas");
+        _canvas2 = GameObject.Find("Canvas2");
         _choiceGenerator = new ChoiceGenerator(_numChoices);
         _buttonPositioner = new ButtonPositioner(_canvas.transform.position, _numChoices, _verticalIconMargin, _horizontalIconMargin);
         GenerateGoal();
