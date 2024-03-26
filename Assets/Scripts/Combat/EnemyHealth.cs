@@ -192,7 +192,7 @@ public class EnemyHealth : MonoBehaviour
             yield return new WaitForSeconds(1f);
             this.DecreaseHealth(damage, "fire");
             fireDuration--;
-            damage++;
+            damage += 2;
         }
 
     }
