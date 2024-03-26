@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections;
 
 public class WoodMiniGame : MonoBehaviour
@@ -15,10 +16,15 @@ public class WoodMiniGame : MonoBehaviour
     private float SwingTime;
 
     private bool input;
+    public TextMeshProUGUI howToPlayText;
 
     public GameObject particlePrefab;
     public Transform goalObject;
     private GameObject particle;
+
+    public AudioClip swing1Audio;
+
+    [SerializeField] private AudioSource audioSource;
 
     void Start()
     {
@@ -29,6 +35,7 @@ public class WoodMiniGame : MonoBehaviour
         input = false;
         chops = 0;
         SwingTime = Time.time + Random.Range(1.5f, 3.0f);
+        howToPlayText.gameObject.SetActive(true);
     }
 
     void Update()
@@ -71,6 +78,8 @@ public class WoodMiniGame : MonoBehaviour
         (keyNumber == 2 && Input.GetKeyDown(KeyCode.A)) || (keyNumber == 3 && Input.GetKeyDown(KeyCode.S))
         || (keyNumber == 4 && Input.GetKeyDown(KeyCode.D)))
         {
+            audioSource.PlayOneShot(swing1Audio);
+            howToPlayText.gameObject.SetActive(false);
             chops++;
             Debug.Log("Chop " + chops + "/" + treeHP);
             Vector3 offset = new Vector3(1.0f, 2.0f, -3.0f);

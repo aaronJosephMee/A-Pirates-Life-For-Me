@@ -15,6 +15,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     public GameObject widget;
     private GameObject instance;
     public Vector3 offset;
+    public bool ownedItem = false;
 
     // Start is called before the first frame update
     public void GiveItem(Item item){
@@ -36,6 +37,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     {
         if (this.item != ItemManager.instance.GenericNoItem){
             instance = Instantiate(widget, this.transform.parent);
+            instance.GetComponent<InfoWidget>().ownedItem = ownedItem;
             instance.GetComponent<InfoWidget>().GiveItem(item);
             if (shopUpgrade){
                 instance.GetComponent<InfoWidget>().SetTextLevel();

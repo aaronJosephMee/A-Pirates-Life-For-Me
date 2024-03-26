@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class wheelRotation : MonoBehaviour
@@ -10,10 +11,17 @@ public class wheelRotation : MonoBehaviour
     int inRotate;
     float stop;
 
+    public TextMeshProUGUI winText;
+    public TextMeshProUGUI loseText;
+    public TextMeshProUGUI relicWinText; 
+
     public GameObject relicChoice;
-    private int _delay = 1; // test later for 2 secs 
+    private int _delay = 2; // test later for 2 secs 
     private void Start()
     {
+        winText.gameObject.SetActive(false);
+        loseText.gameObject.SetActive(false);
+        relicWinText.gameObject.SetActive(false);
         rbody = GetComponent<Rigidbody2D>();
         stop = Random.Range(500f, 1500f); 
         Rotate();
@@ -60,28 +68,33 @@ public class wheelRotation : MonoBehaviour
         if (rot > 0 && rot <= 45)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 45 - 23);
+            relicWinText.gameObject.SetActive(true);
             StartCoroutine(relicWait());
         }
         else if (rot > 45 && rot <= 90)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,90-23);
+            winText.gameObject.SetActive(true);
             ItemManager.instance.AddGold(100);
             StartCoroutine(WinWait());
         }
         else if (rot > 90 && rot <= 135)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,135-23);
+            relicWinText.gameObject.SetActive(true);
             StartCoroutine(relicWait()); 
         }
         else if (rot > 135 && rot <= 180)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,180-23);
+            winText.gameObject.SetActive(true);
             ItemManager.instance.AddGold(100);
             StartCoroutine(WinWait());
         }
         else if (rot > 180 && rot <= 225)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,225-23);
+            loseText.gameObject.SetActive(true);
             ItemManager.instance.AddGold(-100);
             StartCoroutine(WinWait());
         }
@@ -89,6 +102,7 @@ public class wheelRotation : MonoBehaviour
         else if (rot > 225 && rot <= 270)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,270-23);
+            winText.gameObject.SetActive(true);
             ItemManager.instance.AddGold(100);
             StartCoroutine(WinWait());
             
@@ -97,6 +111,7 @@ public class wheelRotation : MonoBehaviour
         else if (rot > 270 && rot <= 315)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,315-23);
+            loseText.gameObject.SetActive(true);
             ItemManager.instance.AddGold(-100);
             StartCoroutine(WinWait());
         }
@@ -104,6 +119,7 @@ public class wheelRotation : MonoBehaviour
         else if (rot > 315 && rot <= 360)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,315+23);
+            winText.gameObject.SetActive(true);
             ItemManager.instance.AddGold(100);
             StartCoroutine(WinWait());
         }

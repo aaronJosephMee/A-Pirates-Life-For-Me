@@ -29,6 +29,8 @@ public struct ItemStats{
     public Debuffs swordDebuff;
     public Debuffs gunDebuff;
     public float accuracy;
+    public float critChance;
+    public float critMultiplier;
 }
 public class ItemPool
 {

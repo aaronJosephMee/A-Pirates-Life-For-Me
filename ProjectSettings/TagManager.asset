@@ -21,11 +21,10 @@ TagManager:
   - EnemyShip
   - BulletShip
   - PlayerShip
-  - collider
+  - EnemyShipcollider
   - InvisibleWall
-  - 
-  - 
-  - 
+  - EnemyBulletShip
+  - PlayerShipCollider
   - 
   - 
   - 

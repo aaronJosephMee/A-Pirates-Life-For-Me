@@ -22,7 +22,7 @@ public class PlayerItems
     public WeaponScriptableObject currentGun;
     public WeaponScriptableObject currentSword;
     public int itemUses = 0;
-    int gold = 0;
+    int gold = 100;
     public Dictionary<string, DebuffStats> GetSwordDebuffs(){
         return meleeDebuffs;
     }
