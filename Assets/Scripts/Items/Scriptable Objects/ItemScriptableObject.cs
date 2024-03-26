@@ -7,4 +7,5 @@ using UnityEngine;
 public class ItemScriptableObject : Item
 {
     public int uses;
+    public float cooldown;
 }

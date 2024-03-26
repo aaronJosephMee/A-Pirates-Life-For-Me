@@ -10,17 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f9e5ccdd96a356458566500df21e961, type: 3}
-  m_Name: Bottle
+  m_Name: Heal Bottle
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Bottle
   maxlvl: 5
   baseStats:
-    damage: 15
+    gunDamage: 0
+    swordDamage: 0
     defense: 0
     duration: 3
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 5
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
   lvlStats:
-    damage: 0
+    gunDamage: 0
+    swordDamage: 0
     defense: 0
     duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+  price: 0
   uses: 2
+  cooldown: 4

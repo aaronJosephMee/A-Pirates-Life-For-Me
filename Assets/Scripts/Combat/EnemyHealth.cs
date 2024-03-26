@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -23,10 +24,14 @@ public class EnemyHealth : MonoBehaviour
     public AudioClip[] swordhitSounds;
 
     combatManager combatManager;
+    NavMeshAgent navMeshAgent;
+    [SerializeField] private float moveSpeed = 1f;
 
     [Header("Debuff Types")]
     public bool isIgnitable = false; 
-
+    int fireDuration = 0;
+    int poisonStacks = 0;
+    int freezeStacks = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +39,8 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         combatManager = FindObjectOfType<combatManager>();
-
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.speed = moveSpeed;
         isDead = false;
     }
 
@@ -70,14 +76,55 @@ public class EnemyHealth : MonoBehaviour
             }
         }
         if (type=="gun")
-        {Debug.Log("Gun Hit"); }
+        {
+            Dictionary<string, DebuffStats> debuffs = ItemManager.instance.GetGunDebuffs();    
+            foreach (KeyValuePair<string, DebuffStats> debuff in debuffs){
+                if (debuff.Key == Debuffs.Fire.ToString()){
+                    if (fireDuration == 0){
+                        fireDuration += debuff.Value.duration;
+                        StartCoroutine(OnFire());
+                    }
+                    else{
+                        fireDuration += debuff.Value.duration;
+                    }
+                }
+                if (debuff.Key == Debuffs.Poison.ToString()){
+                    if (poisonStacks < debuff.Value.maxStacks){
+                        poisonStacks++;
+                        StartCoroutine(Poisoned(debuff.Value.duration));
+                    }
+                }
+                if (debuff.Key == Debuffs.Freeze.ToString()){
+                    if (freezeStacks < debuff.Value.maxStacks){
+                        freezeStacks++;
+                        StartCoroutine(Freeze(debuff.Value.duration));
+                    }
+                }
+            } }
         if(type == "sword")
         { 
-            Dictionary<string, int> debuffs = ItemManager.instance.GetSwordDebuffs();    
-            foreach (KeyValuePair<string, int> debuff in debuffs){
+            Dictionary<string, DebuffStats> debuffs = ItemManager.instance.GetSwordDebuffs();    
+            foreach (KeyValuePair<string, DebuffStats> debuff in debuffs){
                 if (debuff.Key == Debuffs.Fire.ToString()){
-                    Debug.Log("On fire halp");
-                    StartCoroutine(OnFire(debuff.Value));
+                    if (fireDuration == 0){
+                        fireDuration += debuff.Value.duration;
+                        StartCoroutine(OnFire());
+                    }
+                    else{
+                        fireDuration += debuff.Value.duration;
+                    }
+                }
+                if (debuff.Key == Debuffs.Poison.ToString()){
+                    if (poisonStacks < debuff.Value.maxStacks){
+                        poisonStacks++;
+                        StartCoroutine(Poisoned(debuff.Value.duration));
+                    }
+                }
+                if (debuff.Key == Debuffs.Freeze.ToString()){
+                    if (freezeStacks < debuff.Value.maxStacks){
+                        freezeStacks++;
+                        StartCoroutine(Freeze(debuff.Value.duration));
+                    }
                 }
             }
 
@@ -137,14 +184,34 @@ public class EnemyHealth : MonoBehaviour
 
         Destroy(gameObject);
     }
-    IEnumerator OnFire(int duration){
+    IEnumerator OnFire(){
         int damage = 1;
-        while (duration > 0){
-            yield return new WaitForSeconds(0.5f);
+        while (fireDuration > 0){
+            yield return new WaitForSeconds(1f);
             this.DecreaseHealth(damage, "fire");
-            duration--;
+            fireDuration--;
             damage++;
         }
 
+    }
+    IEnumerator Poisoned(int duration){
+        int damage = 5;
+        while (duration > 0){
+            yield return new WaitForSeconds(1f);
+            this.DecreaseHealth(damage, "poison");
+            duration--;
+        }
+        poisonStacks--;
+    }
+    IEnumerator Freeze(int duration){
+        moveSpeed *= 0.7f;
+        navMeshAgent.speed = moveSpeed;
+        while (duration > 0){
+            yield return new WaitForSeconds(1f);
+            duration--;
+        }
+        freezeStacks--;
+        moveSpeed = moveSpeed / 0.7f;
+        navMeshAgent.speed = moveSpeed;
     }
 }

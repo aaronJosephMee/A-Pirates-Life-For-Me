@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce77370ce9a73b942bf89cd4f8ba96ea, type: 3}
-  m_Name: Gun
+  m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
+  m_Name: Fire Gun
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: Pistol
-  maxlvl: 5
+  title: 
+  maxlvl: 0
   baseStats:
-    gunDamage: 25
+    gunDamage: 0
     swordDamage: 0
     defense: 0
     duration: 0
     maxStacks: 0
-    bulletCount: 1
-    fireRate: 0.75
-    speedBoost: 10
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
@@ -44,4 +44,32 @@ MonoBehaviour:
     gunDebuff: 0
     accuracy: 0
   price: 0
-  type: 0
+  activator: 0
+  ActivatorStats:
+    gunDamage: 0
+    swordDamage: 0
+    defense: 0
+    duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+  Activatorlvl:
+    gunDamage: 0
+    swordDamage: 0
+    defense: 0
+    duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0

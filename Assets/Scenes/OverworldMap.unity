@@ -2047,13 +2047,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
-      propertyPath: relics.Array.size
-      value: 7
+      propertyPath: items.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: items.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 93eb1de89e534fa4aa08d297057c48d4, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: items.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ad744658ecc39d4688a2014a935b2e2, type: 2}
     - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
       propertyPath: relics.Array.data[6]
       value: 
       objectReference: {fileID: 11400000, guid: a2631024bd394424b9a34384717d51a0, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 76865ce773c4eed4da3f688079b6faa7, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: d325010fa7778ce469a0cf229a4243c4, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: defc1ed24cfe4d44d8a92b5676a90cf5, type: 2}
+    - target: {fileID: 3410595713700482888, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
+      propertyPath: relics.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b9174512d7057744b1b26363a0f02b5, type: 2}
     - target: {fileID: 4570886627651428899, guid: 6e3f71162cd215643b8e1aea3bae08cb, type: 3}
       propertyPath: m_Name
       value: ItemManager

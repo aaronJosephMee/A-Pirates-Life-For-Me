@@ -17,7 +17,6 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
     public bool free = false;
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log(free);
         if (item != null && item != ItemManager.instance.GenericNoItem && (ItemManager.instance.CurrentGold() >= item.price || free)){
             this.background.color = highlight;
         }

@@ -22,11 +22,11 @@ public class ShopInventory : MonoBehaviour
             //     }
             //     continue;
             // }
-            // else if (res < 30){
-            //     items[i] = ItemManager.instance.GetRandItem();
-            //     continue;
-            // }
-            // else{
+            if (res < 30){
+                items[i] = ItemManager.instance.GetRandItem();
+                continue;
+            }
+             else{
                 int threshold = 100;
                 if (ItemManager.instance.GetRandRelic() != null){
                     if (ItemManager.instance.RelicCount() < ItemManager.instance.MaxRelics/4){
@@ -49,7 +49,7 @@ public class ShopInventory : MonoBehaviour
                 else{
                     items[i] = ItemManager.instance.GetRandRelic();
                 }
-            // }
+             }
         }
         for (int i = 0; i < items.Length; i++){
             shopItems[i].GiveItem(items[i]);
