@@ -23,6 +23,9 @@ public class combatManager : MonoBehaviour
     [SerializeField] GameObject sword;
     [SerializeField] GameObject gun;
 
+    [SerializeField] public List<EnemyCount> enemiesToSpawn;
+    private List<Transform> spawners;
+
     void Start()
     {
 
@@ -41,6 +44,15 @@ public class combatManager : MonoBehaviour
         playerSword = playerObject.GetComponentInChildren<MeleeAttack>();
 
         cameraManager = FindObjectOfType<CameraManager>();
+
+        spawners = new List<Transform>();
+        GameObject[] spawnerObjects = GameObject.FindGameObjectsWithTag("Spawner");
+        foreach (GameObject spawner in spawnerObjects)
+        {
+            spawners.Add(spawner.transform);
+        }
+
+        SpawnEnemies();
     }
 
     private void Awake()
@@ -54,16 +66,40 @@ public class combatManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemyCount = enemies.Length;
+    public void SpawnEnemies()
+    {
+        foreach (Transform spawner in spawners)
+        {
+            foreach (EnemyCount enemyCount in enemiesToSpawn)
+            {
+                StartCoroutine(SpawnEnemy(enemyCount, spawner));
+            }
+        }
+    }
+
+    IEnumerator SpawnEnemy(EnemyCount enemyCount, Transform spawnLocation)
+    {
+        for (int i = 0; i < enemyCount.numToSpawn; i++)
+        {
+            Vector3 position = spawnLocation.position;
+            Instantiate(enemyCount.EnemyPrefab,
+                new Vector3(position.x + Random.Range(-25, 25), position.y, position.z + Random.Range(-25, 25)),
+                transform.rotation);
+            //Instantiate(enemyCount.EnemyPrefab, new Vector3(spawnLocation.x + Random.Range(-25, 25), spawnLocation.y, spawnLocation.z + Random.Range(-25, 25)), Quaternion.identity);
+
+
+            this.enemyCount++;
+            yield return new WaitForSeconds(8);
+        }
     }
 
     public void DecreaseEnemyCount()
     {
         enemyCount--;
 
-        if (enemyCount == 0)
+        if (enemyCount <= 0 && !IsInvoking("SpawnEnemies"))
         {
             CombatCleared();
         }

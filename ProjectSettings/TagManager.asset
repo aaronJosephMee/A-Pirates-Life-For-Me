@@ -9,6 +9,7 @@ TagManager:
   - PlayerShip
   - FxTemporaire
   - Fire
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,6 @@ TagManager:
   - PlayerShip
   - collider
   - InvisibleWall
-  - 
   - 
   - 
   - 

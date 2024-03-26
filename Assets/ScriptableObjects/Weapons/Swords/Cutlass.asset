@@ -17,7 +17,7 @@ MonoBehaviour:
   maxlvl: 5
   baseStats:
     gunDamage: 0
-    swordDamage: 10
+    swordDamage: 50
     defense: 0
     duration: 0
     maxStacks: 0

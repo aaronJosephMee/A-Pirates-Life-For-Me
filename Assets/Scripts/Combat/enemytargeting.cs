@@ -19,8 +19,9 @@ public class enemytargeting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
         Animator animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        
 
         AnimationClip clip = animator.runtimeAnimatorController.animationClips[0]; 
         float animationLength = clip.length;
