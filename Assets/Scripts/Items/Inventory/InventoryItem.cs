@@ -47,7 +47,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
         }
         catch{}
     }  
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         if (this.item != ItemManager.instance.GenericNoItem){
             instance = Instantiate(widget, this.transform.parent);
@@ -65,7 +65,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
         
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         DestroyWidget();
     }
