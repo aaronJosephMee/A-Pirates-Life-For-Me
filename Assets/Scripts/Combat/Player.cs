@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace.OverworldMap;
@@ -60,11 +61,9 @@ public class Player : MonoBehaviour
         else{
             damageToTake = damage - newStats.defense;
         }
+        damageToTake = MathF.Round(damageToTake,2);
         this.currentHealth -= damageToTake; 
         GameObject dmgNumber = Instantiate(dmgNumb, slider.transform);
-        if (dmgNumber == null){
-            Debug.Log("Whys??");
-        }
         if (damageToTake == 0){
             dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("DODGE", dodgeColor);
         }
@@ -72,7 +71,8 @@ public class Player : MonoBehaviour
             dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("-" + damageToTake, hitColor);
             ItemManager.instance.OnTakeDamage();
         }
-        
+        Destroy(dmgNumber);
+        Instantiate(dmgNumb, slider.transform);
         if (currentHealth <= 0 && !isDead)
         {
             Die();

@@ -17,13 +17,14 @@ public class StatsText : MonoBehaviour
         statText += "Sword Damage: " + stats.swordDamage + "   ";
         statText += "Defense: " + stats.defense + "\n";
         statText += "Bullet Count: " + stats.bulletCount + "     ";
-        statText += "Fire Rate: " + stats.fireRate + "      ";
+        
         statText += "Ricochets: " + stats.richochet + "\n";
+        statText += "Fire Rate: " + stats.fireRate + "      ";
         // statText += "Bullet Size: " + stats.projectileSize + "       ";
         // statText += "Accuracy: " + stats.accuracy + "\n";
-        statText += "Dodge Chance: " + stats.dodgeChance + "       ";
-        statText += "Crit Chance: " + stats.critChance + "       ";
-        statText += "Crit Multiplier: " + stats.critMultiplier + "\n";
+        statText += "Dodge Chance: " + stats.dodgeChance*100 + "%\n";
+        statText += "Crit Chance: " + stats.critChance*100 + "%       ";
+        statText += "Crit Multiplier: " + stats.critMultiplier + "x\n";
         text.text = statText;
     }
 
