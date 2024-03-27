@@ -11,12 +11,14 @@ public class ItemWidget : InventoryItem,IPointerEnterHandler,IPointerExitHandler
     public Image background;
     ItemStats stats;
     Health hp;
+    public Slider healthBar;
     // Start is called before the first frame update
     void Start()
     {
         item = ItemManager.instance.playerItems.GetItem();
         stats = ItemManager.instance.GetItemStats(item);
         hp = ItemManager.instance.GetHealth();
+        healthBar.value = hp.curHealth / hp.maxHealth;
         this.GiveItem(item);
     }
 
@@ -48,6 +50,7 @@ public class ItemWidget : InventoryItem,IPointerEnterHandler,IPointerExitHandler
                 this.background.color = regular;
             }
             ItemManager.instance.SetHealth(hp.curHealth, hp.maxHealth);
+            healthBar.value = hp.curHealth / hp.maxHealth;
             ItemManager.instance.playerItems.itemUses++;
             if (ItemManager.instance.playerItems.itemUses >= ((ItemScriptableObject)item).uses){
                 ItemManager.instance.SetItem(null);
