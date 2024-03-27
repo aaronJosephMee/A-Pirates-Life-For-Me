@@ -17,8 +17,9 @@ public class StatsText : MonoBehaviour
         statText += "Sword Damage: " + stats.swordDamage + "   ";
         statText += "Bullet Count: " + stats.bulletCount + "\n";
         statText += "Fire Rate: " + stats.fireRate + "      ";
-        statText += "Bullet Size: " + stats.projectileSize + "       ";
-        statText += "Accuracy: " + stats.accuracy + "\n";
+        statText += "Ricochets: " + stats.richochet + "\n";
+        // statText += "Bullet Size: " + stats.projectileSize + "       ";
+        // statText += "Accuracy: " + stats.accuracy + "\n";
         statText += "Crit Chance: " + stats.critChance + "       ";
         statText += "Crit Multiplier: " + stats.critMultiplier + "\n";
         text.text = statText;
