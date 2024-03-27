@@ -78,7 +78,7 @@ public class InfoWidget : MonoBehaviour
             info += "Sword Debuff: " + stats.swordDebuff + "\n";
         }
         if (stats.duration != 0){
-            info += "Duration: " + stats.duration + "\n";
+            info += "Duration: " + stats.duration + " sec\n";
         }
         if (stats.maxStacks != 0 && stats.gunDebuff != Debuffs.Fire){
             info += "Max Stacks: " + stats.maxStacks + "\n";
@@ -214,7 +214,7 @@ public class InfoWidget : MonoBehaviour
             info += "Ricochets: " + stats.richochet + " -> " + (stats.richochet + item.lvlStats.richochet) + "\n";
         }
         if (item.lvlStats.duration != 0){
-            info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + "\n";
+            info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + " sec\n";
         }
         if (item.lvlStats.maxStacks != 0){
             info += "Max Stacks: " + stats.maxStacks + " -> " + (stats.maxStacks + item.lvlStats.maxStacks) + "\n";
