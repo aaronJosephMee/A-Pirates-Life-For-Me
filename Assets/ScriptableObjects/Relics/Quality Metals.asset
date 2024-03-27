@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: Both Damage
+  m_Name: Quality Metals
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 7438454cc680d1f4089f9f3229c2adca, type: 3}
-  title: Both Damage
-  maxlvl: 2
+  image: {fileID: 21300000, guid: 4e56ee1b502d5eb4bb4dd1d590b21c6a, type: 3}
+  title: Quality Metals
+  description: Gives a small boost to gun and sword damage as well as a boost to
+    crit rate and multiplier.
+  maxlvl: 5
   baseStats:
-    gunDamage: 10
-    swordDamage: 0
+    gunDamage: 5
+    swordDamage: 5
     defense: 0
     duration: 0
     maxStacks: 0
@@ -29,11 +31,12 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-    critChance: 0
-    critMultiplier: 0
+    critChance: 0.05
+    critMultiplier: 0.1
+    richochet: 0
   lvlStats:
-    gunDamage: 10
-    swordDamage: 0
+    gunDamage: 5
+    swordDamage: 5
     defense: 0
     duration: 0
     maxStacks: 0
@@ -45,31 +48,16 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-    critChance: 0
-    critMultiplier: 0
-  price: 100
-  activator: 1
+    critChance: 0.05
+    critMultiplier: 0.05
+    richochet: 0
+  price: 80
+  activator: 0
   ActivatorStats:
     gunDamage: 0
-    swordDamage: 10
+    swordDamage: 0
     defense: 0
-    duration: 5
-    maxStacks: 2
-    bulletCount: 0
-    fireRate: 0
-    speedBoost: 1
-    hpRegen: 0
-    projectileSize: 0
-    swordDebuff: 0
-    gunDebuff: 0
-    accuracy: 0
-    critChance: 0
-    critMultiplier: 0
-  Activatorlvl:
-    gunDamage: 0
-    swordDamage: 10
-    defense: 0
-    duration: 2
+    duration: 0
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
@@ -81,3 +69,21 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+  Activatorlvl:
+    gunDamage: 0
+    swordDamage: 0
+    defense: 0
+    duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0

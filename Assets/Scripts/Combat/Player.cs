@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace.OverworldMap;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public class Player : MonoBehaviour
@@ -14,8 +15,12 @@ public class Player : MonoBehaviour
     meleeHitbox meleeWeapon;
     CameraManager cameraManager;
     WeaponManager weaponManager;
+    ItemStats newStats;
     float toHeal = 0;
-    [SerializeField] public Slider slider;
+    [SerializeField] Slider slider;
+    [SerializeField] GameObject dmgNumb;
+    [SerializeField] Color hitColor;
+    [SerializeField] Color dodgeColor;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +50,29 @@ public class Player : MonoBehaviour
     
     public void takeDamage(float damage)
     {
-        this.currentHealth -= damage;
-        ItemManager.instance.OnTakeDamage();
+        float damageToTake;
+        if (new System.Random().NextDouble() < newStats.dodgeChance){
+            damageToTake = 0;
+        }
+        else if (newStats.defense >= damage){
+            damageToTake = 1;
+        }
+        else{
+            damageToTake = damage - newStats.defense;
+        }
+        this.currentHealth -= damageToTake; 
+        GameObject dmgNumber = Instantiate(dmgNumb, slider.transform);
+        if (dmgNumber == null){
+            Debug.Log("Whys??");
+        }
+        if (damageToTake == 0){
+            dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("DODGE", dodgeColor);
+        }
+        else{
+            dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("-" + damageToTake, hitColor);
+            ItemManager.instance.OnTakeDamage();
+        }
+        
         if (currentHealth <= 0 && !isDead)
         {
             Die();
@@ -73,7 +99,7 @@ public class Player : MonoBehaviour
         GameManager.instance.LoadScene(SceneName.TitleScreen);
     }
     private IEnumerator PollRelics(){
-        ItemStats newStats = ItemManager.instance.TotalStats();
+        newStats = ItemManager.instance.TotalStats();
         // TODO: Make it not call everything if nothing is changed
         weaponManager.damage = newStats.gunDamage;
         weaponManager.bulletsPerShot = newStats.bulletCount;

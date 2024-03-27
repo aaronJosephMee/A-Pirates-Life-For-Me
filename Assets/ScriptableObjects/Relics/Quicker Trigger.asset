@@ -10,38 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: Fish
-  m_EditorClassIdentifier:
-  image: {fileID: 0}
-  title: Poisson
-  description: Makes the sword inflict the poison debuff
-  maxlvl: 2
+  m_Name: Quicker Trigger
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: f0c6d5ee29df7134e8eeb10345ba8035, type: 3}
+  title: Quicker Trigger
+  description: Improves fire rate
+  maxlvl: 3
   baseStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 3
-    maxStacks: 3
+    duration: 0
+    maxStacks: 0
     bulletCount: 0
-    fireRate: 0
-    speedBoost: 0
-    hpRegen: 0
-    projectileSize: 0
-    swordDebuff: 2
-    gunDebuff: 0
-    accuracy: 0
-    critChance: 0
-    critMultiplier: 0
-    richochet: 0
-    dodgeChance: 0
-  lvlStats:
-    gunDamage: 0
-    swordDamage: 0
-    defense: 0
-    duration: 3
-    maxStacks: 1
-    bulletCount: 0
-    fireRate: 0
+    fireRate: -0.3
     speedBoost: 0
     hpRegen: 0
     projectileSize: 0
@@ -52,7 +34,25 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
-  price: 60
+  lvlStats:
+    gunDamage: 0
+    swordDamage: 0
+    defense: 0
+    duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: -0.3
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
+  price: 100
   activator: 0
   ActivatorStats:
     gunDamage: 0
