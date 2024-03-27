@@ -33,9 +33,6 @@ public class CombatItem : MonoBehaviour
             if (item == null){
                 item = ItemManager.instance.GenericNoItem;
             }
-            if (item.image != null){
-                itemImage.sprite = item.image;
-            }
             if (item != ItemManager.instance.GenericNoItem && ((ItemScriptableObject)item).cooldown != 0){
                 StartCoroutine(StartCooldown(((ItemScriptableObject)item).cooldown));
             }
@@ -57,6 +54,9 @@ public class CombatItem : MonoBehaviour
         if (item != ItemManager.instance.GenericNoItem && coolDownImage.transform.localScale.x <= 0 && activeImage.transform.localScale.x <= 0){
             useImage.SetActive(true);
         }
+        if (item.image != null && coolDownImage.transform.localScale.x <= 0 && activeImage.transform.localScale.x <= 0){
+                itemImage.sprite = item.image;
+            }
     }
     IEnumerator StartCooldown(float sec){
         yield return new WaitForSeconds(sec - 0.01f);

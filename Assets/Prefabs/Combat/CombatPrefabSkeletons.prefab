@@ -5473,6 +5473,10 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5520484091843396569, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: bulletVelocity
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520484091843396569, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
       propertyPath: raycastDesination
       value: 
       objectReference: {fileID: 6508356621278170948}
