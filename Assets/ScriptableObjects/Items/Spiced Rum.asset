@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Spiced Rum
+  description: A 2 use offesive item providing a boost to damage, speed, and fire
+    rate for 7 seconds.
   maxlvl: 2
   baseStats:
     gunDamage: 20

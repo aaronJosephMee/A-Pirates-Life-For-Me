@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Pistol
+  description: 
   maxlvl: 5
   baseStats:
     gunDamage: 25
@@ -29,6 +30,9 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -43,5 +47,8 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
   price: 0
   type: 0

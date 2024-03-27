@@ -22,7 +22,7 @@ public class ShopInventory : MonoBehaviour
             //     }
             //     continue;
             // }
-            if (res < 30){
+            if (res < 10){
                 items[i] = ItemManager.instance.GetRandItem();
                 continue;
             }

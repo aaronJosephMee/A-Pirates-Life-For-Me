@@ -31,6 +31,7 @@ public struct ItemStats{
     public float accuracy;
     public float critChance;
     public float critMultiplier;
+    public int richochet;
 }
 public class ItemPool
 {

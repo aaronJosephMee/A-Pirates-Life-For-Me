@@ -18,6 +18,7 @@ public class WeaponManager : MonoBehaviour
     public float damage = 25;
     public float critChance;
     public float critMultiplier;
+    public int richochet;
     [SerializeField] public Vector3 bulletSize = Vector3.one;
 
 

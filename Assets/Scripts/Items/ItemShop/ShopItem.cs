@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -81,7 +82,7 @@ public class ShopItem : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler, 
         if (item != null && ItemManager.instance.IsUpgrade(item) && !inventoryItem.shopUpgrade){
             GiveItem(this.item);
         }
-        if (ItemManager.instance.CurrentGold() < item.price){
+        if (price != null && ItemManager.instance.CurrentGold() < item.price){
             price.color = Color.red;
         }
     }

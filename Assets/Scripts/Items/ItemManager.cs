@@ -146,6 +146,7 @@ public class ItemManager : MonoBehaviour
         IS1.speedBoost += IS2.speedBoost;
         IS1.critChance += IS2.critChance;
         IS1.critMultiplier += IS2.critMultiplier;
+        IS1.richochet += IS2.richochet;
         return IS1;
     }
     public ItemStats SubtractStats(ItemStats IS1, ItemStats IS2){
@@ -160,6 +161,7 @@ public class ItemManager : MonoBehaviour
         IS1.speedBoost -= IS2.speedBoost;
         IS1.critChance -= IS2.critChance;
         IS1.critMultiplier -= IS2.critMultiplier;
+        IS1.richochet -= IS2.richochet;
         return IS1;
     }
     public ItemStats GetItemStats(Item item){

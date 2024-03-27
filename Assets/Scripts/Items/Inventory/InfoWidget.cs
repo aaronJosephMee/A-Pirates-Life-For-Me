@@ -68,6 +68,9 @@ public class InfoWidget : MonoBehaviour
         if (stats.critMultiplier != 0){
             info += "Crit Multiplier: " + stats.critMultiplier + "\n";
         }
+        if (stats.richochet != 0){
+            info += "Ricochets: " + stats.richochet + "\n";
+        }
         if (stats.gunDebuff != Debuffs.None){
             info += "Gun Debuff: " + stats.gunDebuff + "\n";
         }
@@ -147,6 +150,9 @@ public class InfoWidget : MonoBehaviour
                 if (stats.critMultiplier != 0){
                     info += "Crit Multiplier: " + stats.critMultiplier + "\n";
                 }
+                if (stats.richochet != 0){
+                    info += "Ricochets: " + stats.richochet + "\n";
+                }
             }
             info += "Class: Relic\n";
         }
@@ -203,6 +209,9 @@ public class InfoWidget : MonoBehaviour
         }
         if (item.lvlStats.critMultiplier != 0){
             info += "Crit Multiplier: " + stats.critMultiplier + " -> " + (stats.critMultiplier + item.lvlStats.critMultiplier) + "\n";
+        }
+        if (item.lvlStats.richochet != 0){
+            info += "Ricochets: " + stats.richochet + " -> " + (stats.richochet + item.lvlStats.richochet) + "\n";
         }
         if (item.lvlStats.duration != 0){
             info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + "\n";
@@ -268,6 +277,9 @@ public class InfoWidget : MonoBehaviour
                 }
                 if (relic.Activatorlvl.critMultiplier != 0){
                     active += "Crit Multiplier: " + stats.critMultiplier + " -> " + (stats.critMultiplier + relic.Activatorlvl.critMultiplier) + "\n";
+                }
+                if (relic.Activatorlvl.richochet != 0){
+                    active += "Ricochets: " + stats.richochet + " -> " + (stats.richochet + relic.Activatorlvl.richochet) + "\n";
                 }
                 if (active != ""){
                     active = "Active Effects: \n" + active;
