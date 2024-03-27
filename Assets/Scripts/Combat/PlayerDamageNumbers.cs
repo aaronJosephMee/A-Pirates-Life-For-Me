@@ -8,13 +8,16 @@ public class PlayerDamageNumbers : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI tmp;
     [SerializeField]float timeToLive;
+    string text;
+    Color color;
     // Start is called before the first frame update
     void Awake()
     {
         StartCoroutine(Die());
     }
     public void SetText(string text, Color color){
-        Debug.Log(tmp);
+        this.text = text;
+        this.color = color;
         tmp.text = text;
         tmp.color = color;
     }
@@ -23,6 +26,7 @@ public class PlayerDamageNumbers : MonoBehaviour
     {
         this.transform.position = this.transform.position + new Vector3(0,25f * Time.deltaTime, 0);
         tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, tmp.color.a - 0.5f * Time.deltaTime);
+        
     }
     private IEnumerator Die(){
         yield return new WaitForSeconds(timeToLive);
