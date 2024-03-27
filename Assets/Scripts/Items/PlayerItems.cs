@@ -175,9 +175,6 @@ public class PlayerItems
         }
         else{
             playerRelics.Add(relic.title, relic);
-            Debug.Log("Adding " + relic.title);
-            Debug.Log("Curlvl " + relic.curlvl + ", Maxlvl: " + relic.maxlvl);
-
             if (relic.curlvl < relic.maxlvl){
                 upgradeables.Add(relic.title, relic);
             }

@@ -14,11 +14,9 @@ public class meleeHitbox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            //Debug.Log("enemy hit");
             enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                Debug.Log(swordDebuff);
                 if (new System.Random().NextDouble() < critChance){
                     enemyHealth.DecreaseHealth(swordDamage * critMultiplier,"sword");
                 }
