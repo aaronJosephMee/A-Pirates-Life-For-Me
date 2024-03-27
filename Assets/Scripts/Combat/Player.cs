@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
         meleeWeapon = GetComponentInChildren<meleeHitbox>();
         weaponManager = GetComponentInChildren<WeaponManager>();
         anim = GetComponent<Animator>();
+        currentHealth = ItemManager.instance.GetHealth().curHealth;
+        maxHealth = ItemManager.instance.GetHealth().maxHealth;
         StartCoroutine(PollRelics());
     }
 
@@ -88,5 +90,8 @@ public class Player : MonoBehaviour
         anim.SetFloat("Speed", newStats.speedBoost/speedDenominator);
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(PollRelics());
+    }
+    public void UpdateHealth(){
+        ItemManager.instance.SetHealth(currentHealth, maxHealth);
     }
 }

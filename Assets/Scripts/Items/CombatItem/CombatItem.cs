@@ -27,7 +27,7 @@ public class CombatItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(useButton) && item != ItemManager.instance.GenericNoItem && coolDownImage.transform.localScale.x <= 0 && activeImage.transform.localScale.x <= 0){
+        if (Input.GetKeyDown(useButton) && item != ItemManager.instance.GenericNoItem && coolDownImage.transform.localScale.x <= 0 && activeImage.transform.localScale.x <= 0 && !combatManager.Instance.waveCleared){
             ItemManager.instance.UseItem();
             item = ItemManager.instance.CurrentItem();
             if (item == null){

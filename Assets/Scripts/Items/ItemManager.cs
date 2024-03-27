@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
+public struct Health{
+    public float maxHealth;
+    public float curHealth;
+}
 public class ItemManager : MonoBehaviour
 {
     public int MaxRelics = 21;
@@ -15,6 +19,10 @@ public class ItemManager : MonoBehaviour
     public WeaponScriptableObject defaultSword;
     public ItemScriptableObject defaultItem;
     public Item GenericNoItem;
+    [SerializeField] Health health = new Health(){
+        curHealth = 100f,
+        maxHealth = 100f,
+    };
     void Awake(){
         if (instance == null)
         {
@@ -34,6 +42,13 @@ public class ItemManager : MonoBehaviour
     }
     public Dictionary<string, DebuffStats> GetSwordDebuffs(){
         return playerItems.GetSwordDebuffs();
+    }
+    public Health GetHealth(){
+        return health;
+    }
+    public void SetHealth(float curHealth, float maxHealth){
+        health.curHealth = curHealth;
+        health.maxHealth = maxHealth;
     }
     public Dictionary<string, DebuffStats> GetGunDebuffs(){
         return playerItems.GetGunDebuffs();

@@ -18,6 +18,7 @@ public class combatManager : MonoBehaviour
     public CharacterAiming playerAim;
     public WeaponManager playerGun;
     public MeleeAttack playerSword;
+    public Player playerHealth;
     CameraManager cameraManager;
     public bool waveCleared = false;
     [SerializeField] GameObject sword;
@@ -39,6 +40,7 @@ public class combatManager : MonoBehaviour
         playerGun = playerObject.GetComponentInChildren<WeaponManager>();
 
         playerSword = playerObject.GetComponentInChildren<MeleeAttack>();
+        playerHealth = playerObject.GetComponent<Player>();
 
         cameraManager = FindObjectOfType<CameraManager>();
     }
@@ -98,6 +100,7 @@ public class combatManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         yield return new WaitForSeconds(4f);
+        playerHealth.UpdateHealth();
         Instantiate(itemDrop);
     }
 }
