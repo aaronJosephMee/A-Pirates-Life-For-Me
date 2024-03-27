@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Confidence
-  maxlvl: 2
+  description: Gives a large boost to damage but getting hit will inflict a large
+    damage debuff for several seconds
+  maxlvl: 3
   baseStats:
     gunDamage: 20
     swordDamage: 20
@@ -31,6 +33,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 10
     swordDamage: 10
@@ -47,13 +51,15 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 80
   activator: 3
   ActivatorStats:
     gunDamage: -30
     swordDamage: -30
     defense: 0
-    duration: 4
+    duration: 5
     maxStacks: 1
     bulletCount: 0
     fireRate: 0
@@ -65,9 +71,11 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   Activatorlvl:
-    gunDamage: 10
-    swordDamage: 10
+    gunDamage: 5
+    swordDamage: 5
     defense: 0
     duration: 1
     maxStacks: 0
@@ -81,3 +89,5 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0

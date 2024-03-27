@@ -30,9 +30,10 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-    critChance: 0
-    critMultiplier: 0
+    critChance: 0.1
+    critMultiplier: 1.3
     richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -50,5 +51,6 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
+    dodgeChance: 0
   price: 0
   type: 0

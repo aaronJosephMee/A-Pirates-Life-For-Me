@@ -5399,6 +5399,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6749645392033074335}
     - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: dmgNumb
+      value: 
+      objectReference: {fileID: 233297204070333816, guid: 7b667c7d6817eda4592983dfb78351ee, type: 3}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: hitColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: hitColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: hitColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: hitColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: dodgeColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: dodgeColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: dodgeColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: dodgeColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
       propertyPath: currentHealth
       value: 100
       objectReference: {fileID: 0}

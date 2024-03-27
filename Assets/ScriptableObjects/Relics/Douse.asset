@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Douse
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 95b05f39ff881684b9135209ceb88015, type: 3}
-  title: gas douse
+  title: Gas Douse
+  description: Makes the sword inflict the fire debuff for several seconds
   maxlvl: 2
   baseStats:
     gunDamage: 0
@@ -31,6 +32,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 10
@@ -47,6 +50,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 60
   activator: 0
   ActivatorStats:
@@ -65,6 +70,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -81,3 +88,5 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
