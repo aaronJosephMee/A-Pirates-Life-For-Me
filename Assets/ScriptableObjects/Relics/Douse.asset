@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 95b05f39ff881684b9135209ceb88015, type: 3}
   title: Gas Douse
-  description: Makes the sword inflict the fire debuff for several seconds
+  description: Makes the sword inflict the fire debuff
   maxlvl: 2
   baseStats:
     gunDamage: 0

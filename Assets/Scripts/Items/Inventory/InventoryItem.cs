@@ -29,7 +29,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
             nme.text = "";
         }
         else{
-            nme.text = item.name;
+            nme.text = item.title;
         }
         if (item.image != null){
             image.sprite = item.image;

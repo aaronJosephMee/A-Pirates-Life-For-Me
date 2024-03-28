@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Speed Boost
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: Speed Boost
+  title: Better Boots
+  description: Improves your speed
   maxlvl: 3
   baseStats:
     gunDamage: 0
@@ -23,7 +24,7 @@ MonoBehaviour:
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
-    speedBoost: 1
+    speedBoost: 2
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
@@ -31,6 +32,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -47,17 +50,19 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 50
-  activator: 1
+  activator: 0
   ActivatorStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 3
-    maxStacks: 1
+    duration: 0
+    maxStacks: 0
     bulletCount: 0
     fireRate: 0
-    speedBoost: 1
+    speedBoost: 0
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
@@ -65,6 +70,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -73,7 +80,7 @@ MonoBehaviour:
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
-    speedBoost: 1
+    speedBoost: 0
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
@@ -81,3 +88,5 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
