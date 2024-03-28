@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Sword Damage Up
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: f2b7c60eaae2f984bb7e90e241aecefa, type: 3}
-  title: Sword Damage Up
+  title: Sharpened Blade
+  description: Improves sword damage
   maxlvl: 2
   baseStats:
     gunDamage: 0
@@ -23,10 +24,16 @@ MonoBehaviour:
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 50
@@ -35,9 +42,51 @@ MonoBehaviour:
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 150
   activator: 0
+  ActivatorStats:
+    gunDamage: 0
+    swordDamage: 0
+    defense: 0
+    duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
+  Activatorlvl:
+    gunDamage: 0
+    swordDamage: 0
+    defense: 0
+    duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0

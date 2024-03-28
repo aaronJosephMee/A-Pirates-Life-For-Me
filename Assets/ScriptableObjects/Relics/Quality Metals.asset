@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 4e56ee1b502d5eb4bb4dd1d590b21c6a, type: 3}
   title: Quality Metals
   description: Gives a small boost to gun and sword damage as well as a boost to
-    crit rate and multiplier.
+    crit rate and multiplier
   maxlvl: 5
   baseStats:
     gunDamage: 5
@@ -34,6 +34,7 @@ MonoBehaviour:
     critChance: 0.05
     critMultiplier: 0.1
     richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 5
     swordDamage: 5
@@ -51,6 +52,7 @@ MonoBehaviour:
     critChance: 0.05
     critMultiplier: 0.05
     richochet: 0
+    dodgeChance: 0
   price: 80
   activator: 0
   ActivatorStats:
@@ -70,6 +72,7 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
+    dodgeChance: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -87,3 +90,4 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
+    dodgeChance: 0

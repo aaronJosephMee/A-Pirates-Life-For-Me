@@ -18,7 +18,7 @@ public class ExpandedInfo : MonoBehaviour
             nme.text = "";
         }
         else{
-            nme.text = item.name;
+            nme.text = item.title;
             desc.text = item.description;
             price.text = item.price + " Gold";
         }
