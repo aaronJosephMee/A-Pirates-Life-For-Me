@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: Cultists Part II
+  m_EditorClassIdentifier: 
+  title: Cultists - Part II
+  scene: 10
+  sceneIdx: 0
+  flavorText: "You are walking through a small, wooded area just outside of a village.
+    Suddenly, a hooded figure appears from behind a tree. \u201CWe\u2019ve been watching
+    you,\u201D he says. \u201CYou have made an offering of blood in the name of our
+    god, Dagon. Greater sacrifices will lead to even greater rewards. Are you interested
+    in what we offer?\u201D How do you respond"
+  isMinigame: 0
+  initialChoices: 0000000000000000
+  choices:
+    Value:
+    - text: 'No, my offering was a mistake (walk away). '
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'The man looks at you disdainfully, shaking his head, as you
+        leave the woods.
+
+
+        Lose Mark of Dagon'
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Tell me more.
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "\u201COur god demands more blood. Find someone, a suitable offering,
+        and lead them to the shores straight behind me. There, you will find an archway
+        and ring of red flowers. Bring the sacrifice there and our god will do the
+        rest. Then you will have your reward.\u201D How do you proceed?"
+      nextChoiceIndices:
+        Value: 0300000004000000
+    - text: Continue
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: I will do as you ask.
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "You find a man sitting alone beneath the shade of a tree. No
+        one else appears to be around. You ask him for help, pretending to have lost
+        a precious ring along the shores. He follows you, eager to help. You direct
+        him towards the patch of red flowers and hang back a bit.\u201D"
+      nextChoiceIndices:
+        Value: 00000000
+    - text: No! How could you ask such a thing of me?!
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: No! How could you ask such a thing of me?!
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
