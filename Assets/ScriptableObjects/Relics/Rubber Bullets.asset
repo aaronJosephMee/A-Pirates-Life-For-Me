@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Rubber Bullets
-  description: Your bullets gain the ability to ricochet off enemies.
+  description: Gives your bullets the ability to ricochet off enemies
   maxlvl: 2
   baseStats:
     gunDamage: 0
@@ -33,6 +33,7 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 1
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -50,6 +51,7 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 1
+    dodgeChance: 0
   price: 60
   activator: 0
   ActivatorStats:
@@ -69,6 +71,7 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
+    dodgeChance: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -86,3 +89,4 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
+    dodgeChance: 0
