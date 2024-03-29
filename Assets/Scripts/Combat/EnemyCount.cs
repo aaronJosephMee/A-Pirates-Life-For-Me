@@ -7,4 +7,5 @@ public class EnemyCount
 {
     public GameObject EnemyPrefab;
     public int numToSpawn;
+    public float scalingFactor = 1.0f;
 }

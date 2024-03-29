@@ -84,14 +84,25 @@ public class combatManager : MonoBehaviour
         for (int i = 0; i < enemyCount.numToSpawn; i++)
         {
             Vector3 position = spawnLocation.position;
-            Instantiate(enemyCount.EnemyPrefab,
-                new Vector3(position.x + Random.Range(-25, 25), position.y, position.z + Random.Range(-25, 25)),
-                transform.rotation);
-            //Instantiate(enemyCount.EnemyPrefab, new Vector3(spawnLocation.x + Random.Range(-25, 25), spawnLocation.y, spawnLocation.z + Random.Range(-25, 25)), Quaternion.identity);
+            GameObject enemy = Instantiate(enemyCount.EnemyPrefab,
+            new Vector3(position.x + Random.Range(-10, 10), position.y, position.z + Random.Range(-10, 10)), Quaternion.identity);
 
+            EnemyDamage enemyDamage = enemy.GetComponent<EnemyDamage>();
+            if (enemyDamage)
+            {
+                enemyDamage.damageAmount *= enemyCount.scalingFactor;
+            }
+
+            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            if (enemyHealth)
+            {
+                enemyHealth.maxHealth *= enemyCount.scalingFactor;
+                enemyHealth.currentHealth = enemyHealth.maxHealth; 
+            }
+            //maybe scalingfactor should be separate for health and damage
 
             this.enemyCount++;
-            yield return new WaitForSeconds(8);
+            yield return new WaitForSeconds(8); // enemy respawn timer
         }
     }
 
