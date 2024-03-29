@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] float currentHealth, maxHealth = 100f;
+    [SerializeField] public float currentHealth, maxHealth = 100f;
     private bool isDead;
 
     Ragdoll ragdoll;
@@ -175,7 +175,7 @@ public class EnemyHealth : MonoBehaviour
 
         
 
-        //StartCoroutine(DestroyAfterDelay(1.5f));
+        StartCoroutine(DestroyAfterDelay(1.5f));
     }
 
     IEnumerator DestroyAfterDelay(float delay)
