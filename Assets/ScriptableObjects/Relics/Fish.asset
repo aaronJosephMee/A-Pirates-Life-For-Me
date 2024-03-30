@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fish
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: Poisson
+  title: Fish
   description: Makes the sword inflict the poison debuff
   maxlvl: 2
   baseStats:

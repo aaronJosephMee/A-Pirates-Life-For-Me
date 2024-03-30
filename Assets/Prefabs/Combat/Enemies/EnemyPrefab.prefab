@@ -632,6 +632,10 @@ MonoBehaviour:
   swordhitSounds: []
   moveSpeed: 3
   isIgnitable: 0
+  normalHit: {r: 1, g: 0, b: 0, a: 1}
+  criticalHit: {r: 1, g: 0.9576374, b: 0, a: 1}
+  fireHit: {r: 1, g: 0.55825305, b: 0, a: 1}
+  poisonHit: {r: 0.14779377, g: 1, b: 0, a: 1}
 --- !u!114 &6994515315635724010
 MonoBehaviour:
   m_ObjectHideFlags: 0

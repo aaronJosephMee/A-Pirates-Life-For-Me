@@ -21,4 +21,5 @@ public enum Activators{
     OnKill,
     [Description("Take Damage")]
     OnTakeDamage,
+    OnDodge,
 }

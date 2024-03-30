@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f9e5ccdd96a356458566500df21e961, type: 3}
-  m_Name: Spiced Rum
+  m_Name: Emergency Protection
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: Spiced Rum
-  description: A 2 use offesive item providing a boost to damage, speed, and fire
-    rate for 7 seconds.
-  maxlvl: 2
+  title: Emergency Protection
+  description: Gives a speed boost and 100% damage reduction for a short time, and
+    heals a medium amount of hp
+  maxlvl: 0
   baseStats:
     gunDamage: 0
-    swordDamage: 20
-    defense: 10
-    duration: 7
+    swordDamage: 0
+    defense: 100
+    duration: 4
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
-    speedBoost: 0
-    hpRegen: 0
+    speedBoost: 8
+    hpRegen: 10
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
@@ -53,6 +53,6 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
-  price: 30
-  uses: 2
-  cooldown: 5
+  price: 50
+  uses: 1
+  cooldown: 0

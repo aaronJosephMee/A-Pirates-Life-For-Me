@@ -15,11 +15,11 @@ public class StatsText : MonoBehaviour
         string statText = "";
         statText += "Gun Damage: " + stats.gunDamage + "   ";
         statText += "Sword Damage: " + stats.swordDamage + "   ";
-        statText += "Defense: " + stats.defense + "\n";
-        statText += "Bullet Count: " + stats.bulletCount + "     ";
-        
+        statText += "Bullet Count: " + stats.bulletCount + "\n";
+        statText += "Damage Reduction: " + stats.defense + "%    ";
         statText += "Ricochets: " + stats.richochet + "\n";
         statText += "Fire Rate: " + stats.fireRate + "      ";
+        statText += "Speed: " + stats.speedBoost +"    ";
         // statText += "Bullet Size: " + stats.projectileSize + "       ";
         // statText += "Accuracy: " + stats.accuracy + "\n";
         statText += "Dodge Chance: " + stats.dodgeChance*100 + "%\n";

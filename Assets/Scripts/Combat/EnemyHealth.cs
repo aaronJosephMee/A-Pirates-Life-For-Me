@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -34,6 +35,10 @@ public class EnemyHealth : MonoBehaviour
     int freezeGunStacks = 0;
     int poisonMeleeStacks = 0;
     int freezeMeleeStacks = 0;
+    [SerializeField] Color normalHit;
+    [SerializeField] Color criticalHit;
+    [SerializeField] Color fireHit;
+    [SerializeField] Color poisonHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +60,7 @@ public class EnemyHealth : MonoBehaviour
         skinnedMeshRenderer.material.color = Color.white * intensity;
     }
 
-    public void DecreaseHealth(float amount, string type)
+    public void DecreaseHealth(float amount, string type, bool wasCrit)
     {
         currentHealth -= amount;
         if (type == "gun")
@@ -131,8 +136,16 @@ public class EnemyHealth : MonoBehaviour
             }
 
         }
-        ShowFloatingText(amount);
-
+        if (!isDead){
+            if (wasCrit){
+                ShowFloatingText(amount, "crit");
+            }
+            else{
+                ShowFloatingText(amount, type);
+            }
+            
+        }
+        
         
 
         if (currentHealth <= 0 && !isDead)
@@ -142,10 +155,22 @@ public class EnemyHealth : MonoBehaviour
         blinkTimer = blinkDuration;
     }
 
-    void ShowFloatingText(float amount)
+    void ShowFloatingText(float amount, string type)
     {
         var go = Instantiate(FloatingText, transform.position, Quaternion.identity, transform);
         go.GetComponent<TextMeshPro>().text = amount.ToString();
+        if (type == "fire"){
+            go.GetComponent<TextMeshPro>().color = fireHit;
+        }
+        else if (type == "poison"){
+            go.GetComponent<TextMeshPro>().color = poisonHit;
+        }
+        else if (type == "crit"){
+            go.GetComponent<TextMeshPro>().color = criticalHit;
+        }
+        else{
+            go.GetComponent<TextMeshPro>().color = normalHit;
+        }
     }
 
 
@@ -190,7 +215,7 @@ public class EnemyHealth : MonoBehaviour
         int damage = 1;
         while (fireDuration > 0){
             yield return new WaitForSeconds(1f);
-            this.DecreaseHealth(damage, "fire");
+            this.DecreaseHealth(damage, "fire", false);
             fireDuration--;
             damage += 2;
         }
@@ -200,7 +225,7 @@ public class EnemyHealth : MonoBehaviour
         int damage = 5;
         while (duration > 0){
             yield return new WaitForSeconds(1f);
-            this.DecreaseHealth(damage, "poison");
+            this.DecreaseHealth(damage, "poison", false);
             duration--;
         }
         if (isGun){

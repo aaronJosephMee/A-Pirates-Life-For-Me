@@ -15,6 +15,7 @@ public class PlayerItems
     List<string> onMelee = new List<string>();
     List<string> onKill = new List<string>();
     List<string> onTakeDamage = new List<string>();
+    List<string> onDodge = new List<string>();
     Dictionary<string, DebuffStats> meleeDebuffs = new Dictionary<string, DebuffStats>();
     Dictionary<string, DebuffStats> gunDebuffs = new Dictionary<string, DebuffStats>();
 
@@ -37,6 +38,9 @@ public class PlayerItems
     }
     public List<string> GetTakeDamageRelics(){
         return onTakeDamage;
+    }
+    public List<string> GetOnDodgeRelics(){
+        return onDodge;
     }
     public Item GetRandUpgrade(){
         if (upgradeables.Count == 0){
@@ -186,6 +190,9 @@ public class PlayerItems
             }
             else if (relic.activator == Activators.OnTakeDamage){
                 onTakeDamage.Add(relic.title);
+            }
+            else if (relic.activator == Activators.OnDodge){
+                onDodge.Add(relic.title);
             }
             
             totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(relic)); 

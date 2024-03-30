@@ -45,7 +45,7 @@ public class InfoWidget : MonoBehaviour
             info += "Sword Damage: " + stats.swordDamage + "\n";
         }
         if (stats.defense != 0){
-            info += "Defense: " + stats.defense + "\n";
+            info += "Damage Reduction: " + stats.defense + "%\n";
         }
         if (stats.bulletCount != 0){
             info += "Extra Bullets: " + stats.bulletCount + "\n";
@@ -100,9 +100,10 @@ public class InfoWidget : MonoBehaviour
                 else{
                     info += "Uses: " + ((ItemScriptableObject) item).uses + "\n"; 
                 }
-                info += "Cooldown: " + ((ItemScriptableObject)item).cooldown + " sec\n";
+                if (((ItemScriptableObject) item).uses > 1){
+                    info += "Cooldown: " + ((ItemScriptableObject)item).cooldown + " sec\n";
+                }
             }
-            info += "Class: Item\n";
         }
         catch{}
         try{
@@ -119,6 +120,9 @@ public class InfoWidget : MonoBehaviour
                 else if (((RelicScriptableObject) item).activator == Activators.OnKill){
                     info += "Condition: On Kill\n";
                 }
+                else if (((RelicScriptableObject) item).activator == Activators.OnDodge){
+                    info += "Condition: On Dodge\n";
+                }
                 else{
                     info += "Condition: " + ((RelicScriptableObject) item).activator + "\n";
                 }
@@ -133,7 +137,7 @@ public class InfoWidget : MonoBehaviour
                     info += "Sword Damage: " + stats.swordDamage + "\n";
                 }
                 if (stats.defense != 0){
-                    info += "Defense: " + stats.defense + "\n";
+                    info += "Damage Reduction: " + stats.defense + "%\n";
                 }
                 if (stats.bulletCount != 0){
                     info += "Extra Bullets: " + stats.bulletCount + "\n";
@@ -166,19 +170,26 @@ public class InfoWidget : MonoBehaviour
                     info += "Ricochets: " + stats.richochet + "\n";
                 }
             }
-            info += "Class: Relic\n";
         }
         catch{}
         if (infotext != null){
             infotext.text = info;
         }
         if (levelText != null){
-            if (item.curlvl < item.maxlvl){
-                levelText.text = "Level: " + item.curlvl;
+            try{
+                if (((ItemScriptableObject)item)){
+                    levelText.text = "Level: MAX";
+                }
             }
-            else{
-                levelText.text = "Level: MAX";
+            catch{
+                if (item.curlvl < item.maxlvl){
+                    levelText.text = "Level: " + item.curlvl;
+                }
+                else{
+                    levelText.text = "Level: MAX";
+                }
             }
+            
         }
     }
     public void SetTextLevel(){
@@ -196,7 +207,7 @@ public class InfoWidget : MonoBehaviour
             info += "Sword Damage: " + stats.swordDamage + " -> " + (stats.swordDamage + item.lvlStats.swordDamage) + "\n";
         }
         if (item.lvlStats.defense != 0){
-            info += "Defense: " + stats.defense + " -> " + (stats.defense + item.lvlStats.defense) + "\n";
+            info += "Damage Reduction: " + stats.defense + "% -> " + (stats.defense + item.lvlStats.defense)/100f + "%\n";
         }
         if (item.lvlStats.bulletCount != 0){
             info += "Extra Bullets: " + stats.bulletCount + " -> " + (stats.bulletCount + item.lvlStats.bulletCount) + "\n";
@@ -241,7 +252,6 @@ public class InfoWidget : MonoBehaviour
             if (((ItemScriptableObject) item).uses != 0){
                 info += "Uses: " + ((ItemScriptableObject) item).uses + "\n";
             }
-            info += "Class: Item\n";
         }
         catch{}
         try{
@@ -267,7 +277,7 @@ public class InfoWidget : MonoBehaviour
                     active += "Sword Damage: " + stats.swordDamage + " -> " + (stats.swordDamage + relic.Activatorlvl.swordDamage) + "\n";
                 }
                 if (relic.Activatorlvl.defense != 0){
-                    active += "Defense: " + stats.defense + " -> " + (stats.defense + relic.Activatorlvl.defense) + "\n";
+                    active += "Damage Reduction: " + stats.defense + "% -> " + (stats.defense + relic.Activatorlvl.defense)/100f + "%\n";
                 }
                 if (relic.Activatorlvl.bulletCount != 0){
                     active += "Extra Bullets: " + stats.bulletCount + " -> " + (stats.bulletCount + relic.Activatorlvl.bulletCount) + "\n";
@@ -305,7 +315,6 @@ public class InfoWidget : MonoBehaviour
                 info += active;
                 
             }
-            info += "Class: Relic\n";
         }
         catch{}
         if (infotext != null){

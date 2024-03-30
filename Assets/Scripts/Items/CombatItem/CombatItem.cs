@@ -18,6 +18,7 @@ public class CombatItem : MonoBehaviour
         oldItem = ItemManager.instance.CurrentItem();
         if (item == null){
             item = ItemManager.instance.GenericNoItem;
+            useImage.gameObject.SetActive(false);
         }
         if (item.image != null){
             itemImage.sprite = item.image;
