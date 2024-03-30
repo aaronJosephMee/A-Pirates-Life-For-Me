@@ -36,9 +36,9 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: You enter the graveyard, peering over your shoulders to make
+      followUpText: 'You enter the graveyard, peering over your shoulders to make
         sure no one (human) is watching. You dig out the skeleton and watch as it
-        slowly comes to life.
+        slowly comes to life. '
       nextChoiceIndices:
         Value: 
     - text: 
