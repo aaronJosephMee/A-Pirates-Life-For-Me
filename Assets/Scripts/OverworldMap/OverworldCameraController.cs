@@ -28,12 +28,10 @@ public class OverworldCameraController : MonoBehaviour
     public void GetMovementInput(InputAction.CallbackContext context)
     {
         _input = context.ReadValue<Vector2>();
-        print(gameObject.name);
     }
 
     private void LateUpdate()
     {
-        print(gameObject.name);
         if (_input.x != 0)
         {
             Vector3 newPosition = transform.position;
