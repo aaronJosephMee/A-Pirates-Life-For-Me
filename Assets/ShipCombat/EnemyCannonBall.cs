@@ -19,6 +19,14 @@ public class EnemyCannonBall : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
     }
 
+    private void Update()
+    {
+        if (SeaGameManager.instance.stopCombat)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         other.GetComponent<ShipCombat>().TakeDamage(damage);

@@ -27,11 +27,18 @@ public class EnemyShip : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         fire.SetActive(false);
+
+        GameObject playerObject = GameObject.FindGameObjectWithTag("PlayerShip");
+
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+        }
     }
 
     private void Update()
     {
-        if (!SeaGameManager.instance.stopCombat)
+        if (!SeaGameManager.instance.stopCombat && Alive)
         {
             float distance = Vector3.Distance(transform.position, player.position);
 

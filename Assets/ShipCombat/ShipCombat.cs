@@ -47,11 +47,6 @@ public class ShipCombat : MonoBehaviour
             ShipMovement();
             shoot();
         }
-
-        if (Input.GetKey(KeyCode.R))
-        {
-            StartCoroutine(Reload());
-        }
     }
 
     private void ShipMovement()
@@ -88,21 +83,6 @@ public class ShipCombat : MonoBehaviour
         }
     }
 
-    IEnumerator Reload()
-    {
-        yield return new WaitForSeconds(0.5f);
-        if (Ammo < 6)
-        {
-            Ammo++;
-            cannonSound.PlayOneShot(ReloadSFX);
-        }
-        else
-        {
-            Debug.Log("Cannot reload over 6");
-        }
-
-    }
-
     public void TakeDamage(float dmg)
     {
         Health -= dmg;
@@ -123,10 +103,5 @@ public class ShipCombat : MonoBehaviour
         yield return new WaitForSecondsRealtime(2);
         Time.timeScale = 1.0f;
         OverworldMapManager.Instance.TransitionBackToMap();
-    }
-
-    private void DestroyShip()
-    {
-        Destroy(gameObject);
     }
 }
