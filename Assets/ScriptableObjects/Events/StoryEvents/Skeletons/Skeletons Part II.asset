@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: Skeletons Part II
+  m_EditorClassIdentifier: 
+  title: Skeletons - Part II
+  scene: 0
+  sceneIdx: 0
+  flavorText: "While heading back to your ship, you see a familiar face. And several,
+    similar faces. The skeleton you helped earlier is standing by the docks with
+    its crewmates, waving you over. \u201CAh, friend! Fleshy friend! Please, we humbly
+    request your help once more.\u201D The skeleton explains that they need to recover,
+    or rather, uncover the body of their crewmate, who is buried in a local cemetery.
+    Disturbing a grave carries a heavy stigma, but perhaps it\u2019s worth the risk.
+    What do you do?"
+  isMinigame: 0
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Help them and dig out their crewmate
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'You enter the graveyard, peering over your shoulders to make
+        sure no one (human) is watching. You dig out the skeleton and watch as it
+        slowly comes to life. '
+      nextChoiceIndices:
+        Value: 
+    - text: 
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: 
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
