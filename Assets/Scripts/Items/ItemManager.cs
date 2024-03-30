@@ -210,4 +210,9 @@ public class ItemManager : MonoBehaviour
             StartCoroutine(playerItems.AddEffect(playerItems.GetRelics()[relic]));
         }
     }
+    public void OnDodge(){
+        foreach (string relic in playerItems.GetOnDodgeRelics()){
+            StartCoroutine(playerItems.AddEffect(playerItems.GetRelics()[relic]));
+        }
+    }
 }

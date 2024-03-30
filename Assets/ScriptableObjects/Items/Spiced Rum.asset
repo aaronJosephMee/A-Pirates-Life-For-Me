@@ -18,14 +18,14 @@ MonoBehaviour:
     rate for 7 seconds.
   maxlvl: 2
   baseStats:
-    gunDamage: 20
+    gunDamage: 0
     swordDamage: 20
-    defense: 0
+    defense: 10
     duration: 7
     maxStacks: 0
     bulletCount: 0
-    fireRate: 0.3
-    speedBoost: 3
+    fireRate: 0
+    speedBoost: 0
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
@@ -33,6 +33,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -49,6 +51,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 30
   uses: 2
-  cooldown: 10
+  cooldown: 5

@@ -32,10 +32,10 @@ public class Bullet : MonoBehaviour
             if (collisionDelay <= 0){
                 if (enemy != null){
                     if (new System.Random().NextDouble() < weapon.critChance){
-                        enemy.DecreaseHealth(MathF.Round(weapon.damage * weapon.critMultiplier, 2),"gun");
+                        enemy.DecreaseHealth(MathF.Round(weapon.damage * weapon.critMultiplier, 2),"gun", true);
                     }
                     else{
-                        enemy.DecreaseHealth(MathF.Round(weapon.damage, 2),"gun");
+                        enemy.DecreaseHealth(MathF.Round(weapon.damage, 2),"gun", false);
                     }
                     enemy = null;
                 }  

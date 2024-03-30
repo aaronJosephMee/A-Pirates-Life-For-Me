@@ -23,7 +23,7 @@ MonoBehaviour:
     duration: 0
     maxStacks: 0
     bulletCount: 0
-    fireRate: -0.3
+    fireRate: 1.5
     speedBoost: 0
     hpRegen: 0
     projectileSize: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
     duration: 0
     maxStacks: 0
     bulletCount: 0
-    fireRate: -0.3
+    fireRate: 0.75
     speedBoost: 0
     hpRegen: 0
     projectileSize: 0
