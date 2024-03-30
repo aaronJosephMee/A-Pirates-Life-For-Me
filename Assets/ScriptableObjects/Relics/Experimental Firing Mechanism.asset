@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Experimental Firing Mechanism
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: ntal Weapon
+  title: Experimental Weapon
   description: Greatly increases fire rate but lowers gun damage
   maxlvl: 2
   baseStats:
