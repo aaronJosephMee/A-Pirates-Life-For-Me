@@ -10,18 +10,22 @@ public class SeaGameManager : MonoBehaviour
 
     public GameObject Player;
 
-    public int enemyCount = 5;
+    public int enemyCount = 10;
 
     public int Killed = 0;
 
-    public int Spawned = 0;
+    public int Spawned = 1;
 
     public TextMeshProUGUI winningText;
 
-    public bool stopCombat = false;
+    public TextMeshProUGUI howToPlayText;
+
+    public bool stopCombat;
     public void Start()
     {
+        stopCombat = true;
         winningText.gameObject.SetActive(false);
+        howToPlayText.gameObject.SetActive(true);
     }
     private void Awake()
     {
@@ -37,6 +41,12 @@ public class SeaGameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            stopCombat = false;
+            howToPlayText.gameObject.SetActive(false);
+        }
+        
         if (Killed == enemyCount && !winningText.gameObject.activeSelf)
         {
             StartCoroutine(EndGameRoutine());
@@ -46,7 +56,7 @@ public class SeaGameManager : MonoBehaviour
     private IEnumerator EndGameRoutine()
     {
         winningText.gameObject.SetActive(true);
-        SeaGameManager.instance.stopCombat = true;
+        stopCombat = true;
         ItemManager.instance.AddGold(100);
         yield return new WaitForSecondsRealtime(2);
         Time.timeScale = 1.0f;
