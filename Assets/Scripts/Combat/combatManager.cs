@@ -87,7 +87,7 @@ public class combatManager : MonoBehaviour
         {
             Vector3 position = spawnLocation.position;
             GameObject enemy = Instantiate(enemyCount.EnemyPrefab,
-            new Vector3(position.x + Random.Range(-10, 10), position.y, position.z + Random.Range(-10, 10)), Quaternion.identity);
+            new Vector3(position.x, position.y, position.z), Quaternion.identity);
 
             EnemyDamage enemyDamage = enemy.GetComponent<EnemyDamage>();
             if (enemyDamage)
