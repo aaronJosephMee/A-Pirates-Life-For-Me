@@ -72,6 +72,9 @@ public class ItemManager : MonoBehaviour
         playerItems.AddRelic(relic);
         itemPool.RemoveItem("Relic", relic.title);
     }
+    public void LoseRelic(RelicScriptableObject relic){
+        playerItems.LoseRelic(relic);
+    }
     public void AddWeapon(WeaponScriptableObject weapon){
         playerItems.AddWeapon(weapon);
         itemPool.RemoveItem("Weapon", weapon.title);
