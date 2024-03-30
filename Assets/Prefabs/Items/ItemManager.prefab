@@ -44,17 +44,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569fcb15819e485439919ee09a79ce51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxRelics: 21
+  MaxRelics: 12
   relics:
   - {fileID: 11400000, guid: 38dc0d34e6414d0439ffd671306fdc1b, type: 2}
   - {fileID: 11400000, guid: b880b0d643c3e49449d72e5e468bb65c, type: 2}
   - {fileID: 11400000, guid: ab0b6d2a012745e4d925a79ad1cd4afa, type: 2}
-  - {fileID: 11400000, guid: 920b81b77cb8f1d46a5012b048e47d79, type: 2}
-  - {fileID: 11400000, guid: ac5551fa4ebfcfa4ba2bf34508984f69, type: 2}
   - {fileID: 11400000, guid: df219dfb676703f4790ef8c7a80943b5, type: 2}
-  items: []
+  - {fileID: 11400000, guid: a2631024bd394424b9a34384717d51a0, type: 2}
+  - {fileID: 11400000, guid: 76865ce773c4eed4da3f688079b6faa7, type: 2}
+  - {fileID: 11400000, guid: d325010fa7778ce469a0cf229a4243c4, type: 2}
+  - {fileID: 11400000, guid: defc1ed24cfe4d44d8a92b5676a90cf5, type: 2}
+  - {fileID: 11400000, guid: 0b9174512d7057744b1b26363a0f02b5, type: 2}
+  - {fileID: 11400000, guid: a48aa792f4137e54588723e7a1ca0e7b, type: 2}
+  - {fileID: 11400000, guid: 56ea94f62ba40ef4c9fb4144d86c7fa5, type: 2}
+  - {fileID: 11400000, guid: ef8070011f5d5014091b21997c26416e, type: 2}
+  - {fileID: 11400000, guid: bbc234e1ec8406743b300770ea95c7ad, type: 2}
+  - {fileID: 11400000, guid: 93e2decc546675a4b97fc8bb329833fe, type: 2}
+  - {fileID: 11400000, guid: 348d2c5aa98c42940b85625d780c2852, type: 2}
+  - {fileID: 11400000, guid: 33a0a4704afc50541a5a635c316e2eff, type: 2}
+  - {fileID: 11400000, guid: 34193f1c539c6c84ca2c68eb43cd4c61, type: 2}
+  - {fileID: 11400000, guid: 6c3a5d1460e1c294c9f3495ab7466e17, type: 2}
+  - {fileID: 11400000, guid: aebdfef879e7f88439456cca180c9a9d, type: 2}
+  - {fileID: 11400000, guid: f2663e2cfd9aec8468a373b2d4df5c6b, type: 2}
+  - {fileID: 11400000, guid: f5a7b755c56d0b94387153cdc10241cc, type: 2}
+  - {fileID: 11400000, guid: c78a6c77045832c4e872e0c9c76a0812, type: 2}
+  - {fileID: 11400000, guid: 511c33b67d5b5ab46a076820a0f966a0, type: 2}
+  - {fileID: 11400000, guid: a3ba5a9a0d176d749a145cacb605efcd, type: 2}
+  - {fileID: 11400000, guid: 3878b15ce6a17034da8df14c0e187c96, type: 2}
+  - {fileID: 11400000, guid: 9bef353724a37c34bab66c26ab96ea0d, type: 2}
+  - {fileID: 11400000, guid: 8494a7d2f348c9e4ba81f913657275a3, type: 2}
+  - {fileID: 11400000, guid: 0e2b62ddfe52f834bb02f4b09ac02564, type: 2}
+  items:
+  - {fileID: 11400000, guid: 93eb1de89e534fa4aa08d297057c48d4, type: 2}
+  - {fileID: 11400000, guid: 3ad744658ecc39d4688a2014a935b2e2, type: 2}
+  - {fileID: 11400000, guid: a117bfcda7f045146b1d43a4e0409efa, type: 2}
+  - {fileID: 11400000, guid: de697ed5c490d4343b406aa19a1bb6b5, type: 2}
+  - {fileID: 11400000, guid: a45e39c57de09724e9a25f48ea5c99cd, type: 2}
+  - {fileID: 11400000, guid: c92b31ae7242615439d774c00c48cf05, type: 2}
   weapons: []
   defaultGun: {fileID: 11400000, guid: 98a39c2b587d2b042825576258221e9c, type: 2}
   defaultSword: {fileID: 11400000, guid: c5caf00828c5dea499922360ad853639, type: 2}
   defaultItem: {fileID: 11400000, guid: 93eb1de89e534fa4aa08d297057c48d4, type: 2}
   GenericNoItem: {fileID: 11400000, guid: c3a9c14a5accee54ba0f317598aad0ff, type: 2}
+  health:
+    maxHealth: 100
+    curHealth: 100
