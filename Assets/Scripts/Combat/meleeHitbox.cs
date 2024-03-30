@@ -19,10 +19,10 @@ public class meleeHitbox : MonoBehaviour
             if (enemyHealth != null)
             {
                 if (new System.Random().NextDouble() < critChance){
-                    enemyHealth.DecreaseHealth(MathF.Round(swordDamage * critMultiplier,2),"sword");
+                    enemyHealth.DecreaseHealth(MathF.Round(swordDamage * critMultiplier,2),"sword", true);
                 }
                 else{
-                    enemyHealth.DecreaseHealth(MathF.Round(swordDamage,2),"sword");
+                    enemyHealth.DecreaseHealth(MathF.Round(swordDamage,2),"sword", false);
                 }
                 
                 ItemManager.instance.OnMelee();

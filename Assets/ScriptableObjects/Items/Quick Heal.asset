@@ -9,26 +9,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: Rancid Rounds
+  m_Script: {fileID: 11500000, guid: 0f9e5ccdd96a356458566500df21e961, type: 3}
+  m_Name: Quick Heal
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: Rancid Rounds
-  description: Makes the gun inflict the poison debuff
-  maxlvl: 2
+  title: Quick Heal
+  description: Restores a medium amount of health over a short time
+  maxlvl: 0
   baseStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 3
-    maxStacks: 2
+    duration: 1
+    maxStacks: 0
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
-    hpRegen: 0
+    hpRegen: 50
     projectileSize: 0
     swordDebuff: 0
-    gunDebuff: 2
+    gunDebuff: 0
     accuracy: 0
     critChance: 0
     critMultiplier: 0
@@ -38,26 +38,6 @@ MonoBehaviour:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 2
-    maxStacks: 1
-    bulletCount: 0
-    fireRate: 0
-    speedBoost: 0
-    hpRegen: 0
-    projectileSize: 0
-    swordDebuff: 0
-    gunDebuff: 0
-    accuracy: 0
-    critChance: 0
-    critMultiplier: 0
-    richochet: 0
-    dodgeChance: 0
-  price: 60
-  activator: 0
-  ActivatorStats:
-    gunDamage: 0
-    swordDamage: 0
-    defense: 0
     duration: 0
     maxStacks: 0
     bulletCount: 0
@@ -72,21 +52,6 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
-  Activatorlvl:
-    gunDamage: 0
-    swordDamage: 0
-    defense: 0
-    duration: 0
-    maxStacks: 0
-    bulletCount: 0
-    fireRate: 0
-    speedBoost: 0
-    hpRegen: 0
-    projectileSize: 0
-    swordDebuff: 0
-    gunDebuff: 0
-    accuracy: 0
-    critChance: 0
-    critMultiplier: 0
-    richochet: 0
-    dodgeChance: 0
+  price: 40
+  uses: 2
+  cooldown: 5

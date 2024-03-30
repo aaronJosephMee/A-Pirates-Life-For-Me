@@ -22,7 +22,7 @@ public class ShopInventory : MonoBehaviour
             //     }
             //     continue;
             // }
-            if (res < 10){
+            if ((res < 20 && ItemManager.instance.CurrentItem() == null) || (res < 10 && ItemManager.instance.CurrentItem() != null)){
                 items[i] = ItemManager.instance.GetRandItem();
                 continue;
             }

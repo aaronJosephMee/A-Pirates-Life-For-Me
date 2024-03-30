@@ -14,23 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 4510b6076bf20824a8744360aec74aaf, type: 3}
   title: Large Heal
+  description: Restores a large amount of health over several seconds
   maxlvl: 2
   baseStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 1
+    duration: 3
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
-    hpRegen: 40
+    hpRegen: 25
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -47,6 +50,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 40
   uses: 2
-  cooldown: 5
+  cooldown: 3

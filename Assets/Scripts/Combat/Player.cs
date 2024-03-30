@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         slider.value = currentHealth / maxHealth;
-        if (toHeal > 0 && currentHealth < maxHealth){
+        if (toHeal > 0 && currentHealth < maxHealth && !isDead){
             currentHealth += toHeal * Time.deltaTime;
             if (currentHealth > maxHealth){
                 currentHealth = maxHealth;
@@ -55,17 +55,21 @@ public class Player : MonoBehaviour
         if (new System.Random().NextDouble() < newStats.dodgeChance){
             damageToTake = 0;
         }
-        else if (newStats.defense >= damage){
+        else if (newStats.defense >= 100f){
             damageToTake = 1;
         }
+        else if (newStats.defense < 0){
+            damageToTake = damage;
+        }
         else{
-            damageToTake = damage - newStats.defense;
+            damageToTake = damage * (1 - newStats.defense/100f);
         }
         damageToTake = MathF.Round(damageToTake,2);
         this.currentHealth -= damageToTake; 
         GameObject dmgNumber = Instantiate(dmgNumb, slider.transform);
         if (damageToTake == 0){
             dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("DODGE", dodgeColor);
+            ItemManager.instance.OnDodge();
         }
         else{
             dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("-" + damageToTake, hitColor);
@@ -103,7 +107,7 @@ public class Player : MonoBehaviour
         // TODO: Make it not call everything if nothing is changed
         weaponManager.damage = newStats.gunDamage;
         weaponManager.bulletsPerShot = newStats.bulletCount;
-        weaponManager.fireRate = weaponManager.baseFireRate * newStats.fireRate;
+        weaponManager.fireRate = weaponManager.baseFireRate / (newStats.fireRate/5f);
         weaponManager.critChance = newStats.critChance;
         weaponManager.critMultiplier = newStats.critMultiplier;
         weaponManager.richochet = newStats.richochet;

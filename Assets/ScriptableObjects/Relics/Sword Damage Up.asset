@@ -52,7 +52,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
-  price: 150
+  price: 100
   activator: 0
   ActivatorStats:
     gunDamage: 0
