@@ -9,13 +9,19 @@ using UnityEngine.Serialization;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    
     public static Choices choices;
     private static Vector3 _lastPosition;
-    public bool menuOpen;
     private bool movePlayerOnLoad = false;
     private int _cameraIndex = 0;
+    
+    public bool menuOpen;
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
+    private Canvas canvas;
+    
     public SceneName currentScene = SceneName.TitleScreen;
+    
     // Start is called before the first frame update
     void Awake(){
         if (instance == null)
@@ -27,6 +33,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        Canvas currentCanvas = GetComponentInParent<Canvas>();
+        canvas = currentCanvas;
     }
 
     public void LoadScene(SceneName scene, int cameraIndex=0)
@@ -46,6 +58,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !menuOpen){
             Instantiate(pauseMenu);
+        }
+
+        if (menuOpen && canvas != null)
+        {
+            canvas.gameObject.SetActive(false);
         }
     }
     void OnEnable() {

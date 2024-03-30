@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuOpen: 0
   pauseMenu: {fileID: 5792749610776295130, guid: bf2aecb993c56b24c93671c0431780b3, type: 3}
+  settingsMenu: {fileID: 923647274645953076, guid: a612a1165cda241bb830219937711f8c, type: 3}
+  currentScene: 4
