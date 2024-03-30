@@ -13,6 +13,7 @@ namespace DefaultNamespace.OverworldMap
         private GameObject _button;
         private Image _image;
         private Button _buttonComponent;
+        private ChoiceButtonHover _choiceHover;
         private Vector3 _savedPosition;
 
         public ChoiceNode(ChoiceType choiceType, SceneName sceneName)
@@ -22,11 +23,13 @@ namespace DefaultNamespace.OverworldMap
             this.SceneName = sceneName;
         }
 
-        public void AddButton(GameObject buttonGameObject, Vector3 position, Sprite sprite, List<UnityAction> callbacks)
+        public void AddButton(GameObject buttonGameObject, Vector3 position, Sprite sprite, String description, List<UnityAction> callbacks)
         {
             _button = buttonGameObject;
             _image = buttonGameObject.GetComponent<Image>();
             _buttonComponent = buttonGameObject.GetComponent<Button>();
+            _choiceHover = buttonGameObject.GetComponent<ChoiceButtonHover>();
+            _choiceHover.SetDescriptionText(description);
             _savedPosition = position;
 
             _button.transform.position = position;
@@ -34,11 +37,13 @@ namespace DefaultNamespace.OverworldMap
             AddCallbacks(callbacks);
         }
 
-        public void ReAddButton(GameObject buttonGameObject, Sprite sprite, List<UnityAction> callbacks)
+        public void ReAddButton(GameObject buttonGameObject, Sprite sprite, String description, List<UnityAction> callbacks)
         {
             _button = buttonGameObject;
             _image = buttonGameObject.GetComponent<Image>();
             _buttonComponent = buttonGameObject.GetComponent<Button>();
+            _choiceHover = buttonGameObject.GetComponent<ChoiceButtonHover>();
+            _choiceHover.SetDescriptionText(description);
 
             _button.transform.position = _savedPosition;
             _image.sprite = sprite;

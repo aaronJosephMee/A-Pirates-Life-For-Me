@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 1670852955258429811}
   - component: {fileID: 3917788407019423321}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: GoldCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,7 +380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93, y: -26}
+  m_AnchoredPosition: {x: 95, y: -26}
   m_SizeDelta: {x: 190.1, y: 51.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1670852955258429811

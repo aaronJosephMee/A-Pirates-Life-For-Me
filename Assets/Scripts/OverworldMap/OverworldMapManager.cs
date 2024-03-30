@@ -17,7 +17,7 @@ public class OverworldMapManager : MonoBehaviour
     [SerializeField] private GameObject choiceButtonPrefab;
     [SerializeField] private List<ChoiceScriptableObject> choiceScriptableObjects;
     private Dictionary<ChoiceType, Sprite> _choiceSprites;
-    private Dictionary<ChoiceType, GameObject> _choiceIcons = new Dictionary<ChoiceType, GameObject>();
+    private Dictionary<ChoiceType, String> _choiceDescriptions;
     private GameObject _canvas;
     public GameObject eventCanvas;
     public GameObject _canvas2; 
@@ -64,7 +64,7 @@ public class OverworldMapManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         _canvas = GameObject.Find("Canvas");
         _canvas2 = GameObject.Find("Canvas2");
-        _choiceSprites = CreateChoiceSpritesDictionary();
+        CreateChoiceDictionaries();
         _horizontalIconMargin = (_mapLength - (2 * _margin)) / (_numChoices + 2);
         _choiceGenerator = new ChoiceGenerator(_numChoices);
         _buttonPositioner = new ButtonPositioner(_canvas.transform.position, _numChoices, _verticalIconMargin, _horizontalIconMargin);
@@ -91,15 +91,16 @@ public class OverworldMapManager : MonoBehaviour
         return _choiceGenerator.GetCurrentEvent();
     }
 
-    private Dictionary<ChoiceType, Sprite> CreateChoiceSpritesDictionary()
+    private void CreateChoiceDictionaries()
     {
-        Dictionary<ChoiceType, Sprite> dictionary = new Dictionary<ChoiceType, Sprite>();
+        _choiceSprites = new Dictionary<ChoiceType, Sprite>();
+        _choiceDescriptions = new Dictionary<ChoiceType, String>();
         foreach (ChoiceScriptableObject choice in choiceScriptableObjects)
         {
-            dictionary[choice.choiceType] = choice.sprite;
-            _choiceIcons[choice.choiceType] = choice.icon;
+            _choiceSprites[choice.choiceType] = choice.sprite;
+            _choiceDescriptions[choice.choiceType] = choice.description;
         }
-        return dictionary;
+        
     }
 
     private void GenerateNextChoices()
@@ -115,8 +116,8 @@ public class OverworldMapManager : MonoBehaviour
         for (int i = 0; i < _currentChoiceNodes.Count; i++)
         {
             List<UnityAction> callbacks = GenerateCallbacks(_currentChoiceNodes[i]);
-            Instantiate(_choiceIcons[_currentChoiceNodes[i].ChoiceType], positions[i], GetIconRotation(_currentChoiceNodes[i].ChoiceType), _canvas.transform);
-            _currentChoiceNodes[i].AddButton(GenerateChoiceButton(), positions[i], _choiceSprites[_currentChoiceNodes[i].ChoiceType], callbacks);
+            String description = _choiceDescriptions[_currentChoiceNodes[i].ChoiceType];
+            _currentChoiceNodes[i].AddButton(GenerateChoiceButton(), positions[i], _choiceSprites[_currentChoiceNodes[i].ChoiceType], description, callbacks);
         }
 
         _choiceGenerator.IncreaseChoiceDepth();
@@ -164,16 +165,17 @@ public class OverworldMapManager : MonoBehaviour
     {
         List<Vector3> goalPositon = _buttonPositioner.GetButtonPositions(_numChoices + 1, 1);
         _goalLocation = new ChoiceNode(ChoiceType.Goal, SceneName.NoScene);
-        _goalLocation.AddButton(GenerateChoiceButton(), goalPositon[0], _choiceSprites[ChoiceType.Goal], GetGoalCallback());
-        Instantiate(_choiceIcons[ChoiceType.Goal], goalPositon[0] - new Vector3(0, 30, 0), Quaternion.Euler(0, 90, 0), _canvas.transform);
+        String description = _choiceDescriptions[ChoiceType.Goal];
+        print(description);
+        _goalLocation.AddButton(GenerateChoiceButton(), goalPositon[0], _choiceSprites[ChoiceType.Goal], description, GetGoalCallback());
     }
 
     private void GenerateStartingPoint()
     {
         List<Vector3> startPosition = _buttonPositioner.GetButtonPositions(0, 1);
         _currentBoatLocation = new ChoiceNode(ChoiceType.Ship, SceneName.NoScene);
-        _currentBoatLocation.AddButton(GenerateChoiceButton(), startPosition[0], _choiceSprites[ChoiceType.Ship], GetBoatCallback());
-        Instantiate(_choiceIcons[ChoiceType.Ship], startPosition[0] - new Vector3(0, 30, 0), Quaternion.Euler(0, 90, 0), _canvas.transform);
+        String description = _choiceDescriptions[ChoiceType.Ship];
+        _currentBoatLocation.AddButton(GenerateChoiceButton(), startPosition[0], _choiceSprites[ChoiceType.Ship], description, GetBoatCallback());
     }
 
     private GameObject GenerateChoiceButton()
@@ -209,10 +211,6 @@ public class OverworldMapManager : MonoBehaviour
             else
             {
                 print("You have not made it to the goal yet.");
-            
-                
-                
-                
             }
         }
 
@@ -287,30 +285,6 @@ public class OverworldMapManager : MonoBehaviour
 
     private void LoadChoiceNodeButton(ChoiceNode choiceNode, List<UnityAction> callbacks)
     {
-        Vector3 offset;
-        if (choiceNode.ChoiceType == ChoiceType.Ship || choiceNode.ChoiceType == ChoiceType.Goal)
-        {
-            offset = new Vector3(0, 30, 0);
-        }
-        else
-        {
-            offset = new Vector3(0, 0, 0);
-        }
-        Instantiate(_choiceIcons[choiceNode.ChoiceType], choiceNode.GetSavedPosition() - offset, GetIconRotation(choiceNode.ChoiceType), _canvas.transform);
-        choiceNode.ReAddButton(GenerateChoiceButton(), _choiceSprites[choiceNode.ChoiceType], callbacks);
-    }
-
-    private Quaternion GetIconRotation(ChoiceType choiceType)
-    {
-        if (choiceType == ChoiceType.Goal || choiceType == ChoiceType.Ship)
-        {
-            return Quaternion.Euler(0, 90, 0);
-        }
-
-        if (choiceType == ChoiceType.Event)
-        {
-            return Quaternion.Euler(0, 180, 0);
-        }
-        return Quaternion.Euler(0, 0, 0);
+        choiceNode.ReAddButton(GenerateChoiceButton(), _choiceSprites[choiceNode.ChoiceType], _choiceDescriptions[choiceNode.ChoiceType], callbacks);
     }
 }
