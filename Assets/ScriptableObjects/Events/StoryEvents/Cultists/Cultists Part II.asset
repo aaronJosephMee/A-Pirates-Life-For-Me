@@ -96,7 +96,8 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      followUpText: "The cultist glares at you. \u201CYou know too much,\u201D he
+        says, readying himself to fight you. What do you do?"
       nextChoiceIndices:
         Value: 
     - text: No! How could you ask such a thing of me?!
@@ -112,3 +113,51 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+    - text: Fight
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: Flee to your ship
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'You hear the man yelling, as you race towards where your ship
+        is docked. You escape unharmed.
+
+
+        Lose Mark of Dagon'
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Continue watching
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'As you witness the man crumple lifelessly to the ground, you
+        hear an unsettling voice whisper into your ears, "Well done. Have your reward."
+
+
+        Gain
+        Improved Mark of Dagon'
+      nextChoiceIndices:
+        Value: 02000000

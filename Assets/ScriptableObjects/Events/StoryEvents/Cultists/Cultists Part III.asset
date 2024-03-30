@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: Cultists Part III
+  m_EditorClassIdentifier: 
+  title: Cultists - Part III
+  scene: 11
+  sceneIdx: 0
+  flavorText: You find a strange encampment with a familiar monolith and cages holding
+    human bodies. Or at least, what remains of them. One of these humans is still
+    alive. Releasing the prisoner is sure to draw the attention of the cultists.
+    What do you do?
+  isMinigame: 0
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Rescue the prisoner
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: You break open the prisoner's cage and help him down onto the
+        ground. You see some movement from the corner of your eye and realize that
+        some very angry cultists are running towards you. You tell the prisoner to
+        hide and draw your sword, preparing to fight.
+      nextChoiceIndices:
+        Value: 00000000
+    - text: Leave the prisoner to their fate
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'You decide not to get involved. You avert your eyes from the
+        prisoner''s gaze and sheepishly walk away. "Hey! Hey where are you going?!
+        Help! Come back!" he demands. You sprint to your ship before the cultists
+        are alarmed.
+
+
+        Gain Guilt'
+      nextChoiceIndices:
+        Value: 04000000
+    - text: Rescue the prisoner
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: You break open the prisoner's cage and help him down onto the
+        ground. You see some movement from the corner of your eye and realize that
+        some very angry cultists are running towards you. You tell the prisoner to
+        hide, as you draw your sword, preparing to fight.
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Fight
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: You break open the prisoner's cage and help him down onto the
+        ground. You see some movement from the corner of your eye and realize that
+        some very angry cultists are running towards you. You tell the prisoner to
+        hide, as you draw your sword, preparing to fight.
+      nextChoiceIndices:
+        Value: 00000000
+    - text: Continue
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: You break open the prisoner's cage and help him down onto the
+        ground. You see some movement from the corner of your eye and realize that
+        some very angry cultists are running towards you. You tell the prisoner to
+        hide, as you draw your sword, preparing to fight.
+      nextChoiceIndices:
+        Value: 00000000
