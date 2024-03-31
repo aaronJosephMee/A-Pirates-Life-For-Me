@@ -221,7 +221,7 @@ public class OverworldMapManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        GameManager.instance.LoadScene(SceneName.OverworldMap);
+        GameManager.instance.DisplayStoredPopUp();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

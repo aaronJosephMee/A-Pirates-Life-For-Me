@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     private Canvas canvas;
     
     public SceneName currentScene = SceneName.TitleScreen;
+
+    private GameObject storedPopUp;
+    private SceneName storedPopUpNextScene;
+    private String storedPopUpFollowUpText;
     
     // Start is called before the first frame update
     void Awake(){
@@ -107,5 +111,38 @@ public class GameManager : MonoBehaviour
     private void ToggleEventToggleable(GameObject cameras)
     {
         cameras.GetComponent<IEventToggleable>()?.ToggleEventEffects(_cameraIndex);
+    }
+
+    public void DisplayPopUp(GameObject popUpPrefab, SceneName nextScene, String followUpText)
+    {
+        GameObject popUpGameObject = Instantiate(popUpPrefab);
+        PopUpScreen popUpScreen = popUpGameObject.GetComponent<PopUpScreen>();
+        popUpScreen.AssignContinueLocation(nextScene);
+        popUpScreen.SetText(followUpText);
+    }
+
+    public void StorePopUp(GameObject popUpPrefab, SceneName nextScene, String followUpText)
+    {
+        storedPopUp = popUpPrefab;
+        storedPopUpNextScene = nextScene;
+        storedPopUpFollowUpText = followUpText;
+    }
+
+    public void DisplayStoredPopUp()
+    {
+        if (storedPopUp != null)
+        {
+            DisplayPopUp(storedPopUp, storedPopUpNextScene, storedPopUpFollowUpText);
+            storedPopUp = null;
+        }
+        else
+        {
+            LoadScene(SceneName.OverworldMap);
+        }
+    }
+
+    public bool HasPopup()
+    {
+        return storedPopUp != null;
     }
 }
