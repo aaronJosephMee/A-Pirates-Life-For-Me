@@ -52,7 +52,8 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
-  price: 0
+  price: 100
+  isStoryRelic: 0
   activator: 0
   ActivatorStats:
     gunDamage: 0

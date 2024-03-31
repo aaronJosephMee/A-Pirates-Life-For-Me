@@ -68,18 +68,10 @@ public class InfoWidget : MonoBehaviour
         if (stats.dodgeChance != 0){
             info += "Dodge Chance: " + stats.dodgeChance*100 + "%\n";
         }
-        if (stats.dodgeChance != 0){
-            info += "Dodge Chance: " + stats.dodgeChance*100 + "%\n";
-        }
         if (stats.critChance != 0){
-            info += "Crit Chance: " + stats.critChance * 100 + "%\n";
             info += "Crit Chance: " + stats.critChance * 100 + "%\n";
         }
         if (stats.critMultiplier != 0){
-            info += "Crit Multiplier: " + stats.critMultiplier + "x\n";
-        }
-        if (stats.richochet != 0){
-            info += "Ricochets: " + stats.richochet + "\n";
             info += "Crit Multiplier: " + stats.critMultiplier + "x\n";
         }
         if (stats.richochet != 0){
@@ -92,7 +84,6 @@ public class InfoWidget : MonoBehaviour
             info += "Sword Debuff: " + stats.swordDebuff + "\n";
         }
         if (stats.duration != 0){
-            info += "Duration: " + stats.duration + " sec\n";
             info += "Duration: " + stats.duration + " sec\n";
         }
         if (stats.maxStacks != 0 && stats.gunDebuff != Debuffs.Fire){
@@ -169,18 +160,10 @@ public class InfoWidget : MonoBehaviour
                 if (stats.dodgeChance != 0){
                     info += "Dodge Chance: " + stats.dodgeChance*100 + "%\n";
                 }
-                if (stats.dodgeChance != 0){
-                    info += "Dodge Chance: " + stats.dodgeChance*100 + "%\n";
-                }
                 if (stats.critChance != 0){
-                    info += "Crit Chance: " + stats.critChance*100 + "%\n";
                     info += "Crit Chance: " + stats.critChance*100 + "%\n";
                 }
                 if (stats.critMultiplier != 0){
-                    info += "Crit Multiplier: " + stats.critMultiplier + "x\n";
-                }
-                if (stats.richochet != 0){
-                    info += "Ricochets: " + stats.richochet + "\n";
                     info += "Crit Multiplier: " + stats.critMultiplier + "x\n";
                 }
                 if (stats.richochet != 0){
@@ -247,11 +230,7 @@ public class InfoWidget : MonoBehaviour
         if (item.lvlStats.dodgeChance != 0){
             info += "Dodge Chance: " + stats.dodgeChance*100 + "% -> " + (stats.dodgeChance + item.lvlStats.dodgeChance)*100 + "%\n";
         }
-        if (item.lvlStats.dodgeChance != 0){
-            info += "Dodge Chance: " + stats.dodgeChance*100 + "% -> " + (stats.dodgeChance + item.lvlStats.dodgeChance)*100 + "%\n";
-        }
         if (item.lvlStats.critChance != 0){
-            info += "Crit Chance: " + stats.critChance*100 + "% -> " + (stats.critChance + item.lvlStats.critChance)*100 + "%\n";
             info += "Crit Chance: " + stats.critChance*100 + "% -> " + (stats.critChance + item.lvlStats.critChance)*100 + "%\n";
         }
         if (item.lvlStats.critMultiplier != 0){
@@ -259,13 +238,8 @@ public class InfoWidget : MonoBehaviour
         }
         if (item.lvlStats.richochet != 0){
             info += "Ricochets: " + stats.richochet + " -> " + (stats.richochet + item.lvlStats.richochet) + "\n";
-            info += "Crit Multiplier: " + stats.critMultiplier + "x -> " + (stats.critMultiplier + item.lvlStats.critMultiplier) + "x\n";
-        }
-        if (item.lvlStats.richochet != 0){
-            info += "Ricochets: " + stats.richochet + " -> " + (stats.richochet + item.lvlStats.richochet) + "\n";
         }
         if (item.lvlStats.duration != 0){
-            info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + " sec\n";
             info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + " sec\n";
         }
         if (item.lvlStats.maxStacks != 0){
@@ -328,16 +302,8 @@ public class InfoWidget : MonoBehaviour
                 }
                 if (relic.Activatorlvl.critChance != 0){
                     active += "Crit Chance: " + stats.critChance*100 + "% -> " + (stats.critChance + relic.Activatorlvl.critChance)*100 + "%\n";
-                    active += "Dodge Chance: " + stats.dodgeChance*100 + "% -> " + (stats.dodgeChance + relic.Activatorlvl.dodgeChance)*100 + "%\n";
-                }
-                if (relic.Activatorlvl.critChance != 0){
-                    active += "Crit Chance: " + stats.critChance*100 + "% -> " + (stats.critChance + relic.Activatorlvl.critChance)*100 + "%\n";
                 }
                 if (relic.Activatorlvl.critMultiplier != 0){
-                    active += "Crit Multiplier: " + stats.critMultiplier + "x -> " + (stats.critMultiplier + relic.Activatorlvl.critMultiplier) + "x\n";
-                }
-                if (relic.Activatorlvl.richochet != 0){
-                    active += "Ricochets: " + stats.richochet + " -> " + (stats.richochet + relic.Activatorlvl.richochet) + "\n";
                     active += "Crit Multiplier: " + stats.critMultiplier + "x -> " + (stats.critMultiplier + relic.Activatorlvl.critMultiplier) + "x\n";
                 }
                 if (relic.Activatorlvl.richochet != 0){
