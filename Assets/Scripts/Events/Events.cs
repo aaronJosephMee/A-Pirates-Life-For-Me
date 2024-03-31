@@ -25,7 +25,7 @@ public class Choice
     [ConditionalField(nameof(isTerminal))] public Stats stats;
     [ConditionalField(nameof(isTerminal))] public SceneName nextScene;
 
-    [ConditionalField(nameof(isTerminal), true)] [TextArea(7,15)]
+    [TextArea(7,15)]
     public String followUpText;
 
     [ConditionalField(nameof(isTerminal), true)]

@@ -36,7 +36,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 14
-      followUpText: 
+      followUpText: '[INSERT TEXT HERE]'
       nextChoiceIndices:
         Value: 
     - text: Refuse (fight the captain).
@@ -49,6 +49,6 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 13
-      followUpText: 
+      followUpText: '[INSERT TEXT HERE]'
       nextChoiceIndices:
         Value: 

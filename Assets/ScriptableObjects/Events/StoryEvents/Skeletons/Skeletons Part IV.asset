@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: Skeletons Part IV
+  m_EditorClassIdentifier: 
+  title: Skeletons - Part IV
+  scene: 0
+  sceneIdx: 0
+  flavorText: "As you approach a local village, you hear an increasing amount of
+    racket. You see a familiar group of skeletons facing a group of humans, ready
+    to fight. The skeletons plead for your help, \u201CWe were just passing by, and
+    they came after us! All they ever do is attack us. Please, help us get rid of
+    them!\u201D What do you do?"
+  isMinigame: 0
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Help the skeletons fight the civilians
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: Bribe the civilians to leave the skeletons alone
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "You approach the civilians, with your hands up to show that
+        you are peaceful. You negotiate with them, explaining that the skeletons
+        just wish to pass through. No harm will be done. The civilians demand some
+        kind of incentive. \n\nLose 300 gold.\nSkeleton Friend improved!"
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Continue
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 

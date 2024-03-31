@@ -34,8 +34,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 13
-      followUpText: 
+      nextScene: 12
+      followUpText: '[INSERT TEXT HERE]'
       nextChoiceIndices:
         Value: 
     - text: Refuse (kill the governor).
@@ -47,7 +47,7 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 14
-      followUpText: 
+      nextScene: 12
+      followUpText: '[INSERT TEXT HERE]'
       nextChoiceIndices:
         Value: 
