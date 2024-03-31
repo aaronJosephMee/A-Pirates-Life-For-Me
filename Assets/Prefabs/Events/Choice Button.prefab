@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myText: {fileID: 1768401629190387797}
+  popUpPrefab: {fileID: 5792749610776295130, guid: e794e2a210f94f641b8b1a5583dedf7a, type: 3}
 --- !u!1 &7309106289619699511
 GameObject:
   m_ObjectHideFlags: 0

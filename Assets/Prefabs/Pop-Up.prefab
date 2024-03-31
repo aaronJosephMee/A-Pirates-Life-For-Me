@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 391962972574487277}
   - component: {fileID: 200724969820119747}
   - component: {fileID: 7682506518689195709}
-  - component: {fileID: 6189854995900892119}
+  - component: {fileID: 2136332362395051597}
   m_Layer: 5
   m_Name: Pop-Up
   m_TagString: Untagged
@@ -493,7 +493,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6189854995900892119
+--- !u!114 &2136332362395051597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -502,9 +502,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5792749610776295130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c622db76bc95b46a308417752608ac, type: 3}
+  m_Script: {fileID: 11500000, guid: b3be582702de7554fb9a425393f9c89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 4221292219375585765}
+  descriptionText: {fileID: 6900352357979311611}
 --- !u!1 &6247765247423476550
 GameObject:
   m_ObjectHideFlags: 0

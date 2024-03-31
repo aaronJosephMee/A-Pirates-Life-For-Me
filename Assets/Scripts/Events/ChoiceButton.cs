@@ -9,6 +9,7 @@ public class ChoiceButton : MonoBehaviour
 {
     Choice toDisplay;
     [SerializeField] TextMeshProUGUI myText;
+    [SerializeField] private GameObject popUpPrefab;
     void Start()
     {
         this.GetComponent<Button>().onClick.AddListener(ChoicePicked);
@@ -36,8 +37,16 @@ public class ChoiceButton : MonoBehaviour
             // Add gold
             ItemManager.instance.AddGold(toDisplay.stats.gold);
             // TODO: Add logic to reward player with stats and relics
+            if (toDisplay.nextScene == SceneName.OverworldMap)
+            {
+                GameManager.instance.DisplayPopUp(popUpPrefab, SceneName.OverworldMap, toDisplay.followUpText);
+            }
+            else
+            {
+                GameManager.instance.StorePopUp(popUpPrefab, SceneName.OverworldMap, toDisplay.followUpText);
+                GameManager.instance.LoadScene(toDisplay.nextScene);
+            }
             Destroy(this.transform.parent.gameObject);
-            GameManager.instance.LoadScene(toDisplay.nextScene);
         }
         else
         {

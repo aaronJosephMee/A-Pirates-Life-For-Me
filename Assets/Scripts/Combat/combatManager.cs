@@ -148,6 +148,13 @@ public class combatManager : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
         playerHealth.UpdateHealth();
-        Instantiate(itemDrop);
+        if (GameManager.instance.HasPopup())
+        {
+            GameManager.instance.DisplayStoredPopUp();
+        }
+        else
+        {
+            Instantiate(itemDrop);
+        }
     }
 }
