@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Rest
   choiceType: 4
-  sprite: {fileID: 21300000, guid: 86d649e65d1bd7044b1ae09c9ad9acdc, type: 3}
+  sprite: {fileID: 21300000, guid: 44f6cc78054f98a4fa5dc29c8c5d9126, type: 3}

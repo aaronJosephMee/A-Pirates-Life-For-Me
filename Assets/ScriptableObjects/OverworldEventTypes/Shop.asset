@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Shop
   choiceType: 1
-  sprite: {fileID: 21300000, guid: 9a482cba75eb2bc4da0c4a5eaa09e027, type: 3}
+  sprite: {fileID: 21300000, guid: bb85e0cf906a6fa429403c62c9a508fb, type: 3}
