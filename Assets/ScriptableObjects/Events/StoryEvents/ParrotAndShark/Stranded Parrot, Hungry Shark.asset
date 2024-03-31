@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: Stranded Parrot, Hungry Shark
+  m_EditorClassIdentifier: 
+  title: Stranded Parrot, Hungry Shark
+  scene: 0
+  sceneIdx: 0
+  flavorText: While sailing the seas, you spot something floating in the distance.
+    As you draw closer to it, you realize that it is a broken piece of wood with
+    a parrot sitting on top of it. The parrot has an injured wing and is squawking
+    in distress, as there is a shark watching it intently, waiting for a quick meal.
+    What do you do?
+  isMinigame: 0
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Rescue the parrot
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "You lean over the side of your ship and scoop the parrot up
+        to safety. It sighs with relief and shuffles closer to you. This little parrot
+        loves you. The shark thrashes angrily in the water, then swims away. \n\nYou
+        gained Parrot! It fills you with determination."
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Leave the parrot to its fate. Hey, it's the nature of things
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'You avert your eyes and plug your ears to muffle the parrot''s
+        distressed cries. For a moment, there is a violent thrashing, then stillness. '
+      nextChoiceIndices:
+        Value: 03000000
+    - text: Continue
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 00000000
+    - text: Continue
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'After travelling for several kilometers, you hear a high-pitched
+        sound, or rather, several of them. The sounds gets louder, as you realize
+        a swarm of parrots is headed towards your ship. Somehow, word got out that
+        a shark dined on one of their friends, while you dashed. You hide in your
+        quarters, as the parrots screech and make a mess of your ship. Once the sound
+        dies down, you come out and see the mess. There is crap everywhere.
+
+
+        Gained
+        Poop Deck. It fills you with consternation.'
+      nextChoiceIndices:
+        Value: 02000000

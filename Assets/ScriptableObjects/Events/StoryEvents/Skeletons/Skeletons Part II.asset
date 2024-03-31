@@ -40,9 +40,24 @@ MonoBehaviour:
         sure no one (human) is watching. You dig out the skeleton and watch as it
         slowly comes to life. '
       nextChoiceIndices:
-        Value: 
-    - text: 
+        Value: 00000000
+    - text: Reject their request. Who knows who could be watching?
       isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "You awkwardly shake your head and avert your eyes from theirs.
+        Well, their eye sockets. As you walk away, you hear them mumble in a disappointed
+        tone. \n\nLose Skeleton Friend"
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Continue
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
@@ -54,7 +69,7 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
-    - text: 
+    - text: Continue
       isTerminal: 0
       relics:
         Value: []
@@ -64,6 +79,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      followUpText: "The skeleton thanks you profusely and walks over to where his
+        crew is waiting. \n\nSkeleton Friend improved!\nGain Graverobber"
       nextChoiceIndices:
-        Value: 
+        Value: 02000000
