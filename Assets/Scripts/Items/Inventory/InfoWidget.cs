@@ -86,9 +86,13 @@ public class InfoWidget : MonoBehaviour
         if (stats.duration != 0){
             info += "Duration: " + stats.duration + " sec\n";
         }
+        if (stats.healthBoost != 0){
+            info += "Health Boost: " + stats.healthBoost + "\n";
+        }
         if (stats.maxStacks != 0 && stats.gunDebuff != Debuffs.Fire){
             info += "Max Stacks: " + stats.maxStacks + "\n";
         }
+        
         if (info != ""){
             info = "Passive Effects: \n" + info;
         }
@@ -241,6 +245,9 @@ public class InfoWidget : MonoBehaviour
         }
         if (item.lvlStats.duration != 0){
             info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + " sec\n";
+        }
+        if (item.lvlStats.maxStacks != 0){
+            info += "Health Boost: " + stats.healthBoost + " -> " + (stats.healthBoost + item.lvlStats.healthBoost) + "\n";
         }
         if (item.lvlStats.maxStacks != 0){
             info += "Max Stacks: " + stats.maxStacks + " -> " + (stats.maxStacks + item.lvlStats.maxStacks) + "\n";
