@@ -14,22 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Cultists - Part II
   scene: 10
-  sceneIdx: 0
+  sceneIdx: 2
   flavorText: "You are walking through a small, wooded area just outside of a village.
     Suddenly, a hooded figure appears from behind a tree. \u201CWe\u2019ve been watching
     you,\u201D he says. \u201CYou have made an offering of blood in the name of our
     god, Dagon. Greater sacrifices will lead to even greater rewards. Are you interested
     in what we offer?\u201D How do you respond"
   isMinigame: 0
-  initialChoices: 0000000000000000
+  initialChoices: 0000000001000000
   choices:
     Value:
     - text: 'No, my offering was a mistake (walk away). '
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
       stats:
         health: 0
         gold: 0
@@ -41,6 +42,8 @@ MonoBehaviour:
         Lose Mark of Dagon'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Tell me more.
       isTerminal: 0
       relics:
@@ -56,20 +59,9 @@ MonoBehaviour:
         and ring of red flowers. Bring the sacrifice there and our god will do the
         rest. Then you will have your reward.\u201D How do you proceed?"
       nextChoiceIndices:
-        Value: 0300000004000000
-    - text: Continue
-      isTerminal: 1
-      relics:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
+        Value: 0200000003000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: I will do as you ask.
       isTerminal: 0
       relics:
@@ -85,7 +77,9 @@ MonoBehaviour:
         a precious ring along the shores. He follows you, eager to help. You direct
         him towards the patch of red flowers and hang back a bit.\u201D"
       nextChoiceIndices:
-        Value: 00000000
+        Value: 06000000
+      changeVisuals: 1
+      changeIndex: 3
     - text: No! How could you ask such a thing of me?!
       isTerminal: 0
       relics:
@@ -99,13 +93,16 @@ MonoBehaviour:
       followUpText: "The cultist glares at you. \u201CYou know too much,\u201D he
         says, readying himself to fight you. What do you do?"
       nextChoiceIndices:
-        Value: 
+        Value: 0400000005000000
+      changeVisuals: 1
+      changeIndex: 5
     - text: Fight
       isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
       stats:
         health: 0
         gold: 0
@@ -113,12 +110,15 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Flee to your ship
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
       stats:
         health: 0
         gold: 0
@@ -130,12 +130,15 @@ MonoBehaviour:
         Lose Mark of Dagon'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue watching
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: c32e8a37611ff804586c04f33f53f13a, type: 2}
       stats:
         health: 0
         gold: 0
@@ -148,3 +151,5 @@ MonoBehaviour:
         Improved Mark of Dagon'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0

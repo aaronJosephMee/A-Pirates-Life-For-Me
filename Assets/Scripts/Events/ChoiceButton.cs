@@ -50,6 +50,10 @@ public class ChoiceButton : MonoBehaviour
         }
         else
         {
+            if (toDisplay.changeVisuals)
+            {
+                GameManager.instance.ChangeVisuals(toDisplay.changeIndex);
+            }
             gameObject.transform.GetComponentInParent<EventMenu>().UpdateEventMenu(toDisplay.followUpText, toDisplay.nextChoiceIndices.Value);
         }
     }

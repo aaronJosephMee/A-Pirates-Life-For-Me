@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     private GameObject storedPopUp;
     private SceneName storedPopUpNextScene;
     private String storedPopUpFollowUpText;
+    private IEventToggleable currentEventToggleable;
     
     // Start is called before the first frame update
     void Awake(){
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
         if (cameras != null)
         {
             SelectEventCamera(cameras);
+            currentEventToggleable = cameras.GetComponent<IEventToggleable>();
             ToggleEventToggleable(cameras);
         } 
         
@@ -102,7 +104,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!cam.gameObject.name.Contains( _cameraIndex.ToString()))
                 {
-                    Destroy(cam.gameObject);
+                    cam.gameObject.SetActive(false);
                 }
             }
         }
@@ -144,5 +146,10 @@ public class GameManager : MonoBehaviour
     public bool HasPopup()
     {
         return storedPopUp != null;
+    }
+
+    public void ChangeVisuals(int index)
+    {
+        currentEventToggleable.ChangeVisuals(index);
     }
 }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cultists Part IV-A
   m_EditorClassIdentifier: 
   title: Cultists - Part IV-A
-  scene: 0
-  sceneIdx: 0
+  scene: 16
+  sceneIdx: 3
   flavorText: There is an uproar at the public square of a local village. Devotees
     of the Cult of Dagon have installed a shrine, claiming religious freedom. Many
     local civilians are upset and are threatening to tear it down. Both groups are
@@ -36,8 +36,10 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Bribe the civilians to leave the shrine alone
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
@@ -54,16 +56,5 @@ MonoBehaviour:
         400 Gold. Gain Lesser Mark of Dagon'
       nextChoiceIndices:
         Value: 02000000
-    - text: Continue
-      isTerminal: 1
-      relics:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
+      changeVisuals: 0
+      changeIndex: 0

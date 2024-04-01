@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Cultists - Part III
   scene: 11
-  sceneIdx: 0
+  sceneIdx: 4
   flavorText: You find a strange encampment with a familiar monolith and cages holding
     human bodies. Or at least, what remains of them. One of these humans is still
     alive. Releasing the prisoner is sure to draw the attention of the cultists.
@@ -38,13 +38,16 @@ MonoBehaviour:
         some very angry cultists are running towards you. You tell the prisoner to
         hide and draw your sword, preparing to fight.
       nextChoiceIndices:
-        Value: 00000000
+        Value: 03000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Leave the prisoner to their fate
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a2c7effb584642e458248215678960fb, type: 2}
       stats:
         health: 0
         gold: 0
@@ -58,28 +61,15 @@ MonoBehaviour:
         Gain Guilt'
       nextChoiceIndices:
         Value: 04000000
-    - text: Rescue the prisoner
-      isTerminal: 0
-      relics:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: You break open the prisoner's cage and help him down onto the
-        ground. You see some movement from the corner of your eye and realize that
-        some very angry cultists are running towards you. You tell the prisoner to
-        hide, as you draw your sword, preparing to fight.
-      nextChoiceIndices:
-        Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Fight
       isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: ae1657c1e226885459c2ce212cadc726, type: 2}
       stats:
         health: 0
         gold: 0
@@ -90,19 +80,5 @@ MonoBehaviour:
         hide, as you draw your sword, preparing to fight.
       nextChoiceIndices:
         Value: 00000000
-    - text: Continue
-      isTerminal: 1
-      relics:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: You break open the prisoner's cage and help him down onto the
-        ground. You see some movement from the corner of your eye and realize that
-        some very angry cultists are running towards you. You tell the prisoner to
-        hide, as you draw your sword, preparing to fight.
-      nextChoiceIndices:
-        Value: 00000000
+      changeVisuals: 0
+      changeIndex: 0
