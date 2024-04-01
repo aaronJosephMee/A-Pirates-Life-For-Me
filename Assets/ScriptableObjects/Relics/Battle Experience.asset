@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
   m_Name: Battle Experience
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: fb83a0b1e7dadbe4a90cb02fecd0a570, type: 3}
   title: Battle Experience
   description: Gives a boost to crit rate and crit multiplier
   maxlvl: 4
@@ -33,6 +33,7 @@ MonoBehaviour:
     critChance: 0.3
     critMultiplier: 0.3
     richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -50,7 +51,9 @@ MonoBehaviour:
     critChance: 0.1
     critMultiplier: 0.2
     richochet: 0
+    dodgeChance: 0
   price: 120
+  isStoryRelic: 0
   activator: 0
   ActivatorStats:
     gunDamage: 0
@@ -69,6 +72,7 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
+    dodgeChance: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -86,3 +90,4 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
+    dodgeChance: 0

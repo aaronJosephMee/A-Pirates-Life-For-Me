@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
   m_Name: Shock Absorption
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 818ca74ee3651714889c84226b52484e, type: 3}
   title: Shock Absorption
   description: Gives high damage reduction, but each hit you take lowers your damage
     reduction temporarily
@@ -54,6 +54,7 @@ MonoBehaviour:
     richochet: 0
     dodgeChance: 0
   price: 120
+  isStoryRelic: 0
   activator: 3
   ActivatorStats:
     gunDamage: 0

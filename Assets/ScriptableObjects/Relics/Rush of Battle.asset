@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
   m_Name: Rush of Battle
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: ab2bbb15968878a4aaf6e3cd9a06cfb7, type: 3}
   title: Rush of Battle
   description: Kills grant temporary defense
   maxlvl: 2
@@ -53,6 +53,7 @@ MonoBehaviour:
     richochet: 0
     dodgeChance: 0
   price: 60
+  isStoryRelic: 0
   activator: 2
   ActivatorStats:
     gunDamage: 0
