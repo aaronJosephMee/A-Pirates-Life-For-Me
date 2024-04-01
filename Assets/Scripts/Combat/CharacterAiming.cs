@@ -17,6 +17,7 @@ public class CharacterAiming : MonoBehaviour
     public Cinemachine.AxisState xAxis, yAxis;
     [SerializeField] Transform camLookAt;
     public combatManager combat_Manager;
+    private SensitivityManager sensitivityManager;
 
     public Rig handLayer;
     public Rig aimLayer;
@@ -37,14 +38,15 @@ public class CharacterAiming : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         weapon = GetComponentInChildren<WeaponManager>();
+        sensitivityManager = SensitivityManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        xAxis.Value += Input.GetAxisRaw("Mouse X") * mouseSense;
-        yAxis.Value -= Input.GetAxisRaw("Mouse Y") * mouseSense;
+        xAxis.Value += Input.GetAxisRaw("Mouse X") * mouseSense * sensitivityManager.mouseSensitivity;
+        yAxis.Value -= Input.GetAxisRaw("Mouse Y") * mouseSense * sensitivityManager.mouseSensitivity;
         yAxis.Value = Mathf.Clamp(yAxis.Value, -80, 80);
         
         if(combat_Manager.waveCleared == false)
@@ -81,12 +83,13 @@ public class CharacterAiming : MonoBehaviour
             aimLayer.weight = 0;
         }
 
-        
+        sensitivityManager = SensitivityManager.Instance;
+
 
     }
 
 
-    
+
     void LateUpdate()
     {
         camLookAt.localEulerAngles = new Vector3(yAxis.Value, camLookAt.localEulerAngles.y, camLookAt.localEulerAngles.z);
