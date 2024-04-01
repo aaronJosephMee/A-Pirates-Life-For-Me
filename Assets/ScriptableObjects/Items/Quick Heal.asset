@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9e5ccdd96a356458566500df21e961, type: 3}
   m_Name: Quick Heal
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 326d48b39007b2e4cb86815610058e40, type: 3}
   title: Quick Heal
   description: Restores a medium amount of health over a short time
   maxlvl: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9e5ccdd96a356458566500df21e961, type: 3}
   m_Name: Spiced Rum
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 8d9a3473fe68ff44eb31a87796ebb5fb, type: 3}
   title: Spiced Rum
   description: A 2 use offesive item providing a boost to damage, speed, and fire
     rate for 7 seconds.
