@@ -49,6 +49,6 @@ public class EventMenu : MonoBehaviour
             Destroy(button);
         }
 
-        buttonSpawner.Spawn(GetChoicesFromIndices(followUpChoices));
+        buttons = buttonSpawner.Spawn(GetChoicesFromIndices(followUpChoices));
     }
 }

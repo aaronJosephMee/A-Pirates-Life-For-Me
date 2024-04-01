@@ -895,11 +895,17 @@ MonoBehaviour:
   _canvas2: {fileID: 1518890943}
   seedEvents:
   - {fileID: 11400000, guid: c7db6eec88e1bc848b4966b923b1907a, type: 2}
+  - {fileID: 11400000, guid: 334fd50343d1d1642b44e7617990b777, type: 2}
   storyEvents:
   - {fileID: 11400000, guid: 598f8f3309020734997774727ad3a69e, type: 2}
   - {fileID: 11400000, guid: cd221cf525957834984137e1ce49b805, type: 2}
   - {fileID: 11400000, guid: a7f601e931c5c9d40a97a2406fe88d20, type: 2}
   - {fileID: 11400000, guid: 7ff94567036b32e46b50ada4fbc5f8c8, type: 2}
+  - {fileID: 11400000, guid: 995f678d40780dc4ca90c73f59d63003, type: 2}
+  - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
+  - {fileID: 11400000, guid: c32e8a37611ff804586c04f33f53f13a, type: 2}
+  - {fileID: 11400000, guid: ae1657c1e226885459c2ce212cadc726, type: 2}
+  - {fileID: 11400000, guid: a2c7effb584642e458248215678960fb, type: 2}
   genericEvents:
   - {fileID: 11400000, guid: 3d561b9c49592f54097a0a76e4229464, type: 2}
   - {fileID: 11400000, guid: 44670fcc19bce744abe923946ab8bf0b, type: 2}

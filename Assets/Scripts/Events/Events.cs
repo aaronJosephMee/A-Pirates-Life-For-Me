@@ -30,6 +30,12 @@ public class Choice
 
     [ConditionalField(nameof(isTerminal), true)]
     public ChoiceIndices nextChoiceIndices;
+
+    [ConditionalField(nameof(isTerminal), true)]
+    public bool changeVisuals;
+
+    [ConditionalField(nameof(changeVisuals))]
+    public int changeIndex;
 }
 
 [Serializable]
@@ -58,10 +64,10 @@ public class Events
         _storyEvents = storyEvents;
         int randomEventIndex = _random.Next(_seedEvents.Count);
         _eventPool.Add(_seedEvents[randomEventIndex]);
-        foreach (EventScriptableObject genericEvent in genericEvents)
-        {
-            _eventPool.Add(genericEvent);
-        }
+        // foreach (EventScriptableObject genericEvent in genericEvents)
+        // {
+        //     _eventPool.Add(genericEvent);
+        // }
     }
     
     public EventScriptableObject GetEvent()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Cultists - Part I
   scene: 10
-  sceneIdx: 0
+  sceneIdx: 1
   flavorText: While exploring on an island, you come across a skull-shaped cavern.
     Inside, you find a strange monolith surrounded by human bones. There is a large
     chalice placed in front of it containing what looks like blood. What do you do?
@@ -23,11 +23,12 @@ MonoBehaviour:
   choices:
     Value:
     - text: Add some of your blood, losing some health.
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 995f678d40780dc4ca90c73f59d63003, type: 2}
       stats:
         health: 0
         gold: 0
@@ -37,11 +38,12 @@ MonoBehaviour:
       nextChoiceIndices:
         Value: 0000000000000000
     - text: Destroy the monolith.
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
       stats:
         health: 0
         gold: 0
@@ -54,34 +56,3 @@ MonoBehaviour:
         gain 15 HP'
       nextChoiceIndices:
         Value: 0000000000000000
-    - text: Continue
-      isTerminal: 1
-      relics:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
-    - text: Destroy the monolith.
-      isTerminal: 0
-      relics:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 'You shove the monolith onto the ground and smash it to pieces
-        with a large stone. It feels like a weight has been lifted from the area.
-
-
-        Permanently
-        gain 15 HP'
-      nextChoiceIndices:
-        Value: 

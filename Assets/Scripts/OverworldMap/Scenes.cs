@@ -20,6 +20,7 @@ namespace DefaultNamespace.OverworldMap
         CombatIsleOfTorrentPirate,
         CombatIsleOfTorrentAris,
         ShipCombat,
+        Night,
         NoScene
     }
     
@@ -61,6 +62,8 @@ namespace DefaultNamespace.OverworldMap
                     return "COMBAT(aris)_IsleofTorrent";
                 case SceneName.ShipCombat:
                     return "sea combat demo";
+                case SceneName.Night:
+                    return "NightScene";
                 default:
                     return "Error";
             }

@@ -16,4 +16,9 @@ public class IsleOfTorrentEventToggleable : MonoBehaviour, IEventToggleable
             aristocrats.SetActive(false);
         }
     }
+
+    public void ChangeVisuals(int index)
+    {
+        throw new System.NotImplementedException();
+    }
 }

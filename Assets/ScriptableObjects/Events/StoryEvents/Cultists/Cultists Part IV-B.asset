@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cultists Part IV-B
   m_EditorClassIdentifier: 
   title: Cultists - Part IV-B
-  scene: 0
-  sceneIdx: 0
+  scene: 16
+  sceneIdx: 3
   flavorText: "There is an uproar at the public square of a local village. Some devotees
     of the Cult of Dagon have installed a shrine, claiming religious freedom. You
     have seen firsthand what this \u201Creligion\u201D involves. In fact, you recognize
@@ -37,8 +37,10 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Leave them to deal with this on their own
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
@@ -56,16 +58,5 @@ MonoBehaviour:
         Freedom'
       nextChoiceIndices:
         Value: 02000000
-    - text: Continue
-      isTerminal: 1
-      relics:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
+      changeVisuals: 0
+      changeIndex: 0
