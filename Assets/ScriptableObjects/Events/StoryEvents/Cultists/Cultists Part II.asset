@@ -100,19 +100,6 @@ MonoBehaviour:
         says, readying himself to fight you. What do you do?"
       nextChoiceIndices:
         Value: 
-    - text: No! How could you ask such a thing of me?!
-      isTerminal: 0
-      relics:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
     - text: Fight
       isTerminal: 1
       relics:
