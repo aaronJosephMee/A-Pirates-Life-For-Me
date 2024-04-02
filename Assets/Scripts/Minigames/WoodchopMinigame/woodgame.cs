@@ -23,6 +23,8 @@ public class WoodMiniGame : MonoBehaviour
     private GameObject particle;
 
     public AudioClip swing1Audio;
+    public Animator coconutsAnimator;
+    public Animator coconutAnimator;
 
     [SerializeField] private AudioSource audioSource;
 
@@ -79,6 +81,7 @@ public class WoodMiniGame : MonoBehaviour
         || (keyNumber == 4 && Input.GetKeyDown(KeyCode.D)))
         {
             audioSource.PlayOneShot(swing1Audio);
+            coconutsAnimator.SetBool("IsHit", true);
             howToPlayText.gameObject.SetActive(false);
             chops++;
             Debug.Log("Chop " + chops + "/" + treeHP);
@@ -88,10 +91,13 @@ public class WoodMiniGame : MonoBehaviour
             {
                 Debug.Log("tree defeated");
                 chops = 0;
+                //StartCoroutine(PlayCoconutAnimation());
+                coconutAnimator.SetBool("IsFall", true);
                 OverworldMapManager.Instance.TransitionBackToMap();
-            }
+            } else { coconutAnimator.SetBool("IsFall", false); }
             input = false;
         }
+        else { coconutsAnimator.SetBool("IsHit", false); }
 
     }
 
@@ -112,4 +118,13 @@ public class WoodMiniGame : MonoBehaviour
         }
         input = false;
     }
+
+    //IEnumerator PlayCoconutAnimation()
+    //{
+    //    coconutAnimator.Play("Coconut-Fall");
+
+    //    // Optional: Wait for the animation to complete if needed
+    //    yield return null;
+
+    //}
 }
