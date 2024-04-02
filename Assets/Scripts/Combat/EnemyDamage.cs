@@ -27,7 +27,7 @@ public class EnemyDamage : MonoBehaviour
                 Player player = col.GetComponent<Player>();
                 if (player)
                 {
-                    player.takeDamage(damageAmount);
+                    player.takeDamage(damageAmount, true);
 
                     nextHitTime = Time.time + rehitTime;
                 }
