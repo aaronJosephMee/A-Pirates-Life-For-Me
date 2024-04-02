@@ -15,7 +15,6 @@ public class EventMenu : MonoBehaviour
     {
         buttonSpawner = GetComponentInChildren<ButtonSpawner>();
         toDisplay = OverworldMapManager.Instance.GetEvent();
-        //Debug.Log(toDisplay.name);
         
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
         foreach (TextMeshProUGUI tmp in tmps){
@@ -26,8 +25,25 @@ public class EventMenu : MonoBehaviour
                     break;
             }
         }
-        bodyText.text = toDisplay.flavorText;
-        buttons = buttonSpawner.Spawn(GetChoicesFromIndices(toDisplay.initialChoices));
+
+        bodyText.text = "";
+        StartCoroutine(WriteText(toDisplay.flavorText, toDisplay.initialChoices, false));
+    }
+    
+    IEnumerator WriteText(String textToWrite, int[] choices, bool followUp)
+    {
+        if (!followUp)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        int characterIndex = 0;
+        float typingSpeed = 0.02f;
+        while (characterIndex < textToWrite.Length) {
+            yield return new WaitForSeconds(typingSpeed);
+            bodyText.text += textToWrite[characterIndex];
+            characterIndex+= 1; 
+        }
+        buttons = buttonSpawner.Spawn(GetChoicesFromIndices(choices));
     }
 
     private Choice[] GetChoicesFromIndices(int[] indices)
@@ -43,12 +59,11 @@ public class EventMenu : MonoBehaviour
 
     public void UpdateEventMenu(String followUpText, int[] followUpChoices)
     {
-        bodyText.text = followUpText;
         foreach (GameObject button in buttons)
         {
             Destroy(button);
         }
-
-        buttons = buttonSpawner.Spawn(GetChoicesFromIndices(followUpChoices));
+        bodyText.text = "";
+        StartCoroutine(WriteText(followUpText, followUpChoices, true));
     }
 }

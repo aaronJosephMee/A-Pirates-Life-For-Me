@@ -30,6 +30,18 @@ public class PopUpScreen : MonoBehaviour
 
     public void SetText(String text)
     {
-        descriptionText.text = text;
+        descriptionText.text = "";
+        StartCoroutine(WriteText(text));
+    }
+    
+    IEnumerator WriteText(String textToWrite)
+    {
+        int characterIndex = 0;
+        float typingSpeed = 0.02f;
+        while (characterIndex < textToWrite.Length) {
+            yield return new WaitForSeconds(typingSpeed);
+            descriptionText.text += textToWrite[characterIndex];
+            characterIndex+= 1; 
+        }
     }
 }

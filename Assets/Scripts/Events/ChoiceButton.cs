@@ -29,14 +29,21 @@ public class ChoiceButton : MonoBehaviour
             }
             
             // Add relics
-            foreach (RelicScriptableObject relic in toDisplay.relicsToAdd.Value)
+            if (toDisplay.relicsToAdd.Value != null)
             {
-                ItemManager.instance.AddRelic(relic);
+                foreach (RelicScriptableObject relic in toDisplay.relicsToAdd.Value)
+                {
+                    ItemManager.instance.AddRelic(relic);
+                }
             }
-            foreach (RelicScriptableObject relic in toDisplay.relicsToLose.Value)
+            if (toDisplay.relicsToLose.Value != null)
             {
-                ItemManager.instance.LoseRelic(relic);
+                foreach (RelicScriptableObject relic in toDisplay.relicsToLose.Value)
+                {
+                    ItemManager.instance.LoseRelic(relic);
+                }
             }
+
             // Add gold
             ItemManager.instance.AddGold(toDisplay.stats.gold);
             Health health = ItemManager.instance.GetHealth();
