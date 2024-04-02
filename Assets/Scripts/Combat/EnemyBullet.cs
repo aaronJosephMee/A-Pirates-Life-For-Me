@@ -33,7 +33,7 @@ public class EnemyBullet : MonoBehaviour
             if (collisionDelay <= 0){
                 if (hit != null){
                     if (hit.tag == "Player"){
-                        hit.GetComponent<Player>().takeDamage(damage);
+                        hit.GetComponent<Player>().takeDamage(damage, false);
                     }
                     else if (hit.tag == "Enemy"){
                         hit.GetComponentInParent<EnemyHealth>().DecreaseHealth(damage, "", false);

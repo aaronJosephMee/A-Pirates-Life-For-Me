@@ -55,10 +55,12 @@ public class Player : MonoBehaviour
         }
     }
     
-    public void takeDamage(float damage)
+    public void takeDamage(float damage, bool giveIFrames)
     {
         if (ITimer < Time.time && !isDead){
-            ITimer = Time.time + IFrames;
+            if (giveIFrames){
+                ITimer = Time.time + IFrames;
+            }
             float damageToTake;
             if (new System.Random().NextDouble() < newStats.dodgeChance){
                 damageToTake = 0;
