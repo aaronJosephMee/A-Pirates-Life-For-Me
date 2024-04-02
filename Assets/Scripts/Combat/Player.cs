@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         }
     }
     
-    public void takeDamage(float damage)
+    public void takeDamage(float damage, bool giveIframes)
     {
         if (ITimer < Time.time && !isDead){
             ITimer = Time.time + IFrames;
