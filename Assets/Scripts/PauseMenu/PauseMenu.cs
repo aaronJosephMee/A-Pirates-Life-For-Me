@@ -15,12 +15,12 @@ public class PauseMenu : Menu
             _playerController.DisablePlayerInput();
         }
         Time.timeScale = 0;
-        GameManager.instance.menuOpen = true;
+        
     }
     void OnDestroy()
     {
         Time.timeScale = 1;
-        GameManager.instance.menuOpen = false;
+        
         if (_playerController != null)
         {
             _playerController.EnablePlayerInput();
