@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -22,8 +23,8 @@ public class StatsText : MonoBehaviour
         statText += "Speed: " + stats.speedBoost +"    ";
         // statText += "Bullet Size: " + stats.projectileSize + "       ";
         // statText += "Accuracy: " + stats.accuracy + "\n";
-        statText += "Dodge Chance: " + stats.dodgeChance*100 + "%\n";
-        statText += "Crit Chance: " + stats.critChance*100 + "%       ";
+        statText += "Dodge Chance: " + MathF.Round(stats.dodgeChance*100,2) + "%\n";
+        statText += "Crit Chance: " + MathF.Round(stats.critChance*100,2) + "%       ";
         statText += "Crit Multiplier: " + stats.critMultiplier + "x\n";
         text.text = statText;
     }

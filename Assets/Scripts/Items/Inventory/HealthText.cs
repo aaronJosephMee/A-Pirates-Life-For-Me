@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +17,6 @@ public class HealthText : MonoBehaviour
     void Update()
     {
         Health hp = ItemManager.instance.GetHealth();
-        text.text = "Health: " + hp.curHealth + "/" + hp.maxHealth;
+        text.text = "Health: " + MathF.Round(hp.curHealth, 2) + "/" + MathF.Round(hp.maxHealth, 2);
     }
 }

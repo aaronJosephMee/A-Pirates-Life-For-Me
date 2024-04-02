@@ -785,7 +785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 156.56693, y: 12.1422}
+  m_AnchoredPosition: {x: 156.56693, y: 4.3}
   m_SizeDelta: {x: 204.5773, y: 33.3156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6186467598547830198
@@ -879,7 +879,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 10.23864, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1752,6 +1752,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1848624362110379374}
     m_Modifications:
+    - target: {fileID: 7275582615006506483, guid: 7150c89bee4c055429014d6a00883f9f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 58.554
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275582615006506483, guid: 7150c89bee4c055429014d6a00883f9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.8501
+      objectReference: {fileID: 0}
     - target: {fileID: 7836773425114221842, guid: 7150c89bee4c055429014d6a00883f9f, type: 3}
       propertyPath: m_Name
       value: Slider

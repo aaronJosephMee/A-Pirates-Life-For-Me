@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: Agile Assault
+  m_Name: Mark of Dagon +1
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  title: Agile Assault
-  description: Gives a little bit of dodge and speed. Dodging an attack increases
-    crit chance and multiplier
-  maxlvl: 2
+  title: 
+  description: 
+  maxlvl: 0
   baseStats:
     gunDamage: 0
     swordDamage: 0
@@ -25,7 +24,7 @@ MonoBehaviour:
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
-    speedBoost: 2
+    speedBoost: 0
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
@@ -34,7 +33,7 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
-    dodgeChance: 0.1
+    dodgeChance: 0
     healthBoost: 0
   lvlStats:
     gunDamage: 0
@@ -44,7 +43,7 @@ MonoBehaviour:
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
-    speedBoost: 1
+    speedBoost: 0
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
@@ -53,17 +52,17 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
-    dodgeChance: 0.05
+    dodgeChance: 0
     healthBoost: 0
-  price: 70
+  price: 0
   isStoryRelic: 0
-  activator: 4
+  activator: 0
   ActivatorStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 4
-    maxStacks: 1
+    duration: 0
+    maxStacks: 0
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
@@ -72,8 +71,8 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
-    critChance: 0.2
-    critMultiplier: 0.5
+    critChance: 0
+    critMultiplier: 0
     richochet: 0
     dodgeChance: 0
     healthBoost: 0
@@ -81,8 +80,8 @@ MonoBehaviour:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 1
-    maxStacks: 1
+    duration: 0
+    maxStacks: 0
     bulletCount: 0
     fireRate: 0
     speedBoost: 0

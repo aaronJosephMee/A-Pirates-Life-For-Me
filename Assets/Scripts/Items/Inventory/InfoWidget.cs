@@ -304,7 +304,7 @@ public class InfoWidget : MonoBehaviour
                 if (relic.Activatorlvl.speedBoost != 0){
                     active += "Speed: " + stats.speedBoost + " -> " + (stats.speedBoost + relic.Activatorlvl.speedBoost) + "\n";
                 }
-                if (relic.Activatorlvl.critChance != 0){
+                if (relic.Activatorlvl.dodgeChance != 0){
                     active += "Dodge Chance: " + stats.dodgeChance*100 + "% -> " + (stats.dodgeChance + relic.Activatorlvl.dodgeChance)*100 + "%\n";
                 }
                 if (relic.Activatorlvl.critChance != 0){
