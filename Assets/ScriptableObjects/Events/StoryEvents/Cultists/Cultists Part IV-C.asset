@@ -26,7 +26,9 @@ MonoBehaviour:
     Value:
     - text: Fight alongside the civilians
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -34,14 +36,16 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      followUpText: Guilt relic removed
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
     - text: Leave them to resolve this on their own
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -51,7 +55,7 @@ MonoBehaviour:
       nextScene: 0
       followUpText: "You shake your head and frown slightly, as you tell the civilians
         that you cannot get involved. They plead, as you turn and head back to your
-        ship. \n\nGuilt effect increased"
+        ship. \n\nGuilt relic increased +1"
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0

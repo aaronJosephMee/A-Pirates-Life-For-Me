@@ -15,18 +15,18 @@ MonoBehaviour:
   title: Skeletons - Part I
   scene: 0
   sceneIdx: 0
-  flavorText: "As you walk along a beach, you hear an odd sound, almost like dragging.
+  flavorText: 'As you walk along a beach, you hear an odd sound, almost like dragging.
     You get closer to the source of the sound and see an animated skeleton struggling
-    to push a treasure chest along the shore, possibly to a ship? The skeleton notices
-    you, but does not flee. Maybe it\u2019s exhausted. Or maybe the treasure is too
-    important to risk losing. What do you do?"
+    to push a treasure chest along the shore, possibly to a ship? '
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 03000000
   choices:
     Value:
     - text: Show some pity and help the skeleton
-      isTerminal: 0
-      relics:
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -36,12 +36,16 @@ MonoBehaviour:
       nextScene: 0
       followUpText: "You smile at the skeleton and ask if it needs some help. You
         toss your sword and pistol to the ground to show that you are friendly. The
-        skeleton is elated and gratefully accepts. \n\nGain Skeleton Friend"
+        skeleton is elated and gratefully accepts. \n\nGain Skeleton Friend relic"
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Attack the skeleton and take the treasure for yourself
-      isTerminal: 0
-      relics:
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -50,16 +54,19 @@ MonoBehaviour:
         gold: 0
       nextScene: 0
       followUpText: 'You easily cut down the already exhausted skeleton. You think
-        you see a tear drip from one of its eye sockets. How?! No matter...
+        you see a tear drip from one of its eye sockets.
 
 
-        Gain
-        500 Gold'
+        Gain 500 Gold'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue
-      isTerminal: 1
-      relics:
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -67,6 +74,10 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      followUpText: "The skeleton notices you, but does not flee. Maybe it\u2019s
+        exhausted. Or maybe the treasure is too important to risk losing. What do
+        you do?"
       nextChoiceIndices:
-        Value: 
+        Value: 0000000001000000
+      changeVisuals: 0
+      changeIndex: 0

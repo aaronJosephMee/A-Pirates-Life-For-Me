@@ -24,7 +24,9 @@ MonoBehaviour:
     Value:
     - text: Add some of your blood, losing some health.
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -34,12 +36,17 @@ MonoBehaviour:
         gold: 0
       nextScene: 0
       followUpText: "You slice into your forearm with your sword and let some blood
-        dribble into the chalice. \n\nPermanently lose 15 HP\n\nGain Mark of Dagon"
+        dribble into the chalice. \n\nPermanently lose 15 HP\n\nGain Mark of Dagon
+        relic"
       nextChoiceIndices:
         Value: 0000000000000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Destroy the monolith.
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -56,3 +63,5 @@ MonoBehaviour:
         gain 15 HP'
       nextChoiceIndices:
         Value: 0000000000000000
+      changeVisuals: 0
+      changeIndex: 0
