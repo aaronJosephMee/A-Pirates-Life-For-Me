@@ -5,6 +5,8 @@ using DefaultNamespace.OverworldMap;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 public class Player : MonoBehaviour
 {
     [SerializeField] float currentHealth, maxHealth = 100f;
@@ -12,6 +14,7 @@ public class Player : MonoBehaviour
     Ragdoll ragdoll;
     public bool isDead;
     public CharacterAiming aiming;
+
     Animator anim;
     meleeHitbox meleeWeapon;
     CameraManager cameraManager;
@@ -30,6 +33,7 @@ public class Player : MonoBehaviour
     {
         ragdoll = GetComponent<Ragdoll>();
         aiming = GetComponent<CharacterAiming>();
+
         cameraManager = FindObjectOfType<CameraManager>();
         meleeWeapon = GetComponentInChildren<meleeHitbox>();
         weaponManager = GetComponentInChildren<WeaponManager>();

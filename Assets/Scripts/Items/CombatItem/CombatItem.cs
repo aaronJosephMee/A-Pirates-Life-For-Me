@@ -12,7 +12,7 @@ public class CombatItem : MonoBehaviour
     [SerializeField] GameObject coolDownImage;
     [SerializeField] GameObject activeImage;
     [SerializeField] GameObject useImage;
-    void Awake()
+    void Start()
     {
         item = ItemManager.instance.CurrentItem();
         oldItem = ItemManager.instance.CurrentItem();
