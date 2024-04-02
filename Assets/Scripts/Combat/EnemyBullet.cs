@@ -35,7 +35,7 @@ public class EnemyBullet : MonoBehaviour
                     if (hit.tag == "Player"){
                         hit.GetComponent<Player>().takeDamage(damage);
                     }
-                    else{
+                    else if (hit.tag == "Enemy"){
                         hit.GetComponentInParent<EnemyHealth>().DecreaseHealth(damage, "", false);
                     }
                 }  

@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class PauseMenu : Menu
 {
-    private PlayerController _playerController;
+    private GameObject _playerController;
     // Start is called before the first frame update
     void Start()
     {
         
-        _playerController = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
+        _playerController = GameObject.FindGameObjectWithTag("Player");
         if (_playerController != null)
         {
-            _playerController.DisablePlayerInput();
+            Debug.Log(_playerController.name);
+            //_playerController.GetComponent<PlayerController>().DisablePlayerInput();
+            _playerController.GetComponent<CharacterAiming>().enabled = false;
         }
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
         
     }
@@ -23,7 +27,10 @@ public class PauseMenu : Menu
         
         if (_playerController != null)
         {
-            _playerController.EnablePlayerInput();
+            //_playerController.GetComponent<PlayerController>().EnablePlayerInput();
+            _playerController.GetComponent<CharacterAiming>().enabled = true;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }
