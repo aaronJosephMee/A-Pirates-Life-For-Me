@@ -12,9 +12,16 @@ public class enemytargeting : MonoBehaviour
     GameObject playerAvatar;
     public Animator animator;
     public Player playerScript;
-
+    public bool isRanged = false;
+    public GameObject bullet;
     public float attackRange = 3.0f;
     public bool withinAttackRange = false;
+    [SerializeField] float fireDelay = 1f;
+    float fireTimer = 0;
+    [SerializeField] public float bulletVelocity;
+    [SerializeField] public Vector3 bulletSize = Vector3.one;
+    [SerializeField] GameObject gun;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,11 +60,21 @@ public class enemytargeting : MonoBehaviour
 
             if (distance <= attackRange)
             {
+                agent.destination = this.transform.position;
                 withinAttackRange = true;
                 animator.SetBool("inRange", true);
                 int randomAttack = Random.Range(1, 3);
                 //animator.SetInteger("attackNum", randomAttack);
                 transform.LookAt(player.position); 
+                if (isRanged && fireTimer <= Time.time){
+                    //Debug.Log("Here");
+                    fireTimer = Time.time + fireDelay;
+                    GameObject currentBullet = Instantiate(bullet, gun.transform.position, gun.transform.rotation);
+                    currentBullet.transform.localScale = bulletSize;
+
+                    Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
+                    rb.AddForce(gun.transform.forward * bulletVelocity, ForceMode.Impulse);
+                }
             }
             else
             {
