@@ -1131,6 +1131,7 @@ GameObject:
   - component: {fileID: 4035603828056395376}
   - component: {fileID: 691815798872382372}
   - component: {fileID: 1097602228359469424}
+  - component: {fileID: 2045334155085478883}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1205,7 +1206,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8b54f81f3648949a1f0e04ed78919d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  currentHealth: 0
+  maxHealth: 100
+  speedDenominator: 10
+  isDead: 0
+  aiming: {fileID: 0}
+  slider: {fileID: 0}
+  dmgNumb: {fileID: 0}
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  dodgeColor: {r: 0.9245283, g: 0.8931292, b: 0.8931292, a: 1}
+  IFrames: 0.3
 --- !u!136 &2997954303921819415
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1293,6 +1303,7 @@ MonoBehaviour:
       m_LegacyHeadingDefinition: 0
       m_LegacyVelocityFilterStrength: 0
   camLookAt: {fileID: 1237121871273431165}
+  combat_Manager: {fileID: 0}
   handLayer: {fileID: 466293895139161163}
   aimLayer: {fileID: 2229518612840280249}
   gunLayer: {fileID: 7473105451014124044}
@@ -1360,8 +1371,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4518532581920016763}
   hitbox: {fileID: 2638205023229482967}
-  attackDuration: 0.5
+  swing1Audio: {fileID: 0}
+  swing2Audio: {fileID: 0}
+  audioSource: {fileID: 0}
   blendSpeed: 0.5
+--- !u!65 &2045334155085478883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488650255071751408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.76155967, y: 1.8807704, z: 0.6400193}
+  m_Center: {x: -0.048679918, y: 0.9742681, z: 0.026159585}
 --- !u!1 &1527797247323055002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,6 +1518,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 0}
   swordDamage: 100
+  critChance: 0
+  critMultiplier: 0
+  swordDebuff: 
 --- !u!1 &1560208079156259408
 GameObject:
   m_ObjectHideFlags: 0
@@ -7841,13 +7878,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
+  baseFireRate: 0
   semiAuto: 0
   bullet: {fileID: 4867017510607868501, guid: bdad488673265424290324ddb009f781, type: 3}
   bulletVelocity: 125
   barrelPos: {fileID: 5808947556903546267}
   bulletsPerShot: 1
   damage: 25
-  isFiring: 0
+  critChance: 0
+  critMultiplier: 0
+  richochet: 0
+  bulletSize: {x: 1, y: 1, z: 1}
+  audioClips: []
+  audioSource: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   raycastOrigin: {fileID: 5808947556903546267}
   raycastDesination: {fileID: 0}
   recoil: {fileID: 0}

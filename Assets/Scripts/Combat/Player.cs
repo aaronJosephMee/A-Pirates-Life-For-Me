@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
     
     public void takeDamage(float damage)
     {
-        if (ITimer < Time.time){
+        if (ITimer < Time.time && !isDead){
             ITimer = Time.time + IFrames;
             float damageToTake;
             if (new System.Random().NextDouble() < newStats.dodgeChance){
