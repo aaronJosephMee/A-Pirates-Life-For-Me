@@ -131,7 +131,10 @@ public class WhirlpoolGame : MonoBehaviour
         {
             translationSpeed = 20;
 
-            backgroundMusic.pitch -= 0.2f * Time.deltaTime;
+            if (backgroundMusic.pitch > 0.5)
+            {
+                backgroundMusic.pitch -= 0.2f * Time.deltaTime;
+            }
         }
     }
 
@@ -141,8 +144,11 @@ public class WhirlpoolGame : MonoBehaviour
         {
             // Controls how fast you are moving away from the whirlpool when you press Z
             ship.transform.position = Vector3.MoveTowards(ship.transform.position, whirlpoolCenter.position, -5.0f);
-            
-            backgroundMusic.pitch -= 5f * Time.deltaTime;
+
+            if (backgroundMusic.pitch > 0.5)
+            {
+                backgroundMusic.pitch -= 5f * Time.deltaTime;
+            }
         }
     }
 }
