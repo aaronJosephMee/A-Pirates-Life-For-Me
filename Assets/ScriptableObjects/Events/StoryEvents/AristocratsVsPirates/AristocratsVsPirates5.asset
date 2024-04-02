@@ -17,18 +17,16 @@ MonoBehaviour:
   sceneIdx: 1
   flavorText: "As you walk onto the shores of an unfamiliar island, you see the unmistakable
     peg leg of a certain pirate. He approaches and points to a nearby structure \u2013
-    a mansion to be exact. \u201CAhoy there, me hearty! Ye\u2019ve proven yeself
-    to be a real mate in tough times. See that mansion over there? Entitled scoundrels,
-    the lot of them. Born into wealth, yet they continue to take and take from the
-    poor. They\u2019ve been needing to walk the plank for a long time now. What do
-    ye say, will you feed em to the fishes fer me?\u201D"
+    a mansion to be exact. "
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 00000000
   choices:
     Value:
-    - text: Comply (attack and kill the aristocrats).
-      isTerminal: 1
-      relics:
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -36,14 +34,54 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
-      followUpText: '[INSERT TEXT HERE]'
+      followUpText: "\u201CAhoy there, me hearty! Ye\u2019ve proven yeself to be
+        a real mate in tough times. See that mansion over there? Entitled scoundrels,
+        the lot of them. Born into wealth, yet they continue to take and take from
+        the poor."
+      nextChoiceIndices:
+        Value: 01000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 12
+      followUpText: "They\u2019ve been needing to walk the plank for a long time
+        now. What do ye say, will you feed em to the fishes fer me?\u201D"
+      nextChoiceIndices:
+        Value: 0200000003000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Comply (attack and kill the aristocrats).
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 12
+      followUpText: Gain 1000 gold
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
     - text: Refuse (fight the captain).
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -51,7 +89,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
-      followUpText: '[INSERT TEXT HERE]'
+      followUpText: Gain Peg Leg relic
       nextChoiceIndices:
         Value: 
       changeVisuals: 0

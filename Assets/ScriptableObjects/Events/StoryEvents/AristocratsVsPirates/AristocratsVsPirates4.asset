@@ -16,18 +16,16 @@ MonoBehaviour:
   scene: 11
   sceneIdx: 2
   flavorText: "As you walk onto the shores of an unfamiliar island, you see the unmistakable
-    blue of an aristocrat\u2019s coat. He approaches and points to a nearby camp.
-    \u201CHow fortunate that we meet again. You have proven yourself worthy, so I
-    have a job for you. That camp, over there. It is filled with dangerous pirates
-    who keep stealing my rightfully-earned wealth. Wipe them out.\u201D What do you
-    do?"
+    blue of an aristocrat\u2019s coat. He approaches and points to a nearby camp. "
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 02000000
   choices:
     Value:
     - text: Comply (kill the pirates and destroy their base).
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -35,12 +33,16 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
-      followUpText: '[INSERT TEXT HERE]'
+      followUpText: Gain Bootlicker relic
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Refuse (kill the governor).
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -48,6 +50,28 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
-      followUpText: '[INSERT TEXT HERE]'
+      followUpText: Gain Turncoat relic
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 12
+      followUpText: "\u201CHow fortunate that we meet again. You have proven yourself
+        worthy, so I have a job for you. That camp, over there. It is filled with
+        dangerous pirates who keep stealing my rightfully-earned wealth. Wipe them
+        out.\u201D What do you do?"
+      nextChoiceIndices:
+        Value: 0000000001000000
+      changeVisuals: 0
+      changeIndex: 0

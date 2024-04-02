@@ -26,7 +26,9 @@ MonoBehaviour:
     Value:
     - text: Rescue the parrot
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -40,9 +42,13 @@ MonoBehaviour:
         gained Parrot! It fills you with determination."
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Leave the parrot to its fate. Hey, it's the nature of things
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -54,9 +60,13 @@ MonoBehaviour:
         distressed cries. For a moment, there is a violent thrashing, then stillness. '
       nextChoiceIndices:
         Value: 03000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -64,12 +74,19 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      followUpText: 'Gain Parrot friend!
+
+
+        You are filled with determination'
       nextChoiceIndices:
         Value: 00000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -86,6 +103,8 @@ MonoBehaviour:
 
 
         Gained
-        Poop Deck. It fills you with consternation.'
+        Poop Deck relic. It fills you with consternation.'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0

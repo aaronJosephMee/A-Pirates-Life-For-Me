@@ -25,7 +25,9 @@ MonoBehaviour:
     Value:
     - text: Fight alongside the cultists
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -33,14 +35,16 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      followUpText: Mark of Dagon improved +2
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
     - text: Bribe the civilians to leave the shrine alone
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -53,7 +57,7 @@ MonoBehaviour:
 
 
         Lose
-        400 Gold. Gain Lesser Mark of Dagon'
+        400 Gold. Mark of Dagon relic improved +1'
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0

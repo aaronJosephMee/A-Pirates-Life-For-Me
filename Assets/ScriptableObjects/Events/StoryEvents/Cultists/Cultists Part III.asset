@@ -16,16 +16,16 @@ MonoBehaviour:
   scene: 11
   sceneIdx: 4
   flavorText: You find a strange encampment with a familiar monolith and cages holding
-    human bodies. Or at least, what remains of them. One of these humans is still
-    alive. Releasing the prisoner is sure to draw the attention of the cultists.
-    What do you do?
+    human bodies. Or at least, what remains of them.
   isMinigame: 0
   initialChoices: 0000000001000000
   choices:
     Value:
     - text: Rescue the prisoner
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -34,16 +34,18 @@ MonoBehaviour:
         gold: 0
       nextScene: 0
       followUpText: You break open the prisoner's cage and help him down onto the
-        ground. You see some movement from the corner of your eye and realize that
-        some very angry cultists are running towards you. You tell the prisoner to
-        hide and draw your sword, preparing to fight.
+        ground. You see some movement from the corner of your eye. Some very angry
+        cultists are running towards you. You tell the prisoner to hide and draw
+        your sword, preparing to fight.
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
     - text: Leave the prisoner to their fate
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -65,7 +67,9 @@ MonoBehaviour:
       changeIndex: 0
     - text: Fight
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -80,5 +84,24 @@ MonoBehaviour:
         hide, as you draw your sword, preparing to fight.
       nextChoiceIndices:
         Value: 00000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: ae1657c1e226885459c2ce212cadc726, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: One of these humans is still alive. Releasing the prisoner is
+        sure to draw the attention of the cultists. What do you do?
+      nextChoiceIndices:
+        Value: 0000000001000000
       changeVisuals: 0
       changeIndex: 0

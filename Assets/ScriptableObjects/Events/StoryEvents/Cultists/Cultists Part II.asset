@@ -17,16 +17,36 @@ MonoBehaviour:
   sceneIdx: 2
   flavorText: "You are walking through a small, wooded area just outside of a village.
     Suddenly, a hooded figure appears from behind a tree. \u201CWe\u2019ve been watching
-    you,\u201D he says. \u201CYou have made an offering of blood in the name of our
-    god, Dagon. Greater sacrifices will lead to even greater rewards. Are you interested
-    in what we offer?\u201D How do you respond"
+    you,\u201D he says. "
   isMinigame: 0
   initialChoices: 0000000001000000
   choices:
     Value:
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: c32e8a37611ff804586c04f33f53f13a, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "\u201CYou have made an offering of blood in the name of our
+        god, Dagon. Greater sacrifices will lead to even greater rewards. Are you
+        interested in what we offer?\u201D How do you respond?"
+      nextChoiceIndices:
+        Value: 0100000002000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: 'No, my offering was a mistake (walk away). '
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -39,14 +59,16 @@ MonoBehaviour:
         leave the woods.
 
 
-        Lose Mark of Dagon'
+        Lose Mark of Dagon relic'
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
     - text: Tell me more.
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -56,15 +78,16 @@ MonoBehaviour:
       nextScene: 0
       followUpText: "\u201COur god demands more blood. Find someone, a suitable offering,
         and lead them to the shores straight behind me. There, you will find an archway
-        and ring of red flowers. Bring the sacrifice there and our god will do the
-        rest. Then you will have your reward.\u201D How do you proceed?"
+        and ring of red flowers."
       nextChoiceIndices:
-        Value: 0200000003000000
+        Value: 08000000
       changeVisuals: 0
       changeIndex: 0
     - text: I will do as you ask.
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -72,17 +95,18 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: "You find a man sitting alone beneath the shade of a tree. No
+      followUpText: You find a man sitting alone beneath the shade of a tree. No
         one else appears to be around. You ask him for help, pretending to have lost
-        a precious ring along the shores. He follows you, eager to help. You direct
-        him towards the patch of red flowers and hang back a bit.\u201D"
+        a precious ring along the shores.
       nextChoiceIndices:
-        Value: 06000000
+        Value: 09000000
       changeVisuals: 1
       changeIndex: 3
     - text: No! How could you ask such a thing of me?!
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -93,12 +117,14 @@ MonoBehaviour:
       followUpText: "The cultist glares at you. \u201CYou know too much,\u201D he
         says, readying himself to fight you. What do you do?"
       nextChoiceIndices:
-        Value: 0400000005000000
+        Value: 0500000006000000
       changeVisuals: 1
       changeIndex: 5
     - text: Fight
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -107,14 +133,16 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      followUpText: Lose Mark of Dagon relic
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
     - text: Flee to your ship
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -127,14 +155,16 @@ MonoBehaviour:
         is docked. You escape unharmed.
 
 
-        Lose Mark of Dagon'
+        Lose Mark of Dagon relic'
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
     - text: Continue watching
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -148,8 +178,46 @@ MonoBehaviour:
 
 
         Gain
-        Improved Mark of Dagon'
+        Red Flower relic'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: c32e8a37611ff804586c04f33f53f13a, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "Bring the sacrifice there and our god will do the rest. Then
+        you will have your reward.\u201D How do you proceed?"
+      nextChoiceIndices:
+        Value: 0300000004000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: c32e8a37611ff804586c04f33f53f13a, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "He follows you, eager to help. You direct him towards the patch
+        of red flowers and hang back a bit.\u201D"
+      nextChoiceIndices:
+        Value: 07000000
       changeVisuals: 0
       changeIndex: 0
