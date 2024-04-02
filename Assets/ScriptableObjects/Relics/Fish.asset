@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  title: Fish
+  image: {fileID: 21300000, guid: 101d9a3666e711a45abe8c9de580ea66, type: 3}
+  title: Poisson
+  description: Makes the sword inflict the poison debuff
   maxlvl: 2
   baseStats:
     gunDamage: 0
@@ -31,12 +32,14 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
     defense: 0
     duration: 3
-    maxStacks: 0
+    maxStacks: 1
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
@@ -47,7 +50,10 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
-  price: 70
+    richochet: 0
+    dodgeChance: 0
+  price: 60
+  isStoryRelic: 0
   activator: 0
   ActivatorStats:
     gunDamage: 0
@@ -65,6 +71,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -81,3 +89,5 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0

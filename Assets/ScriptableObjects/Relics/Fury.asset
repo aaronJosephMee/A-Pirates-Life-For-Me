@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
   m_Name: Fury
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: ebb094e8153a75b4898cb2fbb2f45222, type: 3}
   title: Fury
+  description: Melee hits grant a boost to sword damage and speed
   maxlvl: 3
   baseStats:
     gunDamage: 0
@@ -31,6 +32,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -47,6 +50,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 120
   activator: 1
   ActivatorStats:
@@ -58,13 +63,15 @@ MonoBehaviour:
     bulletCount: 0
     fireRate: 0
     speedBoost: 1
-    hpRegen: 1
+    hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 2
@@ -81,3 +88,5 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0

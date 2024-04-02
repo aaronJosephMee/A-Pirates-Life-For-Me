@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: Skeletons Part III
+  m_EditorClassIdentifier: 
+  title: Skeletons - Part III
+  scene: 0
+  sceneIdx: 0
+  flavorText: "After a long evening at the pub, you head back to your ship to rest.
+    As you get closer to the docks, you see an eerie green glow. A large ghostly
+    ship is docked next to yours and a group of animated skeletons approaches you.
+    \u201CHey! You useless sack of flesh! You thought you\u2019d get away with hurting
+    our friend and taking our treasure, huh? Prepare to suffer!\u201D What do you
+    do?"
+  isMinigame: 0
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Attack the skeletons
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+    - text: Bribe the skeletons
+      isTerminal: 0
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'You hold your hands up in surrender and offer the skeletons
+        a sizeable amount of gold. They look at you warily, as one of them reaches
+        over to take it. "We''ve got our eye sockets on you..." it says.
+
+
+        Lose
+        300 gold'
+      nextChoiceIndices:
+        Value: 02000000
+    - text: Continue
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 

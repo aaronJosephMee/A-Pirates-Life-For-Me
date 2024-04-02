@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: Cultists Part I
+  m_EditorClassIdentifier: 
+  title: Cultists - Part I
+  scene: 10
+  sceneIdx: 1
+  flavorText: While exploring on an island, you come across a skull-shaped cavern.
+    Inside, you find a strange monolith surrounded by human bones. There is a large
+    chalice placed in front of it containing what looks like blood. What do you do?
+  isMinigame: 0
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Add some of your blood, losing some health.
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: 995f678d40780dc4ca90c73f59d63003, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "You slice into your forearm with your sword and let some blood
+        dribble into the chalice. \n\nPermanently lose 15 HP\n\nGain Mark of Dagon"
+      nextChoiceIndices:
+        Value: 0000000000000000
+    - text: Destroy the monolith.
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'You shove the monolith onto the ground and smash it to pieces
+        with a large stone. It feels like a weight has been lifted from the area.
+
+
+        Permanently
+        gain 15 HP'
+      nextChoiceIndices:
+        Value: 0000000000000000

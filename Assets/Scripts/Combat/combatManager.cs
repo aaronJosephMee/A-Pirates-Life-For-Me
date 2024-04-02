@@ -18,10 +18,14 @@ public class combatManager : MonoBehaviour
     public CharacterAiming playerAim;
     public WeaponManager playerGun;
     public MeleeAttack playerSword;
+    public Player playerHealth;
     CameraManager cameraManager;
     public bool waveCleared = false;
     [SerializeField] GameObject sword;
     [SerializeField] GameObject gun;
+
+    [SerializeField] public List<EnemyCount> enemiesToSpawn;
+    private List<Transform> spawners;
 
     void Start()
     {
@@ -39,8 +43,18 @@ public class combatManager : MonoBehaviour
         playerGun = playerObject.GetComponentInChildren<WeaponManager>();
 
         playerSword = playerObject.GetComponentInChildren<MeleeAttack>();
+        playerHealth = playerObject.GetComponent<Player>();
 
         cameraManager = FindObjectOfType<CameraManager>();
+
+        spawners = new List<Transform>();
+        GameObject[] spawnerObjects = GameObject.FindGameObjectsWithTag("Spawner");
+        foreach (GameObject spawner in spawnerObjects)
+        {
+            spawners.Add(spawner.transform);
+        }
+
+        SpawnEnemies();
     }
 
     private void Awake()
@@ -54,16 +68,51 @@ public class combatManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemyCount = enemies.Length;
+    public void SpawnEnemies()
+    {
+        foreach (Transform spawner in spawners)
+        {
+            foreach (EnemyCount enemyCount in enemiesToSpawn)
+            {
+                StartCoroutine(SpawnEnemy(enemyCount, spawner));
+            }
+        }
+    }
+
+    IEnumerator SpawnEnemy(EnemyCount enemyCount, Transform spawnLocation)
+    {
+        for (int i = 0; i < enemyCount.numToSpawn; i++)
+        {
+            Vector3 position = spawnLocation.position;
+            GameObject enemy = Instantiate(enemyCount.EnemyPrefab,
+            new Vector3(position.x, position.y, position.z), Quaternion.identity);
+
+            EnemyDamage enemyDamage = enemy.GetComponent<EnemyDamage>();
+            if (enemyDamage)
+            {
+                enemyDamage.damageAmount *= enemyCount.scalingFactor;
+            }
+
+            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            if (enemyHealth)
+            {
+                enemyHealth.maxHealth *= enemyCount.scalingFactor;
+                enemyHealth.currentHealth = enemyHealth.maxHealth; 
+            }
+            //maybe scalingfactor should be separate for health and damage
+
+            this.enemyCount++;
+            yield return new WaitForSeconds(8); // enemy respawn timer
+        }
     }
 
     public void DecreaseEnemyCount()
     {
         enemyCount--;
 
-        if (enemyCount == 0)
+        if (enemyCount <= 0 && !IsInvoking("SpawnEnemies"))
         {
             CombatCleared();
         }
@@ -98,6 +147,14 @@ public class combatManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         yield return new WaitForSeconds(4f);
-        Instantiate(itemDrop);
+        playerHealth.UpdateHealth();
+        if (GameManager.instance.HasPopup())
+        {
+            GameManager.instance.DisplayStoredPopUp();
+        }
+        else
+        {
+            Instantiate(itemDrop);
+        }
     }
 }

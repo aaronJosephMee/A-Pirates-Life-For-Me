@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
+  m_Name: Cultists Part IV-B
+  m_EditorClassIdentifier: 
+  title: Cultists - Part IV-B
+  scene: 16
+  sceneIdx: 3
+  flavorText: "There is an uproar at the public square of a local village. Some devotees
+    of the Cult of Dagon have installed a shrine, claiming religious freedom. You
+    have seen firsthand what this \u201Creligion\u201D involves. In fact, you recognize
+    the prisoner you freed among the crowd. Both groups are on the verge of fighting
+    and the civilians ask for your help. What do you do?"
+  isMinigame: 0
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Fight alongside the civilians
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Leave them to deal with this on their own
+      isTerminal: 1
+      relics:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: 'You shake your head and frown slightly, as you tell the civilians
+        that you cannot get involved. They plead, as you turn and head back to your
+        ship. The man you rescued from the cultist prison shouts at you, "Coward!"
+
+
+        Lost
+        Freedom'
+      nextChoiceIndices:
+        Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0

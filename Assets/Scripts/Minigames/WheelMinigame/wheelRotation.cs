@@ -94,7 +94,7 @@ public class wheelRotation : MonoBehaviour
         else if (rot > 180 && rot <= 225)
         {
             GetComponent<Transform>().eulerAngles = new Vector3(0,0,225-23);
-            loseText.gameObject.SetActive(false);
+            loseText.gameObject.SetActive(true);
             ItemManager.instance.AddGold(-100);
             StartCoroutine(WinWait());
         }

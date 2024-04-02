@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a096550c6d31495492eb011d0a505952, type: 3}
   m_Name: Healing
   m_EditorClassIdentifier: 
+  description: Rest
   choiceType: 4
-  sprite: {fileID: 21300000, guid: 86d649e65d1bd7044b1ae09c9ad9acdc, type: 3}
-  icon: {fileID: 1370194587197772, guid: 879ffc02c5ab8934da536d05478e54fb, type: 3}
+  sprite: {fileID: 21300000, guid: 44f6cc78054f98a4fa5dc29c8c5d9126, type: 3}

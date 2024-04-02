@@ -24,7 +24,7 @@ MonoBehaviour:
   choices:
     Value:
     - text: Bribe the pirates.
-      isTerminal: 0
+      isTerminal: 1
       relics:
         Value: []
       eventsToAdd:
@@ -49,21 +49,7 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 13
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
-    - text: Continue.
-      isTerminal: 1
-      relics:
-        Value: []
-      eventsToAdd:
-        Value:
-        - {fileID: 11400000, guid: a7f601e931c5c9d40a97a2406fe88d20, type: 2}
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 
+      nextScene: 12
+      followUpText: '[INSERT TEXT HERE]'
       nextChoiceIndices:
         Value: 

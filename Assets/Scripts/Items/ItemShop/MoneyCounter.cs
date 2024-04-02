@@ -10,12 +10,12 @@ public class MoneyCounter : MonoBehaviour
     private void Start()
     {
         _textMeshProUGUI = GetComponent<TextMeshProUGUI>();
-        _textMeshProUGUI.text = "Current Money: " + ItemManager.instance.CurrentGold();
+        _textMeshProUGUI.text = "Gold: " + ItemManager.instance.CurrentGold();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _textMeshProUGUI.text = "Current Money: " + ItemManager.instance.CurrentGold();
+        _textMeshProUGUI.text = "Gold: " + ItemManager.instance.CurrentGold();
     }
 }

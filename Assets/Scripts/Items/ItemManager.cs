@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
+public struct Health{
+    public float maxHealth;
+    public float curHealth;
+}
 public class ItemManager : MonoBehaviour
 {
-    public int MaxRelics = 21;
+    public int MaxRelics = 10;
     public static ItemManager instance;
     public PlayerItems playerItems = new PlayerItems();
     public ItemPool itemPool;
@@ -15,6 +19,10 @@ public class ItemManager : MonoBehaviour
     public WeaponScriptableObject defaultSword;
     public ItemScriptableObject defaultItem;
     public Item GenericNoItem;
+    [SerializeField] Health health = new Health(){
+        curHealth = 100f,
+        maxHealth = 100f,
+    };
     void Awake(){
         if (instance == null)
         {
@@ -34,6 +42,13 @@ public class ItemManager : MonoBehaviour
     }
     public Dictionary<string, DebuffStats> GetSwordDebuffs(){
         return playerItems.GetSwordDebuffs();
+    }
+    public Health GetHealth(){
+        return health;
+    }
+    public void SetHealth(float curHealth, float maxHealth){
+        health.curHealth = curHealth;
+        health.maxHealth = maxHealth;
     }
     public Dictionary<string, DebuffStats> GetGunDebuffs(){
         return playerItems.GetGunDebuffs();
@@ -56,6 +71,9 @@ public class ItemManager : MonoBehaviour
     public void AddRelic(RelicScriptableObject relic){
         playerItems.AddRelic(relic);
         itemPool.RemoveItem("Relic", relic.title);
+    }
+    public void LoseRelic(RelicScriptableObject relic){
+        playerItems.LoseRelic(relic);
     }
     public void AddWeapon(WeaponScriptableObject weapon){
         playerItems.AddWeapon(weapon);
@@ -146,6 +164,9 @@ public class ItemManager : MonoBehaviour
         IS1.speedBoost += IS2.speedBoost;
         IS1.critChance += IS2.critChance;
         IS1.critMultiplier += IS2.critMultiplier;
+        IS1.richochet += IS2.richochet;
+        IS1.dodgeChance += IS2.dodgeChance;
+        IS1.healthBoost += IS2.healthBoost;
         return IS1;
     }
     public ItemStats SubtractStats(ItemStats IS1, ItemStats IS2){
@@ -160,6 +181,9 @@ public class ItemManager : MonoBehaviour
         IS1.speedBoost -= IS2.speedBoost;
         IS1.critChance -= IS2.critChance;
         IS1.critMultiplier -= IS2.critMultiplier;
+        IS1.richochet -= IS2.richochet;
+        IS1.dodgeChance -= IS2.dodgeChance;
+        IS1.healthBoost -= IS2.healthBoost;
         return IS1;
     }
     public ItemStats GetItemStats(Item item){
@@ -188,6 +212,11 @@ public class ItemManager : MonoBehaviour
     }
     public void OnTakeDamage(){
         foreach (string relic in playerItems.GetTakeDamageRelics()){
+            StartCoroutine(playerItems.AddEffect(playerItems.GetRelics()[relic]));
+        }
+    }
+    public void OnDodge(){
+        foreach (string relic in playerItems.GetOnDodgeRelics()){
             StartCoroutine(playerItems.AddEffect(playerItems.GetRelics()[relic]));
         }
     }

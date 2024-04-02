@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/RelicScriptableObject", order = 1)]
 public class RelicScriptableObject :  Item
 {
+    public bool isStoryRelic;
     public Activators activator;
     public ItemStats ActivatorStats;
     public ItemStats Activatorlvl;
@@ -21,4 +22,5 @@ public enum Activators{
     OnKill,
     [Description("Take Damage")]
     OnTakeDamage,
+    OnDodge,
 }

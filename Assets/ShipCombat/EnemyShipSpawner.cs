@@ -1,25 +1,35 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class EnemyShipSpawner : MonoBehaviour
 {
     public GameObject enemy;
 
-    private float spawnTimer = 5;
+    private float spawnTimer = 10;
+    private float worldTimer;
+
+    private void Start()
+    {
+        Instantiate(enemy, transform.position, transform.rotation);
+    }
 
     private void Update()
     {
-        StartCoroutine(EnemySpawn());
-    }
+        if (!SeaGameManager.instance.stopCombat && SeaGameManager.instance.Spawned < SeaGameManager.instance.enemyCount)
+        {
+            worldTimer += Time.deltaTime;
 
-    IEnumerator EnemySpawn()
-    {
-        yield return new WaitForSeconds(spawnTimer);
+            if (worldTimer >= spawnTimer)
+            {
+                worldTimer = 0;
 
-        Instantiate(enemy,transform.position,transform.rotation);
+                Instantiate(enemy, transform.position, transform.rotation);
 
-        SeaGameManager.instance.AddEnemySpawned();
+                SeaGameManager.instance.AddEnemySpawned();
+            }
+        }
     }
 }

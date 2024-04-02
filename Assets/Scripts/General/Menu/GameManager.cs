@@ -9,13 +9,24 @@ using UnityEngine.Serialization;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    
     public static Choices choices;
     private static Vector3 _lastPosition;
-    public bool menuOpen;
     private bool movePlayerOnLoad = false;
     private int _cameraIndex = 0;
+    
+    public bool menuOpen;
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
+    private Canvas canvas;
+    
     public SceneName currentScene = SceneName.TitleScreen;
+
+    private GameObject storedPopUp;
+    private SceneName storedPopUpNextScene;
+    private String storedPopUpFollowUpText;
+    private IEventToggleable currentEventToggleable;
+    
     // Start is called before the first frame update
     void Awake(){
         if (instance == null)
@@ -27,6 +38,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        Canvas currentCanvas = GetComponentInParent<Canvas>();
+        canvas = currentCanvas;
     }
 
     public void LoadScene(SceneName scene, int cameraIndex=0)
@@ -47,6 +64,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !menuOpen){
             Instantiate(pauseMenu);
         }
+
+        if (menuOpen && canvas != null)
+        {
+            canvas.gameObject.SetActive(false);
+        }
     }
     void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -60,6 +82,7 @@ public class GameManager : MonoBehaviour
         if (cameras != null)
         {
             SelectEventCamera(cameras);
+            currentEventToggleable = cameras.GetComponent<IEventToggleable>();
             ToggleEventToggleable(cameras);
         } 
         
@@ -81,7 +104,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!cam.gameObject.name.Contains( _cameraIndex.ToString()))
                 {
-                    Destroy(cam.gameObject);
+                    cam.gameObject.SetActive(false);
                 }
             }
         }
@@ -90,5 +113,43 @@ public class GameManager : MonoBehaviour
     private void ToggleEventToggleable(GameObject cameras)
     {
         cameras.GetComponent<IEventToggleable>()?.ToggleEventEffects(_cameraIndex);
+    }
+
+    public void DisplayPopUp(GameObject popUpPrefab, SceneName nextScene, String followUpText)
+    {
+        GameObject popUpGameObject = Instantiate(popUpPrefab);
+        PopUpScreen popUpScreen = popUpGameObject.GetComponent<PopUpScreen>();
+        popUpScreen.AssignContinueLocation(nextScene);
+        popUpScreen.SetText(followUpText);
+    }
+
+    public void StorePopUp(GameObject popUpPrefab, SceneName nextScene, String followUpText)
+    {
+        storedPopUp = popUpPrefab;
+        storedPopUpNextScene = nextScene;
+        storedPopUpFollowUpText = followUpText;
+    }
+
+    public void DisplayStoredPopUp()
+    {
+        if (storedPopUp != null)
+        {
+            DisplayPopUp(storedPopUp, storedPopUpNextScene, storedPopUpFollowUpText);
+            storedPopUp = null;
+        }
+        else
+        {
+            LoadScene(SceneName.OverworldMap);
+        }
+    }
+
+    public bool HasPopup()
+    {
+        return storedPopUp != null;
+    }
+
+    public void ChangeVisuals(int index)
+    {
+        currentEventToggleable.ChangeVisuals(index);
     }
 }

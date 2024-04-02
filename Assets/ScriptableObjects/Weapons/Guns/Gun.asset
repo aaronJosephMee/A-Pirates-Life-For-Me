@@ -14,21 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Pistol
+  description: 
   maxlvl: 5
   baseStats:
     gunDamage: 25
     swordDamage: 0
-    defense: 0
+    defense: 5
     duration: 0
     maxStacks: 0
     bulletCount: 1
-    fireRate: 0.75
+    fireRate: 3
     speedBoost: 10
     hpRegen: 0
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0.1
+    critMultiplier: 1.3
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -43,5 +48,9 @@ MonoBehaviour:
     swordDebuff: 0
     gunDebuff: 0
     accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 0
   type: 0

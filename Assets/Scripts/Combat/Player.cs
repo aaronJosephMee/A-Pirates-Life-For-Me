@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace.OverworldMap;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public class Player : MonoBehaviour
@@ -14,8 +16,14 @@ public class Player : MonoBehaviour
     meleeHitbox meleeWeapon;
     CameraManager cameraManager;
     WeaponManager weaponManager;
+    ItemStats newStats;
     float toHeal = 0;
-    [SerializeField] public Slider slider;
+    [SerializeField] Slider slider;
+    [SerializeField] GameObject dmgNumb;
+    [SerializeField] Color hitColor;
+    [SerializeField] Color dodgeColor;
+    public float IFrames = 0.3f;
+    float ITimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +34,8 @@ public class Player : MonoBehaviour
         meleeWeapon = GetComponentInChildren<meleeHitbox>();
         weaponManager = GetComponentInChildren<WeaponManager>();
         anim = GetComponent<Animator>();
+        currentHealth = ItemManager.instance.GetHealth().curHealth;
+        maxHealth = ItemManager.instance.GetHealth().maxHealth;
         StartCoroutine(PollRelics());
     }
 
@@ -33,7 +43,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         slider.value = currentHealth / maxHealth;
-        if (toHeal > 0 && currentHealth < maxHealth){
+        if (toHeal > 0 && currentHealth < maxHealth && !isDead){
             currentHealth += toHeal * Time.deltaTime;
             if (currentHealth > maxHealth){
                 currentHealth = maxHealth;
@@ -43,12 +53,40 @@ public class Player : MonoBehaviour
     
     public void takeDamage(float damage)
     {
-        this.currentHealth -= damage;
-        ItemManager.instance.OnTakeDamage();
-        if (currentHealth <= 0 && !isDead)
-        {
-            Die();
+        if (ITimer < Time.time){
+            ITimer = Time.time + IFrames;
+            float damageToTake;
+            if (new System.Random().NextDouble() < newStats.dodgeChance){
+                damageToTake = 0;
+            }
+            else if (newStats.defense >= 100f){
+                damageToTake = 1;
+            }
+            else if (newStats.defense < 0){
+                damageToTake = damage;
+            }
+            else{
+                damageToTake = damage * (1 - newStats.defense/100f);
+            }
+            damageToTake = MathF.Round(damageToTake,2);
+            this.currentHealth -= damageToTake; 
+            GameObject dmgNumber = Instantiate(dmgNumb, slider.transform);
+            if (damageToTake == 0){
+                dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("DODGE", dodgeColor);
+                ItemManager.instance.OnDodge();
+            }
+            else{
+                dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("-" + damageToTake, hitColor);
+                ItemManager.instance.OnTakeDamage();
+            }
+            Destroy(dmgNumber);
+            Instantiate(dmgNumb, slider.transform);
+            if (currentHealth <= 0 && !isDead)
+            {
+                Die();
+            }
         }
+        
     }
 
 
@@ -71,19 +109,25 @@ public class Player : MonoBehaviour
         GameManager.instance.LoadScene(SceneName.TitleScreen);
     }
     private IEnumerator PollRelics(){
-        ItemStats newStats = ItemManager.instance.TotalStats();
+        newStats = ItemManager.instance.TotalStats();
         // TODO: Make it not call everything if nothing is changed
         weaponManager.damage = newStats.gunDamage;
         weaponManager.bulletsPerShot = newStats.bulletCount;
-        weaponManager.fireRate = weaponManager.baseFireRate * newStats.fireRate;
+        weaponManager.fireRate = weaponManager.baseFireRate / (newStats.fireRate/5f);
         weaponManager.critChance = newStats.critChance;
         weaponManager.critMultiplier = newStats.critMultiplier;
+        weaponManager.richochet = newStats.richochet;
+
         meleeWeapon.swordDamage = newStats.swordDamage;
         meleeWeapon.critChance = newStats.critChance;
         meleeWeapon.critMultiplier = newStats.critMultiplier;
+        
         toHeal = newStats.hpRegen;
         anim.SetFloat("Speed", newStats.speedBoost/speedDenominator);
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(PollRelics());
+    }
+    public void UpdateHealth(){
+        ItemManager.instance.SetHealth(currentHealth, maxHealth);
     }
 }

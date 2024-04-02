@@ -20,16 +20,24 @@ public class Choice
 {
     public string text;
     public bool isTerminal;
-    [ConditionalField(nameof(isTerminal))] public RelicCollection relics;
+    [ConditionalField(nameof(isTerminal))] public RelicCollection relicsToAdd;
+        [ConditionalField(nameof(isTerminal))] public RelicCollection relicsToLose;
+
     [ConditionalField(nameof(isTerminal))] public EventCollection eventsToAdd;
     [ConditionalField(nameof(isTerminal))] public Stats stats;
     [ConditionalField(nameof(isTerminal))] public SceneName nextScene;
 
-    [ConditionalField(nameof(isTerminal), true)] [TextArea(7,15)]
+    [TextArea(7,15)]
     public String followUpText;
 
     [ConditionalField(nameof(isTerminal), true)]
     public ChoiceIndices nextChoiceIndices;
+
+    [ConditionalField(nameof(isTerminal), true)]
+    public bool changeVisuals;
+
+    [ConditionalField(nameof(changeVisuals))]
+    public int changeIndex;
 }
 
 [Serializable]
@@ -58,10 +66,10 @@ public class Events
         _storyEvents = storyEvents;
         int randomEventIndex = _random.Next(_seedEvents.Count);
         _eventPool.Add(_seedEvents[randomEventIndex]);
-        foreach (EventScriptableObject genericEvent in genericEvents)
-        {
-            _eventPool.Add(genericEvent);
-        }
+        // foreach (EventScriptableObject genericEvent in genericEvents)
+        // {
+        //     _eventPool.Add(genericEvent);
+        // }
     }
     
     public EventScriptableObject GetEvent()

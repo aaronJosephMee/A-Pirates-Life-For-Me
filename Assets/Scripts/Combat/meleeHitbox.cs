@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,16 +15,14 @@ public class meleeHitbox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            //Debug.Log("enemy hit");
             enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                Debug.Log(swordDebuff);
                 if (new System.Random().NextDouble() < critChance){
-                    enemyHealth.DecreaseHealth(swordDamage * critMultiplier,"sword");
+                    enemyHealth.DecreaseHealth(MathF.Round(swordDamage * critMultiplier,2),"sword", true);
                 }
                 else{
-                    enemyHealth.DecreaseHealth(swordDamage,"sword");
+                    enemyHealth.DecreaseHealth(MathF.Round(swordDamage,2),"sword", false);
                 }
                 
                 ItemManager.instance.OnMelee();

@@ -13,12 +13,15 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     public Item item;
     public TextMeshProUGUI nme;
     public GameObject widget;
+    public GameObject nameAndDesc;
     private GameObject instance;
-    public Vector3 offset;
+    private GameObject instanceDesc;
     public bool ownedItem = false;
+    public bool isShopItem;
 
     // Start is called before the first frame update
     public void GiveItem(Item item){
+        nme.gameObject.SetActive(true);
         if (item == null){
             item = ItemManager.instance.GenericNoItem;
         }
@@ -27,13 +30,25 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
             nme.text = "";
         }
         else{
-            nme.text = item.name;
+            nme.text = item.title;
         }
         if (item.image != null){
             image.sprite = item.image;
         }
+        try{
+            if (((ItemScriptableObject)item)){
+                nme.color = Color.cyan;
+            }
+        }
+        catch{}
+        try{
+            if (((RelicScriptableObject)item)){
+                nme.color = new Color(255f/255, 218f/255, 1f/255);
+            }
+        }
+        catch{}
     }  
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         if (this.item != ItemManager.instance.GenericNoItem){
             instance = Instantiate(widget, this.transform.parent);
@@ -45,11 +60,13 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
             else{
                 instance.GetComponent<InfoWidget>().SetTextTotal();
             }
+            instanceDesc = Instantiate(nameAndDesc, this.transform.parent);
+            instanceDesc.GetComponent<ExpandedInfo>().GiveItem(item, isShopItem);
         }
         
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         DestroyWidget();
     }
@@ -57,6 +74,10 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
         if (instance != null){
             Destroy(instance);
             instance = null;
+        }
+        if (instanceDesc != null){
+            Destroy(instanceDesc);
+            instanceDesc = null;
         }
     }
 }

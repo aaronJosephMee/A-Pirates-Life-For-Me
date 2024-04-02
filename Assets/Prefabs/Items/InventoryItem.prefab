@@ -94,7 +94,9 @@ MonoBehaviour:
   item: {fileID: 0}
   nme: {fileID: 2776164575971987624}
   widget: {fileID: 4118169159548106396, guid: c1a1bdf8d2a0da14e8923e7ab9e146c7, type: 3}
-  offset: {x: 82, y: 0, z: 0}
+  nameAndDesc: {fileID: 6511547645643907594, guid: 57f8e744fd1081c4ba5a0051df9cc547, type: 3}
+  ownedItem: 0
+  isShopItem: 0
 --- !u!1 &5278825035994518343
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 public struct DebuffStats{
     public int maxStacks;
     public int duration;
@@ -15,6 +16,7 @@ public class PlayerItems
     List<string> onMelee = new List<string>();
     List<string> onKill = new List<string>();
     List<string> onTakeDamage = new List<string>();
+    List<string> onDodge = new List<string>();
     Dictionary<string, DebuffStats> meleeDebuffs = new Dictionary<string, DebuffStats>();
     Dictionary<string, DebuffStats> gunDebuffs = new Dictionary<string, DebuffStats>();
 
@@ -23,6 +25,7 @@ public class PlayerItems
     public WeaponScriptableObject currentSword;
     public int itemUses = 0;
     int gold = 100;
+    int numbStoryRelics = 0;
     public Dictionary<string, DebuffStats> GetSwordDebuffs(){
         return meleeDebuffs;
     }
@@ -37,6 +40,9 @@ public class PlayerItems
     }
     public List<string> GetTakeDamageRelics(){
         return onTakeDamage;
+    }
+    public List<string> GetOnDodgeRelics(){
+        return onDodge;
     }
     public Item GetRandUpgrade(){
         if (upgradeables.Count == 0){
@@ -61,7 +67,7 @@ public class PlayerItems
         return gold;
     }
     public int RelicCount(){
-        return playerRelics.Count;
+        return playerRelics.Count - numbStoryRelics;
     }
     public ItemScriptableObject GetItem(){
         return currentItem;
@@ -155,6 +161,17 @@ public class PlayerItems
         if (r != null){
             playerRelics[relic.title].curlvl++;
             totalStats = ItemManager.instance.CombineStats(totalStats, relic.lvlStats); 
+            Health health = ItemManager.instance.GetHealth();
+            if (relic.lvlStats.healthBoost > 0){
+                ItemManager.instance.SetHealth(health.curHealth + relic.lvlStats.healthBoost, health.maxHealth + relic.lvlStats.healthBoost);
+            }
+            else if (relic.lvlStats.healthBoost < 0){
+                health.maxHealth += relic.lvlStats.healthBoost;
+                if (health.curHealth > health.maxHealth){
+                    health.curHealth = health.maxHealth;
+                }
+                ItemManager.instance.SetHealth(health.curHealth, health.maxHealth);
+            }
             if (relic.baseStats.swordDebuff != Debuffs.None){
                 if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out DebuffStats i)){
                     i.duration = i.duration + relic.lvlStats.duration;
@@ -169,17 +186,28 @@ public class PlayerItems
                     gunDebuffs[relic.baseStats.gunDebuff.ToString()] = i;
                 }
             }
-            if (playerRelics[relic.title].curlvl >= relic.maxlvl){
+            if (playerRelics[relic.title].curlvl >= relic.maxlvl && !relic.isStoryRelic){
                 upgradeables.Remove(relic.title);
             }
         }
         else{
             playerRelics.Add(relic.title, relic);
-            Debug.Log("Adding " + relic.title);
-            Debug.Log("Curlvl " + relic.curlvl + ", Maxlvl: " + relic.maxlvl);
-
-            if (relic.curlvl < relic.maxlvl){
+            Health health = ItemManager.instance.GetHealth();
+            if (relic.baseStats.healthBoost > 0){
+                ItemManager.instance.SetHealth(health.curHealth + relic.baseStats.healthBoost, health.maxHealth + relic.baseStats.healthBoost);
+            }
+            else if (relic.baseStats.healthBoost < 0){
+                health.maxHealth += relic.baseStats.healthBoost;
+                if (health.curHealth > health.maxHealth){
+                    health.curHealth = health.maxHealth;
+                }
+                ItemManager.instance.SetHealth(health.curHealth, health.maxHealth);
+            }
+            if (relic.curlvl < relic.maxlvl && !relic.isStoryRelic){
                 upgradeables.Add(relic.title, relic);
+            }
+            if (relic.isStoryRelic){
+                numbStoryRelics++;
             }
             if (relic.activator == Activators.Melee){
                 onMelee.Add(relic.title);
@@ -189,6 +217,9 @@ public class PlayerItems
             }
             else if (relic.activator == Activators.OnTakeDamage){
                 onTakeDamage.Add(relic.title);
+            }
+            else if (relic.activator == Activators.OnDodge){
+                onDodge.Add(relic.title);
             }
             
             totalStats = ItemManager.instance.CombineStats(totalStats, ItemManager.instance.GetItemStats(relic)); 
@@ -223,6 +254,63 @@ public class PlayerItems
                 }
             }
         } 
+    }
+    public void LoseRelic(RelicScriptableObject relic){
+        if (!playerRelics.ContainsKey(relic.title)){
+            return;
+        }
+        Health health = ItemManager.instance.GetHealth();
+        ItemStats stats = ItemManager.instance.GetItemStats(relic);
+        if (stats.healthBoost < 0){
+            ItemManager.instance.SetHealth(health.curHealth - stats.healthBoost, health.maxHealth - stats.healthBoost);
+        }
+        else if (stats.healthBoost > 0){
+            health.maxHealth -= stats.healthBoost;
+            if (health.curHealth > health.maxHealth){
+                health.curHealth = health.maxHealth;
+            }
+            ItemManager.instance.SetHealth(health.curHealth, health.maxHealth);
+        }
+        playerRelics.Remove(relic.title);
+        if (upgradeables.ContainsKey(relic.title)){
+            upgradeables.Remove(relic.title);
+        }
+        if (onMelee.Contains(relic.title)){
+            onMelee.Remove(relic.title);
+        }
+        if (onTakeDamage.Contains(relic.title)){
+            onTakeDamage.Remove(relic.title);
+        }
+        if (onKill.Contains(relic.title)){
+            onKill.Remove(relic.title);
+        }
+        if (onDodge.Contains(relic.title)){
+            onDodge.Remove(relic.title);
+        }
+        if (meleeDebuffs.TryGetValue(relic.baseStats.swordDebuff.ToString(), out DebuffStats i)){
+            i.duration = i.duration - ItemManager.instance.GetItemStats(relic).duration;
+            i.maxStacks = i.maxStacks - ItemManager.instance.GetItemStats(relic).maxStacks;
+            if (i.duration <= 0 && i.maxStacks <= 0){
+                meleeDebuffs.Remove(relic.baseStats.swordDebuff.ToString());
+            }
+            else{
+                meleeDebuffs[relic.baseStats.swordDebuff.ToString()] = i;
+            }
+            
+        }
+        if (gunDebuffs.TryGetValue(relic.baseStats.gunDebuff.ToString(), out DebuffStats y)){
+            y.duration = y.duration - ItemManager.instance.GetItemStats(relic).duration;
+            y.maxStacks = y.maxStacks - ItemManager.instance.GetItemStats(relic).maxStacks;
+            if (y.duration <= 0 && y.maxStacks <= 0){
+                gunDebuffs.Remove(relic.baseStats.gunDebuff.ToString());
+            }
+            else{
+                gunDebuffs[relic.baseStats.gunDebuff.ToString()] = y;
+            }
+            
+        }
+        totalStats = ItemManager.instance.SubtractStats(totalStats, ItemManager.instance.GetItemStats(relic));
+
     }
     public Dictionary<string, WeaponScriptableObject> GetWeapons(){
         return playerWeapons;
