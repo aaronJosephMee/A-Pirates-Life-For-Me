@@ -8,7 +8,7 @@ public class HubManager : MonoBehaviour
     public GameObject hubTut;
     public GameObject p;
     public GameObject page1;
-    
+    private static bool seen;  
     private void Awake()
     {
         
@@ -16,19 +16,33 @@ public class HubManager : MonoBehaviour
 
     private void Start()
     {
-        p.SetActive(false);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None; 
-        page1.SetActive(true);
-        
+        if (seen == false)
+        {
+            p.SetActive(false);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            page1.SetActive(true);
+        }
+        else
+        {
+            print("why wont it go in here");
+        }
+
     }
 
     private void Update()
     {
+        print(seen);
         
         if (hubTut == null)
         {
-           p.SetActive(true);
+            p.SetActive(true);
+            seen = true; 
+        }
+
+        if (seen)
+        {
+            Destroy(hubTut);
         }
        
     }
