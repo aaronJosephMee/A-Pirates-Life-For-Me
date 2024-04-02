@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 263861588900313925}
   - component: {fileID: 1808311308696157637}
   - component: {fileID: 2784342094931009568}
+  - component: {fileID: 2059423265751745238}
   - component: {fileID: 5118893051973071597}
   m_Layer: 5
   m_Name: CloseButton
@@ -197,7 +198,48 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1808311308696157637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 877699563889807537, guid: dfde55688a8b64a218ccd268a3345674, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2059423265751745238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205831407171318891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9108184102633652862, guid: 2ae431cfdf0954d46a747a453a629dad, type: 3}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &5118893051973071597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,6 +1054,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7489558440011005661}
     m_Modifications:
     - target: {fileID: 1088283342943931118, guid: 0dec6e8a7e7c5465989b5d25e15fabe5, type: 3}
+      propertyPath: m_Value
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088283342943931118, guid: 0dec6e8a7e7c5465989b5d25e15fabe5, type: 3}
       propertyPath: m_MinValue
       value: 0.001
       objectReference: {fileID: 0}
@@ -1246,6 +1292,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 834645871833398655, guid: c8aa9d1a6c2c3444daf1506a546133cb, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1987191505747525622}
+    - targetCorrespondingSourceObject: {fileID: 834645871833398655, guid: c8aa9d1a6c2c3444daf1506a546133cb, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 7413053948929257882}
   m_SourcePrefab: {fileID: 100100000, guid: c8aa9d1a6c2c3444daf1506a546133cb, type: 3}
 --- !u!1 &4903956579217674284 stripped
@@ -1253,6 +1302,35 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 834645871833398655, guid: c8aa9d1a6c2c3444daf1506a546133cb, type: 3}
   m_PrefabInstance: {fileID: 5736208758063082835}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1987191505747525622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4903956579217674284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9108184102633652862, guid: 2ae431cfdf0954d46a747a453a629dad, type: 3}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7413053948929257882
 MonoBehaviour:
   m_ObjectHideFlags: 0
