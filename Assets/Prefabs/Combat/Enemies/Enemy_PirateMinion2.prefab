@@ -3256,7 +3256,7 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 2552857504069455357}
   playerScript: {fileID: 0}
-  attackRange: 2.3
+  attackRange: 1.1
   withinAttackRange: 0
 --- !u!114 &6045968776150255174
 MonoBehaviour:

@@ -12,8 +12,10 @@ public class CombatItem : MonoBehaviour
     [SerializeField] GameObject coolDownImage;
     [SerializeField] GameObject activeImage;
     [SerializeField] GameObject useImage;
+    Player player;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         item = ItemManager.instance.CurrentItem();
         oldItem = ItemManager.instance.CurrentItem();
         if (item == null){
@@ -28,7 +30,7 @@ public class CombatItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(useButton) && item != ItemManager.instance.GenericNoItem && coolDownImage.transform.localScale.x <= 0 && activeImage.transform.localScale.x <= 0 && !combatManager.Instance.waveCleared){
+        if (Input.GetKeyDown(useButton) && item != ItemManager.instance.GenericNoItem && coolDownImage.transform.localScale.x <= 0 && activeImage.transform.localScale.x <= 0 && !combatManager.Instance.waveCleared && !player.isDead){
             ItemManager.instance.UseItem();
             item = ItemManager.instance.CurrentItem();
             if (item == null){
