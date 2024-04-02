@@ -21,6 +21,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
     // Start is called before the first frame update
     public void GiveItem(Item item){
+        nme.gameObject.SetActive(true);
         if (item == null){
             item = ItemManager.instance.GenericNoItem;
         }

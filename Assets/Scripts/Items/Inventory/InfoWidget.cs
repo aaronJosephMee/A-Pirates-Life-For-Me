@@ -86,9 +86,13 @@ public class InfoWidget : MonoBehaviour
         if (stats.duration != 0){
             info += "Duration: " + stats.duration + " sec\n";
         }
+        if (stats.healthBoost != 0){
+            info += "Health Boost: " + stats.healthBoost + "\n";
+        }
         if (stats.maxStacks != 0 && stats.gunDebuff != Debuffs.Fire){
             info += "Max Stacks: " + stats.maxStacks + "\n";
         }
+        
         if (info != ""){
             info = "Passive Effects: \n" + info;
         }
@@ -243,6 +247,9 @@ public class InfoWidget : MonoBehaviour
             info += "Duration: " + stats.duration + " -> " + (stats.duration + item.lvlStats.duration) + " sec\n";
         }
         if (item.lvlStats.maxStacks != 0){
+            info += "Health Boost: " + stats.healthBoost + " -> " + (stats.healthBoost + item.lvlStats.healthBoost) + "\n";
+        }
+        if (item.lvlStats.maxStacks != 0){
             info += "Max Stacks: " + stats.maxStacks + " -> " + (stats.maxStacks + item.lvlStats.maxStacks) + "\n";
         }
         if (info != ""){
@@ -297,7 +304,7 @@ public class InfoWidget : MonoBehaviour
                 if (relic.Activatorlvl.speedBoost != 0){
                     active += "Speed: " + stats.speedBoost + " -> " + (stats.speedBoost + relic.Activatorlvl.speedBoost) + "\n";
                 }
-                if (relic.Activatorlvl.critChance != 0){
+                if (relic.Activatorlvl.dodgeChance != 0){
                     active += "Dodge Chance: " + stats.dodgeChance*100 + "% -> " + (stats.dodgeChance + relic.Activatorlvl.dodgeChance)*100 + "%\n";
                 }
                 if (relic.Activatorlvl.critChance != 0){

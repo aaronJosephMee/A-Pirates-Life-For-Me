@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject dmgNumb;
     [SerializeField] Color hitColor;
     [SerializeField] Color dodgeColor;
+    public float IFrames = 0.3f;
+    float ITimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -51,36 +53,40 @@ public class Player : MonoBehaviour
     
     public void takeDamage(float damage)
     {
-        float damageToTake;
-        if (new System.Random().NextDouble() < newStats.dodgeChance){
-            damageToTake = 0;
+        if (ITimer < Time.time){
+            ITimer = Time.time + IFrames;
+            float damageToTake;
+            if (new System.Random().NextDouble() < newStats.dodgeChance){
+                damageToTake = 0;
+            }
+            else if (newStats.defense >= 100f){
+                damageToTake = 1;
+            }
+            else if (newStats.defense < 0){
+                damageToTake = damage;
+            }
+            else{
+                damageToTake = damage * (1 - newStats.defense/100f);
+            }
+            damageToTake = MathF.Round(damageToTake,2);
+            this.currentHealth -= damageToTake; 
+            GameObject dmgNumber = Instantiate(dmgNumb, slider.transform);
+            if (damageToTake == 0){
+                dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("DODGE", dodgeColor);
+                ItemManager.instance.OnDodge();
+            }
+            else{
+                dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("-" + damageToTake, hitColor);
+                ItemManager.instance.OnTakeDamage();
+            }
+            Destroy(dmgNumber);
+            Instantiate(dmgNumb, slider.transform);
+            if (currentHealth <= 0 && !isDead)
+            {
+                Die();
+            }
         }
-        else if (newStats.defense >= 100f){
-            damageToTake = 1;
-        }
-        else if (newStats.defense < 0){
-            damageToTake = damage;
-        }
-        else{
-            damageToTake = damage * (1 - newStats.defense/100f);
-        }
-        damageToTake = MathF.Round(damageToTake,2);
-        this.currentHealth -= damageToTake; 
-        GameObject dmgNumber = Instantiate(dmgNumb, slider.transform);
-        if (damageToTake == 0){
-            dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("DODGE", dodgeColor);
-            ItemManager.instance.OnDodge();
-        }
-        else{
-            dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("-" + damageToTake, hitColor);
-            ItemManager.instance.OnTakeDamage();
-        }
-        Destroy(dmgNumber);
-        Instantiate(dmgNumb, slider.transform);
-        if (currentHealth <= 0 && !isDead)
-        {
-            Die();
-        }
+        
     }
 
 
