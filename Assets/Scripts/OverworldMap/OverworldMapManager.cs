@@ -237,6 +237,7 @@ public class OverworldMapManager : MonoBehaviour
             _canvas = GameObject.Find("Canvas");
             _canvas2 = GameObject.Find("Canvas2");
             ReloadMapIcons();
+            SetFogLevel();
             _advanceMap = false;
         }
 
@@ -245,6 +246,33 @@ public class OverworldMapManager : MonoBehaviour
             AddEvent();
             _wasEventChosen = false;
         }
+    }
+
+    private void SetFogLevel()
+    {
+        GameObject fog = GameObject.Find("Fog");
+        if (_choiceGenerator.GetChoiceDepth() >= _numChoices)
+        {
+            Destroy(fog);
+        }
+        else
+        {
+            ParticleSystem partSystem = fog.GetComponent<ParticleSystem>();
+            // Set shape
+            Vector3 newScale = partSystem.shape.scale;
+            newScale.x -= 28 * (_choiceGenerator.GetChoiceDepth() - 1);
+            ParticleSystem.ShapeModule oldShape = partSystem.shape;
+            oldShape.scale = newScale;
+            // Set position
+            Vector3 offset = new Vector3((_choiceGenerator.GetChoiceDepth() - 1)* 14f, 0.0f, 0.0f);
+            fog.transform.position = fog.transform.position + offset;
+            // Set fog particle amount
+            ParticleSystem.MainModule oldMain = partSystem.main;
+            oldMain.maxParticles -= 100 * (_choiceGenerator.GetChoiceDepth() - 1);
+            partSystem.Simulate(1);
+            partSystem.Play();
+        }
+
     }
 
     private void ReloadMapIcons()

@@ -5,15 +5,31 @@ using UnityEngine.UI;
 
 public class CloseMenu : MonoBehaviour
 {
+    private SettingsButton settingsButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<Button>().onClick.AddListener(delegate{Destroy(this.transform.parent.gameObject);});
+        settingsButton = FindObjectOfType<SettingsButton>();
+        if (settingsButton == null)
+        {
+            Debug.LogError("SettingsButton not found in the scene");
+        }
+        this.GetComponent<Button>().onClick.AddListener(CloseSettingsMenu);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void CloseSettingsMenu()
+    {
+        if (settingsButton != null)
+        {
+            settingsButton.buttonClicked = false;
+        }
+        Destroy(this.transform.parent.gameObject);
     }
 }
