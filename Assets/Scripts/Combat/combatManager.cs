@@ -20,12 +20,14 @@ public class combatManager : MonoBehaviour
     public MeleeAttack playerSword;
     public Player playerHealth;
     CameraManager cameraManager;
+    public Rig bodyLayer;
     public bool waveCleared = false;
     [SerializeField] GameObject sword;
     [SerializeField] GameObject gun;
-
+    [SerializeField] public int spawnTimer = 8;
     [SerializeField] public List<EnemyCount> enemiesToSpawn;
     private List<Transform> spawners;
+    
 
     void Start()
     {
@@ -33,13 +35,9 @@ public class combatManager : MonoBehaviour
         waveCleared = false;
 
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-
         playerAnim = playerObject.GetComponent<Animator>();
-
         playerMove = playerObject.GetComponent<CharacterLocomotion>();
-
         playerAim = playerObject.GetComponent<CharacterAiming>();
-
         playerGun = playerObject.GetComponentInChildren<WeaponManager>();
 
         playerSword = playerObject.GetComponentInChildren<MeleeAttack>();
@@ -104,7 +102,7 @@ public class combatManager : MonoBehaviour
             //maybe scalingfactor should be separate for health and damage
 
             this.enemyCount++;
-            yield return new WaitForSeconds(8); // enemy respawn timer
+            yield return new WaitForSeconds(spawnTimer); // enemy respawn timer
         }
     }
 
@@ -124,6 +122,8 @@ public class combatManager : MonoBehaviour
         sword.SetActive(false);
         gun.SetActive(false);
         cameraManager.EnableWinCam();
+        playerSword.enabled = false;
+
         playerAnim.SetBool("clearedWave", true);
         
         StartCoroutine(DelayedCombatClear());
@@ -137,11 +137,11 @@ public class combatManager : MonoBehaviour
         
         Debug.Log("enemies all clear");
         //OverworldMapManager.Instance.TransitionBackToMap();
-        
 
+        
         playerMove.enabled = false;
         playerGun.enabled = false;
-        playerSword.enabled = false;
+        bodyLayer.weight = 0;
         playerAim.enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
