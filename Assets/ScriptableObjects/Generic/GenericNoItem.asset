@@ -12,15 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad02a2e9d3bf55748a61c77a645d06a1, type: 3}
   m_Name: GenericNoItem
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 75ab62e25f79bb04d876deb523d76fe3, type: 3}
+  image: {fileID: 21300000, guid: c47be5f032c3a394d8c59bbb17dad3ce, type: 3}
   title: NoItem
+  description: 
   maxlvl: 0
   baseStats:
-    damage: 0
+    gunDamage: 0
+    swordDamage: 0
     defense: 0
     duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   lvlStats:
-    damage: 0
+    gunDamage: 0
+    swordDamage: 0
     defense: 0
     duration: 0
+    maxStacks: 0
+    bulletCount: 0
+    fireRate: 0
+    speedBoost: 0
+    hpRegen: 0
+    projectileSize: 0
+    swordDebuff: 0
+    gunDebuff: 0
+    accuracy: 0
+    critChance: 0
+    critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
   price: 9999999

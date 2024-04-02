@@ -35,10 +35,12 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 14
+      nextScene: 12
       followUpText: '[INSERT TEXT HERE]'
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Refuse (fight the captain).
       isTerminal: 1
       relics:
@@ -48,7 +50,9 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 13
+      nextScene: 12
       followUpText: '[INSERT TEXT HERE]'
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0

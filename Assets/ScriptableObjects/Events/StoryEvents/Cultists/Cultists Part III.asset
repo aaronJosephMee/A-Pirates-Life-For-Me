@@ -38,7 +38,7 @@ MonoBehaviour:
         some very angry cultists are running towards you. You tell the prisoner to
         hide and draw your sword, preparing to fight.
       nextChoiceIndices:
-        Value: 03000000
+        Value: 02000000
       changeVisuals: 0
       changeIndex: 0
     - text: Leave the prisoner to their fate
