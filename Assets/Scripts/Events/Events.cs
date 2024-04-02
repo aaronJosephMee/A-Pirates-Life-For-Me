@@ -21,7 +21,7 @@ public class Choice
     public string text;
     public bool isTerminal;
     [ConditionalField(nameof(isTerminal))] public RelicCollection relicsToAdd;
-        [ConditionalField(nameof(isTerminal))] public RelicCollection relicsToLose;
+    [ConditionalField(nameof(isTerminal))] public RelicCollection relicsToLose;
 
     [ConditionalField(nameof(isTerminal))] public EventCollection eventsToAdd;
     [ConditionalField(nameof(isTerminal))] public Stats stats;
