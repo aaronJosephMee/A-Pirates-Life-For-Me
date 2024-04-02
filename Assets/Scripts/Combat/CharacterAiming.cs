@@ -44,9 +44,16 @@ public class CharacterAiming : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        xAxis.Value += Input.GetAxisRaw("Mouse X") * mouseSense * sensitivityManager.mouseSensitivity;
-        yAxis.Value -= Input.GetAxisRaw("Mouse Y") * mouseSense * sensitivityManager.mouseSensitivity;
+        if (sensitivityManager == null)
+        {
+            xAxis.Value += Input.GetAxisRaw("Mouse X") * mouseSense * SensitivityManagerStatic.mouseSensitivityStatic;
+            yAxis.Value -= Input.GetAxisRaw("Mouse Y") * mouseSense * SensitivityManagerStatic.mouseSensitivityStatic;
+        }
+        else
+        {
+            xAxis.Value += Input.GetAxisRaw("Mouse X") * mouseSense * sensitivityManager.mouseSensitivity;
+            yAxis.Value -= Input.GetAxisRaw("Mouse Y") * mouseSense * sensitivityManager.mouseSensitivity;
+        }
         yAxis.Value = Mathf.Clamp(yAxis.Value, -80, 80);
         
         if(combat_Manager.waveCleared == false)

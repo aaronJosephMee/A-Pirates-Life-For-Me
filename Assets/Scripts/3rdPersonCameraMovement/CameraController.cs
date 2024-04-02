@@ -51,8 +51,16 @@ public class CameraController : MonoBehaviour
 
     private void CalculateCameraPosition()
     {
-        _cameraRotation.x += _mouseInput.x * horizontalSensitivity * sensitivityManager.mouseSensitivity * Time.deltaTime;
-        _cameraRotation.y += _mouseInput.y * verticalSensitivity * sensitivityManager.mouseSensitivity * Time.deltaTime;
+        if (sensitivityManager == null)
+        {
+            _cameraRotation.x += _mouseInput.x * horizontalSensitivity * SensitivityManagerStatic.mouseSensitivityStatic * Time.deltaTime;
+            _cameraRotation.y += _mouseInput.y * verticalSensitivity * SensitivityManagerStatic.mouseSensitivityStatic * Time.deltaTime;
+        }
+        else
+        {
+            _cameraRotation.x += _mouseInput.x * horizontalSensitivity * sensitivityManager.mouseSensitivity * Time.deltaTime;
+            _cameraRotation.y += _mouseInput.y * verticalSensitivity * sensitivityManager.mouseSensitivity * Time.deltaTime;
+        }
         _cameraRotation.y = Mathf.Clamp(_cameraRotation.y,-85.0f, 50.0f);
     }
 

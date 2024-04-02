@@ -202,6 +202,9 @@ MonoBehaviour:
       - m_Target: {fileID: 877699563889807537, guid: dfde55688a8b64a218ccd268a3345674, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+      - m_Target: {fileID: 5118893051973071597}
+        m_TargetAssemblyTypeName: CloseMenu, Assembly-CSharp
+        m_MethodName: CloseSettingsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

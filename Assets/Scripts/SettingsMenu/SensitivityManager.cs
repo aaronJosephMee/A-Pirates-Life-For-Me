@@ -28,6 +28,7 @@ public class SensitivityManager : MonoBehaviour
     public void OnSensitivityChanged(float newSensitivity)
     {
         mouseSensitivity = newSensitivity;
+        SensitivityManagerStatic.mouseSensitivityStatic = newSensitivity;
         SaveSettings();
         Debug.Log("Sensitivity changed to " +  newSensitivity);
     }
@@ -49,4 +50,10 @@ public class SensitivityManager : MonoBehaviour
             Debug.Log(sensitivitySlider.value);
         }
     }
+}
+
+public class SensitivityManagerStatic
+{
+    public static float mouseSensitivityStatic = 4.0f;
+
 }
