@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class WhirlpoolGame : MonoBehaviour
@@ -16,9 +16,9 @@ public class WhirlpoolGame : MonoBehaviour
 
     public AudioSource backgroundMusic;
     
-    public TextMeshProUGUI winningText;
-    public TextMeshProUGUI losingText;
-    public TextMeshProUGUI howToPlayText;
+    public GameObject winningText;
+    public GameObject losingText;
+    public GameObject howToPlayPanel;
 
 
     
@@ -30,7 +30,7 @@ public class WhirlpoolGame : MonoBehaviour
         whirlpoolSize = (float) 1.5 * whirlpoolCenter.gameObject.GetComponent<Renderer>().bounds.size.magnitude;
         winningText.gameObject.SetActive(false);
         losingText.gameObject.SetActive(false);
-        howToPlayText.gameObject.SetActive(true);
+        howToPlayPanel.gameObject.SetActive(true);
     }
 
     void Update()
@@ -47,7 +47,7 @@ public class WhirlpoolGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             isBeingPulled = true;
-            howToPlayText.gameObject.SetActive(false);
+            howToPlayPanel.gameObject.SetActive(false);
         }
         distanceFromCenter = Vector3.Distance(ship.gameObject.transform.position, whirlpoolCenter.position);
         playerSlider.value = distanceFromCenter / (whirlpoolSize / 2);
