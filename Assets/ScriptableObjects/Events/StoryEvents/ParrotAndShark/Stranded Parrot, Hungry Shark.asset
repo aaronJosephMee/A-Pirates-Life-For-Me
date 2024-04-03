@@ -34,13 +34,14 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: You lean over the side of your ship and scoop the parrot up to
         safety. It sighs with relief and shuffles closer to you.
       nextChoiceIndices:
         Value: 05000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Leave the parrot to its fate. Hey, it's the nature of things
+    - text: Leave the parrot to its fate
       isTerminal: 0
       relicsToAdd:
         Value: []
@@ -52,6 +53,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You avert your eyes and plug your ears to muffle the parrot''s
         distressed cries. For a moment, there is a violent thrashing, then stillness. '
       nextChoiceIndices:
@@ -70,6 +72,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'Gain Parrot friend!
 
 
@@ -90,6 +93,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: After travelling for several kilometers, you hear a high-pitched
         sound, or rather, several of them. The sounds gets louder, as you realize
         a swarm of parrots is headed towards your ship.
@@ -109,6 +113,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: The parrot has an injured wing and is squawking in distress,
         as there is a shark watching it intently, waiting for a quick meal. What
         do you do?
@@ -128,6 +133,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "This little parrot loves you. The shark thrashes angrily in
         the water, then swims away. \n\nYou gained Parrot! It fills you with determination."
       nextChoiceIndices:
@@ -146,6 +152,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: Somehow, word got out that a shark dined on one of their friends,
         while you dashed. You hide in your quarters, as the parrots screech and make
         a mess of your ship.
@@ -165,6 +172,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'Once the sound dies down, you come out and see the mess. There
         is crap everywhere.
 

@@ -43,7 +43,7 @@ MonoBehaviour:
         Value: 0100000002000000
       changeVisuals: 0
       changeIndex: 0
-    - text: No, my offering was a mistake (walk away)
+    - text: Refuse
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -106,7 +106,7 @@ MonoBehaviour:
         Value: 09000000
       changeVisuals: 1
       changeIndex: 3
-    - text: No! How could you ask such a thing of me?!
+    - text: Absolutely not!
       isTerminal: 0
       relicsToAdd:
         Value: []

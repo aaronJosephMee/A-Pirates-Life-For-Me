@@ -42,7 +42,7 @@ MonoBehaviour:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Leave the prisoner to their fate
+    - text: Flee
       isTerminal: 0
       relicsToAdd:
         Value: []
@@ -63,7 +63,7 @@ MonoBehaviour:
       changeVisuals: 0
       changeIndex: 0
     - text: Continue
-      isTerminal: 1
+      isTerminal: 0
       relicsToAdd:
         Value: []
       relicsToLose:
@@ -78,10 +78,9 @@ MonoBehaviour:
       combatIndex: 5
       followUpText: You break open the prisoner's cage and help him down onto the
         ground. You see some movement from the corner of your eye and realize that
-        some very angry cultists are running towards you. You tell the prisoner to
-        hide, as you draw your sword, preparing to fight.
+        some very angry cultists are running towards you.
       nextChoiceIndices:
-        Value: 00000000
+        Value: 05000000
       changeVisuals: 0
       changeIndex: 0
     - text: Continue
@@ -122,7 +121,28 @@ MonoBehaviour:
         You sprint to your ship before the cultists are alarmed.
 
 
-        Gain Guilt'
+        Gain Guilt
+        relic'
+      nextChoiceIndices:
+        Value: 00000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: ae1657c1e226885459c2ce212cadc726, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      combatIndex: 0
+      followUpText: You tell the prisoner to hide, as you draw your sword, preparing
+        to fight.
       nextChoiceIndices:
         Value: 00000000
       changeVisuals: 0

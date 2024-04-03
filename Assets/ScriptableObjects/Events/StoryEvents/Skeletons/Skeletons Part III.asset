@@ -36,7 +36,11 @@ MonoBehaviour:
         gold: 0
       nextScene: 12
       combatIndex: 8
-      followUpText: 
+      followUpText: 'You cut down the last of the skeletons and feel invigorated.
+
+
+        Gain
+        Ghostly Visage relic'
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
