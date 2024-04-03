@@ -35,6 +35,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "\u201CYou have made an offering of blood in the name of our
         god, Dagon. Greater sacrifices will lead to even greater rewards. Are you
         interested in what we offer?\u201D How do you respond?"
@@ -55,6 +56,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'The man looks at you disdainfully, shaking his head, as you
         leave the woods.
 
@@ -76,6 +78,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "\u201COur god demands more blood. Find someone, a suitable offering,
         and lead them to the shores straight behind me. There, you will find an archway
         and ring of red flowers."
@@ -95,6 +98,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: You find a man sitting alone beneath the shade of a tree. No
         one else appears to be around. You ask him for help, pretending to have lost
         a precious ring along the shores.
@@ -114,6 +118,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "The cultist glares at you. \u201CYou know too much,\u201D he
         says, readying himself to fight you. What do you do?"
       nextChoiceIndices:
@@ -132,7 +137,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 0
+      nextScene: 14
+      combatIndex: 6
       followUpText: Lose Mark of Dagon relic
       nextChoiceIndices:
         Value: 
@@ -151,6 +157,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You hear the man yelling, as you race towards where your ship
         is docked. You escape unharmed.
 
@@ -173,6 +180,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'As you witness the man crumple lifelessly to the ground, you
         hear an unsettling voice whisper into your ears, "Well done. Have your reward."
 
@@ -196,6 +204,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "Bring the sacrifice there and our god will do the rest. Then
         you will have your reward.\u201D How do you proceed?"
       nextChoiceIndices:
@@ -215,6 +224,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "He follows you, eager to help. You direct him towards the patch
         of red flowers and hang back a bit.\u201D"
       nextChoiceIndices:

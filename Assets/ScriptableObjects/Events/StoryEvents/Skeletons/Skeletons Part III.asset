@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skeletons Part III
   m_EditorClassIdentifier: 
   title: Skeletons - Part III
-  scene: 16
+  scene: 17
   sceneIdx: 4
   flavorText: 'After a long evening at the pub, you head back to your ship to rest.
     As you get closer to the docks, you see an eerie green glow. A large ghostly
@@ -34,8 +34,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 0
-      combatIndex: 0
+      nextScene: 12
+      combatIndex: 8
       followUpText: 
       nextChoiceIndices:
         Value: 

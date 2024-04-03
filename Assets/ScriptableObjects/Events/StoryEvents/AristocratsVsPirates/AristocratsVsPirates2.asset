@@ -59,8 +59,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 12
-      combatIndex: 0
+      nextScene: 13
+      combatIndex: 6
       followUpText: Gain 300 gold
       nextChoiceIndices:
         Value: 

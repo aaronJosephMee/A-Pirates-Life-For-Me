@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skeletons Part IV
   m_EditorClassIdentifier: 
   title: Skeletons - Part IV
-  scene: 16
+  scene: 17
   sceneIdx: 5
   flavorText: As you approach a local village, you hear an increasing amount of racket.
     You see a familiar group of skeletons facing a group of humans, ready to fight.
@@ -32,8 +32,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 0
-      combatIndex: 0
+      nextScene: 12
+      combatIndex: 10
       followUpText: 
       nextChoiceIndices:
         Value: 

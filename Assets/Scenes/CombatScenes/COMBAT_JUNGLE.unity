@@ -29399,7 +29399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3651874720645708297, guid: d3eac71f50376314f90e2cfc5aef3e17, type: 3}
       propertyPath: m_Name
-      value: CombatPrefab
+      value: CombatRescuePrisoner
       objectReference: {fileID: 0}
     - target: {fileID: 3651874720645708297, guid: d3eac71f50376314f90e2cfc5aef3e17, type: 3}
       propertyPath: m_IsActive
