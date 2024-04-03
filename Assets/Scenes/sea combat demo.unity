@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1015102854}
-  enemyCount: 10
+  enemyCount: 5
   Killed: 0
   Spawned: 2
   winningText: {fileID: 1719984183}
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2a20c3e0d5b8e44b6940b7f67b3b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 15
   rotateSpeed: 50
   rotate: {x: 0, y: 0, z: 0}
   cannonForce: 15
@@ -6060,7 +6060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ship: {fileID: 1015102855}
-  offset: {x: 0, y: 50, z: 0}
+  offset: {x: 0, y: 75, z: 0}
 --- !u!1 &1175671338
 GameObject:
   m_ObjectHideFlags: 0
