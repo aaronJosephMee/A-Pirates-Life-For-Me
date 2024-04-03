@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     int hits = 0;
     float collisionDelay = 0;
     EnemyHealth enemy;
+    bomb Bomb;
 
     // Start is called before the first frame update
     void Start()
@@ -43,18 +44,25 @@ public class Bullet : MonoBehaviour
                 if (weapon.richochet < hits){
                     Destroy(this.gameObject);
                 }  
-            }       
-        }    
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (((1 << collision.gameObject.layer) & bulletLayer) != 0)
             return;
-        if (collision.gameObject.GetComponentInParent<EnemyHealth>()){
+        if (collision.gameObject.GetComponentInParent<EnemyHealth>())
+        {
             this.enemy = collision.gameObject.GetComponentInParent<EnemyHealth>();
-            
+
         }
         collisionDelay = 0.025f;
+
+        bomb bombComponent = collision.gameObject.GetComponent<bomb>();
+        if (bombComponent != null)
+        {
+            bombComponent.explode();
+        }
     }
 }
