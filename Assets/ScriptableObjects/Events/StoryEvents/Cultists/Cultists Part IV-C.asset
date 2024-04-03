@@ -40,7 +40,7 @@ MonoBehaviour:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Leave them to resolve this on their own
+    - text: Leave them
       isTerminal: 1
       relicsToAdd:
         Value: []

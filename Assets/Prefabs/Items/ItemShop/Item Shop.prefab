@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
+  m_Color: {r: 0.46226418, g: 0.45528662, b: 0.45528662, a: 0.83137256}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1157,7 +1157,7 @@ PrefabInstance:
     - target: {fileID: 3761233506377460240, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7066e0747291df44fa5c2bf93bee3a6e, type: 3}
+      objectReference: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
     - target: {fileID: 6551748228676688775, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: item
       value: 
@@ -1168,7 +1168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184807628585934508, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 104
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 7184807628585934508, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1249,7 +1249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184807628585934508, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 104
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 7184807628585934508, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1444,7 +1444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184807628585934508, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 104
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 7184807628585934508, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1514,6 +1514,18 @@ PrefabInstance:
     - target: {fileID: 2775879288010897084, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: m_fontSize
       value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000181012943807307, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
+      propertyPath: highlight.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000181012943807307, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
+      propertyPath: highlight.g
+      value: 0.6572327
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000181012943807307, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
+      propertyPath: highlight.r
+      value: 0.8962264
       objectReference: {fileID: 0}
     - target: {fileID: 6551748228676688775, guid: e5d4fe77891e37d49a94de8199edf305, type: 3}
       propertyPath: item

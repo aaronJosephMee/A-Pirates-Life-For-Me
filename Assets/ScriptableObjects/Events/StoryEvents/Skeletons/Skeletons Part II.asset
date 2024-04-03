@@ -42,7 +42,7 @@ MonoBehaviour:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Reject their request. Who knows who could be watching?
+    - text: Reject their request
       isTerminal: 1
       relicsToAdd:
         Value: []

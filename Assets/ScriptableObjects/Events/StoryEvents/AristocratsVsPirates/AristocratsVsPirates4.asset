@@ -21,7 +21,7 @@ MonoBehaviour:
   initialChoices: 02000000
   choices:
     Value:
-    - text: Comply (kill the pirates and destroy their base)
+    - text: Comply, kill the pirates
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -39,7 +39,7 @@ MonoBehaviour:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Refuse (kill the governor)
+    - text: Refuse, kill the governor
       isTerminal: 1
       relicsToAdd:
         Value: []

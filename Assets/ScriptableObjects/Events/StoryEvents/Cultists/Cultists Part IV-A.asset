@@ -40,7 +40,7 @@ MonoBehaviour:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Bribe the civilians to leave the shrine alone
+    - text: Bribe the civilians
       isTerminal: 1
       relicsToAdd:
         Value: []

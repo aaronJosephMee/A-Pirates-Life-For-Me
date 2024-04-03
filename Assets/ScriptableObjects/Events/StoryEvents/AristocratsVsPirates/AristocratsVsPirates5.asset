@@ -62,7 +62,7 @@ MonoBehaviour:
         Value: 0200000003000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Comply (attack and kill the aristocrats)
+    - text: Comply, kill the aristocrats
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -80,7 +80,7 @@ MonoBehaviour:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Refuse (fight the captain)
+    - text: Refuse, fight the captain
       isTerminal: 1
       relicsToAdd:
         Value: []

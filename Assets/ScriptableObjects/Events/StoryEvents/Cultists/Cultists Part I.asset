@@ -22,7 +22,7 @@ MonoBehaviour:
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Add some of your blood, losing some health
+    - text: Add more blood
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -35,6 +35,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "You slice into your forearm with your sword and let some blood
         dribble into the chalice. \n\nPermanently lose 15 HP\n\nGain Mark of Dagon
         relic"
@@ -55,6 +56,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You shove the monolith onto the ground and smash it to pieces
         with a large stone. It feels like a weight has been lifted from the area.
 

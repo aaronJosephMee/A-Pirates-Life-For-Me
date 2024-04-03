@@ -34,13 +34,17 @@ MonoBehaviour:
         gold: 0
       nextScene: 12
       combatIndex: 9
-      followUpText: 
+      followUpText: 'The civilians cheer, as they no longer need to fear the skeletons.
+
+
+        Gain
+        Protector of Humanity relic!'
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Refuse to help, but loot everyone while they're distracted
-      isTerminal: 1
+    - text: Refuse (and loot everyone)
+      isTerminal: 0
       relicsToAdd:
         Value: []
       relicsToLose:
@@ -54,12 +58,9 @@ MonoBehaviour:
       combatIndex: 0
       followUpText: You awkwardly shrug your shoulders and shake your head, telling
         the civilians that this is not your fight. The civilians plead once more,
-        but you walk away without looking back. As you disappear from view, you hear
-        the civilians charge at the skeletons. In the ensuing disarray, you move
-        from home to home, then finally to the ghost ship, looting as much as you
-        can. Gain 600 gold.
+        but you walk away without looking back.
       nextChoiceIndices:
-        Value: 02000000
+        Value: 03000000
       changeVisuals: 0
       changeIndex: 0
     - text: Continue
@@ -80,5 +81,25 @@ MonoBehaviour:
         What do you do?"
       nextChoiceIndices:
         Value: 0000000001000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      combatIndex: 0
+      followUpText: As you disappear from view, you hear the civilians charge at
+        the skeletons. In the ensuing disarray, you move from home to home, then
+        finally to the ghost ship, looting as much as you can. Gain 600 gold.
+      nextChoiceIndices:
+        Value: 00000000
       changeVisuals: 0
       changeIndex: 0
