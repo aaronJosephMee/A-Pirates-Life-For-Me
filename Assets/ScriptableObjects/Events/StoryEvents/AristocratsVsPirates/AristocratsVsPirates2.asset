@@ -23,7 +23,7 @@ MonoBehaviour:
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Bribe the pirates
+    - text: Bribe the pirates (Costs 60 Gold)
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -34,7 +34,7 @@ MonoBehaviour:
         - {fileID: 11400000, guid: a7f601e931c5c9d40a97a2406fe88d20, type: 2}
       stats:
         health: 0
-        gold: -300
+        gold: -60
       nextScene: 0
       combatIndex: 0
       followUpText: 'You reach for your coin pouch and awkwardly hand over a pile
@@ -42,7 +42,7 @@ MonoBehaviour:
         you...".
 
 
-        Lost 300 gold'
+        Lost 60 gold'
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0
@@ -58,10 +58,10 @@ MonoBehaviour:
         - {fileID: 11400000, guid: a7f601e931c5c9d40a97a2406fe88d20, type: 2}
       stats:
         health: 0
-        gold: 0
+        gold: 150
       nextScene: 13
       combatIndex: 6
-      followUpText: Gain 300 gold
+      followUpText: Gain 150 gold
       nextChoiceIndices:
         Value: 
       changeVisuals: 0

@@ -45,10 +45,10 @@ public class InfoWidget : MonoBehaviour
             info += "Sword Damage: " + stats.swordDamage + "\n";
         }
         if (stats.defense != 0){
-            info += "Damage Reduction: " + stats.defense + "%\n";
+            info += "Dmg. Reduction: " + stats.defense + "%\n";
         }
         if (stats.bulletCount != 0){
-            info += "Extra Bullets: " + stats.bulletCount + "\n";
+            info += "Extra Pellets: " + stats.bulletCount + "\n";
         }
         if (stats.fireRate != 0){
             info += "Fire rate: " + stats.fireRate + "\n";
@@ -57,7 +57,7 @@ public class InfoWidget : MonoBehaviour
             info += "Accuracy: " + stats.accuracy + "\n";
         }
         if (stats.projectileSize != 0){
-            info += "Bullet Size: " + stats.projectileSize + "\n";
+            info += "Pellet Size: " + stats.projectileSize + "\n";
         }
         if (stats.hpRegen != 0){
             info += "Health Regen: " + stats.hpRegen + "hp/sec\n";
@@ -141,10 +141,10 @@ public class InfoWidget : MonoBehaviour
                     info += "Sword Damage: " + stats.swordDamage + "\n";
                 }
                 if (stats.defense != 0){
-                    info += "Damage Reduction: " + stats.defense + "%\n";
+                    info += "Dmg. Reduction: " + stats.defense + "%\n";
                 }
                 if (stats.bulletCount != 0){
-                    info += "Extra Bullets: " + stats.bulletCount + "\n";
+                    info += "Extra Pellets: " + stats.bulletCount + "\n";
                 }
                 if (stats.fireRate != 0){
                     info += "Fire rate: " + stats.fireRate + "\n";
@@ -153,7 +153,7 @@ public class InfoWidget : MonoBehaviour
                     info += "Accuracy: " + stats.accuracy + "\n";
                 }
                 if (stats.projectileSize != 0){
-                    info += "Bullet Size: " + stats.projectileSize + "\n";
+                    info += "Pellet Size: " + stats.projectileSize + "\n";
                 }
                 if (stats.hpRegen != 0){
                     info += "Health Regen: " + stats.hpRegen + "hp/sec\n";
@@ -211,10 +211,10 @@ public class InfoWidget : MonoBehaviour
             info += "Sword Damage: " + stats.swordDamage + " -> " + (stats.swordDamage + item.lvlStats.swordDamage) + "\n";
         }
         if (item.lvlStats.defense != 0){
-            info += "Damage Reduction: " + stats.defense + "% -> " + (stats.defense + item.lvlStats.defense)/100f + "%\n";
+            info += "Dmg. Reduction: " + stats.defense + "% -> " + (stats.defense + item.lvlStats.defense) + "%\n";
         }
         if (item.lvlStats.bulletCount != 0){
-            info += "Extra Bullets: " + stats.bulletCount + " -> " + (stats.bulletCount + item.lvlStats.bulletCount) + "\n";
+            info += "Extra Pellets: " + stats.bulletCount + " -> " + (stats.bulletCount + item.lvlStats.bulletCount) + "\n";
         }
         if (item.lvlStats.fireRate != 0){
             info += "Fire rate: " + stats.fireRate + " -> " + (stats.fireRate + item.lvlStats.fireRate) + "\n";
@@ -223,7 +223,7 @@ public class InfoWidget : MonoBehaviour
             info += "Accuracy: " + stats.accuracy + " -> " + (stats.accuracy + item.lvlStats.accuracy) + "\n";
         }
         if (item.lvlStats.projectileSize != 0){
-            info += "Bullet Size: " + stats.projectileSize + " -> " + (stats.projectileSize + item.lvlStats.projectileSize) + "\n";
+            info += "Pellet Size: " + stats.projectileSize + " -> " + (stats.projectileSize + item.lvlStats.projectileSize) + "\n";
         }
         if (item.lvlStats.hpRegen != 0){
             info += "Health Regen: " + stats.hpRegen + " -> " + (stats.hpRegen + item.lvlStats.hpRegen) + "\n";
@@ -284,10 +284,10 @@ public class InfoWidget : MonoBehaviour
                     active += "Sword Damage: " + stats.swordDamage + " -> " + (stats.swordDamage + relic.Activatorlvl.swordDamage) + "\n";
                 }
                 if (relic.Activatorlvl.defense != 0){
-                    active += "Damage Reduction: " + stats.defense + "% -> " + (stats.defense + relic.Activatorlvl.defense)/100f + "%\n";
+                    active += "Dmg. Reduction: " + stats.defense + "% -> " + (stats.defense + relic.Activatorlvl.defense) + "%\n";
                 }
                 if (relic.Activatorlvl.bulletCount != 0){
-                    active += "Extra Bullets: " + stats.bulletCount + " -> " + (stats.bulletCount + relic.Activatorlvl.bulletCount) + "\n";
+                    active += "Extra Pellets: " + stats.bulletCount + " -> " + (stats.bulletCount + relic.Activatorlvl.bulletCount) + "\n";
                 }
                 if (relic.Activatorlvl.fireRate != 0){
                     active += "Fire rate: " + stats.fireRate + " -> " + (stats.fireRate + relic.Activatorlvl.fireRate) + "\n";
@@ -296,7 +296,7 @@ public class InfoWidget : MonoBehaviour
                     active += "Accuracy: " + stats.accuracy + " -> " + (stats.accuracy + relic.Activatorlvl.accuracy) + "\n";
                 }
                 if (relic.Activatorlvl.projectileSize != 0){
-                    active += "Bullet Size: " + stats.projectileSize + " -> " + (stats.projectileSize + relic.Activatorlvl.projectileSize) + "\n";
+                    active += "Pellet Size: " + stats.projectileSize + " -> " + (stats.projectileSize + relic.Activatorlvl.projectileSize) + "\n";
                 }
                 if (relic.Activatorlvl.hpRegen != 0){
                     active += "Health Regen: " + stats.hpRegen + " -> " + (stats.hpRegen + relic.Activatorlvl.hpRegen) + "\n";

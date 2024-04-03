@@ -38,8 +38,8 @@ MonoBehaviour:
       nextScene: 0
       combatIndex: 0
       followUpText: "You slice into your forearm with your sword and let some blood
-        dribble into the chalice. \n\nPermanently lose 15 HP\n\nGain Mark of Dagon
-        relic"
+        dribble into the chalice. \n\nPermanently lose 15 Max HP\n\nGain Mark of
+        Dagon relic"
       nextChoiceIndices:
         Value: 0000000000000000
       changeVisuals: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
         Value:
         - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
       stats:
-        health: 0
+        health: 15
         gold: 0
       nextScene: 0
       combatIndex: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
 
 
         Permanently
-        gain 15 HP'
+        gain 15 Max HP'
       nextChoiceIndices:
         Value: 0000000000000000
       changeVisuals: 0

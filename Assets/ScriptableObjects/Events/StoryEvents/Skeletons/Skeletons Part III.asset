@@ -46,7 +46,7 @@ MonoBehaviour:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Bribe the skeletons
+    - text: Bribe the skeletons (Costs 50 Gold)
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -57,7 +57,7 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 706e6775eb11e8d449eab3d85952c278, type: 2}
       stats:
         health: 0
-        gold: 0
+        gold: -50
       nextScene: 0
       combatIndex: 0
       followUpText: 'You hold your hands up in surrender and offer the skeletons
@@ -66,7 +66,7 @@ MonoBehaviour:
 
 
         Lose
-        300 gold'
+        50 gold'
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0

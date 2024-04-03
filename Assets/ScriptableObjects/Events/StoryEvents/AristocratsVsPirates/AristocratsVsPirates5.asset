@@ -72,10 +72,10 @@ MonoBehaviour:
         Value: []
       stats:
         health: 0
-        gold: 0
+        gold: 300
       nextScene: 13
       combatIndex: 3
-      followUpText: Gain 1000 gold
+      followUpText: Gain 300 gold
       nextChoiceIndices:
         Value: 
       changeVisuals: 0

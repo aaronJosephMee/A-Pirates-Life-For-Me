@@ -51,7 +51,7 @@ MonoBehaviour:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Bribe the civilians to leave the skeletons alone
+    - text: Bribe the civilians to leave the skeletons alone (Costs 50 Gold)
       isTerminal: 1
       relicsToAdd:
         Value:
@@ -63,13 +63,13 @@ MonoBehaviour:
         Value: []
       stats:
         health: 0
-        gold: 0
+        gold: -50
       nextScene: 0
       combatIndex: 0
       followUpText: "You approach the civilians, with your hands up to show that
         you are peaceful. You negotiate with them, explaining that the skeletons
         just wish to pass through. No harm will be done. The civilians demand some
-        kind of incentive. \n\nLose 300 gold.\nGained Skeleton Friend +2"
+        kind of incentive. \n\nLose 50 gold.\nGained Skeleton Friend +2"
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0
