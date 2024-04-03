@@ -19,6 +19,26 @@ public class EnemyDamage : MonoBehaviour
 
     private void Update()
     {
+        /*
+        if (Time.time >= nextHitTime)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, damageRadius, targetLayer);
+            foreach (Collider col in colliders)
+            {
+                Player player = col.GetComponent<Player>();
+                if (player)
+                {
+                    player.takeDamage(damageAmount, true);
+
+                    nextHitTime = Time.time + rehitTime;
+                }
+            }
+        }
+        */
+    }
+
+    public void EnableHitbox()
+    {
         if (Time.time >= nextHitTime)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, damageRadius, targetLayer);
