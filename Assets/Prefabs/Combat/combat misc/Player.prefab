@@ -700,7 +700,7 @@ Transform:
   m_GameObject: {fileID: 667559443373558001}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08181776, y: -0.000000007425601, z: -6.095898e-10, w: 0.9966473}
-  m_LocalPosition: {x: 0.58, y: 1.5929999, z: -2.48}
+  m_LocalPosition: {x: 0.57999945, y: 1.5930011, z: -2.4800057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1131,7 +1131,6 @@ GameObject:
   - component: {fileID: 4035603828056395376}
   - component: {fileID: 691815798872382372}
   - component: {fileID: 1097602228359469424}
-  - component: {fileID: 2045334155085478883}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1231,7 +1230,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1356,7 +1355,15 @@ MonoBehaviour:
     m_Active: 1
   - m_Rig: {fileID: 466293895139161163}
     m_Active: 1
-  m_Effectors: []
+  m_Effectors:
+  - m_Transform: {fileID: 4123975568768713505}
+    m_Style:
+      shape: {fileID: 4300000, guid: c6793350c150f456688e39a81f97364a, type: 2}
+      color: {r: 1, g: 0, b: 0, a: 0.5}
+      size: 0.1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+    m_Visible: 1
 --- !u!114 &1097602228359469424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,27 +1382,6 @@ MonoBehaviour:
   swing2Audio: {fileID: 0}
   audioSource: {fileID: 0}
   blendSpeed: 0.5
---- !u!65 &2045334155085478883
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488650255071751408}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.76155967, y: 1.8807704, z: 0.6400193}
-  m_Center: {x: -0.048679918, y: 0.9742681, z: 0.026159585}
 --- !u!1 &1527797247323055002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,7 +1397,7 @@ GameObject:
   - component: {fileID: 8963472757537342715}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Cutlass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1500,7 +1486,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.38
+  m_Radius: 0.5
   m_Height: 1.91
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0.09}
@@ -7824,6 +7810,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 486794, guid: 29706bab6f351e64982fca9af5aa9851, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64834811927865916, guid: 29706bab6f351e64982fca9af5aa9851, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
