@@ -52,6 +52,27 @@ public class GameManager : MonoBehaviour
         
         choices.AddFlag("PirateFlag", 0);
         choices.AddFlag("MarkofDagon", 0);
+        choices.AddFlag("MarkofDagon+1", 0);
+        choices.AddFlag("MarkofDagon+2", 0);
+        choices.AddFlag("Turncoat", 0);
+        choices.AddFlag("Bootlicker",0);
+        choices.AddFlag("Freedom", 0);
+        choices.AddFlag("Freedom+1",0);
+        choices.AddFlag("GhostlyVisage", 0);
+        choices.AddFlag("Graverobber",0);
+        choices.AddFlag("Graverobber-1",0);
+        choices.AddFlag("Guilt",0);
+        choices.AddFlag("Guilt+1",0);
+        choices.AddFlag("Parrot", 0 );
+        choices.AddFlag("PegLeg",0);
+        choices.AddFlag("PoopDeck",0);
+        choices.AddFlag("ProtectorofHumanity",0);
+        choices.AddFlag("RedFlower",0);
+        choices.AddFlag("SkeletonFriend",0);
+        choices.AddFlag("SkeletonFriend+1",0);
+        choices.AddFlag("SkeletonFriend+2",0);
+        
+        
     }
 
     public void LoadScene(SceneName scene, int cameraIndex=0)

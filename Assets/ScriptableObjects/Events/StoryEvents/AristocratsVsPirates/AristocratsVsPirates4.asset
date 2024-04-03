@@ -24,7 +24,8 @@ MonoBehaviour:
     - text: Comply, kill the pirates
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 433601aba65aab24e8d8f5bf7f86498c, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:
@@ -42,7 +43,8 @@ MonoBehaviour:
     - text: Refuse, kill the governor
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: c2fa4495204926c4f84d0d5d0b40b437, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:

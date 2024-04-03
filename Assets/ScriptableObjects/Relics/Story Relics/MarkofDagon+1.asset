@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
-  m_Name: Red Flower
+  m_Name: MarkofDagon+1
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: 
@@ -55,7 +55,7 @@ MonoBehaviour:
     dodgeChance: 0
     healthBoost: 0
   price: 0
-  isStoryRelic: 0
+  isStoryRelic: 1
   activator: 0
   ActivatorStats:
     gunDamage: 0

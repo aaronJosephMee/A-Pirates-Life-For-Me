@@ -1,104 +1,220 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 namespace DefaultNamespace.Hub
 {
     public class TrophyManager : MonoBehaviour
     {
-        public Boolean trophy1Flag = false;
-        public Boolean trophy2Flag = false;
-        public Boolean trophy3Flag = false;
-        public Boolean trophy4Flag = false; 
-        public Boolean trophy5Flag = false;
-        public Boolean trophy6Flag = false;
-        public Boolean trophy7Flag = false;
-        public Boolean trophy8Flag = false;
-        public Boolean trophy9Flag = false;
        
+        public Boolean pirateflagbool  = false; 
+        public Boolean markofdagonbool = false;
+        public Boolean markofdagonbool1 = false;
+        public Boolean markofdagonbool2 = false;
+        public Boolean turncoatbool = false; 
         
-        private Transform trophy1;
-        private Transform trophy2;
-        private Transform trophy3;
-        private Transform trophy4;
-        private Transform trophy5;
-        private Transform trophy6;
-        private Transform trophy7;
-        private Transform trophy8;
-        private Transform trophy9;
+        private Transform markofdagontrophy;
+        private Transform markofdagontrophy1;
+        private Transform markofdagontrophy2;
+        private Transform pirateflagtropy;
+        private Transform turncoattrophy;
+
+
+        public bool skeletonfriendbool = false; 
+        public bool skeletonfriendbool1 = false; 
+        public bool skeletonfriendbool2= false;
+
+        private Transform skeletonfriendtrophy; 
+        private Transform skeletonfriendtrophy1; 
+        private Transform skeletonfriendtrophy2; 
         
+        public bool graverobberbool = false; 
+        public bool graverobberbool1 = false;
+
+
+        private Transform graverobbertrophy;
+        private Transform graverobbertrophy1;
+
+
+        public bool redflowerbool = false;
+        private Transform redflowertrophy;
+
+        public bool ghostlyvisagebool = false;
+        private Transform ghostlyvisagetrophy;
+
+        public Boolean peglegbool = false;
+        private Transform peglegtrophy;
+
+        public Boolean parrotbool = false;
+        private Transform parrottrophy; 
         
+        public Boolean freedombool = false;
+        private Transform freedomtrophy;
+        
+        public Boolean freedombool1 = false;
+        private Transform freedomtrophy1;
+
+
+        public bool poopdeckbool = false;
+        private Transform poopdecktrophy;
+
+        public bool bootlickerbool = false;
+        private Transform bootlickertrophy;
+
+        public bool guiltbool = false;
+        private Transform guilttrophy; 
+        
+        public bool guiltbool1 = false;
+        private Transform guilttrophy1; 
         public void Awake()
         {
             
+            markofdagontrophy = transform.Find("MarkOfDagon");
+            markofdagontrophy1 = transform.Find("MarkOfDagon+1");
+            markofdagontrophy2 = transform.Find("MarkOfDagon+2");
+            pirateflagtropy = transform.Find("PirateFlag");
+            turncoattrophy = transform.Find("Turncoat");
+            skeletonfriendtrophy = transform.Find("SkeletonFriend");
+            skeletonfriendtrophy1 = transform.Find("SkeletonFriend+1");
+            skeletonfriendtrophy2 = transform.Find("SkeletonFriend+2");
+            graverobbertrophy = transform.Find("Graverobber");
+            graverobbertrophy1 = transform.Find("Graverobber-1");
+            redflowertrophy = transform.Find("RedFlower");
+            ghostlyvisagetrophy = transform.Find("GhostlyVisage");
+            peglegtrophy = transform.Find("PegLeg");
+            parrottrophy = transform.Find("Parrot");
+            freedomtrophy = transform.Find("Freedom");
+            freedomtrophy1 = transform.Find("Freedom+1");
+            poopdecktrophy = transform.Find("PoopDeck");
+            bootlickertrophy = transform.Find("Bootlicker");
+            guilttrophy = transform.Find("Guilt");
+            guilttrophy1 = transform.Find("Guilt+1"); 
             
-            trophy1 = transform.Find("1");
-            trophy2 = transform.Find("2");
-            trophy3 = transform.Find("3");
-            trophy4 = transform.Find("4");
-            trophy5 = transform.Find("5");
-            trophy6 = transform.Find("6");
-            trophy7 = transform.Find("7");
-            trophy8 = transform.Find("8");
-            trophy9 = transform.Find("9");
-            
-            GameManager.choices.CreateDependency("PirateFlag", trophy5.gameObject, 1, appearTrophy);
-            GameManager.choices.CreateDependency("MarkofDagon", trophy4.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("PirateFlag", pirateflagtropy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Turncoat", turncoattrophy.gameObject, 1, appearTrophy); 
+            GameManager.choices.CreateDependency("MarkofDagon", markofdagontrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("MarkofDagon+1", markofdagontrophy1.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("MarkofDagon+2", markofdagontrophy2.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("SkeletonFriend", skeletonfriendtrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("SkeletonFriend+1", skeletonfriendtrophy1.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("SkeletonFriend+2", skeletonfriendtrophy2.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Graverobber", graverobbertrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Graverobber-1", graverobbertrophy1.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("RedFlower", redflowertrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("GhostlyVisage", ghostlyvisagetrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("PegLeg", peglegtrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Parrot", parrottrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Freedom", freedomtrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Freedom+1", freedomtrophy1.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("PoopDeck", poopdecktrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Bootlicker", bootlickertrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Guilt", guilttrophy.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("Guilt+1", guilttrophy1.gameObject, 1, appearTrophy);
         }
 
         public void Update()
         {
             
-            
-            if (trophy1Flag)
+            if (pirateflagbool)
             {
-                
-                trophy1.gameObject.SetActive(true);
+                markofdagontrophy.gameObject.SetActive(true);
             }
             
-            if (trophy2Flag)
+            if (turncoatbool)
             {
-                trophy2.gameObject.SetActive(true);
+                turncoattrophy.gameObject.SetActive(true);
             }
             
-            if (trophy3Flag)
+            if (markofdagonbool)
             {
-                trophy3.gameObject.SetActive(true);
+                pirateflagtropy.gameObject.SetActive(true);
             }
-            
-            if (trophy4Flag)
+
+            if (markofdagonbool1)
             {
-                trophy4.gameObject.SetActive(true);
+                markofdagontrophy1.gameObject.SetActive(true);
             }
-            
-            if (trophy5Flag)
+
+            if (markofdagonbool2)
             {
-                trophy5.gameObject.SetActive(true);
+                markofdagontrophy2.gameObject.SetActive(true);
             }
-            
-            if (trophy6Flag)
+
+            if (skeletonfriendbool)
             {
-                trophy6.gameObject.SetActive(true);
+                skeletonfriendtrophy.gameObject.SetActive(true);
             }
-            
-            if (trophy7Flag)
+            if (skeletonfriendbool1)
             {
-                trophy7.gameObject.SetActive(true);
+                skeletonfriendtrophy1.gameObject.SetActive(true);
             }
-            
-            if (trophy8Flag)
+            if (skeletonfriendbool2)
             {
-                trophy8.gameObject.SetActive(true);
+                skeletonfriendtrophy2.gameObject.SetActive(true);
             }
-            
-            if (trophy9Flag)
+            if (graverobberbool)
             {
-                trophy9.gameObject.SetActive(true);
+                graverobbertrophy.gameObject.SetActive(true);
+            }
+
+            if (graverobberbool1)
+            {
+                graverobbertrophy1.gameObject.SetActive(true);
+            }
+
+            if (redflowerbool)
+            {
+                redflowertrophy.gameObject.SetActive(true);
+            }
+
+            if (ghostlyvisagebool)
+            {
+                ghostlyvisagetrophy.gameObject.SetActive(true);
+            }
+
+            if (peglegbool)
+            {
+                peglegtrophy.gameObject.SetActive(true);
+            }
+
+            if (parrotbool)
+            {
+                parrottrophy.gameObject.SetActive(true);
+            }
+
+            if (freedombool)
+            {
+                freedomtrophy.gameObject.SetActive(true);
+            }
+
+            if (freedombool1)
+            {
+                freedomtrophy1.gameObject.SetActive(true);
+            }
+
+            if (poopdeckbool)
+            {
+                poopdecktrophy.gameObject.SetActive(true);
+            }
+
+            if (bootlickerbool)
+            {
+                bootlickertrophy.gameObject.SetActive(true);
+            }
+
+            if (guiltbool)
+            {
+                guilttrophy.gameObject.SetActive(true);
+            }
+
+            if (guiltbool1)
+            {
+                guilttrophy1.gameObject.SetActive(true);
             }
             
             
         }
-
         public int appearTrophy(GameObject trophy)
         {   
             Debug.Log("appear trophy" + trophy);

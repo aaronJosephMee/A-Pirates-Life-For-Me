@@ -83,7 +83,8 @@ MonoBehaviour:
     - text: Refuse, fight the captain
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 4019c7aef93e7ae41b4202399c4d1b36, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:
