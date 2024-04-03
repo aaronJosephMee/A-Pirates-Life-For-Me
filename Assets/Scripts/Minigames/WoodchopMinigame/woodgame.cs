@@ -32,6 +32,8 @@ public class WoodMiniGame : MonoBehaviour
 
     public bool start = false;
 
+    public int misstimes;
+
     void Start()
     {
         WImage.enabled = false;
@@ -42,6 +44,8 @@ public class WoodMiniGame : MonoBehaviour
         chops = 0;
         SwingTime = Time.time + Random.Range(1.5f, 3.0f);
         howToPlayText.gameObject.SetActive(true);
+        WinText.gameObject.SetActive(false);
+        LoseText.gameObject.SetActive(false);
     }
 
     void Update()
@@ -63,6 +67,7 @@ public class WoodMiniGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z) && !start)
         {
             start = true;
+            howToPlayText.gameObject.SetActive(false);
         }
     }
 
@@ -105,7 +110,7 @@ public class WoodMiniGame : MonoBehaviour
                 chops = 0;
                 //StartCoroutine(PlayCoconutAnimation());
                 coconutAnimator.SetBool("IsFall", true);
-                OverworldMapManager.Instance.TransitionBackToMap();
+                StartCoroutine(endGame());
             } else { coconutAnimator.SetBool("IsFall", false); }
             input = false;
         }
@@ -129,6 +134,14 @@ public class WoodMiniGame : MonoBehaviour
             DImage.enabled = false;
         }
         input = false;
+    }
+
+    IEnumerator endGame()
+    {
+        start = false;
+        WinText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+        OverworldMapManager.Instance.TransitionBackToMap();
     }
 
     //IEnumerator PlayCoconutAnimation()
