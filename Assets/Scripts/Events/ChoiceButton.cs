@@ -65,8 +65,7 @@ public class ChoiceButton : MonoBehaviour
             else
             {
                 GameManager.instance.StorePopUp(popUpPrefab, SceneName.OverworldMap, toDisplay.followUpText);
-                if (toDisplay.nextScene == SceneName.CombatNight || toDisplay.nextScene == SceneName.CombatRustys ||
-                    toDisplay.nextScene == SceneName.CombatIsleOfTorrent)
+                if (toDisplay.nextScene.IsSceneCombat())
                 {
                     GameManager.instance.SetCombatIndex(toDisplay.combatIndex);
                 }

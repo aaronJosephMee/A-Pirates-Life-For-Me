@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skeletons Part I
   m_EditorClassIdentifier: 
   title: Skeletons - Part I
-  scene: 16
+  scene: 17
   sceneIdx: 1
   flavorText: 'As you walk along a beach, you hear an odd sound, almost like dragging.
     You get closer to the source of the sound and see an animated skeleton struggling

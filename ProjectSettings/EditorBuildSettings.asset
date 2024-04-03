@@ -47,7 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NightScene.unity
     guid: 82b94b7853c05fa47a65f231fbc0d03f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CombatScenes/COMBAT_NightScene.unity
     guid: 780ce8591070a19428cca0039b4d2e53
   - enabled: 1
@@ -62,4 +62,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatScenes/COMBAT_Rustys.unity
     guid: 625847e4feea79444b1a99adc8f492b1
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/NEW_COMBAT_NIGHT.unity
+    guid: d510c21389397cc45a3c795620e9a879
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/COMBAT_JUNGLE.unity
+    guid: 643cf78df94b34545be10acbbc286016
   m_configObjects: {}

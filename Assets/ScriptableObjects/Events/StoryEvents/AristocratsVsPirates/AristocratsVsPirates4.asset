@@ -32,7 +32,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 12
+      nextScene: 15
+      combatIndex: 1
       followUpText: Gain Bootlicker relic
       nextChoiceIndices:
         Value: 
@@ -49,7 +50,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 12
+      nextScene: 15
+      combatIndex: 2
       followUpText: Gain Turncoat relic
       nextChoiceIndices:
         Value: 
@@ -67,6 +69,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: "\u201CHow fortunate that we meet again. You have proven yourself
         worthy, so I have a job for you. That camp, over there. It is filled with
         dangerous pirates who keep stealing my rightfully-earned wealth. Wipe them

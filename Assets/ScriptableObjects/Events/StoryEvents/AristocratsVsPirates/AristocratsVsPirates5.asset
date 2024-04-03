@@ -34,6 +34,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: "\u201CAhoy there, me hearty! Ye\u2019ve proven yeself to be
         a real mate in tough times. See that mansion over there? Entitled scoundrels,
         the lot of them. Born into wealth, yet they continue to take and take from
@@ -54,6 +55,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: "They\u2019ve been needing to walk the plank for a long time
         now. What do ye say, will you feed em to the fishes fer me?\u201D"
       nextChoiceIndices:
@@ -71,7 +73,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 12
+      nextScene: 13
+      combatIndex: 3
       followUpText: Gain 1000 gold
       nextChoiceIndices:
         Value: 
@@ -88,7 +91,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 12
+      nextScene: 15
+      combatIndex: 4
       followUpText: Gain Peg Leg relic
       nextChoiceIndices:
         Value: 
