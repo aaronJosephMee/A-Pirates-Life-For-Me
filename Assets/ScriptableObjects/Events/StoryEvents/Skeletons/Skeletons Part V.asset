@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Skeletons Part V
   m_EditorClassIdentifier: 
   title: Skeletons - Part V
-  scene: 0
-  sceneIdx: 0
+  scene: 16
+  sceneIdx: 5
   flavorText: As you approach a local village, you hear an increasing amount of racket.
     You see a familiar group of skeletons facing a group of humans, ready to fight.
   isMinigame: 0
-  initialChoices: 03000000
+  initialChoices: 02000000
   choices:
     Value:
     - text: Destroy the skeleton horde
@@ -33,34 +33,13 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
     - text: Refuse to help, but loot everyone while they're distracted
-      isTerminal: 0
-      relicsToAdd:
-        Value: []
-      relicsToLose:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: You awkwardly shrug your shoulders and shake your head, telling
-        the civilians that this is not your fight. The civilians plead once more,
-        but you walk away without looking back. As you disappear from view, you hear
-        the civilians charge at the skeletons. In the ensuing disarray, you move
-        from home to home, then finally to the ghost ship, looting as much as you
-        can. Gain 600 gold.
-      nextChoiceIndices:
-        Value: 02000000
-      changeVisuals: 0
-      changeIndex: 0
-    - text: Continue
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -72,9 +51,15 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      combatIndex: 0
+      followUpText: You awkwardly shrug your shoulders and shake your head, telling
+        the civilians that this is not your fight. The civilians plead once more,
+        but you walk away without looking back. As you disappear from view, you hear
+        the civilians charge at the skeletons. In the ensuing disarray, you move
+        from home to home, then finally to the ghost ship, looting as much as you
+        can. Gain 600 gold.
       nextChoiceIndices:
-        Value: 
+        Value: 02000000
       changeVisuals: 0
       changeIndex: 0
     - text: Continue
@@ -89,6 +74,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "The civilians plead for your help, \u201CThe dead have risen!
         Abominations, all of them! Please, help us destroy these awful monsters!\"
         What do you do?"
