@@ -36,6 +36,7 @@ MonoBehaviour:
         health: 0
         gold: 300
       nextScene: 0
+      combatIndex: 2
       followUpText: "The aristocrats easily dispatch the pirates with your help.
         You are handsomly rewarded for your efforts.\n \nGained 300 gold!"
       nextChoiceIndices:
@@ -55,6 +56,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'The pirates easily dispatch the aristocrats with your help.
         The pirate captain gives you a strange artifact for your efforts.
 

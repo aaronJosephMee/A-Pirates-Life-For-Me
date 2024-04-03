@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.IO;
 using DefaultNamespace.OverworldMap;
 using MyBox;
@@ -26,6 +27,7 @@ public class Choice
     [ConditionalField(nameof(isTerminal))] public EventCollection eventsToAdd;
     [ConditionalField(nameof(isTerminal))] public Stats stats;
     [ConditionalField(nameof(isTerminal))] public SceneName nextScene;
+    [ConditionalField(nameof(isTerminal))] public int combatIndex;
 
     [TextArea(7,15)]
     public String followUpText;

@@ -315,4 +315,9 @@ public class OverworldMapManager : MonoBehaviour
     {
         choiceNode.ReAddButton(GenerateChoiceButton(), _choiceSprites[choiceNode.ChoiceType], _choiceDescriptions[choiceNode.ChoiceType], callbacks);
     }
+
+    public int GetChoiceDepth()
+    {
+        return _choiceGenerator.GetChoiceDepth();
+    }
 }
