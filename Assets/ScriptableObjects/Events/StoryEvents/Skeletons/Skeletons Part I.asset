@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Skeletons Part I
   m_EditorClassIdentifier: 
   title: Skeletons - Part I
-  scene: 0
-  sceneIdx: 0
+  scene: 16
+  sceneIdx: 1
   flavorText: 'As you walk along a beach, you hear an odd sound, almost like dragging.
     You get closer to the source of the sound and see an animated skeleton struggling
     to push a treasure chest along the shore, possibly to a ship? '
   isMinigame: 0
-  initialChoices: 03000000
+  initialChoices: 02000000
   choices:
     Value:
     - text: Show some pity and help the skeleton
@@ -29,11 +29,13 @@ MonoBehaviour:
       relicsToLose:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 4d1c426e63654c74e90a0ada3ca412f4, type: 2}
       stats:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "You smile at the skeleton and ask if it needs some help. You
         toss your sword and pistol to the ground to show that you are friendly. The
         skeleton is elated and gratefully accepts. \n\nGain Skeleton Friend relic"
@@ -48,11 +50,13 @@ MonoBehaviour:
       relicsToLose:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 25d7072021dc5b44999fd1759bbe129d, type: 2}
       stats:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You easily cut down the already exhausted skeleton. You think
         you see a tear drip from one of its eye sockets.
 
@@ -74,6 +78,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "The skeleton notices you, but does not flee. Maybe it\u2019s
         exhausted. Or maybe the treasure is too important to risk losing. What do
         you do?"
