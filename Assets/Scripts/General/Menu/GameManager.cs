@@ -28,11 +28,15 @@ public class GameManager : MonoBehaviour
     private IEventToggleable currentEventToggleable;
     private int combatIndex = 0;
     
+    
+    
+    
     // Start is called before the first frame update
     void Awake(){
         if (instance == null)
         {
             instance = this;
+            choices = new Choices(); 
             DontDestroyOnLoad(this);
         }
         else if (instance != this)
@@ -45,6 +49,9 @@ public class GameManager : MonoBehaviour
     {
         Canvas currentCanvas = GetComponentInParent<Canvas>();
         canvas = currentCanvas;
+        
+        choices.AddFlag("PirateFlag", 0);
+        choices.AddFlag("MarkofDagon", 0);
     }
 
     public void LoadScene(SceneName scene, int cameraIndex=0)

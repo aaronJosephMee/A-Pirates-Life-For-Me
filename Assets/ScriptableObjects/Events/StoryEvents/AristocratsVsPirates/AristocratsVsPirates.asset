@@ -46,7 +46,8 @@ MonoBehaviour:
     - text: Side with the pirates
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 975acda4baf0db741ad8891aeca9a6a2, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:

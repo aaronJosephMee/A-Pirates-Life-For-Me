@@ -23,16 +23,13 @@ public class HubManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             page1.SetActive(true);
         }
-        else
-        {
-            print("why wont it go in here");
-        }
+       
 
     }
 
     private void Update()
     {
-        print(seen);
+        
         
         if (hubTut == null)
         {

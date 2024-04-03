@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace DefaultNamespace.Hub
 {
@@ -27,8 +28,10 @@ namespace DefaultNamespace.Hub
         private Transform trophy9;
         
         
-        public void Start()
+        public void Awake()
         {
+            
+            
             trophy1 = transform.Find("1");
             trophy2 = transform.Find("2");
             trophy3 = transform.Find("3");
@@ -38,12 +41,18 @@ namespace DefaultNamespace.Hub
             trophy7 = transform.Find("7");
             trophy8 = transform.Find("8");
             trophy9 = transform.Find("9");
+            
+            GameManager.choices.CreateDependency("PirateFlag", trophy5.gameObject, 1, appearTrophy);
+            GameManager.choices.CreateDependency("MarkofDagon", trophy4.gameObject, 1, appearTrophy);
         }
 
         public void Update()
         {
+            
+            
             if (trophy1Flag)
             {
+                
                 trophy1.gameObject.SetActive(true);
             }
             
@@ -87,6 +96,14 @@ namespace DefaultNamespace.Hub
                 trophy9.gameObject.SetActive(true);
             }
             
+            
+        }
+
+        public int appearTrophy(GameObject trophy)
+        {   
+            Debug.Log("appear trophy" + trophy);
+            trophy.SetActive(true);
+            return 0; 
         }
     }
     

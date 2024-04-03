@@ -25,7 +25,8 @@ MonoBehaviour:
     - text: Add more blood
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 5510cc08322b23345bd1aa4177a761a9, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:
