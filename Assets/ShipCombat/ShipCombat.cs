@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class ShipCombat : MonoBehaviour
 {
@@ -30,9 +30,13 @@ public class ShipCombat : MonoBehaviour
 
     public float Health = 100.0f;
 
+    public float MaxHealth = 100.0f;
+
     public bool PlayerAlive = true;
 
-    public TextMeshProUGUI losingText;
+    public GameObject losingText;
+
+    [SerializeField] Slider healthBar;
 
     private void Start()
     {
@@ -42,6 +46,7 @@ public class ShipCombat : MonoBehaviour
 
     void Update()
     {
+        healthBar.value = Health / MaxHealth;
         if (!SeaGameManager.instance.stopCombat)
         {
             ShipMovement();

@@ -58,7 +58,7 @@ public class EnemyShip : MonoBehaviour
     private void Chase()
     {
         transform.LookAt(player.position);
-        transform.position += transform.forward * 2.0f * Time.deltaTime;
+        transform.position += transform.forward * 2.5f * Time.deltaTime;
     }
 
     private void Attack()

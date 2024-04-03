@@ -57,7 +57,19 @@ namespace DefaultNamespace.OverworldMap
                         choiceNodes.Add(new ChoiceNode(choiceType, _currentEvent.scene));
                         break;
                     case ChoiceType.Combat:
-                        choiceNodes.Add(new ChoiceNode(choiceType, SceneName.CombatNight));
+                        if (_currentChoiceDepth < 5)
+                        {
+                            choiceNodes.Add(new ChoiceNode(choiceType, SceneName.CombatRustys));
+                        }
+                        else if (_currentChoiceDepth < 10)
+                        {
+                            choiceNodes.Add(new ChoiceNode(choiceType, SceneName.CombatNight));
+                        }
+                        else
+                        {
+                            choiceNodes.Add(new ChoiceNode(choiceType, SceneName.CombatIsleOfTorrent));
+                        }
+                        
                         break;
                     default:
                         choiceNodes.Add(new ChoiceNode(choiceType, SceneName.ButtonMashing));
