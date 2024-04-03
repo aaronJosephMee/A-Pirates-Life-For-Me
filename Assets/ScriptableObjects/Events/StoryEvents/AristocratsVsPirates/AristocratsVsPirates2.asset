@@ -36,6 +36,7 @@ MonoBehaviour:
         health: 0
         gold: -300
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You reach for your coin pouch and awkwardly hand over a pile
         of coins to the pirates. "Yarrr, this''ll do fer now. I''ve got my eye on
         you...".
@@ -58,7 +59,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 13
+      nextScene: 12
+      combatIndex: 0
       followUpText: Gain 300 gold
       nextChoiceIndices:
         Value: 

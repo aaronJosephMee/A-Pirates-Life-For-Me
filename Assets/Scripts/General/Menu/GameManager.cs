@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     private SceneName storedPopUpNextScene;
     private String storedPopUpFollowUpText;
     private IEventToggleable currentEventToggleable;
+    private int combatIndex = 0;
     
     // Start is called before the first frame update
     void Awake(){
@@ -151,5 +152,15 @@ public class GameManager : MonoBehaviour
     public void ChangeVisuals(int index)
     {
         currentEventToggleable.ChangeVisuals(index);
+    }
+
+    public void SetCombatIndex(int index)
+    {
+        combatIndex = index;
+    }
+
+    public int GetCombatIndex()
+    {
+        return combatIndex;
     }
 }

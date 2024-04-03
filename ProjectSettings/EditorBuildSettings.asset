@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/CombatScenes/COMBAT(aris)_IsleofTorrent.unity
     guid: c06e4f070f2743940abe2949f6ace27b
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/COMBAT_Rustys.unity
+    guid: 625847e4feea79444b1a99adc8f492b1
   m_configObjects: {}

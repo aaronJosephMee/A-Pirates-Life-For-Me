@@ -58,7 +58,6 @@ public class ChoiceButton : MonoBehaviour
                 ItemManager.instance.SetHealth(health.curHealth, health.maxHealth);
             }
             
-            // TODO: Add logic to reward player with stats and relics
             if (toDisplay.nextScene == SceneName.OverworldMap)
             {
                 GameManager.instance.DisplayPopUp(popUpPrefab, SceneName.OverworldMap, toDisplay.followUpText);
@@ -66,6 +65,11 @@ public class ChoiceButton : MonoBehaviour
             else
             {
                 GameManager.instance.StorePopUp(popUpPrefab, SceneName.OverworldMap, toDisplay.followUpText);
+                if (toDisplay.nextScene == SceneName.CombatNight || toDisplay.nextScene == SceneName.CombatRustys ||
+                    toDisplay.nextScene == SceneName.CombatIsleOfTorrent)
+                {
+                    GameManager.instance.SetCombatIndex(toDisplay.combatIndex);
+                }
                 GameManager.instance.LoadScene(toDisplay.nextScene);
             }
             Destroy(this.transform.parent.gameObject);
