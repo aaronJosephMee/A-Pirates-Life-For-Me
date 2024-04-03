@@ -45,7 +45,8 @@ MonoBehaviour:
     - text: Flee
       isTerminal: 0
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a6a9506f99dfac740bff5002e7a296c2, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:

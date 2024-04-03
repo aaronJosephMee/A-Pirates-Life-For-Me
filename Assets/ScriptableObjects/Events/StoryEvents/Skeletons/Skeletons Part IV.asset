@@ -24,7 +24,8 @@ MonoBehaviour:
     - text: Help the skeletons fight the civilians
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a1396e2936b3a01439da3b7b023956c3, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:

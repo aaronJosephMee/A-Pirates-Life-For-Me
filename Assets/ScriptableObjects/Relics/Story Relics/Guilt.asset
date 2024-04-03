@@ -55,7 +55,7 @@ MonoBehaviour:
     dodgeChance: 0
     healthBoost: 0
   price: 0
-  isStoryRelic: 0
+  isStoryRelic: 1
   activator: 0
   ActivatorStats:
     gunDamage: 0

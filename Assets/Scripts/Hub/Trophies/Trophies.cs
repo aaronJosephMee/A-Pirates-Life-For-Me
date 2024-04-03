@@ -8,7 +8,7 @@ public class Trophies : MonoBehaviour
     [SerializeField] private GameObject trophyVisibility;
     void Start()
     {
-        trophyVisibility.SetActive(false);
+        //trophyVisibility.SetActive(false);
     }
 
     
