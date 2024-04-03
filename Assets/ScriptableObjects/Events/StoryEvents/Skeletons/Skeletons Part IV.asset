@@ -18,7 +18,7 @@ MonoBehaviour:
   flavorText: As you approach a local village, you hear an increasing amount of racket.
     You see a familiar group of skeletons facing a group of humans, ready to fight.
   isMinigame: 0
-  initialChoices: 03000000
+  initialChoices: 02000000
   choices:
     Value:
     - text: Help the skeletons fight the civilians
@@ -33,7 +33,16 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      combatIndex: 0
+      followUpText: 'As the last civilian is cut down, you see several of the skeletons
+        begin to pull apart the bodies, down to the bone. I guess good skeletons
+        are hard to come by when all you can do is graverob.
+
+
+        Gained Skeleton
+        Friend +2!
+
+        Gained Graverobber -1'
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
@@ -50,29 +59,13 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "You approach the civilians, with your hands up to show that
         you are peaceful. You negotiate with them, explaining that the skeletons
         just wish to pass through. No harm will be done. The civilians demand some
-        kind of incentive. \n\nLose 300 gold.\nSkeleton Friend improved!"
+        kind of incentive. \n\nLose 300 gold.\nGained Skeleton Friend +2"
       nextChoiceIndices:
         Value: 02000000
-      changeVisuals: 0
-      changeIndex: 0
-    - text: Continue
-      isTerminal: 1
-      relicsToAdd:
-        Value: []
-      relicsToLose:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
       changeVisuals: 0
       changeIndex: 0
     - text: Continue
@@ -87,6 +80,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "The skeletons plead for your help, \u201CWe were just passing
         by, and they came after us! All they ever do is attack us. Please, help us
         get rid of them!\u201D What do you do?"

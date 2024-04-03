@@ -34,12 +34,13 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: Freedom relic improved
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Leave them to deal with this on their own
+    - text: Leave them
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -51,6 +52,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You shake your head and frown slightly, as you tell the civilians
         that you cannot get involved. They plead, as you turn and head back to your
         ship. The man you rescued from the cultist prison shouts at you, "Coward!"
@@ -74,6 +76,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: In fact, you recognize the prisoner you freed among the crowd.
         Both groups are on the verge of fighting and the civilians ask for your help.
         What do you do?

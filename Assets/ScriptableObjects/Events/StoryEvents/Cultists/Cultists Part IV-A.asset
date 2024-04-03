@@ -34,12 +34,13 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: Mark of Dagon improved +2
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Bribe the civilians to leave the shrine alone
+    - text: Bribe the civilians
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -51,6 +52,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You approach the civilians and manage to talk them down. They
         will leave the shrine alone, but at a price. You cover the cost for the cultists.
 
@@ -73,6 +75,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: Both groups are on the verge of fighting. The cultists ask you
         to help them. What do you do?
       nextChoiceIndices:

@@ -21,7 +21,7 @@ MonoBehaviour:
   initialChoices: 02000000
   choices:
     Value:
-    - text: Comply (kill the pirates and destroy their base)
+    - text: Comply, kill the pirates
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -33,12 +33,13 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: Gain Bootlicker relic
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Refuse (kill the governor)
+    - text: Refuse, kill the governor
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -50,6 +51,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: Gain Turncoat relic
       nextChoiceIndices:
         Value: 
@@ -67,6 +69,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: "\u201CHow fortunate that we meet again. You have proven yourself
         worthy, so I have a job for you. That camp, over there. It is filled with
         dangerous pirates who keep stealing my rightfully-earned wealth. Wipe them

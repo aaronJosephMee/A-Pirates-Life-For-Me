@@ -34,13 +34,18 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      combatIndex: 0
+      followUpText: 'You cut down the last of the skeletons and feel invigorated.
+
+
+        Gain
+        Ghostly Visage relic'
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
     - text: Bribe the skeletons
-      isTerminal: 0
+      isTerminal: 1
       relicsToAdd:
         Value: []
       relicsToLose:
@@ -51,6 +56,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You hold your hands up in surrender and offer the skeletons
         a sizeable amount of gold. They look at you warily, as one of them reaches
         over to take it. "We''ve got our eye sockets on you..." it says.
@@ -63,23 +69,6 @@ MonoBehaviour:
       changeVisuals: 0
       changeIndex: 0
     - text: Continue
-      isTerminal: 1
-      relicsToAdd:
-        Value: []
-      relicsToLose:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
-      changeVisuals: 0
-      changeIndex: 0
-    - text: Continue
       isTerminal: 0
       relicsToAdd:
         Value: []
@@ -91,6 +80,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "\u201CHey! You useless sack of flesh! You thought you\u2019d
         get away with hurting our friend and taking our treasure, huh? Prepare to
         suffer!\u201D What do you do?"

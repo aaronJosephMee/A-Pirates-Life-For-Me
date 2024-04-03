@@ -47,7 +47,7 @@ MonoBehaviour:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Stand your ground and fight
+    - text: Fight
       isTerminal: 1
       relicsToAdd:
         Value: []

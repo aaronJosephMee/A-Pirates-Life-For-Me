@@ -19,7 +19,7 @@ MonoBehaviour:
     similar faces. The skeleton you helped earlier is standing by the docks with
     its crewmates, waving you over.
   isMinigame: 0
-  initialChoices: 04000000
+  initialChoices: 03000000
   choices:
     Value:
     - text: Help them and dig out their crewmate
@@ -34,15 +34,16 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You enter the graveyard, peering over your shoulders to make
         sure no one (human) is watching. You dig out the skeleton and watch as it
         slowly comes to life. '
       nextChoiceIndices:
-        Value: 00000000
+        Value: 02000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Reject their request. Who knows who could be watching?
-      isTerminal: 0
+    - text: Reject their request
+      isTerminal: 1
       relicsToAdd:
         Value: []
       relicsToLose:
@@ -53,6 +54,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "You awkwardly shake your head and avert your eyes from theirs.
         Well, their eye sockets. As you walk away, you hear them mumble in a disappointed
         tone. \n\nLose Skeleton Friend"
@@ -72,23 +74,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
-      nextChoiceIndices:
-        Value: 
-      changeVisuals: 0
-      changeIndex: 0
-    - text: Continue
-      isTerminal: 0
-      relicsToAdd:
-        Value: []
-      relicsToLose:
-        Value: []
-      eventsToAdd:
-        Value: []
-      stats:
-        health: 0
-        gold: 0
-      nextScene: 0
+      combatIndex: 0
       followUpText: "The skeleton thanks you profusely and walks over to where his
         crew is waiting. \n\nSkeleton Friend improved!\nGain Graverobber"
       nextChoiceIndices:
@@ -107,11 +93,12 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "\u201CAh, friend! Fleshy friend! Please, we humbly request your
         help once more.\u201D The skeleton explains that they need to recover, or
         rather, uncover the body of their crewmate, who is buried in a local cemetery."
       nextChoiceIndices:
-        Value: 05000000
+        Value: 04000000
       changeVisuals: 0
       changeIndex: 0
     - text: Continue
@@ -126,6 +113,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "Disturbing a grave carries a heavy stigma, but perhaps it\u2019s
         worth the risk. What do you do?"
       nextChoiceIndices:

@@ -34,6 +34,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: "\u201CAhoy there, me hearty! Ye\u2019ve proven yeself to be
         a real mate in tough times. See that mansion over there? Entitled scoundrels,
         the lot of them. Born into wealth, yet they continue to take and take from
@@ -54,13 +55,14 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: "They\u2019ve been needing to walk the plank for a long time
         now. What do ye say, will you feed em to the fishes fer me?\u201D"
       nextChoiceIndices:
         Value: 0200000003000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Comply (attack and kill the aristocrats)
+    - text: Comply, kill the aristocrats
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -72,12 +74,13 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: Gain 1000 gold
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Refuse (fight the captain)
+    - text: Refuse, fight the captain
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -89,6 +92,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 12
+      combatIndex: 0
       followUpText: Gain Peg Leg relic
       nextChoiceIndices:
         Value: 

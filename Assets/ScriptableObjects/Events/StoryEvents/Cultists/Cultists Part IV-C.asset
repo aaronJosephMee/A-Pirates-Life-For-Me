@@ -34,12 +34,13 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: Guilt relic removed
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Leave them to resolve this on their own
+    - text: Leave them
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -51,6 +52,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: "You shake your head and frown slightly, as you tell the civilians
         that you cannot get involved. They plead, as you turn and head back to your
         ship. \n\nGuilt relic increased +1"
@@ -70,6 +72,7 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
+      combatIndex: 0
       followUpText: Many local civilians are threatening to tear the shrine down
         and both groups are on the verge of fighting. The civilians ask you to help
         them. What do you do?
