@@ -15,19 +15,18 @@ MonoBehaviour:
   title: Skeletons - Part III
   scene: 0
   sceneIdx: 0
-  flavorText: "After a long evening at the pub, you head back to your ship to rest.
+  flavorText: 'After a long evening at the pub, you head back to your ship to rest.
     As you get closer to the docks, you see an eerie green glow. A large ghostly
-    ship is docked next to yours and a group of animated skeletons approaches you.
-    \u201CHey! You useless sack of flesh! You thought you\u2019d get away with hurting
-    our friend and taking our treasure, huh? Prepare to suffer!\u201D What do you
-    do?"
+    ship is docked next to yours and a group of animated skeletons approaches you. '
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 03000000
   choices:
     Value:
     - text: Attack the skeletons
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -38,9 +37,13 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Bribe the skeletons
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -57,9 +60,13 @@ MonoBehaviour:
         300 gold'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -70,3 +77,24 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "\u201CHey! You useless sack of flesh! You thought you\u2019d
+        get away with hurting our friend and taking our treasure, huh? Prepare to
+        suffer!\u201D What do you do?"
+      nextChoiceIndices:
+        Value: 0000000001000000
+      changeVisuals: 0
+      changeIndex: 0

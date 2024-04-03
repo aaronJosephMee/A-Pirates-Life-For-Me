@@ -22,7 +22,7 @@ MonoBehaviour:
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Add some of your blood, losing some health.
+    - text: Add some of your blood, losing some health
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -42,7 +42,7 @@ MonoBehaviour:
         Value: 0000000000000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Destroy the monolith.
+    - text: Destroy the monolith
       isTerminal: 1
       relicsToAdd:
         Value: []

@@ -23,7 +23,7 @@ MonoBehaviour:
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Bribe them.
+    - text: Bribe them
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -46,7 +46,7 @@ MonoBehaviour:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Eat the rich (fight).
+    - text: Eat the rich (fight)
       isTerminal: 1
       relicsToAdd:
         Value: []

@@ -17,10 +17,9 @@ MonoBehaviour:
   sceneIdx: 3
   flavorText: There is an uproar at the public square of a local village. Devotees
     of the Cult of Dagon have installed a shrine, claiming religious freedom. Many
-    local civilians are upset and are threatening to tear it down. Both groups are
-    on the verge of fighting. The cultists ask you to help them. What do you do?
+    local civilians are upset and are threatening to tear it down.
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 02000000
   choices:
     Value:
     - text: Fight alongside the cultists
@@ -60,5 +59,23 @@ MonoBehaviour:
         400 Gold. Mark of Dagon relic improved +1'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: Both groups are on the verge of fighting. The cultists ask you
+        to help them. What do you do?
+      nextChoiceIndices:
+        Value: 0000000001000000
       changeVisuals: 0
       changeIndex: 0

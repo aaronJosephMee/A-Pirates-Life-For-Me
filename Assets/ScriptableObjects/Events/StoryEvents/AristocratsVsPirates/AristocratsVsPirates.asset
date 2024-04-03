@@ -23,7 +23,7 @@ MonoBehaviour:
   initialChoices: 0000000001000000
   choices:
     Value:
-    - text: Side with the aristocrats.
+    - text: Side with the aristocrats
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -43,7 +43,7 @@ MonoBehaviour:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Side with the pirates.
+    - text: Side with the pirates
       isTerminal: 1
       relicsToAdd:
         Value: []

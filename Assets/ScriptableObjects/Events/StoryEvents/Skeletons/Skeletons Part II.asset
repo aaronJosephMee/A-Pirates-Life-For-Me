@@ -15,20 +15,18 @@ MonoBehaviour:
   title: Skeletons - Part II
   scene: 0
   sceneIdx: 0
-  flavorText: "While heading back to your ship, you see a familiar face. And several,
+  flavorText: While heading back to your ship, you see a familiar face. And several,
     similar faces. The skeleton you helped earlier is standing by the docks with
-    its crewmates, waving you over. \u201CAh, friend! Fleshy friend! Please, we humbly
-    request your help once more.\u201D The skeleton explains that they need to recover,
-    or rather, uncover the body of their crewmate, who is buried in a local cemetery.
-    Disturbing a grave carries a heavy stigma, but perhaps it\u2019s worth the risk.
-    What do you do?"
+    its crewmates, waving you over.
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 04000000
   choices:
     Value:
     - text: Help them and dig out their crewmate
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -41,9 +39,13 @@ MonoBehaviour:
         slowly comes to life. '
       nextChoiceIndices:
         Value: 00000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Reject their request. Who knows who could be watching?
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -56,9 +58,13 @@ MonoBehaviour:
         tone. \n\nLose Skeleton Friend"
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -69,9 +75,13 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -83,3 +93,42 @@ MonoBehaviour:
         crew is waiting. \n\nSkeleton Friend improved!\nGain Graverobber"
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "\u201CAh, friend! Fleshy friend! Please, we humbly request your
+        help once more.\u201D The skeleton explains that they need to recover, or
+        rather, uncover the body of their crewmate, who is buried in a local cemetery."
+      nextChoiceIndices:
+        Value: 05000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "Disturbing a grave carries a heavy stigma, but perhaps it\u2019s
+        worth the risk. What do you do?"
+      nextChoiceIndices:
+        Value: 0000000001000000
+      changeVisuals: 0
+      changeIndex: 0

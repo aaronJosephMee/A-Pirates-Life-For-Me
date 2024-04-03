@@ -19,7 +19,7 @@ MonoBehaviour:
     Suddenly, a hooded figure appears from behind a tree. \u201CWe\u2019ve been watching
     you,\u201D he says. "
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 00000000
   choices:
     Value:
     - text: Continue
@@ -42,7 +42,7 @@ MonoBehaviour:
         Value: 0100000002000000
       changeVisuals: 0
       changeIndex: 0
-    - text: 'No, my offering was a mistake (walk away). '
+    - text: No, my offering was a mistake (walk away)
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -64,7 +64,7 @@ MonoBehaviour:
         Value: 02000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Tell me more.
+    - text: Tell me more
       isTerminal: 0
       relicsToAdd:
         Value: []
@@ -83,7 +83,7 @@ MonoBehaviour:
         Value: 08000000
       changeVisuals: 0
       changeIndex: 0
-    - text: I will do as you ask.
+    - text: I will do as you ask
       isTerminal: 0
       relicsToAdd:
         Value: []
