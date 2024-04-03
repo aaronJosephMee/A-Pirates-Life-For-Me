@@ -39,6 +39,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] Color criticalHit;
     [SerializeField] Color fireHit;
     [SerializeField] Color poisonHit;
+    [SerializeField] Color freezeHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -168,6 +170,9 @@ public class EnemyHealth : MonoBehaviour
         else if (type == "crit"){
             go.GetComponent<TextMeshPro>().color = criticalHit;
         }
+        else if (type == "freeze"){
+            go.GetComponent<TextMeshPro>().color = freezeHit;
+        }
         else{
             go.GetComponent<TextMeshPro>().color = normalHit;
         }
@@ -240,6 +245,7 @@ public class EnemyHealth : MonoBehaviour
         navMeshAgent.speed = moveSpeed;
         while (duration > 0){
             yield return new WaitForSeconds(1f);
+            this.DecreaseHealth(1f, "freeze", false);
             duration--;
         }
         if (isGun){

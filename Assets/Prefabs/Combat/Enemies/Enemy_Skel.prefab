@@ -1561,6 +1561,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6795447f564e2eb4a8889c11514fcd2f, type: 3}
   moveSpeed: 3
   isIgnitable: 0
+  normalHit: {r: 1, g: 0, b: 0, a: 1}
+  criticalHit: {r: 1, g: 0.95696914, b: 0, a: 1}
+  fireHit: {r: 1, g: 0.5902525, b: 0, a: 1}
+  poisonHit: {r: 0.113589525, g: 1, b: 0, a: 1}
+  freezeHit: {r: 0, g: 0.31438303, b: 1, a: 1}
 --- !u!114 &1070410660872746967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,7 +1665,7 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 5988966618708936600}
   playerScript: {fileID: 0}
-  attackRange: 2.3
+  attackRange: 1.1
   withinAttackRange: 0
 --- !u!114 &1675997254555911809
 MonoBehaviour:

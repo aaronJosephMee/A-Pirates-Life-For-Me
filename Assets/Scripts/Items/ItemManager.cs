@@ -8,7 +8,7 @@ public struct Health{
 }
 public class ItemManager : MonoBehaviour
 {
-    public int MaxRelics = 21;
+    public int MaxRelics = 10;
     public static ItemManager instance;
     public PlayerItems playerItems = new PlayerItems();
     public ItemPool itemPool;
@@ -166,6 +166,7 @@ public class ItemManager : MonoBehaviour
         IS1.critMultiplier += IS2.critMultiplier;
         IS1.richochet += IS2.richochet;
         IS1.dodgeChance += IS2.dodgeChance;
+        IS1.healthBoost += IS2.healthBoost;
         return IS1;
     }
     public ItemStats SubtractStats(ItemStats IS1, ItemStats IS2){
@@ -182,6 +183,7 @@ public class ItemManager : MonoBehaviour
         IS1.critMultiplier -= IS2.critMultiplier;
         IS1.richochet -= IS2.richochet;
         IS1.dodgeChance -= IS2.dodgeChance;
+        IS1.healthBoost -= IS2.healthBoost;
         return IS1;
     }
     public ItemStats GetItemStats(Item item){

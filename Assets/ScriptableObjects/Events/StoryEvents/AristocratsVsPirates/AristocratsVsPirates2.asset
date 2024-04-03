@@ -25,7 +25,9 @@ MonoBehaviour:
     Value:
     - text: Bribe the pirates.
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -34,14 +36,21 @@ MonoBehaviour:
         health: 0
         gold: -300
       nextScene: 0
-      followUpText: You reach for your coin pouch and awkwardly hand over a pile
-        of coins to the pirates. "Yarrr, this'll do fer now. I've got my eye on you...".
-        [Lose 300 gold].
+      followUpText: 'You reach for your coin pouch and awkwardly hand over a pile
+        of coins to the pirates. "Yarrr, this''ll do fer now. I''ve got my eye on
+        you...".
+
+
+        Lost 300 gold'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Stand your ground and fight.
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value:
@@ -49,7 +58,9 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 12
-      followUpText: '[INSERT TEXT HERE]'
+      nextScene: 13
+      followUpText: Gain 300 gold
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0

@@ -26,7 +26,9 @@ MonoBehaviour:
     Value:
     - text: Fight alongside the civilians
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -34,14 +36,16 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 
+      followUpText: Freedom relic improved
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
       changeIndex: 0
     - text: Leave them to deal with this on their own
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -54,8 +58,8 @@ MonoBehaviour:
         ship. The man you rescued from the cultist prison shouts at you, "Coward!"
 
 
-        Lost
-        Freedom'
+        Lose
+        Freedom relic'
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0

@@ -33,6 +33,7 @@ public struct ItemStats{
     public float critMultiplier;
     public int richochet;
     public float dodgeChance;
+    public float healthBoost;
 }
 public class ItemPool
 {
