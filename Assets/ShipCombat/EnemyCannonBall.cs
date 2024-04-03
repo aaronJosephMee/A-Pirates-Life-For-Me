@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCannonBall : MonoBehaviour
 {
-    public float damage = 10.0f;
+    public float damage = 25.0f;
     public GameObject impact;
     public AudioSource cannonAudio;
     public AudioClip impactSFX;
