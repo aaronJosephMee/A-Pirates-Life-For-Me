@@ -25,7 +25,8 @@ MonoBehaviour:
     - text: Show some pity and help the skeleton
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 1a67a94bb5ba9f4479500eb92093c841, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:

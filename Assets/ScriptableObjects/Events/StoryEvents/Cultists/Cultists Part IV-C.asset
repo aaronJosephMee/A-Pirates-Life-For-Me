@@ -27,7 +27,8 @@ MonoBehaviour:
       relicsToAdd:
         Value: []
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a6a9506f99dfac740bff5002e7a296c2, type: 2}
       eventsToAdd:
         Value: []
       stats:
@@ -43,9 +44,11 @@ MonoBehaviour:
     - text: Leave them
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: d1b5386ed8d12574899b7e8f71d01a40, type: 2}
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a6a9506f99dfac740bff5002e7a296c2, type: 2}
       eventsToAdd:
         Value: []
       stats:

@@ -25,7 +25,8 @@ MonoBehaviour:
     - text: Fight alongside the civilians
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 9d8fe44f3b3c1dd4d926bc5f158e8e5c, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:
@@ -45,7 +46,8 @@ MonoBehaviour:
       relicsToAdd:
         Value: []
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a8d1100b7bf1daa4fb040161a704e346, type: 2}
       eventsToAdd:
         Value: []
       stats:
