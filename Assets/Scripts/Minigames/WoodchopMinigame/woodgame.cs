@@ -16,7 +16,9 @@ public class WoodMiniGame : MonoBehaviour
     private float SwingTime;
 
     private bool input;
-    public TextMeshProUGUI howToPlayText;
+    public GameObject howToPlayText;
+    public GameObject WinText;
+    public GameObject LoseText;
 
     public GameObject particlePrefab;
     public Transform goalObject;
@@ -27,6 +29,8 @@ public class WoodMiniGame : MonoBehaviour
     public Animator coconutAnimator;
 
     [SerializeField] private AudioSource audioSource;
+
+    public bool start = false;
 
     void Start()
     {
@@ -42,15 +46,23 @@ public class WoodMiniGame : MonoBehaviour
 
     void Update()
     {
-        if (Time.time >= SwingTime)
+        if (start)
         {
-            DisplayKey();
-            SwingTime = Time.time + Random.Range(1.5f, 3.0f);
+            if (Time.time >= SwingTime)
+            {
+                DisplayKey();
+                SwingTime = Time.time + Random.Range(1.5f, 3.0f);
+            }
+
+            if (input)
+            {
+                CheckInput();
+            }
         }
 
-        if (input)
+        if (Input.GetKeyDown(KeyCode.Z) && !start)
         {
-            CheckInput();
+            start = true;
         }
     }
 
