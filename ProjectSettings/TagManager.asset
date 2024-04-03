@@ -10,6 +10,7 @@ TagManager:
   - FxTemporaire
   - Fire
   - Spawner
+  - Cutlass
   layers:
   - Default
   - TransparentFX
@@ -25,6 +26,7 @@ TagManager:
   - InvisibleWall
   - EnemyBulletShip
   - PlayerShipCollider
+  - RealEnemyBullet
   - 
   - 
   - 

@@ -12,7 +12,6 @@ public class PauseMenu : Menu
         _playerController = GameObject.FindGameObjectWithTag("Player");
         if (_playerController != null)
         {
-            Debug.Log(_playerController.name);
             //_playerController.GetComponent<PlayerController>().DisablePlayerInput();
             _playerController.GetComponent<CharacterAiming>().enabled = false;
         }
