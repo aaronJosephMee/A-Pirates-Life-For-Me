@@ -17,8 +17,7 @@ namespace DefaultNamespace.OverworldMap
         RustysRetreat,
         Jungle,
         CombatNight,
-        CombatIsleOfTorrentPirate,
-        CombatIsleOfTorrentAris,
+        CombatIsleOfTorrent,
         ShipCombat,
         Night,
         NoScene
@@ -56,10 +55,8 @@ namespace DefaultNamespace.OverworldMap
                     return "Jungle";
                 case SceneName.CombatNight:
                     return "COMBAT_NightScene";
-                case SceneName.CombatIsleOfTorrentPirate:
-                    return "COMBAT(pirate)_IsleofTorrent";
-                case SceneName.CombatIsleOfTorrentAris:
-                    return "COMBAT(aris)_IsleofTorrent";
+                case SceneName.CombatIsleOfTorrent:
+                    return "COMBAT_IsleofTorrent";
                 case SceneName.ShipCombat:
                     return "sea combat demo";
                 case SceneName.Night:

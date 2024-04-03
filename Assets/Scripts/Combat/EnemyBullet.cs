@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
@@ -15,9 +16,15 @@ public class EnemyBullet : MonoBehaviour
     public float damage;
     float noHitPeriod = 0.3f;
     float noHitTimer;
+
+    private Rigidbody rb;
+    private SphereCollider sc;
+
+    private bool reflected = false;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         noHitTimer = Time.time + noHitPeriod;
     }
 
@@ -32,6 +39,18 @@ public class EnemyBullet : MonoBehaviour
             collisionDelay -= Time.deltaTime;
             if (collisionDelay <= 0){
                 if (hit != null){
+                    if (hit.tag == "Cutlass")
+                    {
+                        if (!reflected)
+                        {
+                            reflected = true;
+                            timer = 0.0f;
+                            damage *= 2;
+                            rb.velocity = -rb.velocity * 4;
+                            // sc.excludeLayers.
+                        }   
+                        return;
+                    }
                     if (hit.tag == "Player"){
                         hit.GetComponent<Player>().takeDamage(damage, false);
                     }
@@ -45,9 +64,10 @@ public class EnemyBullet : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+        print(other);
         if (noHitTimer < Time.time){
             hit = other.gameObject;
-            collisionDelay = 0.025f;
+            collisionDelay = 0.0001f;
         }
     }
 }
