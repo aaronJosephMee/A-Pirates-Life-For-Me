@@ -107,12 +107,13 @@ MonoBehaviour:
     - text: Continue
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a6a9506f99dfac740bff5002e7a296c2, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:
         Value:
-        - {fileID: 11400000, guid: ae1657c1e226885459c2ce212cadc726, type: 2}
+        - {fileID: 11400000, guid: a2c7effb584642e458248215678960fb, type: 2}
       stats:
         health: 0
         gold: 0
@@ -131,7 +132,8 @@ MonoBehaviour:
     - text: Continue
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a8d1100b7bf1daa4fb040161a704e346, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:
@@ -142,8 +144,11 @@ MonoBehaviour:
         gold: 0
       nextScene: 0
       combatIndex: 0
-      followUpText: You tell the prisoner to hide, as you draw your sword, preparing
+      followUpText: 'You tell the prisoner to hide, as you draw your sword, preparing
         to fight.
+
+
+        Gain Freedom relic'
       nextChoiceIndices:
         Value: 00000000
       changeVisuals: 0

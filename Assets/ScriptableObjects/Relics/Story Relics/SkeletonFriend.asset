@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: d001768e05f4bca489ad5b4908d9e188, type: 3}
   title: Skeleton Friend
-  description: Adds poison effect to sword and pistol
+  description: Adds poison effect to sword and gun
   maxlvl: 1
   baseStats:
     gunDamage: 0

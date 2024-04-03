@@ -47,7 +47,8 @@ MonoBehaviour:
       relicsToAdd:
         Value: []
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 1a67a94bb5ba9f4479500eb92093c841, type: 2}
       eventsToAdd:
         Value:
         - {fileID: 11400000, guid: 7447bbb62c65ab04e8ff209c8b358fa3, type: 2}
@@ -66,9 +67,12 @@ MonoBehaviour:
     - text: Continue
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: e3b5a5217d820ab40acf237d55684059, type: 2}
+        - {fileID: 11400000, guid: e5180191bc7822844a4945fb96c16690, type: 2}
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 1a67a94bb5ba9f4479500eb92093c841, type: 2}
       eventsToAdd:
         Value:
         - {fileID: 11400000, guid: 7447bbb62c65ab04e8ff209c8b358fa3, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier:
   image: {fileID: 21300000, guid: e66c85881b7caff46a67e660a01db2e5, type: 3}
   title: Protector of Humanity
-  description: Gain an extra pellet
+  description: Gun fires an extra pellet
   maxlvl: 1
   baseStats:
     gunDamage: 0

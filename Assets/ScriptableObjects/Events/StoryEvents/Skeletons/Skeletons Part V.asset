@@ -24,7 +24,8 @@ MonoBehaviour:
     - text: Destroy the skeleton horde
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a5ecdb1bd92e2fd40bd034b8675c1ce7, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:

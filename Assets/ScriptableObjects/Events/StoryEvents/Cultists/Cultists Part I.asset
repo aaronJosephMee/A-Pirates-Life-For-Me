@@ -33,7 +33,7 @@ MonoBehaviour:
         Value:
         - {fileID: 11400000, guid: 995f678d40780dc4ca90c73f59d63003, type: 2}
       stats:
-        health: 0
+        health: -15
         gold: 0
       nextScene: 0
       combatIndex: 0

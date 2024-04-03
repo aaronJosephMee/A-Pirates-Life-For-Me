@@ -26,8 +26,11 @@ MonoBehaviour:
       relicsToAdd:
         Value:
         - {fileID: 11400000, guid: a1396e2936b3a01439da3b7b023956c3, type: 2}
+        - {fileID: 11400000, guid: 79ea74a951633fe47bbfbcbb7a3e1f57, type: 2}
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: e3b5a5217d820ab40acf237d55684059, type: 2}
+        - {fileID: 11400000, guid: e5180191bc7822844a4945fb96c16690, type: 2}
       eventsToAdd:
         Value: []
       stats:
@@ -51,9 +54,11 @@ MonoBehaviour:
     - text: Bribe the civilians to leave the skeletons alone
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a1396e2936b3a01439da3b7b023956c3, type: 2}
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: e3b5a5217d820ab40acf237d55684059, type: 2}
       eventsToAdd:
         Value: []
       stats:
