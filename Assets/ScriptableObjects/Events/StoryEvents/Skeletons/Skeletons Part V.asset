@@ -15,17 +15,17 @@ MonoBehaviour:
   title: Skeletons - Part V
   scene: 0
   sceneIdx: 0
-  flavorText: "As you approach a local village, you hear an increasing amount of
-    racket. You see a familiar group of skeletons facing a group of humans, ready
-    to fight. The civilians plead for your help, \u201CThe dead have risen! Abominations,
-    all of them! Please, help us destroy these awful monsters!\" What do you do?"
+  flavorText: As you approach a local village, you hear an increasing amount of racket.
+    You see a familiar group of skeletons facing a group of humans, ready to fight.
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 03000000
   choices:
     Value:
     - text: Destroy the skeleton horde
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -36,9 +36,13 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Refuse to help, but loot everyone while they're distracted
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -54,9 +58,13 @@ MonoBehaviour:
         can. Gain 600 gold.
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -67,3 +75,24 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "The civilians plead for your help, \u201CThe dead have risen!
+        Abominations, all of them! Please, help us destroy these awful monsters!\"
+        What do you do?"
+      nextChoiceIndices:
+        Value: 0000000001000000
+      changeVisuals: 0
+      changeIndex: 0

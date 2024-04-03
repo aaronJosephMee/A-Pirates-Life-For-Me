@@ -17,11 +17,9 @@ MonoBehaviour:
   sceneIdx: 3
   flavorText: "There is an uproar at the public square of a local village. Some devotees
     of the Cult of Dagon have installed a shrine, claiming religious freedom. You
-    have seen firsthand what this \u201Creligion\u201D involves. In fact, you recognize
-    the prisoner you freed among the crowd. Both groups are on the verge of fighting
-    and the civilians ask for your help. What do you do?"
+    have seen firsthand what this \u201Creligion\u201D involves."
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 02000000
   choices:
     Value:
     - text: Fight alongside the civilians
@@ -62,5 +60,24 @@ MonoBehaviour:
         Freedom relic'
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: In fact, you recognize the prisoner you freed among the crowd.
+        Both groups are on the verge of fighting and the civilians ask for your help.
+        What do you do?
+      nextChoiceIndices:
+        Value: 0000000001000000
       changeVisuals: 0
       changeIndex: 0

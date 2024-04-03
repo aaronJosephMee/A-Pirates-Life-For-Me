@@ -18,7 +18,7 @@ MonoBehaviour:
   flavorText: You find a strange encampment with a familiar monolith and cages holding
     human bodies. Or at least, what remains of them.
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 03000000
   choices:
     Value:
     - text: Rescue the prisoner
@@ -42,7 +42,7 @@ MonoBehaviour:
       changeVisuals: 0
       changeIndex: 0
     - text: Leave the prisoner to their fate
-      isTerminal: 1
+      isTerminal: 0
       relicsToAdd:
         Value: []
       relicsToLose:
@@ -54,18 +54,13 @@ MonoBehaviour:
         health: 0
         gold: 0
       nextScene: 0
-      followUpText: 'You decide not to get involved. You avert your eyes from the
-        prisoner''s gaze and sheepishly walk away. "Hey! Hey where are you going?!
-        Help! Come back!" he demands. You sprint to your ship before the cultists
-        are alarmed.
-
-
-        Gain Guilt'
+      followUpText: You decide not to get involved. You avert your eyes from the
+        prisoner's gaze and sheepishly walk away.
       nextChoiceIndices:
         Value: 04000000
       changeVisuals: 0
       changeIndex: 0
-    - text: Fight
+    - text: Continue
       isTerminal: 1
       relicsToAdd:
         Value: []
@@ -103,5 +98,27 @@ MonoBehaviour:
         sure to draw the attention of the cultists. What do you do?
       nextChoiceIndices:
         Value: 0000000001000000
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value:
+        - {fileID: 11400000, guid: ae1657c1e226885459c2ce212cadc726, type: 2}
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: '"Hey! Hey where are you going?! Help! Come back!" he demands.
+        You sprint to your ship before the cultists are alarmed.
+
+
+        Gain Guilt'
+      nextChoiceIndices:
+        Value: 00000000
       changeVisuals: 0
       changeIndex: 0

@@ -15,18 +15,17 @@ MonoBehaviour:
   title: Skeletons - Part IV
   scene: 0
   sceneIdx: 0
-  flavorText: "As you approach a local village, you hear an increasing amount of
-    racket. You see a familiar group of skeletons facing a group of humans, ready
-    to fight. The skeletons plead for your help, \u201CWe were just passing by, and
-    they came after us! All they ever do is attack us. Please, help us get rid of
-    them!\u201D What do you do?"
+  flavorText: As you approach a local village, you hear an increasing amount of racket.
+    You see a familiar group of skeletons facing a group of humans, ready to fight.
   isMinigame: 0
-  initialChoices: 0000000001000000
+  initialChoices: 03000000
   choices:
     Value:
     - text: Help the skeletons fight the civilians
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -37,9 +36,13 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
     - text: Bribe the civilians to leave the skeletons alone
       isTerminal: 0
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -53,9 +56,13 @@ MonoBehaviour:
         kind of incentive. \n\nLose 300 gold.\nSkeleton Friend improved!"
       nextChoiceIndices:
         Value: 02000000
+      changeVisuals: 0
+      changeIndex: 0
     - text: Continue
       isTerminal: 1
-      relics:
+      relicsToAdd:
+        Value: []
+      relicsToLose:
         Value: []
       eventsToAdd:
         Value: []
@@ -66,3 +73,24 @@ MonoBehaviour:
       followUpText: 
       nextChoiceIndices:
         Value: 
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Continue
+      isTerminal: 0
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      followUpText: "The skeletons plead for your help, \u201CWe were just passing
+        by, and they came after us! All they ever do is attack us. Please, help us
+        get rid of them!\u201D What do you do?"
+      nextChoiceIndices:
+        Value: 0000000001000000
+      changeVisuals: 0
+      changeIndex: 0
