@@ -16,9 +16,9 @@ public class SeaGameManager : MonoBehaviour
 
     public int Spawned = 1;
 
-    public TextMeshProUGUI winningText;
+    public GameObject winningText;
 
-    public TextMeshProUGUI howToPlayText;
+    public GameObject howToPlayText;
 
     public bool stopCombat;
     public void Start()
