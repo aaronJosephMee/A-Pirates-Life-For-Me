@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItem
       objectReference: {fileID: 0}
+    - target: {fileID: 1278477059186799829, guid: 0777adbfc701ea749a2199e00596836f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
     - target: {fileID: 5278825035994518343, guid: 0777adbfc701ea749a2199e00596836f, type: 3}
       propertyPath: m_IsActive
       value: 0

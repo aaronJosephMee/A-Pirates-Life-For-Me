@@ -457,8 +457,8 @@ MonoBehaviour:
   item: {fileID: 0}
   price: {fileID: 2775879288010897084}
   background: {fileID: 3761233506377460240}
-  highlight: {r: 0.8301887, g: 0.76954997, b: 0.06578848, a: 1}
-  regular: {r: 0, g: 0, b: 0, a: 1}
+  highlight: {r: 0.83137256, g: 0.62189317, b: 0.06666668, a: 1}
+  regular: {r: 1, g: 1, b: 1, a: 1}
   free: 0
 --- !u!224 &5738005890056591860 stripped
 RectTransform:
