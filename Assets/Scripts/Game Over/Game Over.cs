@@ -13,6 +13,7 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.menuOpen = true;
         title.onClick.AddListener(delegate{
             OverworldMapManager.Instance?.MarkMapForReset();
             GameManager.instance.LoadScene(SceneName.TitleScreen);});
