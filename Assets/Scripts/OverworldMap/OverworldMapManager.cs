@@ -41,6 +41,7 @@ public class OverworldMapManager : MonoBehaviour
     [SerializeField] private List<EventScriptableObject> storyEvents;
     [SerializeField] private List<EventScriptableObject> genericEvents;
     private Events _events;
+    [SerializeField] private GameObject tutorial;
     private bool _wasEventChosen = false;
     private bool _advanceMap = false;
     private bool _resetMap = false;
@@ -71,6 +72,7 @@ public class OverworldMapManager : MonoBehaviour
         GenerateGoal();
         GenerateStartingPoint();
         GenerateNextChoices();
+        Instantiate(tutorial, _canvas2.transform);
     }
 
     public void AddEvent()
@@ -232,6 +234,7 @@ public class OverworldMapManager : MonoBehaviour
             {
                 ResetMap();
                 _resetMap = false;
+                Instantiate(tutorial, _canvas2.transform);
                 return;
             }
             _canvas = GameObject.Find("Canvas");
