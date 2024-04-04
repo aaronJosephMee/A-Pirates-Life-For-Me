@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
   m_Name: WoodchipMinigame
   m_EditorClassIdentifier: 
-  name: Woodchop Minigame
+  title: 
   scene: 7
   sceneIdx: 0
-  flavorText: 
+  flavorText: The svurvy begins to hit as you sail the high seas, quickly
   isMinigame: 1
-  choices: []
+  initialChoices: 
+  choices:
+    Value: []
