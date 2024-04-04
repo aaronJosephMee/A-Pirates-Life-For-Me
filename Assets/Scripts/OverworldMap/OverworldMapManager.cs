@@ -42,10 +42,13 @@ public class OverworldMapManager : MonoBehaviour
     [SerializeField] private List<EventScriptableObject> genericEvents;
     private Events _events;
     [SerializeField] private GameObject tutorial;
+    [SerializeField] private GameObject victoryScreen;
+    [SerializeField] private GameObject finalCombatScreen;
     private bool _wasEventChosen = false;
     private bool _advanceMap = false;
     private bool _resetMap = false;
-    public GameObject victoryText; 
+    public GameObject victoryText;
+    bool hasWon = false;
     
     void Awake(){
         if (Instance == null)
@@ -208,7 +211,8 @@ public class OverworldMapManager : MonoBehaviour
             if (_choiceGenerator.IsAtGoal())
             {
                 print("You made it to the goal!");
-                GameObject placement = Instantiate(victoryText, _canvas2.transform.position, Quaternion.identity,_canvas2.transform);
+                Instantiate(finalCombatScreen);
+                hasWon = true;
             }
             else
             {
@@ -242,6 +246,10 @@ public class OverworldMapManager : MonoBehaviour
             ReloadMapIcons();
             SetFogLevel();
             _advanceMap = false;
+            if (hasWon)
+            {
+                GameObject placement = Instantiate(victoryScreen);
+            }
         }
 
         if (_wasEventChosen)
@@ -301,6 +309,7 @@ public class OverworldMapManager : MonoBehaviour
         _currentChoiceNodes = new List<ChoiceNode>();
         _currentBoatLocation = null;
         _goalLocation = null;
+        hasWon = false;
 
         _events = new Events(seedEvents, storyEvents, genericEvents);
         _wasEventChosen = false;
