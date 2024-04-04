@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Skeletons Part I
   m_EditorClassIdentifier: 
   title: Skeletons - Part I
-  scene: 0
-  sceneIdx: 0
+  scene: 17
+  sceneIdx: 1
   flavorText: 'As you walk along a beach, you hear an odd sound, almost like dragging.
     You get closer to the source of the sound and see an animated skeleton struggling
     to push a treasure chest along the shore, possibly to a ship? '
@@ -29,7 +29,8 @@ MonoBehaviour:
       relicsToLose:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 4d1c426e63654c74e90a0ada3ca412f4, type: 2}
       stats:
         health: 0
         gold: 0
@@ -49,7 +50,8 @@ MonoBehaviour:
       relicsToLose:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 25d7072021dc5b44999fd1759bbe129d, type: 2}
       stats:
         health: 0
         gold: 0

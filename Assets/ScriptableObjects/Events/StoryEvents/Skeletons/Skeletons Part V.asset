@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Skeletons Part V
   m_EditorClassIdentifier: 
   title: Skeletons - Part V
-  scene: 0
-  sceneIdx: 0
+  scene: 17
+  sceneIdx: 5
   flavorText: As you approach a local village, you hear an increasing amount of racket.
     You see a familiar group of skeletons facing a group of humans, ready to fight.
   isMinigame: 0
@@ -32,8 +32,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 0
-      combatIndex: 0
+      nextScene: 12
+      combatIndex: 9
       followUpText: 'The civilians cheer, as they no longer need to fear the skeletons.
 
 

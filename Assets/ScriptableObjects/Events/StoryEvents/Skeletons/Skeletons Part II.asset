@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Skeletons Part II
   m_EditorClassIdentifier: 
   title: Skeletons - Part II
-  scene: 0
-  sceneIdx: 0
+  scene: 17
+  sceneIdx: 2
   flavorText: While heading back to your ship, you see a familiar face. And several,
     similar faces. The skeleton you helped earlier is standing by the docks with
     its crewmates, waving you over.
@@ -49,7 +49,8 @@ MonoBehaviour:
       relicsToLose:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 7447bbb62c65ab04e8ff209c8b358fa3, type: 2}
       stats:
         health: 0
         gold: 0
@@ -69,7 +70,8 @@ MonoBehaviour:
       relicsToLose:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 7447bbb62c65ab04e8ff209c8b358fa3, type: 2}
       stats:
         health: 0
         gold: 0

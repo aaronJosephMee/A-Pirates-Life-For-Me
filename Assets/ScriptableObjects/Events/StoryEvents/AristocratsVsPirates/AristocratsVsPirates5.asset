@@ -73,8 +73,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 12
-      combatIndex: 0
+      nextScene: 13
+      combatIndex: 3
       followUpText: Gain 1000 gold
       nextChoiceIndices:
         Value: 
@@ -91,8 +91,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 12
-      combatIndex: 0
+      nextScene: 15
+      combatIndex: 4
       followUpText: Gain Peg Leg relic
       nextChoiceIndices:
         Value: 

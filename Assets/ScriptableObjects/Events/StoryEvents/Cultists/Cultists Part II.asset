@@ -137,8 +137,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 0
-      combatIndex: 0
+      nextScene: 14
+      combatIndex: 6
       followUpText: Lose Mark of Dagon relic
       nextChoiceIndices:
         Value: 

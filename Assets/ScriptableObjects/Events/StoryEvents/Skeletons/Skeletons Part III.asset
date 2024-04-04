@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Skeletons Part III
   m_EditorClassIdentifier: 
   title: Skeletons - Part III
-  scene: 0
-  sceneIdx: 0
+  scene: 17
+  sceneIdx: 4
   flavorText: 'After a long evening at the pub, you head back to your ship to rest.
     As you get closer to the docks, you see an eerie green glow. A large ghostly
     ship is docked next to yours and a group of animated skeletons approaches you. '
   isMinigame: 0
-  initialChoices: 03000000
+  initialChoices: 02000000
   choices:
     Value:
     - text: Attack the skeletons
@@ -29,12 +29,13 @@ MonoBehaviour:
       relicsToLose:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 706e6775eb11e8d449eab3d85952c278, type: 2}
       stats:
         health: 0
         gold: 0
-      nextScene: 0
-      combatIndex: 0
+      nextScene: 12
+      combatIndex: 8
       followUpText: 'You cut down the last of the skeletons and feel invigorated.
 
 
@@ -51,7 +52,8 @@ MonoBehaviour:
       relicsToLose:
         Value: []
       eventsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 706e6775eb11e8d449eab3d85952c278, type: 2}
       stats:
         health: 0
         gold: 0

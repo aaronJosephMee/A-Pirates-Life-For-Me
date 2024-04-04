@@ -36,6 +36,7 @@ MonoBehaviour:
         health: 0
         gold: -300
       nextScene: 0
+      combatIndex: 0
       followUpText: 'You reach for your coin pouch and awkwardly hand over a pile
         of coins to the aristocrats. "Hmm, I suppose this will do. For now...".
 
@@ -58,7 +59,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 14
+      nextScene: 13
+      combatIndex: 7
       followUpText: Gain 300 gold
       nextChoiceIndices:
         Value: 

@@ -18,7 +18,6 @@ public class EventMenu : MonoBehaviour
         
         TextMeshProUGUI[] tmps = GetComponentsInChildren<TextMeshProUGUI>();
         foreach (TextMeshProUGUI tmp in tmps){
-            Debug.Log(tmp.name);
             switch(tmp.name){
                 case "Body Text":
                     bodyText = tmp;

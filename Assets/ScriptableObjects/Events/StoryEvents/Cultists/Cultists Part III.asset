@@ -74,8 +74,8 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 0
-      combatIndex: 0
+      nextScene: 15
+      combatIndex: 5
       followUpText: You break open the prisoner's cage and help him down onto the
         ground. You see some movement from the corner of your eye and realize that
         some very angry cultists are running towards you.
