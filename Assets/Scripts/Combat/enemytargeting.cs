@@ -24,6 +24,8 @@ public class enemytargeting : MonoBehaviour
     [SerializeField] GameObject gun;
     public float scaleFactor;
 
+    public bool isEnemy = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +98,11 @@ public class enemytargeting : MonoBehaviour
         {
             //Debug.Log("Here");
             //fireTimer = Time.time + fireDelay;
+            if (isEnemy)
+            {
+                combatManager.Instance.enemyCount++;
+            }
+
             GameObject currentBullet = Instantiate(bullet, gun.transform.position, gun.transform.rotation);
             currentBullet.transform.localScale = bulletSize;
             currentBullet.GetComponent<EnemyBullet>().scaleFactor = this.scaleFactor;
