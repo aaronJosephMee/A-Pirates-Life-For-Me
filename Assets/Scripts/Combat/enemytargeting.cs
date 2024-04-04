@@ -22,6 +22,7 @@ public class enemytargeting : MonoBehaviour
     [SerializeField] public float bulletVelocity;
     [SerializeField] public Vector3 bulletSize = Vector3.one;
     [SerializeField] GameObject gun;
+    public float scaleFactor;
 
 
     // Start is called before the first frame update
@@ -97,7 +98,7 @@ public class enemytargeting : MonoBehaviour
             //fireTimer = Time.time + fireDelay;
             GameObject currentBullet = Instantiate(bullet, gun.transform.position, gun.transform.rotation);
             currentBullet.transform.localScale = bulletSize;
-
+            currentBullet.GetComponent<EnemyBullet>().scaleFactor = this.scaleFactor;
             Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
             rb.AddForce(gun.transform.forward * bulletVelocity, ForceMode.Impulse);
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -978,6 +978,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bc2587b48b676624382594dc0c6b459b, type: 2}
   - {fileID: 11400000, guid: 11c9afd8717eee74ba6fac72b2987664, type: 2}
   - {fileID: 11400000, guid: 40de997eceb2d554f87b97dac6090093, type: 2}
+  tutorial: {fileID: 364349087879893089, guid: 5ed19c8ea6a15d140864859b64143fa1, type: 3}
   victoryText: {fileID: 5688606504921768942, guid: 041c00f4d94f94ae7ac50b673a957bab, type: 3}
 --- !u!1001 &690497959
 PrefabInstance:
