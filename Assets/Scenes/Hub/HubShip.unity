@@ -2837,6 +2837,14 @@ PrefabInstance:
       propertyPath: button
       value: 
       objectReference: {fileID: 2053992285}
+    - target: {fileID: 1030228151654960336, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
+      propertyPath: m_fontSize
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030228151654960336, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 68
+      objectReference: {fileID: 0}
     - target: {fileID: 1900480458386193247, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
       propertyPath: m_Name
       value: tutPage
@@ -2844,6 +2852,19 @@ PrefabInstance:
     - target: {fileID: 2719958769024809454, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085872652330166286, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
+      propertyPath: m_text
+      value: To start your adventure navigate to the ship wheel and press the"e"
+        key
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085872652330166286, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
+      propertyPath: m_fontSize
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085872652330166286, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 5243745779701163881, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
       propertyPath: m_Pivot.x
@@ -2933,6 +2954,10 @@ PrefabInstance:
       propertyPath: entireMenu
       value: 
       objectReference: {fileID: 1155344939}
+    - target: {fileID: 8593681548525076443, guid: 227a15ff345c94eb5b355bccdd541683, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

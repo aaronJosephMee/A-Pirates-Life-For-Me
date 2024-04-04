@@ -22,5 +22,6 @@ public class MapCollision : MonoBehaviour
         {
             OverworldMapManager.Instance.TransitionBackToMap();
         }
+        
     }
 }
