@@ -13,10 +13,29 @@ MonoBehaviour:
   m_Name: ShipCombat
   m_EditorClassIdentifier: 
   title: 
-  scene: 15
-  sceneIdx: 0
-  flavorText: 
+  scene: 2
+  sceneIdx: 4
+  flavorText: As you sail the high seas, you run into a fleet of hostile pirates.
+    Quickly defend yourself before they punder your booty!
   isMinigame: 1
-  initialChoices: 
+  initialChoices: 00000000
   choices:
-    Value: []
+    Value:
+    - text: Fight
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 16
+      combatIndex: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+      changeVisuals: 0
+      changeIndex: 0

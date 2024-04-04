@@ -135,10 +135,11 @@ public class OverworldMapManager : MonoBehaviour
         if (choiceNode.ChoiceType == ChoiceType.Event)
         {
             callbacks.Add(() => _events.RemoveEvent(_choiceGenerator.GetCurrentEvent()));
-            if (!_choiceGenerator.GetCurrentEvent().isMinigame)
-            {
-                callbacks.Add(() => _wasEventChosen = true);
-            }
+            callbacks.Add(() => _wasEventChosen = true);
+            // if (!_choiceGenerator.GetCurrentEvent().isMinigame)
+            // {
+            //     
+            // }
             callbacks.Add(() => GameManager.instance.LoadScene(choiceNode.SceneName, _choiceGenerator.GetCurrentEvent().sceneIdx));
         }
         else

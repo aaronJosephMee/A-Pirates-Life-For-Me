@@ -920,6 +920,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44670fcc19bce744abe923946ab8bf0b, type: 2}
   - {fileID: 11400000, guid: bc2587b48b676624382594dc0c6b459b, type: 2}
   - {fileID: 11400000, guid: 11c9afd8717eee74ba6fac72b2987664, type: 2}
+  - {fileID: 11400000, guid: 40de997eceb2d554f87b97dac6090093, type: 2}
   victoryText: {fileID: 5688606504921768942, guid: 041c00f4d94f94ae7ac50b673a957bab, type: 3}
 --- !u!1001 &690497959
 PrefabInstance:

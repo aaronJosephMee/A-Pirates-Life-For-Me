@@ -16,7 +16,7 @@ MonoBehaviour:
   scene: 2
   sceneIdx: 3
   flavorText: The winds quicken as you enter choppy waters. All of the sudden your
-    ship begins to spin, you've been sucked into a mighty whirlpool!
+    ship begins to spin, you're being sucked into a mighty whirlpool!
   isMinigame: 1
   initialChoices: 00000000
   choices:
