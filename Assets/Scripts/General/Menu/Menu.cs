@@ -16,6 +16,7 @@ public class Menu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)){
+            GameManager.instance.menuOpen = false;
             Destroy(this.gameObject);
         }
     }

@@ -24,6 +24,7 @@ public class StartButton : MonoBehaviour
     }
     void StartGame(){
         GameManager.instance.menuOpen = false;
+        Destroy(ItemManager.instance.gameObject);
         GameManager.instance.LoadScene(scene);
     }
 }

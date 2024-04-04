@@ -110,6 +110,10 @@ MonoBehaviour:
     body: If you time your sword attack correctly you can parry and reflect ranged
       attacks back the sender. It really cool
     titleColor: {r: 0, g: 0, b: 0, a: 1}
+  - title: Bombs
+    body: During combat you can throw bombs with 'Q'. They recharge between fights
+      so use lots.
+    titleColor: {r: 0, g: 0, b: 0, a: 1}
   next: {fileID: 4258811604686556116}
   tmp: {fileID: 7756287898881773582}
   title: {fileID: 5115599935174782081}

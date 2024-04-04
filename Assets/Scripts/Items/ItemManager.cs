@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 [System.Serializable]
 public struct Health{
@@ -39,6 +40,10 @@ public class ItemManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void ResetItemManager(){
+        instance = null;
+        Awake();
     }
     public Dictionary<string, DebuffStats> GetSwordDebuffs(){
         return playerItems.GetSwordDebuffs();

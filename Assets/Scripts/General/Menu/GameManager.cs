@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !menuOpen){
             Instantiate(pauseMenu);
+            menuOpen = true;
         }
 
         if (menuOpen && canvas != null)

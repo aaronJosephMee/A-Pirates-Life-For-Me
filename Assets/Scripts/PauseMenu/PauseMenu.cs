@@ -13,7 +13,9 @@ public class PauseMenu : Menu
         if (_playerController != null)
         {
             //_playerController.GetComponent<PlayerController>().DisablePlayerInput();
-            _playerController.GetComponent<CharacterAiming>().enabled = false;
+            if (_playerController.GetComponent<CharacterAiming>()){
+                _playerController.GetComponent<CharacterAiming>().enabled = false;
+            }
         }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -27,7 +29,9 @@ public class PauseMenu : Menu
         if (_playerController != null)
         {
             //_playerController.GetComponent<PlayerController>().EnablePlayerInput();
-            _playerController.GetComponent<CharacterAiming>().enabled = true;
+            if (_playerController.GetComponent<CharacterAiming>()){
+                _playerController.GetComponent<CharacterAiming>().enabled = true;
+            }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
