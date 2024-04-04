@@ -5055,7 +5055,7 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   isRanged: 0
   bullet: {fileID: 0}
-  attackRange: 1.12
+  attackRange: 2
   withinAttackRange: 0
   bulletVelocity: 0
   bulletSize: {x: 1, y: 1, z: 1}
