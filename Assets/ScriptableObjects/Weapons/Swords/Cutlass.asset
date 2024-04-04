@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   title: Cutlass
+  description: 
   maxlvl: 5
   baseStats:
     gunDamage: 0
-    swordDamage: 50
+    swordDamage: 30
     defense: 0
     duration: 0
     maxStacks: 0
@@ -31,6 +32,9 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
+    healthBoost: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -47,5 +51,8 @@ MonoBehaviour:
     accuracy: 0
     critChance: 0
     critMultiplier: 0
+    richochet: 0
+    dodgeChance: 0
+    healthBoost: 0
   price: 0
   type: 1

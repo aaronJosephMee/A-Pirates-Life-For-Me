@@ -218,17 +218,17 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
     }
     IEnumerator OnFire(){
-        int damage = 1;
+        int damage = 8;
         while (fireDuration > 0){
             yield return new WaitForSeconds(1f);
             this.DecreaseHealth(damage, "fire", false);
             fireDuration--;
-            damage += 2;
+            damage *= 2;
         }
 
     }
     IEnumerator Poisoned(int duration, bool isGun){
-        int damage = 5;
+        int damage = 20;
         while (duration > 0){
             yield return new WaitForSeconds(1f);
             this.DecreaseHealth(damage, "poison", false);
@@ -246,7 +246,7 @@ public class EnemyHealth : MonoBehaviour
         navMeshAgent.speed = moveSpeed;
         while (duration > 0){
             yield return new WaitForSeconds(1f);
-            this.DecreaseHealth(1f, "freeze", false);
+            this.DecreaseHealth(10f, "freeze", false);
             duration--;
         }
         if (isGun){

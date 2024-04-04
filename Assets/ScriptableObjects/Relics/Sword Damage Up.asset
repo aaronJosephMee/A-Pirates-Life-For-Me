@@ -18,7 +18,7 @@ MonoBehaviour:
   maxlvl: 2
   baseStats:
     gunDamage: 0
-    swordDamage: 50
+    swordDamage: 30
     defense: 0
     duration: 0
     maxStacks: 0
@@ -34,9 +34,10 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   lvlStats:
     gunDamage: 0
-    swordDamage: 50
+    swordDamage: 20
     defense: 0
     duration: 0
     maxStacks: 0
@@ -52,6 +53,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   price: 100
   isStoryRelic: 0
   activator: 0
@@ -73,6 +75,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -91,3 +94,4 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0

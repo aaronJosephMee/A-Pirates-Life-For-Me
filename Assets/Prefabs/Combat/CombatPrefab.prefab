@@ -2845,6 +2845,10 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 4784092200643747948, guid: 771f15adeba4f4940b51f7bbe75ddb2f, type: 3}
     - target: {fileID: 6246133924368035026, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
       propertyPath: m_Layer
       value: 3
