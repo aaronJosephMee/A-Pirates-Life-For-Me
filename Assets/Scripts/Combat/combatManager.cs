@@ -132,7 +132,7 @@ public class combatManager : MonoBehaviour
     IEnumerator DelayedCombatClear()
     {
         ItemManager.instance.AddGold(100);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.05f);
 
         
         Debug.Log("enemies all clear");
@@ -146,7 +146,7 @@ public class combatManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         playerHealth.UpdateHealth();
         if (GameManager.instance.HasPopup())
         {
