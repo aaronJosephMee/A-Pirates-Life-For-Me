@@ -42,7 +42,7 @@ public class ShopInventory : MonoBehaviour
                 res = random.Next(100);
                 if (res < threshold){
                     items[i] = ItemManager.instance.GetRandUpgrade();
-                    if (items[i] == null){
+                    if (items[i] == null && ItemManager.instance.RelicCount() < ItemManager.instance.MaxRelics){
                         items[i] = ItemManager.instance.GetRandRelic();
                     }
                 }

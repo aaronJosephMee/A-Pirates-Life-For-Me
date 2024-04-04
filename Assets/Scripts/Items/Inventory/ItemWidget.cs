@@ -16,6 +16,9 @@ public class ItemWidget : InventoryItem,IPointerEnterHandler,IPointerExitHandler
     void Start()
     {
         item = ItemManager.instance.playerItems.GetItem();
+        if (item == null){
+            item = ItemManager.instance.GenericNoItem;
+        }
         stats = ItemManager.instance.GetItemStats(item);
         hp = ItemManager.instance.GetHealth();
         healthBar.value = hp.curHealth / hp.maxHealth;

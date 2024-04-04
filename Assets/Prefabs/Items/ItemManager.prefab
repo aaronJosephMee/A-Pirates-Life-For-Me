@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569fcb15819e485439919ee09a79ce51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxRelics: 12
+  MaxRelics: 10
   relics:
   - {fileID: 11400000, guid: 38dc0d34e6414d0439ffd671306fdc1b, type: 2}
   - {fileID: 11400000, guid: b880b0d643c3e49449d72e5e468bb65c, type: 2}

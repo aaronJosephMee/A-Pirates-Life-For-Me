@@ -272,6 +272,9 @@ public class PlayerItems
             }
             ItemManager.instance.SetHealth(health.curHealth, health.maxHealth);
         }
+        if (relic.isStoryRelic){
+            numbStoryRelics--;
+        }
         playerRelics.Remove(relic.title);
         if (relic.isStoryRelic)
         {
