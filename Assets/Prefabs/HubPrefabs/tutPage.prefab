@@ -900,6 +900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c929cfb08d764b3aac6f26ca87d616e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  page1: {fileID: 0}
+  page2: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &7885895515556540046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f58d613410744d89e92958dd2f95cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p: {fileID: 0}
 --- !u!1 &8593681548525076443
 GameObject:
   m_ObjectHideFlags: 0
