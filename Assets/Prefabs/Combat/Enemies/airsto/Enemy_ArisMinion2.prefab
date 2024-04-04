@@ -99,7 +99,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3563182133956822422
 Transform:
   m_ObjectHideFlags: 0
@@ -1609,7 +1609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7896802166852871198
 Transform:
   m_ObjectHideFlags: 0
@@ -3054,7 +3054,7 @@ GameObject:
   - component: {fileID: 6045968776150255174}
   - component: {fileID: 9086301722391178739}
   m_Layer: 0
-  m_Name: Enemy_PirateMinion2
+  m_Name: Enemy_ArisMinion2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3259,7 +3259,7 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   isRanged: 0
   bullet: {fileID: 0}
-  attackRange: 1.1
+  attackRange: 2
   withinAttackRange: 0
   bulletVelocity: 0
   bulletSize: {x: 1, y: 1, z: 1}
@@ -3277,7 +3277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
-  damageRadius: 1
+  damageRadius: 2.1
   targetLayer:
     serializedVersion: 2
     m_Bits: 8

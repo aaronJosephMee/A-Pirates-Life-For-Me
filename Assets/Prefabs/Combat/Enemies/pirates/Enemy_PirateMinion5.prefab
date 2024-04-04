@@ -5055,7 +5055,7 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   isRanged: 0
   bullet: {fileID: 0}
-  attackRange: 1.1
+  attackRange: 1.12
   withinAttackRange: 0
   bulletVelocity: 0
   bulletSize: {x: 1, y: 1, z: 1}
@@ -5073,7 +5073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
-  damageRadius: 1
+  damageRadius: 2.1
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
