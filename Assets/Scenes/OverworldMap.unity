@@ -979,6 +979,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11c9afd8717eee74ba6fac72b2987664, type: 2}
   - {fileID: 11400000, guid: 40de997eceb2d554f87b97dac6090093, type: 2}
   tutorial: {fileID: 364349087879893089, guid: 5ed19c8ea6a15d140864859b64143fa1, type: 3}
+  victoryScreen: {fileID: 7946421710430528135, guid: 63a0e0384a6d0a645b43afc5362515c8, type: 3}
+  finalCombatScreen: {fileID: 3644835383962893298, guid: 84caa339e2bab0346877c3dc097c036d, type: 3}
   victoryText: {fileID: 5688606504921768942, guid: 041c00f4d94f94ae7ac50b673a957bab, type: 3}
 --- !u!1001 &690497959
 PrefabInstance:
