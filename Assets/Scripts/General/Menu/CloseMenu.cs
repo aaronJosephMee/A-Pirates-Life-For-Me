@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CloseMenu : MonoBehaviour
 {
     private SettingsButton settingsButton;
+    public bool isPauseMenu = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,9 @@ public class CloseMenu : MonoBehaviour
         if (settingsButton != null)
         {
             settingsButton.buttonClicked = false;
+        }
+        if (isPauseMenu){
+            GameManager.instance.menuOpen = false;
         }
         Destroy(this.transform.parent.gameObject);
     }
