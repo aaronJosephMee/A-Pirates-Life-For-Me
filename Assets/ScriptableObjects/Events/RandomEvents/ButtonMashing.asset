@@ -12,11 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
   m_Name: ButtonMashing
   m_EditorClassIdentifier: 
-  name: ButtonMashing
-  scene: 1
-  sceneIdx: 0
-  flavorText: 
+  title: 
+  scene: 2
+  sceneIdx: 3
+  flavorText: The winds quicken as you enter choppy waters. All of the sudden your
+    ship begins to spin, you've been sucked into a mighty whirlpool!
   isMinigame: 1
-  initialChoices: 
+  initialChoices: 00000000
   choices:
-    Value: []
+    Value:
+    - text: Continue
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 1
+      combatIndex: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+      changeVisuals: 0
+      changeIndex: 0
