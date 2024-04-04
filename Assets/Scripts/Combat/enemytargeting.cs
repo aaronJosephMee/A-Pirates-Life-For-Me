@@ -65,7 +65,7 @@ public class enemytargeting : MonoBehaviour
                 withinAttackRange = true;
                 animator.SetBool("inRange", true);
                 int randomAttack = Random.Range(1, 3);
-                //animator.SetInteger("attackNum", randomAttack);
+                animator.SetInteger("attackNum", randomAttack);
                 transform.LookAt(player.position);
                 /*
                 if (isRanged && fireTimer <= Time.time){
