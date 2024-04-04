@@ -26,7 +26,7 @@ MonoBehaviour:
       isTerminal: 1
       relicsToAdd:
         Value:
-        - {fileID: 11400000, guid: aa1c62a08a698d74dac5fa3b67e11b7c, type: 2}
+        - {fileID: 11400000, guid: 42d6d87ead0992d4f9d099371c56406f, type: 2}
       relicsToLose:
         Value:
         - {fileID: 11400000, guid: 5510cc08322b23345bd1aa4177a761a9, type: 2}
@@ -42,18 +42,19 @@ MonoBehaviour:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Bribe the civilians
+    - text: Bribe the civilians (Costs 50 Gold)
       isTerminal: 1
       relicsToAdd:
         Value:
         - {fileID: 11400000, guid: aa1c62a08a698d74dac5fa3b67e11b7c, type: 2}
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 5510cc08322b23345bd1aa4177a761a9, type: 2}
       eventsToAdd:
         Value: []
       stats:
         health: 0
-        gold: 0
+        gold: -50
       nextScene: 0
       combatIndex: 0
       followUpText: 'You approach the civilians and manage to talk them down. They
@@ -61,7 +62,7 @@ MonoBehaviour:
 
 
         Lose
-        400 Gold. Mark of Dagon relic improved +1'
+        50 Gold. Mark of Dagon relic improved +1'
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 12c54073b1a62d54a8283ef79c2c30d5, type: 3}
   title: Panic
-  description: Gives a burst of speed upon taking damage
+  description: Gives a burst of speed and dodge upon taking damage
   maxlvl: 2
   baseStats:
     gunDamage: 0
@@ -34,6 +34,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -52,7 +53,9 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   price: 70
+  isStoryRelic: 0
   activator: 3
   ActivatorStats:
     gunDamage: 0
@@ -71,7 +74,8 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
-    dodgeChance: 0
+    dodgeChance: 0.1
+    healthBoost: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -89,4 +93,5 @@ MonoBehaviour:
     critChance: 0
     critMultiplier: 0
     richochet: 0
-    dodgeChance: 0
+    dodgeChance: 0.1
+    healthBoost: 0

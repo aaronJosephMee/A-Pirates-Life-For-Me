@@ -55,14 +55,14 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 25d7072021dc5b44999fd1759bbe129d, type: 2}
       stats:
         health: 0
-        gold: 0
+        gold: 120
       nextScene: 0
       combatIndex: 0
       followUpText: 'You easily cut down the already exhausted skeleton. You think
         you see a tear drip from one of its eye sockets.
 
 
-        Gain 500 Gold'
+        Gain 120 Gold'
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0

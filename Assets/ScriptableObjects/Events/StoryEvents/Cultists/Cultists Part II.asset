@@ -138,10 +138,10 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
       stats:
         health: 0
-        gold: 0
+        gold: 100
       nextScene: 14
       combatIndex: 6
-      followUpText: Lose Mark of Dagon relic
+      followUpText: Lose Mark of Dagon relic and gain 100 gold
       nextChoiceIndices:
         Value: 
       changeVisuals: 0

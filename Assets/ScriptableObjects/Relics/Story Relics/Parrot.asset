@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
   m_Name: Parrot
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  title: 
-  description: 
-  maxlvl: 0
+  image: {fileID: 21300000, guid: a42b7cd796cf00747b991e8712bf35af, type: 3}
+  title: Parrot
+  description: Fills you with determination
+  maxlvl: 1
   baseStats:
     gunDamage: 0
     swordDamage: 0

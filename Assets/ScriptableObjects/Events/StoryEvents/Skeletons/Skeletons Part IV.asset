@@ -26,8 +26,11 @@ MonoBehaviour:
       relicsToAdd:
         Value:
         - {fileID: 11400000, guid: a1396e2936b3a01439da3b7b023956c3, type: 2}
+        - {fileID: 11400000, guid: 79ea74a951633fe47bbfbcbb7a3e1f57, type: 2}
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: e3b5a5217d820ab40acf237d55684059, type: 2}
+        - {fileID: 11400000, guid: e5180191bc7822844a4945fb96c16690, type: 2}
       eventsToAdd:
         Value: []
       stats:
@@ -48,23 +51,25 @@ MonoBehaviour:
         Value: 
       changeVisuals: 0
       changeIndex: 0
-    - text: Bribe the civilians to leave the skeletons alone
+    - text: Bribe the civilians to leave the skeletons alone (Costs 50 Gold)
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a1396e2936b3a01439da3b7b023956c3, type: 2}
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: e3b5a5217d820ab40acf237d55684059, type: 2}
       eventsToAdd:
         Value: []
       stats:
         health: 0
-        gold: 0
+        gold: -50
       nextScene: 0
       combatIndex: 0
       followUpText: "You approach the civilians, with your hands up to show that
         you are peaceful. You negotiate with them, explaining that the skeletons
         just wish to pass through. No harm will be done. The civilians demand some
-        kind of incentive. \n\nLose 300 gold.\nGained Skeleton Friend +2"
+        kind of incentive. \n\nLose 50 gold.\nGained Skeleton Friend +2"
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 7f1d3dfc00426094aa281479143a987c, type: 3}
   title: Better Boots
-  description: Improves your speed
+  description: Improves your speed and melee damage
   maxlvl: 3
   baseStats:
     gunDamage: 0
-    swordDamage: 0
+    swordDamage: 15
     defense: 0
     duration: 0
     maxStacks: 0
@@ -34,9 +34,10 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   lvlStats:
     gunDamage: 0
-    swordDamage: 0
+    swordDamage: 10
     defense: 0
     duration: 0
     maxStacks: 0
@@ -52,7 +53,9 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   price: 50
+  isStoryRelic: 0
   activator: 0
   ActivatorStats:
     gunDamage: 0
@@ -72,6 +75,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -90,3 +94,4 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
