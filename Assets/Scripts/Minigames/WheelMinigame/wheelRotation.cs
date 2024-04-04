@@ -16,6 +16,9 @@ public class wheelRotation : MonoBehaviour
     public GameObject relicWinText;
     public GameObject howToPlayPanel; 
     public GameObject relicChoice;
+    public AudioSource audioSource;
+    public AudioClip wheelSFX;
+    
     private int _delay = 2; // test later for 2 secs 
 
     private bool spin = false;
@@ -81,6 +84,7 @@ public class wheelRotation : MonoBehaviour
         {
             rbody.AddTorque(RotatePower);
             inRotate = 1;
+            audioSource.PlayOneShot(wheelSFX);
         }
     }
 
