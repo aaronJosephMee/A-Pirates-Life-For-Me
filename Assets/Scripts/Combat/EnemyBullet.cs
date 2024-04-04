@@ -16,7 +16,7 @@ public class EnemyBullet : MonoBehaviour
     public float damage;
     float noHitPeriod = 0.3f;
     float noHitTimer;
-
+    public float scaleFactor = 1f;
     private Rigidbody rb;
     private SphereCollider sc;
 
@@ -26,6 +26,7 @@ public class EnemyBullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         noHitTimer = Time.time + noHitPeriod;
+        damage *= scaleFactor;
     }
 
     // Update is called once per frame
