@@ -26525,6 +26525,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombatChooser
       objectReference: {fileID: 0}
+    - target: {fileID: 1367117454336755606, guid: d2bc000cac150824487dc2ee6c813616, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367117454336755606, guid: d2bc000cac150824487dc2ee6c813616, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367117454336755606, guid: d2bc000cac150824487dc2ee6c813616, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2082781185615372135, guid: d2bc000cac150824487dc2ee6c813616, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
