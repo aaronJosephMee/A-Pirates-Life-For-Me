@@ -167,7 +167,6 @@ public class OverworldMapManager : MonoBehaviour
         List<Vector3> goalPositon = _buttonPositioner.GetButtonPositions(_numChoices + 1, 1);
         _goalLocation = new ChoiceNode(ChoiceType.Goal, SceneName.NoScene);
         String description = _choiceDescriptions[ChoiceType.Goal];
-        print(description);
         _goalLocation.AddButton(GenerateChoiceButton(), goalPositon[0], _choiceSprites[ChoiceType.Goal], description, GetGoalCallback());
     }
 
