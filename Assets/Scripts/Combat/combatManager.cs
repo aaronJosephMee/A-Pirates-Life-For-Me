@@ -100,6 +100,12 @@ public class combatManager : MonoBehaviour
                 enemyHealth.maxHealth *= enemyCount.scalingFactor;
                 enemyHealth.currentHealth = enemyHealth.maxHealth; 
             }
+
+            enemytargeting enemytargeting = enemy.GetComponent<enemytargeting>();
+            if (enemytargeting)
+            {
+                enemytargeting.scaleFactor = enemyCount.scalingFactor;
+            }
             //maybe scalingfactor should be separate for health and damage
 
             this.enemyCount++;

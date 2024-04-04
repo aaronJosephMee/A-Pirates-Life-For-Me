@@ -90,6 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialMsgs:
+  - title: Intro
+    body: After many years hoping to become a pirate, today your dream comes true.
+      You finally have a ship to call your own. It's small, it's basic, but it's
+      yours.  You already look the part. Now it's time to act the part. Battle, treasure,
+      and choices await as you chart unknown waters.
+    titleColor: {r: 0, g: 0, b: 0, a: 1}
   - title: Relics
     body: 'Relics can be obtained from battle, events, and the shop. They give permanent
       stat buffs and are very important to surving the harsh seas. They can give
