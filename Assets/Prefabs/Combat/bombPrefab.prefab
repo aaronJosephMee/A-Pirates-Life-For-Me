@@ -300,7 +300,7 @@ MonoBehaviour:
   explosionForce: 1000
   explosionRadius: 2.5
   enemyHealth: {fileID: 0}
-  exDamage: 100
+  exDamage: 1000
   targetLayer:
     serializedVersion: 2
     m_Bits: 16384

@@ -12,7 +12,7 @@ public class bomb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ActivateAfterDelay(7f));
+        StartCoroutine(ActivateAfterDelay(4f));
     }
 
     // Update is called once per frame
