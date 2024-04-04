@@ -18,7 +18,8 @@ public class wheelRotation : MonoBehaviour
     public GameObject relicChoice;
     private int _delay = 2; // test later for 2 secs 
 
-    private bool spin = false; 
+    private bool spin = false;
+    private bool zPressed = false; 
     private void Start()
     {
         winText.gameObject.SetActive(false);
@@ -37,8 +38,9 @@ public class wheelRotation : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (!zPressed&&Input.GetKeyDown(KeyCode.Z))
         {
+            zPressed = true;
             spin = true; 
             howToPlayPanel.gameObject.SetActive(false);
         }
