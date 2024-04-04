@@ -24,6 +24,7 @@ public class combatManager : MonoBehaviour
     public bool waveCleared = false;
     [SerializeField] GameObject sword;
     [SerializeField] GameObject gun;
+    [SerializeField] GameObject minimap;
     [SerializeField] public int spawnTimer = 8;
     [SerializeField] public List<EnemyCount> enemiesToSpawn;
     private List<Transform> spawners;
@@ -121,6 +122,7 @@ public class combatManager : MonoBehaviour
         waveCleared = true;
         sword.SetActive(false);
         gun.SetActive(false);
+        minimap.SetActive(false);
         cameraManager.EnableWinCam();
         playerSword.enabled = false;
 

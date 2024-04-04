@@ -5104,6 +5104,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8887732570826914737, guid: 8fcc698fd887f4a89b6e67fdfdf41ff3, type: 3}
   m_PrefabInstance: {fileID: 4773026829248240684}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6401174281735236274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1939002520901908126, guid: 8fcc698fd887f4a89b6e67fdfdf41ff3, type: 3}
+  m_PrefabInstance: {fileID: 4773026829248240684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5873694967382224589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5288,6 +5293,10 @@ PrefabInstance:
       propertyPath: sword
       value: 
       objectReference: {fileID: 1476048052063508688}
+    - target: {fileID: 5930130255283367119, guid: d53ed7f47f2a3a7478583556fd5953ec, type: 3}
+      propertyPath: minimap
+      value: 
+      objectReference: {fileID: 6401174281735236274}
     - target: {fileID: 5930130255283367119, guid: d53ed7f47f2a3a7478583556fd5953ec, type: 3}
       propertyPath: itemDrop
       value: 
