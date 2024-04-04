@@ -26,7 +26,7 @@ MonoBehaviour:
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
-    hpRegen: 0
+    hpRegen: 3
     projectileSize: 0
     swordDebuff: 0
     gunDebuff: 0
@@ -35,6 +35,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -53,6 +54,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   price: 30
   uses: 2
   cooldown: 5

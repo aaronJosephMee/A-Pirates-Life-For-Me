@@ -118,8 +118,8 @@ MonoBehaviour:
       attacks back the sender. It really cool
     titleColor: {r: 0, g: 0, b: 0, a: 1}
   - title: Bombs
-    body: During combat you can throw bombs with 'Q'. They recharge between fights
-      so use lots.
+    body: During combat you can throw bombs with 'Q'. Shoot them to blow them up
+      faster They recharge between fights so use lots.
     titleColor: {r: 0, g: 0, b: 0, a: 1}
   - title: Map
     body: Move the map left with 'A' and right with 'D'. Reach the treasure on the
