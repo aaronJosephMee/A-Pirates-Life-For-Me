@@ -11,45 +11,66 @@ public class wheelRotation : MonoBehaviour
     int inRotate;
     float stop;
 
-    public TextMeshProUGUI winText;
-    public TextMeshProUGUI loseText;
-    public TextMeshProUGUI relicWinText; 
-
+    public GameObject winText;
+    public GameObject loseText;
+    public GameObject relicWinText;
+    public GameObject howToPlayPanel; 
     public GameObject relicChoice;
     private int _delay = 2; // test later for 2 secs 
+
+    private bool spin = false; 
     private void Start()
     {
         winText.gameObject.SetActive(false);
         loseText.gameObject.SetActive(false);
         relicWinText.gameObject.SetActive(false);
+        howToPlayPanel.gameObject.SetActive(true);
+        
+        
         rbody = GetComponent<Rigidbody2D>();
         stop = Random.Range(500f, 1500f); 
-        Rotate();
+       
     }
 
-    float t;
-
+    private float t;
+    
     private void Update()
     {
-        if (rbody.angularVelocity > 0)
+        
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            rbody.angularVelocity -= stop * Time.deltaTime;
-            rbody.angularVelocity = Mathf.Clamp(rbody.angularVelocity, 0, 1440); // increase for roulette 
+            spin = true; 
+            howToPlayPanel.gameObject.SetActive(false);
         }
 
-        if (Mathf.Approximately(rbody.angularVelocity, 0) && inRotate == 1)
+        if (spin)
         {
-            t += 1 * Time.deltaTime;
-            if (t >= 0.5f)
+            Rotate();
+            if (rbody.angularVelocity > 0)
             {
-                
-                inRotate = 0;
-                t = 0;
-                stop = Random.Range(500f, 1500f);
-                GetReward(); 
+                rbody.angularVelocity -= stop * Time.deltaTime;
+                rbody.angularVelocity = Mathf.Clamp(rbody.angularVelocity, 0, 1440); // increase for roulette 
             }
+
+            if (Mathf.Approximately(rbody.angularVelocity, 0) && inRotate == 1)
+            {
+                t += 1 * Time.deltaTime;
+                if (t >= 0.5f)
+                {
+
+                    inRotate = 0;
+                    t = 0;
+                    
+                    stop = Random.Range(500f, 1500f);
+                    spin = false;
+                    GetReward();
+                    
+                }
+                
+            }
+            
         }
-        
+
     }
 
     public void Rotate() 
