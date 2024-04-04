@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b85f91a993b2c8443a48d767fdc7697f, type: 3}
   m_Name: RedFlower
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: cc1bb7e21ae29fd4980cf5eb779333bd, type: 3}
   title: Red Flower
   description: Fire damage on sword and gun
@@ -20,15 +20,15 @@ MonoBehaviour:
     gunDamage: 0
     swordDamage: 0
     defense: 0
-    duration: 0
+    duration: 5
     maxStacks: 0
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
     hpRegen: 0
     projectileSize: 0
-    swordDebuff: 0
-    gunDebuff: 0
+    swordDebuff: 1
+    gunDebuff: 1
     accuracy: 0
     critChance: 0
     critMultiplier: 0

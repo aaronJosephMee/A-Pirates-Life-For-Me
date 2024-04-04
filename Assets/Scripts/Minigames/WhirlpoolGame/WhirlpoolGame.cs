@@ -13,8 +13,14 @@ public class WhirlpoolGame : MonoBehaviour
     public float translationSpeed;
     public float distanceFromCenter;
     public float whirlpoolSize;
+    private bool zPressed;
 
     public AudioSource backgroundMusic;
+    public AudioSource youWinSFX;
+    public AudioSource youLoseSFX;
+    
+    public AudioClip youWin;
+    public AudioClip youLose;
     
     public GameObject winningText;
     public GameObject losingText;
@@ -44,9 +50,10 @@ public class WhirlpoolGame : MonoBehaviour
         }
 
         // Check for user input (adjust this based on your existing button-mashing logic)
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (!zPressed && Input.GetKeyDown(KeyCode.Z))
         {
             isBeingPulled = true;
+            zPressed = true;
             howToPlayPanel.gameObject.SetActive(false);
         }
         distanceFromCenter = Vector3.Distance(ship.gameObject.transform.position, whirlpoolCenter.position);
@@ -71,11 +78,14 @@ public class WhirlpoolGame : MonoBehaviour
         if (won)
         {
             winningText.gameObject.SetActive(true);
+            youWinSFX.PlayOneShot(youWin);
         }
         else
         {
             losingText.gameObject.SetActive(true);
+            youLoseSFX.PlayOneShot(youLose);
         }
+        
         Time.timeScale = 0.0f;
         backgroundMusic.Stop();
         

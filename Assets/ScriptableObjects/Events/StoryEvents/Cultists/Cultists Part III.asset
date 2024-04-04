@@ -39,7 +39,7 @@ MonoBehaviour:
         cultists are running towards you. You tell the prisoner to hide and draw
         your sword, preparing to fight.
       nextChoiceIndices:
-        Value: 02000000
+        Value: 05000000
       changeVisuals: 0
       changeIndex: 0
     - text: Flee
@@ -142,10 +142,10 @@ MonoBehaviour:
       stats:
         health: 0
         gold: 0
-      nextScene: 0
-      combatIndex: 0
-      followUpText: 'You tell the prisoner to hide, as you draw your sword, preparing
-        to fight.
+      nextScene: 15
+      combatIndex: 5
+      followUpText: 'You valiantly fought off the cultists. The prisoner thanks you
+        for your aid.
 
 
         Gain Freedom relic'

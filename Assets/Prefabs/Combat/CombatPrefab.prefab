@@ -2845,6 +2845,10 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6203671913971225488, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 4784092200643747948, guid: 771f15adeba4f4940b51f7bbe75ddb2f, type: 3}
     - target: {fileID: 6246133924368035026, guid: d35715275bf1e9c4884c55a50a1cb6da, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -5087,12 +5091,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9013519024749173996, guid: 8fcc698fd887f4a89b6e67fdfdf41ff3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013519024749173996, guid: 8fcc698fd887f4a89b6e67fdfdf41ff3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013519024749173996, guid: 8fcc698fd887f4a89b6e67fdfdf41ff3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 249
+      value: 274
       objectReference: {fileID: 0}
     - target: {fileID: 9013519024749173996, guid: 8fcc698fd887f4a89b6e67fdfdf41ff3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -73
+      value: -100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5102,6 +5114,11 @@ PrefabInstance:
 --- !u!224 &4137298650387621789 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8887732570826914737, guid: 8fcc698fd887f4a89b6e67fdfdf41ff3, type: 3}
+  m_PrefabInstance: {fileID: 4773026829248240684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6401174281735236274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1939002520901908126, guid: 8fcc698fd887f4a89b6e67fdfdf41ff3, type: 3}
   m_PrefabInstance: {fileID: 4773026829248240684}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5873694967382224589
@@ -5288,6 +5305,10 @@ PrefabInstance:
       propertyPath: sword
       value: 
       objectReference: {fileID: 1476048052063508688}
+    - target: {fileID: 5930130255283367119, guid: d53ed7f47f2a3a7478583556fd5953ec, type: 3}
+      propertyPath: minimap
+      value: 
+      objectReference: {fileID: 6401174281735236274}
     - target: {fileID: 5930130255283367119, guid: d53ed7f47f2a3a7478583556fd5953ec, type: 3}
       propertyPath: itemDrop
       value: 

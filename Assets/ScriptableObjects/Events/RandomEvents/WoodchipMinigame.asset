@@ -12,11 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
   m_Name: WoodchipMinigame
   m_EditorClassIdentifier: 
-  title: 
-  scene: 7
-  sceneIdx: 0
-  flavorText: The svurvy begins to hit as you sail the high seas, quickly
+  title:
+  scene: 11
+  sceneIdx: 5
+  flavorText: As you sail the high seas, you feel a sudden weakness overcome your
+    body. You've been plagued by scurvy and need coconut now!
   isMinigame: 1
-  initialChoices: 
+  initialChoices: 00000000
   choices:
-    Value: []
+    Value:
+    - text: Continue
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 7
+      combatIndex: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+      changeVisuals: 0
+      changeIndex: 0

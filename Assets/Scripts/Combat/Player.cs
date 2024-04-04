@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using DefaultNamespace.OverworldMap;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
     Ragdoll ragdoll;
     public bool isDead;
     public CharacterAiming aiming;
-
+    public GameObject gameOverScreen;
     Animator anim;
     meleeHitbox meleeWeapon;
     CameraManager cameraManager;
@@ -111,8 +112,7 @@ public class Player : MonoBehaviour
     private IEnumerator ReturnToTitle()
     {
         yield return new WaitForSeconds(2);
-        OverworldMapManager.Instance?.MarkMapForReset();
-        GameManager.instance.LoadScene(SceneName.TitleScreen);
+        Instantiate(gameOverScreen);
     }
     private IEnumerator PollRelics(){
         newStats = ItemManager.instance.TotalStats();

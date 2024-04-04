@@ -135,10 +135,11 @@ public class OverworldMapManager : MonoBehaviour
         if (choiceNode.ChoiceType == ChoiceType.Event)
         {
             callbacks.Add(() => _events.RemoveEvent(_choiceGenerator.GetCurrentEvent()));
-            if (!_choiceGenerator.GetCurrentEvent().isMinigame)
-            {
-                callbacks.Add(() => _wasEventChosen = true);
-            }
+            callbacks.Add(() => _wasEventChosen = true);
+            // if (!_choiceGenerator.GetCurrentEvent().isMinigame)
+            // {
+            //     
+            // }
             callbacks.Add(() => GameManager.instance.LoadScene(choiceNode.SceneName, _choiceGenerator.GetCurrentEvent().sceneIdx));
         }
         else
@@ -166,7 +167,6 @@ public class OverworldMapManager : MonoBehaviour
         List<Vector3> goalPositon = _buttonPositioner.GetButtonPositions(_numChoices + 1, 1);
         _goalLocation = new ChoiceNode(ChoiceType.Goal, SceneName.NoScene);
         String description = _choiceDescriptions[ChoiceType.Goal];
-        print(description);
         _goalLocation.AddButton(GenerateChoiceButton(), goalPositon[0], _choiceSprites[ChoiceType.Goal], description, GetGoalCallback());
     }
 
