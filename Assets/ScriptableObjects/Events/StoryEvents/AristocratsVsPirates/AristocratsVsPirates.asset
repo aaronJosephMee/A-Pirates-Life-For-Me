@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Pirates Vs Aristocrats
   scene: 2
-  sceneIdx: 0
+  sceneIdx: 1
   flavorText: 'As you sail the seas, you encounter two ships engaged in battle: a
     group of pirates fighting a group of aristocrats. It is too late to steer your
     ship away from the fight. Both groups beckon at you, asking for your assistance.

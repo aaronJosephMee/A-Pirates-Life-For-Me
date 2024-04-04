@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Stranded Parrot, Hungry Shark
   m_EditorClassIdentifier: 
   title: Stranded Parrot, Hungry Shark
-  scene: 0
-  sceneIdx: 0
+  scene: 11
+  sceneIdx: 3
   flavorText: While sailing the seas, you spot something floating in the distance.
     As you draw closer to it, you realize that it is a broken piece of wood with
     a parrot sitting on top of it.

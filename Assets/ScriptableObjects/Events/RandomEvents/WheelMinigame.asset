@@ -12,9 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7ede30a09145eeaf41c3f17fb9dd38, type: 3}
   m_Name: WheelMinigame
   m_EditorClassIdentifier: 
-  name: Wheel Minigame
-  scene: 6
-  sceneIdx: 0
-  flavorText: 
+  title: 
+  scene: 2
+  sceneIdx: 2
+  flavorText: You stumble upon a mysterious ship while sailing the high seas. The
+    captain of the ship beckons you to board his ship, promising a magical wheel
+    experience if you do. What shall you do?
   isMinigame: 1
-  choices: []
+  initialChoices: 0000000001000000
+  choices:
+    Value:
+    - text: Board the ship
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 6
+      combatIndex: 0
+      followUpText: 
+      nextChoiceIndices:
+        Value: 
+      changeVisuals: 0
+      changeIndex: 0
+    - text: Leave
+      isTerminal: 1
+      relicsToAdd:
+        Value: []
+      relicsToLose:
+        Value: []
+      eventsToAdd:
+        Value: []
+      stats:
+        health: 0
+        gold: 0
+      nextScene: 0
+      combatIndex: 0
+      followUpText: You decide that today is not the day for a magical wheel experience.
+      nextChoiceIndices:
+        Value: 
+      changeVisuals: 0
+      changeIndex: 0
