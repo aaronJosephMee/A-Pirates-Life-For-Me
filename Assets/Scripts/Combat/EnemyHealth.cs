@@ -41,6 +41,10 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] Color fireHit;
     [SerializeField] Color poisonHit;
     [SerializeField] Color freezeHit;
+    
+    public bool isBoss = false;
+    [SerializeField] Slider slider;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +61,11 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isBoss)
+        {
+            slider.value = currentHealth / maxHealth;
+        }
+
         blinkTimer -= Time.deltaTime;
         float lerp = Mathf.Clamp01(blinkTimer / blinkDuration);
         float intensity = (lerp * blinkIntensity) + 1.0f;
