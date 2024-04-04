@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialMsgs:
   - title: Intro
-    body: After many years hoping to become a pirate, today your dream comes true.
+    body: wait as you chart unknown waters. a pirate, today your dream comes true.
       You finally have a ship to call your own. It's small, it's basic, but it's
       yours.  You already look the part. Now it's time to act the part. Battle, treasure,
       and choices await as you chart unknown waters.
@@ -120,6 +120,10 @@ MonoBehaviour:
   - title: Bombs
     body: During combat you can throw bombs with 'Q'. They recharge between fights
       so use lots.
+    titleColor: {r: 0, g: 0, b: 0, a: 1}
+  - title: Map
+    body: Move the map left with 'A' and right with 'D'. Reach the treasure on the
+      far right to complete your journey
     titleColor: {r: 0, g: 0, b: 0, a: 1}
   next: {fileID: 4258811604686556116}
   tmp: {fileID: 7756287898881773582}
