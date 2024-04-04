@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MeleeAttack : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class MeleeAttack : MonoBehaviour
 
     //bomb
     [SerializeField] public int numBombs = 3;
+    [SerializeField] public TextMeshProUGUI bombCount;
     private bool canThrow = true; 
     [SerializeField] public GameObject bomb;
     [SerializeField] public float bombVelocity;
@@ -129,7 +132,7 @@ public class MeleeAttack : MonoBehaviour
         
         GameObject currentBomb = Instantiate(bomb, throwPos.position, throwPos.rotation);
         numBombs -= 1;
-
+        bombCount.text = "" + numBombs;
         Rigidbody rb = currentBomb.GetComponent<Rigidbody>();
         rb.AddForce(throwPos.forward * bombVelocity, ForceMode.Impulse);
     }
