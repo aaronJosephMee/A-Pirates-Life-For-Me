@@ -66,15 +66,10 @@ public class Events
     {
         _seedEvents = seedEvents;
         _storyEvents = storyEvents;
-        // int randomEventIndex = _random.Next(_seedEvents.Count);
-        // _eventPool.Add(_seedEvents[randomEventIndex]);
+        int randomEventIndex = _random.Next(_seedEvents.Count);
+        _eventPool.Add(_seedEvents[randomEventIndex]);
         int randomGenericIndex = _random.Next(genericEvents.Count);
-        randomGenericIndex = 2;
         _eventPool.Add(genericEvents[randomGenericIndex]);
-        // foreach (EventScriptableObject genericEvent in genericEvents)
-        // {
-        //     _eventPool.Add(genericEvent);
-        // }
     }
     
     public EventScriptableObject GetEvent()

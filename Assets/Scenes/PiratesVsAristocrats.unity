@@ -187,6 +187,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8289586018655333998, guid: cbaa9b1bf3bf3e44bb351f7f9c4871f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1489170143}
+    - targetCorrespondingSourceObject: {fileID: 8289586018655333998, guid: cbaa9b1bf3bf3e44bb351f7f9c4871f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260995058}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbaa9b1bf3bf3e44bb351f7f9c4871f8, type: 3}
 --- !u!4 &40420668 stripped
@@ -9626,6 +9629,98 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd3b4bf6d7e36af41b2bc986a4ab13c7, type: 3}
+--- !u!1 &1260995057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1260995058}
+  - component: {fileID: 1260995060}
+  - component: {fileID: 1260995059}
+  m_Layer: 0
+  m_Name: NarrativeCamera4
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1260995058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260995057}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0009725151, y: -0.75236315, z: -0.028751634, w: 0.65812016}
+  m_LocalPosition: {x: 273.09, y: -3, z: 358}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 40420668}
+  m_LocalEulerAnglesHint: {x: -2.553, y: -97.599, z: -2.087}
+--- !u!81 &1260995059
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260995057}
+  m_Enabled: 1
+--- !u!20 &1260995060
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260995057}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1001 &1297472567
 PrefabInstance:
   m_ObjectHideFlags: 0

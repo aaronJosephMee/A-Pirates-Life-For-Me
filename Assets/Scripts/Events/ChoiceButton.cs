@@ -67,7 +67,11 @@ public class ChoiceButton : MonoBehaviour
             }
             else
             {
-                GameManager.instance.StorePopUp(popUpPrefab, SceneName.OverworldMap, toDisplay.followUpText);
+                if (toDisplay.nextScene != SceneName.WheelMinigame && toDisplay.nextScene != SceneName.ShipCombat &&
+                    toDisplay.nextScene != SceneName.ButtonMashing && toDisplay.nextScene != SceneName.WoodchopMinigame)
+                {
+                    GameManager.instance.StorePopUp(popUpPrefab, SceneName.OverworldMap, toDisplay.followUpText);
+                }
                 if (toDisplay.nextScene.IsSceneCombat())
                 {
                     GameManager.instance.SetCombatIndex(toDisplay.combatIndex);
