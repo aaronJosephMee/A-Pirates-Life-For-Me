@@ -31892,7 +31892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2379312406047041509, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2653987459840849476, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -31936,11 +31936,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430030276838966919, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.42145357
+      value: -0.42145354
       objectReference: {fileID: 0}
     - target: {fileID: 4430030276838966919, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13205439
+      value: 0.13205434
       objectReference: {fileID: 0}
     - target: {fileID: 4643168053117206505, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.y
@@ -32060,15 +32060,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8338360325287080770, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.3153794
+      value: -0.31537944
       objectReference: {fileID: 0}
     - target: {fileID: 8338360325287080770, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.051352505
+      value: 0.051352512
       objectReference: {fileID: 0}
     - target: {fileID: 8573093586551438334, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728061783844675686, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728061783844675686, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
