@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MeleeAttack : MonoBehaviour
 {
@@ -16,6 +18,15 @@ public class MeleeAttack : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
+    //bomb
+    [SerializeField] public int numBombs = 3;
+    [SerializeField] public TextMeshProUGUI bombCount;
+    private bool canThrow = true; 
+    [SerializeField] public GameObject bomb;
+    [SerializeField] public float bombVelocity;
+    [SerializeField] Transform throwPos;
+    public float damage = 25;
+
 
     public float blendSpeed = 0.1f;
 
@@ -25,6 +36,13 @@ public class MeleeAttack : MonoBehaviour
         {
             StartAttack();
             attackActive = true;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && canThrow && numBombs > 0)
+        {
+            Debug.Log("toss");
+            ThrowBomb();
 
         }
     }
@@ -54,7 +72,12 @@ public class MeleeAttack : MonoBehaviour
         animator.SetLayerWeight(1, 1);
 
     }
-
+    private void ThrowBomb()
+    {
+        animator.SetLayerWeight(1, 1);
+        animator.Play("toss", 1, 0f);
+        canThrow = false;
+    }
     public void EnableHitbox()
     {
         hitbox.enabled = true;
@@ -95,5 +118,23 @@ public class MeleeAttack : MonoBehaviour
         animator.SetLayerWeight(1, 0); //move after anim fix
     }
 
+    public void tossEnd()
+    {
+        attackActive = false;
+        canThrow = true;
+        
+        animator.SetLayerWeight(1, 0);
+    }
+
+    public void tossStart()
+    {
+        Debug.Log("throwbomb");
+        
+        GameObject currentBomb = Instantiate(bomb, throwPos.position, throwPos.rotation);
+        numBombs -= 1;
+        bombCount.text = "" + numBombs;
+        Rigidbody rb = currentBomb.GetComponent<Rigidbody>();
+        rb.AddForce(throwPos.forward * bombVelocity, ForceMode.Impulse);
+    }
 
 }
