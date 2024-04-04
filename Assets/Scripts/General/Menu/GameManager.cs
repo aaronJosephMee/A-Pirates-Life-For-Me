@@ -28,11 +28,15 @@ public class GameManager : MonoBehaviour
     private IEventToggleable currentEventToggleable;
     private int combatIndex = 0;
     
+    
+    
+    
     // Start is called before the first frame update
     void Awake(){
         if (instance == null)
         {
             instance = this;
+            choices = new Choices(); 
             DontDestroyOnLoad(this);
         }
         else if (instance != this)
@@ -45,6 +49,30 @@ public class GameManager : MonoBehaviour
     {
         Canvas currentCanvas = GetComponentInParent<Canvas>();
         canvas = currentCanvas;
+        
+        choices.AddFlag("PirateFlag", 0);
+        choices.AddFlag("MarkofDagon", 0);
+        choices.AddFlag("MarkofDagon+1", 0);
+        choices.AddFlag("MarkofDagon+2", 0);
+        choices.AddFlag("Turncoat", 0);
+        choices.AddFlag("Bootlicker",0);
+        choices.AddFlag("Freedom", 0);
+        choices.AddFlag("Freedom+1",0);
+        choices.AddFlag("GhostlyVisage", 0);
+        choices.AddFlag("Graverobber",0);
+        choices.AddFlag("Graverobber-1",0);
+        choices.AddFlag("Guilt",0);
+        choices.AddFlag("Guilt+1",0);
+        choices.AddFlag("Parrot", 0 );
+        choices.AddFlag("PegLeg",0);
+        choices.AddFlag("PoopDeck",0);
+        choices.AddFlag("ProtectorofHumanity",0);
+        choices.AddFlag("RedFlower",0);
+        choices.AddFlag("SkeletonFriend",0);
+        choices.AddFlag("SkeletonFriend+1",0);
+        choices.AddFlag("SkeletonFriend+2",0);
+        
+        
     }
 
     public void LoadScene(SceneName scene, int cameraIndex=0)

@@ -24,7 +24,8 @@ MonoBehaviour:
     - text: Destroy the skeleton horde
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: a5ecdb1bd92e2fd40bd034b8675c1ce7, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:
@@ -93,12 +94,12 @@ MonoBehaviour:
         Value: []
       stats:
         health: 0
-        gold: 0
+        gold: 250
       nextScene: 0
       combatIndex: 0
       followUpText: As you disappear from view, you hear the civilians charge at
         the skeletons. In the ensuing disarray, you move from home to home, then
-        finally to the ghost ship, looting as much as you can. Gain 600 gold.
+        finally to the ghost ship, looting as much as you can. Gain 250 gold.
       nextChoiceIndices:
         Value: 00000000
       changeVisuals: 0

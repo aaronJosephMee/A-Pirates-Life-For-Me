@@ -34,11 +34,11 @@ MonoBehaviour:
         - {fileID: 11400000, guid: 598f8f3309020734997774727ad3a69e, type: 2}
       stats:
         health: 0
-        gold: 300
+        gold: 150
       nextScene: 0
       combatIndex: 2
       followUpText: "The aristocrats easily dispatch the pirates with your help.
-        You are handsomly rewarded for your efforts.\n \nGained 300 gold!"
+        You are handsomly rewarded for your efforts.\n \nGained 150 gold!"
       nextChoiceIndices:
         Value: 02000000
       changeVisuals: 0
@@ -46,7 +46,8 @@ MonoBehaviour:
     - text: Side with the pirates
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 975acda4baf0db741ad8891aeca9a6a2, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:

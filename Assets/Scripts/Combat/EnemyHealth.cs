@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using System;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -69,7 +70,7 @@ public class EnemyHealth : MonoBehaviour
         {
             if (gunhitClips != null)
             {
-                int randomClip = Random.Range(0, gunhitClips.Length - 1);
+                int randomClip = UnityEngine.Random.Range(0, gunhitClips.Length - 1);
                 audioSource.clip = gunhitClips[randomClip];
                 audioSource.Play();
             }
@@ -79,7 +80,7 @@ public class EnemyHealth : MonoBehaviour
         {
             if (swordhitSounds != null)
             {
-                int randomClip = Random.Range(0, swordhitSounds.Length - 1);
+                int randomClip = UnityEngine.Random.Range(0, swordhitSounds.Length - 1);
                 audioSource.clip = swordhitSounds[randomClip];
                 audioSource.Play();
             }
@@ -140,10 +141,10 @@ public class EnemyHealth : MonoBehaviour
         }
         if (!isDead){
             if (wasCrit){
-                ShowFloatingText(amount, "crit");
+                ShowFloatingText(MathF.Round(amount), "crit");
             }
             else{
-                ShowFloatingText(amount, type);
+                ShowFloatingText(MathF.Round(amount), type);
             }
             
         }

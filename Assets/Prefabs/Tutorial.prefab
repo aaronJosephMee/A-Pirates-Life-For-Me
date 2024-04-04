@@ -96,15 +96,19 @@ MonoBehaviour:
       buffs require a condition such as a melee hit to be activated. '
     titleColor: {r: 1, g: 0.85490197, b: 0.003921569, a: 1}
   - title: Items
-    body: Items can be bought from the shop and used in combat by pressing 'E'. They
-      can also be used from the inventory by clicking on the item if it is highlighted.
-      Items give temporary stat buffs and healing so use them to give yourself the
-      edge in battle.
+    body: Items are consumables that can can be bought from the shop and used in
+      combat by pressing 'E'. They can also be used from the inventory by clicking
+      on the item if it is highlighted. Items give temporary stat buffs and healing
+      so use them to give yourself the edge in battle.
     titleColor: {r: 0, g: 1, b: 1, a: 1}
   - title: Debuffs
     body: There are 3 debuffs that can be applied. Fire increases in damage overtime
       keep applying it to deal lots of damage. Poison can be stacked and gives consistent
       damage. Freeze slows enemies and can also be stacked to increase the effect.
+    titleColor: {r: 0, g: 0, b: 0, a: 1}
+  - title: Parry
+    body: If you time your sword attack correctly you can parry and reflect ranged
+      attacks back the sender. It really cool
     titleColor: {r: 0, g: 0, b: 0, a: 1}
   next: {fileID: 4258811604686556116}
   tmp: {fileID: 7756287898881773582}

@@ -18,6 +18,8 @@ public class Choices
     //Adds a flag with value = startVal
     public void AddFlag(String name, int startVal){
         //Containing spaces makes saving and loading harder so its not allowed
+        
+        Debug.Log("name of flag" + name);
         if (name.Contains(" ")){
             Debug.Log("Flag names cannot contain spaces");
             return;
@@ -38,6 +40,8 @@ public class Choices
     //Creates a dependency from a gameObject to a flag on a specific value. On that value it calls the function given in whatDo
     public void CreateDependency(String flag, GameObject gameObject, int onVal, Func<GameObject, int> whatDo){
         int state;
+        
+        Debug.Log("making dependency on" + flag);
         if (!flags.TryGetValue(flag, out state)){
             Debug.Log("Requested flag '" + flag +"' doesn't exist");
             return;
@@ -62,6 +66,7 @@ public class Choices
     //Sets the value of a flag to newVal and calls any dependencies on that value
     public void SetFlag(String flag, int newVal){
         int val;
+        
         if (!flags.TryGetValue(flag, out val)){
             Debug.Log("Requested flag '" + flag + "' doesn't exist");
             return;
@@ -72,6 +77,7 @@ public class Choices
         Func<GameObject, int> toDo;
         if (dependencies.TryGetValue(flag, out dep)){
             foreach (KeyValuePair<GameObject, Dictionary<int, Func<GameObject, int>>> entry in dep.deps){
+                Debug.Log("calling dependency");
                 if (entry.Value.TryGetValue(newVal, out toDo) && entry.Key != null){   
                     toDo(entry.Key);
                 }

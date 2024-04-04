@@ -48,7 +48,8 @@ MonoBehaviour:
       relicsToAdd:
         Value: []
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 5510cc08322b23345bd1aa4177a761a9, type: 2}
       eventsToAdd:
         Value:
         - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
@@ -130,16 +131,17 @@ MonoBehaviour:
       relicsToAdd:
         Value: []
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 5510cc08322b23345bd1aa4177a761a9, type: 2}
       eventsToAdd:
         Value:
         - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
       stats:
         health: 0
-        gold: 0
+        gold: 100
       nextScene: 14
       combatIndex: 6
-      followUpText: Lose Mark of Dagon relic
+      followUpText: Lose Mark of Dagon relic and gain 100 gold
       nextChoiceIndices:
         Value: 
       changeVisuals: 0
@@ -149,7 +151,8 @@ MonoBehaviour:
       relicsToAdd:
         Value: []
       relicsToLose:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 5510cc08322b23345bd1aa4177a761a9, type: 2}
       eventsToAdd:
         Value:
         - {fileID: 11400000, guid: 3abd752e4153b264590fc4c2e9f2e2fc, type: 2}
@@ -170,7 +173,8 @@ MonoBehaviour:
     - text: Continue watching
       isTerminal: 1
       relicsToAdd:
-        Value: []
+        Value:
+        - {fileID: 11400000, guid: 4c2b3074f27d30644aa58075ae118ffa, type: 2}
       relicsToLose:
         Value: []
       eventsToAdd:

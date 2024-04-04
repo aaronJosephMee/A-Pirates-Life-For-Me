@@ -18,6 +18,9 @@ public class ChoiceButton : MonoBehaviour
     {
         toDisplay = choice;
         myText.text = choice.text;
+        if (ItemManager.instance.CurrentGold() + toDisplay.stats.gold < 0){
+            this.GetComponent<Button>().enabled = false;
+        }
     }
     void ChoicePicked()
     {

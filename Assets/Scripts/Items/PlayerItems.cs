@@ -208,6 +208,7 @@ public class PlayerItems
             }
             if (relic.isStoryRelic){
                 numbStoryRelics++;
+                GameManager.choices.SetFlag(relic.name, 1);
             }
             if (relic.activator == Activators.Melee){
                 onMelee.Add(relic.title);
@@ -272,6 +273,10 @@ public class PlayerItems
             ItemManager.instance.SetHealth(health.curHealth, health.maxHealth);
         }
         playerRelics.Remove(relic.title);
+        if (relic.isStoryRelic)
+        {
+            GameManager.choices.SetFlag(relic.name, 0);
+        }
         if (upgradeables.ContainsKey(relic.title)){
             upgradeables.Remove(relic.title);
         }

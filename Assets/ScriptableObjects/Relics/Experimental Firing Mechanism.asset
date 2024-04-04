@@ -23,7 +23,7 @@ MonoBehaviour:
     duration: 0
     maxStacks: 0
     bulletCount: 0
-    fireRate: 2.5
+    fireRate: 4
     speedBoost: 0
     hpRegen: 0
     projectileSize: 0
@@ -34,6 +34,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   lvlStats:
     gunDamage: 0
     swordDamage: 0
@@ -52,6 +53,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   price: 100
   isStoryRelic: 0
   activator: 0
@@ -73,6 +75,7 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
   Activatorlvl:
     gunDamage: 0
     swordDamage: 0
@@ -91,3 +94,4 @@ MonoBehaviour:
     critMultiplier: 0
     richochet: 0
     dodgeChance: 0
+    healthBoost: 0
