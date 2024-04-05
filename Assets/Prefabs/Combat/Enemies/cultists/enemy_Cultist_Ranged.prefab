@@ -3446,8 +3446,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.09549457
-  m_Center: {x: 0, y: 0.09549457, z: 0}
+  m_Radius: 20.24
+  m_Center: {x: 0, y: 2.34, z: 0}
 --- !u!54 &6818265597175444103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3487,7 +3487,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -40.415417, y: 6.136862, z: 1.933537e-13}
+  m_ConnectedAnchor: {x: -40.415424, y: 6.136607, z: 1.9335365e-13}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3705,6 +3705,8 @@ MonoBehaviour:
   fireHit: {r: 1, g: 0.5902525, b: 0, a: 1}
   poisonHit: {r: 0.113589525, g: 1, b: 0, a: 1}
   freezeHit: {r: 0, g: 0.31438303, b: 1, a: 1}
+  isBoss: 0
+  slider: {fileID: 0}
 --- !u!114 &1914949963190183061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3739,6 +3741,8 @@ MonoBehaviour:
   bulletVelocity: 5
   bulletSize: {x: 1, y: 1, z: 1}
   gun: {fileID: 6316348196379462508}
+  scaleFactor: 0
+  isEnemy: 0
 --- !u!114 &3166235923863740075
 MonoBehaviour:
   m_ObjectHideFlags: 0

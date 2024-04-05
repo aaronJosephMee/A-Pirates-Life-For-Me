@@ -140,6 +140,7 @@ public class WoodMiniGame : MonoBehaviour
     {
         start = false;
         WinText.gameObject.SetActive(true);
+        ItemManager.instance.AddGold(100);
         yield return new WaitForSeconds(2);
         OverworldMapManager.Instance.TransitionBackToMap();
     }

@@ -6,7 +6,7 @@ using DefaultNamespace.OverworldMap;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     [SerializeField] Color dodgeColor;
     public float IFrames = 0.3f;
     float ITimer = 0;
+    [SerializeField] private TMP_Text healthText;
+    public Transform healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +37,15 @@ public class Player : MonoBehaviour
         ragdoll = GetComponent<Ragdoll>();
         aiming = GetComponent<CharacterAiming>();
 
+        
+
         cameraManager = FindObjectOfType<CameraManager>();
         meleeWeapon = GetComponentInChildren<meleeHitbox>();
         weaponManager = GetComponentInChildren<WeaponManager>();
         anim = GetComponent<Animator>();
         currentHealth = ItemManager.instance.GetHealth().curHealth;
         maxHealth = ItemManager.instance.GetHealth().maxHealth;
+        healthText.text = $"{currentHealth} / {maxHealth}";
         StartCoroutine(PollRelics());
     }
 
@@ -48,6 +53,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         slider.value = currentHealth / maxHealth;
+
+        healthText.text = $"{currentHealth} / {maxHealth}";
+
         if (toHeal > 0 && currentHealth < maxHealth && !isDead){
             currentHealth += toHeal * Time.deltaTime;
             if (currentHealth > maxHealth){
@@ -85,6 +93,7 @@ public class Player : MonoBehaviour
             else{
                 dmgNumb.GetComponent<PlayerDamageNumbers>().SetText("-" + damageToTake, hitColor);
                 ItemManager.instance.OnTakeDamage();
+                StartCoroutine(ShakeHealthText(0.2f, 5.1f));
             }
             Destroy(dmgNumber);
             Instantiate(dmgNumb, slider.transform);
@@ -96,7 +105,31 @@ public class Player : MonoBehaviour
         
     }
 
+    private IEnumerator ShakeHealthText(float duration, float intensity)
+    {
+        Vector3 originalHealthTextPosition = healthText.transform.localPosition;
+        Vector3 originalHealthBarPosition = healthBar.transform.localPosition;
 
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float x = UnityEngine.Random.Range(-2.5f, 2.5f) * intensity;
+            float y = UnityEngine.Random.Range(-2.5f, 2.5f) * intensity;
+            healthText.transform.localPosition = new Vector3(originalHealthTextPosition.x + x, originalHealthTextPosition.y + y, originalHealthTextPosition.z);
+
+            x = UnityEngine.Random.Range(-2.5f, 2.5f) * intensity;
+            y = UnityEngine.Random.Range(-2.5f, 2.5f) * intensity;
+            healthBar.transform.localPosition = new Vector3(originalHealthBarPosition.x + x, originalHealthBarPosition.y + y, originalHealthBarPosition.z);
+
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+
+        healthText.transform.localPosition = originalHealthTextPosition;
+        healthBar.transform.localPosition = originalHealthBarPosition;
+    }
 
     private void Die()
     {

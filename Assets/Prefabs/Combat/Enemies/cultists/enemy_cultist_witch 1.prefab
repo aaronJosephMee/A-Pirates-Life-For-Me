@@ -3812,6 +3812,8 @@ MonoBehaviour:
   fireHit: {r: 1, g: 0.5902525, b: 0, a: 1}
   poisonHit: {r: 0.113589525, g: 1, b: 0, a: 1}
   freezeHit: {r: 0, g: 0.31438303, b: 1, a: 1}
+  isBoss: 0
+  slider: {fileID: 0}
 --- !u!114 &1074892820290512689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3846,6 +3848,8 @@ MonoBehaviour:
   bulletVelocity: 5
   bulletSize: {x: 1, y: 1, z: 1}
   gun: {fileID: 0}
+  scaleFactor: 0
+  isEnemy: 0
 --- !u!114 &6767077241003735366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3992,7 +3996,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
