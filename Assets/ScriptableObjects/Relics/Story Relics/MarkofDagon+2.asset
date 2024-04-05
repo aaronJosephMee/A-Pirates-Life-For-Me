@@ -62,7 +62,7 @@ MonoBehaviour:
     swordDamage: 0
     defense: 0
     duration: 5
-    maxStacks: 0
+    maxStacks: 1
     bulletCount: 0
     fireRate: 0
     speedBoost: 0
