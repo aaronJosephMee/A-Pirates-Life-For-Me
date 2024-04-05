@@ -3446,8 +3446,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.09549457
-  m_Center: {x: 0, y: 0.09549457, z: 0}
+  m_Radius: 20.51
+  m_Center: {x: 0, y: 3.02, z: 0}
 --- !u!54 &6818265597175444103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3705,6 +3705,8 @@ MonoBehaviour:
   fireHit: {r: 1, g: 0.5902525, b: 0, a: 1}
   poisonHit: {r: 0.113589525, g: 1, b: 0, a: 1}
   freezeHit: {r: 0, g: 0.31438303, b: 1, a: 1}
+  isBoss: 0
+  slider: {fileID: 0}
 --- !u!114 &1914949963190183061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3734,11 +3736,13 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   isRanged: 1
   bullet: {fileID: 3830092040764641392, guid: 7d65932d2472df842aac0b4484cd51a2, type: 3}
-  attackRange: 12.9
+  attackRange: 2
   withinAttackRange: 0
   bulletVelocity: 5
   bulletSize: {x: 1, y: 1, z: 1}
   gun: {fileID: 6316348196379462508}
+  scaleFactor: 0
+  isEnemy: 0
 --- !u!114 &3166235923863740075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3752,7 +3756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
-  damageRadius: 1
+  damageRadius: 2.1
   targetLayer:
     serializedVersion: 2
     m_Bits: 8

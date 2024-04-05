@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &10971030944101835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244543433967621680}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244543433967621680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10971030944101835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.158, z: 0.874}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4284177003550035008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90852245753902406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3744,6 +3775,7 @@ Transform:
   - {fileID: 7587626842028238303}
   - {fileID: 1879786907806405342}
   - {fileID: 6314594128532709627}
+  - {fileID: 244543433967621680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4826417874811967097
@@ -3756,7 +3788,7 @@ Animator:
   m_GameObject: {fileID: 8939558888829667787}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: be73df03abf02284486d1afabcf5d4fe, type: 3}
-  m_Controller: {fileID: 9100000, guid: 86138a4771ffad94693c5056efdd2eab, type: 2}
+  m_Controller: {fileID: 9100000, guid: ccd677c05c9a6ef48a168af564b8b7f2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -3812,6 +3844,8 @@ MonoBehaviour:
   fireHit: {r: 1, g: 0.5902525, b: 0, a: 1}
   poisonHit: {r: 0.113589525, g: 1, b: 0, a: 1}
   freezeHit: {r: 0, g: 0.31438303, b: 1, a: 1}
+  isBoss: 0
+  slider: {fileID: 0}
 --- !u!114 &1074892820290512689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3839,13 +3873,15 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 4826417874811967097}
   playerScript: {fileID: 0}
-  isRanged: 0
+  isRanged: 1
   bullet: {fileID: 3830092040764641392, guid: 7d65932d2472df842aac0b4484cd51a2, type: 3}
-  attackRange: 2
+  attackRange: 12
   withinAttackRange: 0
   bulletVelocity: 5
   bulletSize: {x: 1, y: 1, z: 1}
-  gun: {fileID: 0}
+  gun: {fileID: 10971030944101835}
+  scaleFactor: 0
+  isEnemy: 0
 --- !u!114 &6767077241003735366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3859,7 +3895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
-  damageRadius: 2.1
+  damageRadius: 1
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3992,7 +4028,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
