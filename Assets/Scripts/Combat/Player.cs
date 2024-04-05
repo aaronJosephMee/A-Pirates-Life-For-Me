@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         currentHealth = ItemManager.instance.GetHealth().curHealth;
         maxHealth = ItemManager.instance.GetHealth().maxHealth;
-        healthText.text = $"{currentHealth} / {maxHealth}";
+        healthText.text = $"{MathF.Round(currentHealth, 2)} / {maxHealth}";
         StartCoroutine(PollRelics());
     }
 
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
     {
         slider.value = currentHealth / maxHealth;
 
-        healthText.text = $"{currentHealth} / {maxHealth}";
+        healthText.text = $"{MathF.Round(currentHealth, 2)} / {maxHealth}";
 
         if (toHeal > 0 && currentHealth < maxHealth && !isDead){
             currentHealth += toHeal * Time.deltaTime;
