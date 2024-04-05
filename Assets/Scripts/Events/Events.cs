@@ -64,12 +64,17 @@ public class Events
     
     public Events(List<EventScriptableObject> seedEvents, List<EventScriptableObject> storyEvents, List<EventScriptableObject> genericEvents)
     {
+        _genericEvents = genericEvents;
         _seedEvents = seedEvents;
         _storyEvents = storyEvents;
         int randomEventIndex = _random.Next(_seedEvents.Count);
         _eventPool.Add(_seedEvents[randomEventIndex]);
-        int randomGenericIndex = _random.Next(genericEvents.Count);
-        _eventPool.Add(genericEvents[randomGenericIndex]);
+        for (int i = 0; i < 2; i++)
+        {
+            int randomGenericIndex = _random.Next(_genericEvents.Count);
+            _eventPool.Add(genericEvents[randomGenericIndex]);
+            _genericEvents.Remove(genericEvents[randomGenericIndex]);
+        }
     }
     
     public EventScriptableObject GetEvent()
