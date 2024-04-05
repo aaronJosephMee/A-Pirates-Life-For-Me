@@ -9,14 +9,16 @@ using UnityEngine.UI;
     public string title;
     public string body;
     public Color titleColor;
+    public Sprite img;
 }
 public class Tutorial : MonoBehaviour
 {
     public List<tutorialEntry> tutorialMsgs = new List<tutorialEntry>();
+    public Button back;
     public Button next;
     public TextMeshProUGUI tmp;
     public TextMeshProUGUI title;
-
+    public Image tutImg;
     int idx = 0;
     // Start is called before the first frame update
     void Start()
@@ -30,16 +32,31 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    void GoNext(){
-        idx++;
-        if (idx >= tutorialMsgs.Count){
+    void GoBack()
+    {
+        idx--;
+        if (idx >= tutorialMsgs.Count)
+        {
             Destroy(this.gameObject);
             return;
         }
         tmp.text = tutorialMsgs[idx].body;
         title.text = tutorialMsgs[idx].title;
         title.color = tutorialMsgs[idx].titleColor;
+        tutImg.sprite = tutorialMsgs[idx].img;
+    }
+
+    void GoNext(){
+        idx++;
+        if (idx >= tutorialMsgs.Count){
+            Destroy(this.transform.parent.gameObject);
+            return;
+        }
+        tmp.text = tutorialMsgs[idx].body;
+        title.text = tutorialMsgs[idx].title;
+        title.color = tutorialMsgs[idx].titleColor;
+        tutImg.sprite = tutorialMsgs[idx].img;
     }
 }
