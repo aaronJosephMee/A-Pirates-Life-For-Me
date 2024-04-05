@@ -88,6 +88,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 4252697151961127318, guid: 5ed19c8ea6a15d140864859b64143fa1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4252697151961127318, guid: 5ed19c8ea6a15d140864859b64143fa1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4252697151961127318, guid: 5ed19c8ea6a15d140864859b64143fa1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1578
+      objectReference: {fileID: 0}
     - target: {fileID: 9043994547980930071, guid: 5ed19c8ea6a15d140864859b64143fa1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
