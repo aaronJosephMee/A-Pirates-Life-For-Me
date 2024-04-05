@@ -27164,7 +27164,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: c61f6be145320844ca2c9afa7b0b751c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 146adf2e7ba265345800791cbf9fc5fa, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &1788470765
 PrefabInstance:
@@ -32221,7 +32221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054606641573005868, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1522862
+      value: 0.15228622
       objectReference: {fileID: 0}
     - target: {fileID: 1054606641573005868, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.y
@@ -32229,7 +32229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054606641573005868, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.05135256
+      value: 0.051352568
       objectReference: {fileID: 0}
     - target: {fileID: 1065141046534402363, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_IsActive
@@ -32298,6 +32298,10 @@ PrefabInstance:
     - target: {fileID: 2927545171053663225, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: enemiesToSpawn.Array.data[5].numToSpawn
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642818168841125072, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
+      propertyPath: field of view
+      value: 30.00001
       objectReference: {fileID: 0}
     - target: {fileID: 3660176712074266510, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: enemiesToSpawn.Array.size
@@ -32426,6 +32430,10 @@ PrefabInstance:
     - target: {fileID: 4643168053117206505, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.13205434
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881706738747479785, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 30.00001
       objectReference: {fileID: 0}
     - target: {fileID: 5040047849424130952, guid: 42a0245bd272e0a4ba184bc449e7b1b4, type: 3}
       propertyPath: enemiesToSpawn.Array.size

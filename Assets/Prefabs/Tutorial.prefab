@@ -96,38 +96,53 @@ MonoBehaviour:
       yours.  You already look the part. Now it's time to act the part. Battle, treasure,
       and choices await as you chart unknown waters.
     titleColor: {r: 0, g: 0, b: 0, a: 1}
+    img: {fileID: 21300000, guid: 9f60a1a5e873aad46ac4cad5b6ee59b0, type: 3}
+  - title: Combat
+    body: Arrow keys to move around. Left click to swing your sword. Hold right click
+      to aim your gun, and left click to fire the gun. [E] to use consumable item.
+      [Q] to throw a bomb
+    titleColor: {r: 0, g: 0, b: 0, a: 1}
+    img: {fileID: 21300000, guid: 1080e07bda1a1584e86216aafe9b5ade, type: 3}
   - title: Relics
     body: 'Relics can be obtained from battle, events, and the shop. They give permanent
       stat buffs and are very important to surving the harsh seas. They can give
       passive or active stat buffs. Passive buffs are always active, wheras active
       buffs require a condition such as a melee hit to be activated. '
     titleColor: {r: 1, g: 0.85490197, b: 0.003921569, a: 1}
+    img: {fileID: 21300000, guid: bfd2ea158df612c408bb67148a83c593, type: 3}
+  - title: Debuffs
+    body: There are 3 debuffs that can be applied. Fire increases in damage overtime
+      keep applying it to deal lots of damage. Poison can be stacked and gives consistent
+      damage. Freeze slows enemies and can also be stacked to increase the effect.
+    titleColor: {r: 0, g: 0, b: 0, a: 1}
+    img: {fileID: 21300000, guid: bfd2ea158df612c408bb67148a83c593, type: 3}
   - title: Items
     body: Items are consumables that can can be bought from the shop and used in
       combat by pressing 'E'. They can also be used from the inventory by clicking
       on the item if it is highlighted. Items give temporary stat buffs and healing
       so use them to give yourself the edge in battle.
     titleColor: {r: 0, g: 1, b: 1, a: 1}
-  - title: Debuffs
-    body: There are 3 debuffs that can be applied. Fire increases in damage overtime
-      keep applying it to deal lots of damage. Poison can be stacked and gives consistent
-      damage. Freeze slows enemies and can also be stacked to increase the effect.
-    titleColor: {r: 0, g: 0, b: 0, a: 1}
-  - title: Parry
-    body: If you time your sword attack correctly you can parry and reflect ranged
-      attacks back the sender. It really cool
-    titleColor: {r: 0, g: 0, b: 0, a: 1}
+    img: {fileID: 21300000, guid: 02d38a5d33566ca4b92f04716ebdd646, type: 3}
   - title: Bombs
     body: During combat you can throw bombs with 'Q'. Shoot them to blow them up
       faster They recharge between fights so use lots.
     titleColor: {r: 0, g: 0, b: 0, a: 1}
+    img: {fileID: 21300000, guid: ebc7c881b10f7734ba2ab69810cb3288, type: 3}
+  - title: Parry
+    body: If you time your sword attack correctly you can parry and reflect ranged
+      attacks back the sender. It really cool
+    titleColor: {r: 0, g: 0, b: 0, a: 1}
+    img: {fileID: 21300000, guid: 0abbcc82bbb9a5e489297b4e73b47335, type: 3}
   - title: Map
     body: Move the map left with 'A' and right with 'D'. Reach the treasure on the
       far right to complete your journey
     titleColor: {r: 0, g: 0, b: 0, a: 1}
+    img: {fileID: 21300000, guid: 7e9395807cf75454aa0d1b515086f793, type: 3}
+  back: {fileID: 0}
   next: {fileID: 4258811604686556116}
   tmp: {fileID: 7756287898881773582}
   title: {fileID: 5115599935174782081}
+  tutImg: {fileID: 1186302858514029147}
 --- !u!1 &2818570656135347775
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,8 +465,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Relics
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fdba32c4d5576c741adf1788e9892939, type: 2}
+  m_sharedMaterial: {fileID: 3023532362834873437, guid: fdba32c4d5576c741adf1788e9892939, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -481,7 +496,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 4
+  m_fontStyle: 5
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -586,8 +601,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fdba32c4d5576c741adf1788e9892939, type: 2}
+  m_sharedMaterial: {fileID: 3023532362834873437, guid: fdba32c4d5576c741adf1788e9892939, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -687,7 +702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1537.8512}
+  m_AnchoredPosition: {x: 0, y: 1560}
   m_SizeDelta: {x: 3556.1, y: 2289.491}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3297225055993451752
